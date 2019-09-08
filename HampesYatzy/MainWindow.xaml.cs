@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace HampesYatzy
 {
     /// <summary>
@@ -23,6 +24,17 @@ namespace HampesYatzy
         public MainWindow()
         {
             InitializeComponent();
+            DiceTest();
+        }
+        private void DiceTest()
+        {
+            int nr = 1;
+            BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + nr.ToString() + ".png", UriKind.Relative)); //skapar en bitmappsbild av en tärning 
+            dice1.Source = image; //gör ovanstående bild till source till en tom image i gränssnittet
+            dice2.Source = image;
+            dice3.Source = image;
+            dice4.Source = image;
+            dice5.Source = image;
         }
     }
 }

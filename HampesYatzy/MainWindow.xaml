@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Image Height="72" HorizontalAlignment="Left" Margin="65,51,0,0" Name="dice1" Stretch="Fill" VerticalAlignment="Top" Width="74" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="173,51,0,0" x:Name="dice2" Stretch="Fill" VerticalAlignment="Top" Width="74" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="280,51,0,0" x:Name="dice3" Stretch="Fill" VerticalAlignment="Top" Width="74" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="388,51,0,0" x:Name="dice4" Stretch="Fill" VerticalAlignment="Top" Width="74" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="480,51,0,0" x:Name="dice5" Stretch="Fill" VerticalAlignment="Top" Width="74" />
     </Grid>
 </Window>

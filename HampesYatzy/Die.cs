@@ -8,5 +8,6 @@ namespace HampesYatzy
 {
     class Die
     {
+        
     }
 }
