@@ -30,61 +30,61 @@ namespace HampesYatzy
 
 
 
-        public int CalculateYatzy( Dice[] myDice )
-        {
-          int Sum = 0;
+        //public int CalculateYatzy( Dice[] myDice )
+        //{
+        //  int Sum = 0;
 
-          for( int i = 1; i <= 6; i++ )
-          {
-            int Count = 0;
-            for( int j = 0; j < 5; j++ )
-            {
-              if( myDice[j].RollNumber == i )
-                Count++;
+        //  for( int i = 1; i <= 6; i++ )
+        //  {
+        //    int Count = 0;
+        //    for( int j = 0; j < 5; j++ )
+        //    {
+        //      if( myDice[j].RollNumber == i )
+        //        Count++;
 
-              if( Count > 4 )
-                Sum = 50;
-            }
-          }
+        //      if( Count > 4 )
+        //        Sum = 50;
+        //    }
+        //  }
 
-          return Sum;
-        }
+        //  return Sum;
+        //}
 
 
 
 
         //Add dices when the same number is needed, the upper part of yatzy
-        public int AddUpDices(int DieNumber, Dice[] myDice)
-        {
-            int Sum = 0;
+        //public int AddUpDices(int DieNumber, Dice[] myDice)
+        //{
+        //    int Sum = 0;
 
-            for (int i = 0; i < 5; i++)
-            {
-                if (myDice[i].RollNumber == DieNumber)
-                {
-                    Sum += DieNumber;
-                }
-            }
+        //    for (int i = 0; i < 5; i++)
+        //    {
+        //        if (myDice[i].RollNumber == DieNumber)
+        //        {
+        //            Sum += DieNumber;
+        //        }
+        //    }
 
-            return Sum;
-        }
+        //    return Sum;
+        //}
 
         //En metod som summerar tärningarnas värde om spelaren väljer att ta chansen
-        public int AddUpChance( Dice[] myDice )
-        {
-          int Sum = 0;
+        //public int AddUpChance( Dice[] myDice )
+        //{
+        //  int Sum = 0;
 
-          for( int i = 0; i < 5; i++ )
-          {
-            Sum += myDice[i].RollNumber;
-          }
+        //  for( int i = 0; i < 5; i++ )
+        //  {
+        //    Sum += myDice[i].RollNumber;
+        //  }
 
-          return Sum;
-        }
-        public int CheckCategory()
-        {
+        //  return Sum;
+        //}
+        //public int CheckCategory()
+        //{
 
-        }
+        //}
 
 
 
