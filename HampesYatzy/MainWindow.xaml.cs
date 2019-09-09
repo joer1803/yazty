@@ -29,7 +29,7 @@ namespace HampesYatzy
         private void DiceTest()
         {
             int nr = 1;
-            BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + nr.ToString() + ".png", UriKind.Relative)); //skapar en bitmappsbild av en tärning 
+            BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + nr.ToString() + ".png", UriKind.Relative)); //skapar en bitmappsbild av en tärning
             dice1.Source = image; //gör ovanstående bild till source till en tom image i gränssnittet
             dice2.Source = image;
             dice3.Source = image;

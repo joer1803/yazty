@@ -22,7 +22,7 @@ namespace HampesYatzy
         public static int BigStraight;
         public static int FullHouse;
         public static int Chance;
-        public static bool Yatzy;
+        public static bool IsYatzy;
         
         //A method to keep track of total score
         //A method to keep track of upper score
@@ -30,7 +30,7 @@ namespace HampesYatzy
 
 
 
-        public int CalculateYahtzee( Dice[] myDice )
+        public int CalculateYatzy( Dice[] myDice )
         {
           int Sum = 0;
 
@@ -81,7 +81,10 @@ namespace HampesYatzy
 
           return Sum;
         }
+        public int CheckCategory()
+        {
 
+        }
 
 
 
