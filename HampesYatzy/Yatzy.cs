@@ -128,7 +128,44 @@ namespace HampesYatzy
             }
             return sum;
         }
+        private int CheckSmallStraight(int[] dice)
+        {
+            int sum = 0;
+            int count = 0;
 
+            Array.Sort(dice);
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[count] < dice[i] && dice[i] != 6)
+                {
+                    count++;
+                }
+                if (count == 4)
+                {
+                    sum = 15;
+                }
+            }
+            return sum;
+        }
+        private int CheckBigStraight(int[] dice)
+        {
+            int sum = 0;
+            int count = 0;
+
+            Array.Sort(dice);
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[count] < dice[i] && dice[i] != 1)
+                {
+                    count++;
+                }
+                if (count == 4)
+                {
+                    sum = 20;
+                }
+            }
+            return sum;
+        }
         //private int CheckSmallStraight(int die1, int die2, int die3, int die4, int die5)// Checking that dices are ! from each other and that there's no sixes'
         //{
         //    int sum = 0;
@@ -262,5 +299,6 @@ namespace HampesYatzy
 
     //    return sum;
     //}
+    
 }
 
