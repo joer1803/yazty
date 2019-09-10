@@ -25,6 +25,7 @@ namespace HampesYatzy
         {
             InitializeComponent();
             DiceTest();
+            Loaded += MyWindow_Loaded;
         }
         private void DiceTest()
         {
@@ -35,6 +36,10 @@ namespace HampesYatzy
             dice3.Source = image;
             dice4.Source = image;
             dice5.Source = image;
+        }
+        private void MyWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new View.Register());
         }
     }
 }

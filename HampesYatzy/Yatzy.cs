@@ -69,18 +69,7 @@ namespace HampesYatzy
         //    return Sum;
         //}
 
-        //En metod som summerar tärningarnas värde om spelaren väljer att ta chansen
-        //public int AddUpChance( Dice[] myDice )
-        //{
-        //  int Sum = 0;
 
-        //  for( int i = 0; i < 5; i++ )
-        //  {
-        //    Sum += myDice[i].RollNumber;
-        //  }
-
-        //  return Sum;
-        //}
         public int GetScore(int category, int[] dice)
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
@@ -102,14 +91,14 @@ namespace HampesYatzy
                 default:
                     return CountNumbers(category, dice);
 
-                    
-                
+
+
             }
         }
         private int CountNumbers(int category, int[] dice)
         {
             int sum = 0;
-            for(int i = 0; i < dice.Length; i++)
+            for (int i = 0; i < dice.Length; i++)
             {
                 if (dice[i] == category)
                 {
@@ -123,11 +112,11 @@ namespace HampesYatzy
             int sum = 0;
             int countSame = 0;
             int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
-            for (int i=0;i<=dice.Length;i++)
+            for (int i = 0; i <= dice.Length; i++)
             {
-                for(int j = 0; j <= numbers.Length; i++)
+                for (int j = 0; j <= numbers.Length; i++)
                 {
-                    if(dice[i] == numbers[j])
+                    if (dice[i] == numbers[j])
                     {
                         countSame++;
                         if (countSame == 3)
@@ -139,5 +128,139 @@ namespace HampesYatzy
             }
             return sum;
         }
+
+        //private int CheckSmallStraight(int die1, int die2, int die3, int die4, int die5)// Checking that dices are ! from each other and that there's no sixes'
+        //{
+        //    int sum = 0;
+
+        //    if (CheckSmallStraight)
+
+        //    {
+
+        //      if ((die1 != die2) && (die1 != die3) && (die1 != die4) && (die1 != die5))
+
+        //        {
+
+        //            if ((die2 != die3) && (die2 != die4) && (die2 != die5))
+
+        //            {
+
+        //                if ((die3 != die4) && (die3 != die5))
+
+        //                {
+
+        //                    if (die4 != die5)
+
+        //                    {
+
+        //                        if ((die1 != '6') && (die2 != '6') && (die3 != '6') && (die4 != '6') && (die5 != '6'))
+
+        //                        {
+
+        //                            return sum= 15;
+
+        //                        }
+
+        //                        else 
+        //                        {
+        //                            return sum= 0;
+        //                        }
+
+        //                    }
+
+
+        //private int CheckBigStraight(int[] dice )// Sorting the numbers and checking that it's in the correct order for a big straight
+        //{
+        //  int sum = 0;
+        //  int[] i = new int[5];
+
+        // HÄR SKA METODEN FÖR ATT SLÅ TÄRNINGAR IN
+
+
+        //  Array.Sort(i);
+
+        //  if( ((i[0] == 2) &&
+        //       (i[1] == 3) &&
+        //       (i[2] == 4) &&
+        //       (i[3] == 5) &&
+        //       (i[4] == 6)) )
+        //  {
+        //    Sum = 20;
+        //  }
+
+        //  return Sum;
+        //}
+
+
     }
+    //private int CheckFullHouse(int[] dice)
+    //{
+    //    int sum = 0;
+
+    //    int[] i = new int[5];
+
+    //    Array.Sort(i);
+
+    //    if ((((i[0] == i[1]) && (i[1] == i[2])) && // Three of a Kind
+    //         (i[3] == i[4]) && // Two of a Kind
+    //         (i[2] != i[3])) ||
+    //        ((i[0] == i[1]) && // Two of a Kind
+    //         ((i[2] == i[3]) && (i[3] == i[4])) && // Three of a Kind
+    //         (i[1] != i[2])))
+    //    {
+    //        sum = //om kravet ovan uppfylls returneras true vilket sen måste summeras;
+    //    }
+
+    //    return sum;
+    //}
+
+    //private int CountChance(int[] dice)
+    //{
+    //  int sum = 0;
+
+    //  foreach(int die in dice)
+    //  {
+    //    sum+= die;
+    //  }
+
+    //  return Sum;
+    //}
+
+    //private int CheckYatzy(int[] dice)
+    //{
+    //    int sum = 0;
+    //    int countSame = 0;
+    //    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
+    //    for (int i = 0; i <= dice.Length; i++)
+    //    {
+    //        for (int j = 0; j <= numbers.Length; i++)
+    //        {
+    //            if (dice[i] == numbers[j])
+    //            {
+    //                countSame++;
+    //                if (countSame == 5)
+    //                {
+    //                    sum = 50;
+    //                }
+    //            }
+    //        }
+    //    }
+    //    return sum;
+    //}
+
+    //private bool eller int BonusPoint()//Should it be a bool or an int?
+    //{
+    //    int sum = 0;
+    //    if(TotalUp == 63 || TotalUp > 63)
+    //    {
+    //        sum = 50;
+    //    }
+    //    else
+    //    {
+    //        sum = 0;
+    //    }
+
+    //    return sum;
+    //}
 }
+

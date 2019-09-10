@@ -1,0 +1,29 @@
+﻿<Page x:Class="HampesYatzy.View.Lobby"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HampesYatzy.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Lobby">
+
+    <Grid>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="235" Margin="336,161,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="label" Content="Tillgängliga spelare" HorizontalAlignment="Left" Margin="336,130,0,0" VerticalAlignment="Top" Width="117"/>
+        <Button x:Name="Classic_btn" Content="Spela Klassiskt" HorizontalAlignment="Left" Margin="642,296,0,0" VerticalAlignment="Top" Width="114" Height="46" Click="Classic_btn_Click"/>
+        <Button x:Name="Controlled_btn" Content="Spela Styrd" HorizontalAlignment="Left" Margin="642,234,0,0" VerticalAlignment="Top" Width="114" Height="46" Click="Controlled_btn_Click"/>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="235" Margin="65,161,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="label1" Content="Pågående spel" HorizontalAlignment="Left" Margin="65,130,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.71"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+    </Grid>
+</Page>
