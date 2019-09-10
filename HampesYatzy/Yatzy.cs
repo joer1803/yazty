@@ -69,18 +69,7 @@ namespace HampesYatzy
         //    return Sum;
         //}
 
-        //En metod som summerar tärningarnas värde om spelaren väljer att ta chansen
-        //public int AddUpChance( Dice[] myDice )
-        //{
-        //  int Sum = 0;
 
-        //  for( int i = 0; i < 5; i++ )
-        //  {
-        //    Sum += myDice[i].RollNumber;
-        //  }
-
-        //  return Sum;
-        //}
         public int GetScore(int category, int[] dice)
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
@@ -133,28 +122,6 @@ namespace HampesYatzy
                         if (countSame == 3)
                         {
                             sum = dice[i] * 3;
-                        }
-                    }
-                }
-            }
-            return sum;
-        }
-
-        private int CheckFourOfAKind(int[] dice) //Funkar denna?
-        {
-            int sum = 0;
-            int countSame = 0;
-            int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
-            for (int i = 0; i <= dice.Length; i++)
-            {
-                for (int j = 0; j <= numbers.Length; i++)
-                {
-                    if (dice[i] == numbers[j])
-                    {
-                        countSame++;
-                        if (countSame == 4)
-                        {
-                            sum = dice[i] * 4;
                         }
                     }
                 }
@@ -226,4 +193,74 @@ namespace HampesYatzy
 
 
     }
+    //private int CheckFullHouse(int[] dice)
+    //{
+    //    int sum = 0;
+
+    //    int[] i = new int[5];
+
+    //    Array.Sort(i);
+
+    //    if ((((i[0] == i[1]) && (i[1] == i[2])) && // Three of a Kind
+    //         (i[3] == i[4]) && // Two of a Kind
+    //         (i[2] != i[3])) ||
+    //        ((i[0] == i[1]) && // Two of a Kind
+    //         ((i[2] == i[3]) && (i[3] == i[4])) && // Three of a Kind
+    //         (i[1] != i[2])))
+    //    {
+    //        sum = //om kravet ovan uppfylls returneras true vilket sen måste summeras;
+    //    }
+
+    //    return sum;
+    //}
+
+    //private int CountChance(int[] dice)
+    //{
+    //  int sum = 0;
+
+    //  foreach(int die in dice)
+    //  {
+    //    sum+= die;
+    //  }
+
+    //  return Sum;
+    //}
+
+    //private int CheckYatzy(int[] dice)
+    //{
+    //    int sum = 0;
+    //    int countSame = 0;
+    //    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
+    //    for (int i = 0; i <= dice.Length; i++)
+    //    {
+    //        for (int j = 0; j <= numbers.Length; i++)
+    //        {
+    //            if (dice[i] == numbers[j])
+    //            {
+    //                countSame++;
+    //                if (countSame == 5)
+    //                {
+    //                    sum = 50;
+    //                }
+    //            }
+    //        }
+    //    }
+    //    return sum;
+    //}
+
+    //private bool eller int BonusPoint()//Should it be a bool or an int?
+    //{
+    //    int sum = 0;
+    //    if(TotalUp == 63 || TotalUp > 63)
+    //    {
+    //        sum = 50;
+    //    }
+    //    else
+    //    {
+    //        sum = 0;
+    //    }
+
+    //    return sum;
+    //}
 }
+
