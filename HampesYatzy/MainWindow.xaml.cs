@@ -41,7 +41,15 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+
+        private void Btn_classic_Click(object sender, RoutedEventArgs e)
+        {
+            Play play = new Play();
+            play.Show();
+            this.Close();
+        }
+
+        private void Btn_steerd_Click(object sender, RoutedEventArgs e)
         {
             Play play = new Play();
             play.Show();

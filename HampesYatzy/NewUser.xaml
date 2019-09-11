@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
-        Title="NewUser" Height="450" Width="800">
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="Skapa användare" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,6 +25,12 @@
                 <MenuItem Header="Skapa användare"></MenuItem>
             </Menu>
         </StackPanel>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="140" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txtbox_Firstname" HorizontalAlignment="Left" Height="32" Margin="10,42,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="txtbox_Username" TextWrapping="Wrap" Margin="9,79,246,29"/>
+        <TextBox x:Name="txtbox_Lastname" HorizontalAlignment="Left" Height="32" Margin="10,33,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="Lastname" Content="Efternamn" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="Firstname" Content="Förnamn" HorizontalAlignment="Left" Margin="10,16,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="Username" Content="Användarnamn" Margin="9,42,290,66"/>
+        <Button x:Name="button" Content="Skapa användare" Grid.Column="1" HorizontalAlignment="Left" Margin="74,66,0,0" Grid.Row="2" VerticalAlignment="Top" Width="175" Height="43"/>
     </Grid>
 </Window>

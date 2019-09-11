@@ -23,5 +23,28 @@ namespace HampesYatzy
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Rating rating = new Rating();
+            rating.Show();
+            this.Close();
+
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            NewUser newUser = new NewUser();
+            newUser.Show();
+            this.Close();
+
+        }
     }
 }

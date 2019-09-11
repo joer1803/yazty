@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
-        Title="Rating" Height="900" Width="1800">
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="Topplista" Height="900" Width="1800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="211*"/>
