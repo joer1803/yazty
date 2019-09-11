@@ -154,7 +154,7 @@ namespace HampesYatzy
                         }
                     }
                 }
-                for (int i = 0; i < players.Capacity; i++) //loopar så många gånger som det är spelare som ska spela
+                for (int i = 0; i < players.Capacity; i++) //loopen kanske ska va inne i using? och sluta innan executenonquery
                 {
                 using (var cmd = new NpgsqlCommand(stmtTwo, conn))
                 {
