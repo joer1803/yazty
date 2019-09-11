@@ -111,12 +111,11 @@ namespace HampesYatzy
         {
             int sum = 0;
             int countSame = 0;
-            int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
-            for (int i = 0; i <= dice.Length; i++)
+            for (int i = 0; i < dice.Length; i++)
             {
-                for (int j = 0; j <= numbers.Length; i++)
+                for (int j = 0; j < dice.Length; j++)
                 {
-                    if (dice[i] == numbers[j])
+                    if (dice[i] == dice[j])
                     {
                         countSame++;
                         if (countSame == 3)
@@ -125,6 +124,7 @@ namespace HampesYatzy
                         }
                     }
                 }
+                countSame = 0;
             }
             return sum;
         }
@@ -163,6 +163,29 @@ namespace HampesYatzy
                 {
                     sum = 20;
                 }
+            }
+            return sum;
+        }
+        private int CheckOnePair(int[] dice)
+        {
+            int sum = 0;
+            int countSame = 0;
+            Array.Sort(dice);
+            Array.Reverse(dice);
+            for (int i = 0; i < dice.Length; i++)
+            {
+                for (int j = 0; j < dice.Length; j++)
+                {
+                    if (dice[i] == dice[j])
+                    {
+                        countSame++;
+                        if (countSame == 2)
+                        {
+                            return sum = dice[i] * 2;
+                        }
+                    }
+                }
+                countSame = 0;
             }
             return sum;
         }
