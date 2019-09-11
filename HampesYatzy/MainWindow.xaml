@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,0,-8,-3">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition/>
@@ -20,8 +20,8 @@
         <StackPanel Grid.Row="0" Grid.Column="0">
             <Menu IsMainMenu="True">
                 <MenuItem Header="Spela"></MenuItem>
-                <MenuItem Header="Topplista"></MenuItem>
-                <MenuItem Header="Skapa användare"></MenuItem>
+                <MenuItem Header="Topplista" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Skapa användare" Click="MenuItem_Click_1"></MenuItem>
             </Menu>
         </StackPanel>
         <Image Height="72" HorizontalAlignment="Left" Margin="4,51,0,0" Name="dice1" Stretch="Fill" VerticalAlignment="Top" Width="74" Grid.Column="1" />
