@@ -23,5 +23,6 @@
                 <MenuItem Header="Skapa användare"></MenuItem>
             </Menu>
         </StackPanel>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="140" TextChanged="TextBox_TextChanged"/>
     </Grid>
 </Window>
