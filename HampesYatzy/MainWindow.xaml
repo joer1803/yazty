@@ -7,11 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-    
-        <Image Height="72" HorizontalAlignment="Left" Margin="65,51,0,0" Name="dice1" Stretch="Fill" VerticalAlignment="Top" Width="74" />
-        <Image Height="72" HorizontalAlignment="Left" Margin="173,51,0,0" x:Name="dice2" Stretch="Fill" VerticalAlignment="Top" Width="74" />
-        <Image Height="72" HorizontalAlignment="Left" Margin="280,51,0,0" x:Name="dice3" Stretch="Fill" VerticalAlignment="Top" Width="74" />
-        <Image Height="72" HorizontalAlignment="Left" Margin="388,51,0,0" x:Name="dice4" Stretch="Fill" VerticalAlignment="Top" Width="74" />
-        <Image Height="72" HorizontalAlignment="Left" Margin="480,51,0,0" x:Name="dice5" Stretch="Fill" VerticalAlignment="Top" Width="74" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Menu IsMainMenu="True">
+                <MenuItem Header="Spela"></MenuItem>
+                <MenuItem Header="Topplista"></MenuItem>
+                <MenuItem Header="Skapa användare"></MenuItem>
+            </Menu>
+        </StackPanel>
+        <Image Height="72" HorizontalAlignment="Left" Margin="4,51,0,0" Name="dice1" Stretch="Fill" VerticalAlignment="Top" Width="74" Grid.Column="1" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="9,51,0,0" x:Name="dice2" Stretch="Fill" VerticalAlignment="Top" Width="74" Grid.Column="1" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="2,51,0,0" x:Name="dice3" Stretch="Fill" VerticalAlignment="Top" Width="74" Grid.Column="1" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="110,51,0,0" x:Name="dice4" Stretch="Fill" VerticalAlignment="Top" Width="74" Grid.Column="1" />
+        <Image Height="72" HorizontalAlignment="Left" Margin="202,51,0,0" x:Name="dice5" Stretch="Fill" VerticalAlignment="Top" Width="74" Grid.Column="1" />
     </Grid>
 </Window>

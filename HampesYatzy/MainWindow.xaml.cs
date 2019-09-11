@@ -24,9 +24,9 @@ namespace HampesYatzy
         public MainWindow()
         {
             InitializeComponent();
-            DiceTest();
+            //DiceTest();
         }
-        private void DiceTest()
+        /*private void DiceTest()
         {
             int nr = 1;
             BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + nr.ToString() + ".png", UriKind.Relative)); //skapar en bitmappsbild av en tärning
@@ -35,7 +35,7 @@ namespace HampesYatzy
             dice3.Source = image;
             dice4.Source = image;
             dice5.Source = image;
-        }
+        }*/
       
     }
 }
