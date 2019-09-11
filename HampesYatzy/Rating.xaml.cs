@@ -24,18 +24,20 @@ namespace HampesYatzy
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Window window = new Window();
-            window.Show();
-            this.Close();
-        }
+
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            Rating rating = new Rating();
-            rating.Show();
-            rating.Close();
+            NewUser newUser = new NewUser();
+            newUser.Show();
+            this.Close();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
         }
     }
 }

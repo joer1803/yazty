@@ -33,8 +33,8 @@ namespace HampesYatzy
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            Window window = new Window();
-            window.Show();
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
             this.Close();
         }
     }

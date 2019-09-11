@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0">
             <Menu IsMainMenu="True">
-                <MenuItem Header="Spela"></MenuItem>
+                <MenuItem Header="Meny" Click="MenuItem_Click_2"></MenuItem>
                 <MenuItem Header="Topplista" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="Skapa användare" Click="MenuItem_Click_1"></MenuItem>
             </Menu>
