@@ -76,7 +76,7 @@ namespace HampesYatzy
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "WITH rankgamesamount AS (SELECT player.nickname, COUNT(game_player.player_id) FROM game_player JOIN player ON player.player_id = game_player.player_id GROUP BY player.nickname ORDER BY COUNT DESC) SELECT * FROM rankgamesamount";
+                    cmd.CommandText = "WITH rankgamesamount AS (SELECT player.nickname, player.firstname, player.lastname, COUNT(game_player.player_id) FROM game_player JOIN player ON player.player_id = game_player.player_id GROUP BY player.nickname, player.firstname, player.lastname ORDER BY COUNT DESC) SELECT * FROM rankgamesamount";
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -84,7 +84,9 @@ namespace HampesYatzy
                             Player p = new Player
                             {
                                 Nickname = reader.GetString(0),
-                                GamesPlayed = reader.GetInt32(1)
+                                Firstname = reader.GetString(1),
+                                Lastname = reader.GetString(2),
+                                GamesPlayed = reader.GetInt32(3)
                             };
                             plist.Add(p);
                         }
@@ -102,7 +104,7 @@ namespace HampesYatzy
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "WITH rankgamesamount AS (SELECT player.nickname, SUM(game_player.score) FROM game_player JOIN player ON player.player_id = game_player.player_id GROUP BY player.nickname ORDER BY SUM DESC) SELECT * FROM rankgamesamount";
+                    cmd.CommandText = "WITH rankscoreamount AS (SELECT player.nickname, player.firstname, player.lastname, SUM(game_player.score)FROM game_player JOIN player ON player.player_id = game_player.player_id JOIN game ON game.game_id = game_player.game_id WHERE game.started_at BETWEEN CURRENT_DATE - INTERVAL '7 days' AND CURRENT_DATE + INTERVAL '1 day' GROUP BY player.nickname, player.firstname, player.lastname ORDER BY SUM DESC) SELECT* FROM rankscoreamount";
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -110,7 +112,9 @@ namespace HampesYatzy
                             Player p = new Player
                             {
                                 Nickname = reader.GetString(0),
-                                TotalScore = reader.GetInt32(1)
+                                Firstname = reader.GetString(1),
+                                Lastname = reader.GetString(2),
+                                TotalScore = reader.GetInt32(3)
                             };
                             plist.Add(p);
                         }

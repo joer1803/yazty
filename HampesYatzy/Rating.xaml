@@ -40,11 +40,11 @@
         <ListView x:Name="flitigaste" Grid.Column="1" HorizontalAlignment="Left" Height="336" Grid.Row="1" VerticalAlignment="Top" Width="410">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Plats" Width="50"/>
-                    <GridViewColumn Header="Användarnamn" Width="100"/>
-                    <GridViewColumn Header="Förnamn" Width="75"/>
-                    <GridViewColumn Header="Efternamm" Width="75"/>
-                    <GridViewColumn Header="Matcher" Width="100"/>
+                    <GridViewColumn Header="Plats" Width="50" />
+                    <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
+                    <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
+                    <GridViewColumn Header="Matcher" Width="100" DisplayMemberBinding="{Binding GamesPlayed}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -52,10 +52,10 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Plats" Width="50"/>
-                    <GridViewColumn Header="Användarnamn" Width="100"/>
-                    <GridViewColumn Header="Förnamn" Width="75"/>
-                    <GridViewColumn Header="Efternamm" Width="75"/>
-                    <GridViewColumn Header="Totalpoäng" Width="100"/>
+                    <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
+                    <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
+                    <GridViewColumn Header="Totalpoäng" Width="100" DisplayMemberBinding="{Binding TotalScore}"/>
                 </GridView>
             </ListView.View>
         </ListView>
