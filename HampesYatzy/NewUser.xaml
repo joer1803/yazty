@@ -1,0 +1,28 @@
+﻿<Window x:Class="HampesYatzy.NewUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HampesYatzy"
+        mc:Ignorable="d"
+        Title="NewUser" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Menu IsMainMenu="True">
+                <MenuItem Header="Meny" Click="MenuItem_Click_1"></MenuItem>
+                <MenuItem Header="Topplista" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Skapa användare"></MenuItem>
+            </Menu>
+        </StackPanel>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="140" TextChanged="TextBox_TextChanged"/>
+    </Grid>
+</Window>

@@ -12,6 +12,8 @@ namespace HampesYatzy
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Nickname { get; set; }
+        public int GamesPlayed { get; set; }
+        public int TotalScore { get; set; }
         public override string ToString()
         {
             return Nickname;

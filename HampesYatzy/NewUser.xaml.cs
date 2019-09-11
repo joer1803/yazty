@@ -10,29 +10,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HampesYatzy.View
+namespace HampesYatzy
 {
     /// <summary>
-    /// Interaction logic for Lobby.xaml
+    /// Interaction logic for NewUser.xaml
     /// </summary>
-    public partial class Lobby : Page
+    public partial class NewUser : Window
     {
-        public Lobby()
+        public NewUser()
         {
             InitializeComponent();
         }
 
-        private void Controlled_btn_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Play());
+            Rating rating = new Rating();
+            rating.Show();
+            this.Close();
         }
 
-        private void Classic_btn_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Play());
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
         }
     }
 }

@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HampesYatzy.View
+namespace HampesYatzy
 {
     /// <summary>
-    /// Interaction logic for Register.xaml
+    /// Interaction logic for Play.xaml
     /// </summary>
-    public partial class Register : Page
+    public partial class Play : Window
     {
-        public Register()
+        public Play()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Lobby());
         }
     }
 }

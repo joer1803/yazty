@@ -81,17 +81,14 @@
     </ApplicationDefinition>
     <Compile Include="DbOperations.cs" />
     <Compile Include="Die.cs" />
-    <Compile Include="View\Lobby.xaml.cs">
-      <DependentUpon>Lobby.xaml</DependentUpon>
+    <Compile Include="NewUser.xaml.cs">
+      <DependentUpon>NewUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Play.xaml.cs">
+    <Compile Include="Play.xaml.cs">
       <DependentUpon>Play.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Rating.xaml.cs">
+    <Compile Include="Rating.xaml.cs">
       <DependentUpon>Rating.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Register.xaml.cs">
-      <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="Yatzy.cs" />
     <Compile Include="YatzyGame.cs" />
@@ -107,19 +104,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Lobby.xaml">
+    <Page Include="NewUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Play.xaml">
+    <Page Include="Play.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Rating.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Register.xaml">
+    <Page Include="Rating.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,7 +145,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\d1.png" />
   </ItemGroup>
@@ -170,6 +162,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\d6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Score.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
