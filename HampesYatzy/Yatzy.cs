@@ -128,6 +128,27 @@ namespace HampesYatzy
             }
             return sum;
         }
+        private int CheckFourOfAKind(int[] dice)
+        {
+            int sum = 0;
+            int countSame = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                for (int j = 0; j < dice.Length; j++)
+                {
+                    if (dice[i] == dice[j])
+                    {
+                        countSame++;
+                        if (countSame == 4)
+                        {
+                            sum = dice[i] * 4;
+                        }
+                    }
+                }
+                countSame = 0;
+            }
+            return sum;
+        }
         private int CheckSmallStraight(int[] dice)
         {
             int sum = 0;
