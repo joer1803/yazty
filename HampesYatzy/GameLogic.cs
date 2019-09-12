@@ -7,7 +7,22 @@ using System.Threading.Tasks;
 namespace HampesYatzy
 {
     class GameLogic
-    { 
+    {
+        public const int Ones = 1;
+        public const int Twos = 2;
+        public const int Threes = 3;
+        public const int Fours = 4;
+        public const int Fives = 5;
+        public const int Sixes = 6;
+        public const int OnePair = 7;
+        public const int TwoPair = 8;
+        public const int ThreeOfAKind = 9;
+        public const int FourOfAKind = 10;
+        public const int SmallStraight = 11;
+        public const int BigStraight = 12;
+        public const int FullHouse = 13;
+        public const int Chance = 14;
+        public const int Yatzy = 15;
         //A method to keep track of total score
         //A method to keep track of upper score
         //A method to see if the player got 63 points to get bonus points
@@ -58,20 +73,24 @@ namespace HampesYatzy
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
             {
-                case 7:
+                case OnePair:
+                    return CheckOnePair(dice);
+                //case TwoPair:
+                //    return CheckTwoPair(dice);
+                case ThreeOfAKind:
                     return CheckThreeOfAKind(dice);
-                //case 8:
-                //    return CheckFourOfAKind(dice);
-                //case 9:
-                //    return CheckSmallStraight();
-                //case 10:
-                //    return CheckLargeStraight();
-                //case 11:
-                //    return CheckFullHouse();
-                //case 12:
-                //    return CountChance();
-                //case 13:
-                //    return CheckYatzy();
+                case FourOfAKind:
+                    return CheckFourOfAKind(dice);
+                case SmallStraight:
+                    return CheckSmallStraight(dice);
+                case BigStraight:
+                    return CheckBigStraight(dice);
+                //case FullHouse:
+                //    return CheckFullHouse(dice);
+                case Chance:
+                    return CountChance(dice);
+                case Yatzy:
+                    return CheckYatzy(dice);
                 default:
                     return CountNumbers(category, dice);
 
@@ -194,7 +213,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private int CountChance(int[] dice)
+        private static int CountChance(int[] dice)
         {
             int sum = 0;
 
@@ -203,6 +222,27 @@ namespace HampesYatzy
                 sum += die;
             }
 
+            return sum;
+        }
+        private static int CheckYatzy(int[] dice)
+        {
+            int sum = 0;
+            int countSame = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                for (int j = 0; j < dice.Length; j++)
+                {
+                    if (dice[i] == dice[j])
+                    {
+                        countSame++;
+                        if (countSame == 5)
+                        {
+                            sum = 50;
+                        }
+                    }
+                }
+                countSame = 0;
+            }
             return sum;
         }
         //private int CheckTwoPair(int[] dice)
