@@ -8,7 +8,7 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="Skapa användare" Height="900" Width="1800">
-    <Grid>
+    <Grid Background="#FF389355">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -28,10 +28,10 @@
         <TextBox x:Name="txtbox_Firstname" HorizontalAlignment="Left" Height="32" Margin="10,42,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
         <TextBox x:Name="txtbox_Username" TextWrapping="Wrap" Margin="10,215,745.667,52"/>
         <TextBox x:Name="txtbox_Lastname" HorizontalAlignment="Left" Height="32" Margin="11,158,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-        <Label x:Name="Lastname" Content="Efternamn" HorizontalAlignment="Left" Margin="11,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="67"/>
-        <Label x:Name="Firstname" Content="Förnamn" HorizontalAlignment="Left" Margin="10,16,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label x:Name="Username" Content="Användarnamn" Margin="10,178,745.667,88"/>
-        <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Margin="360,223,0,0" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="43"/>
+        <Label x:Name="Lastname" Content="Efternamn" HorizontalAlignment="Left" Margin="11,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" FontSize="14"/>
+        <Label x:Name="Firstname" Content="Förnamn" HorizontalAlignment="Left" Margin="10,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="Username" Content="Användarnamn" Margin="10,178,745.667,88" Background="{x:Null}" FontSize="14"/>
+        <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Margin="11,245,0,0" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="43" FontSize="14"/>
         <Button x:Name="Kryss_btn" Content="Stäng" Grid.Column="1" HorizontalAlignment="Left" Margin="790.333,0,0,0" VerticalAlignment="Top" Width="106" Height="43" Click="Kryss_btn_Click"/>
     </Grid>
 </Window>
