@@ -22,10 +22,21 @@ namespace HampesYatzy
         public Rating()
         {
             InitializeComponent();
+            LoadMostGamesRankings();
+            LoadTotalScoreRankings();
         }
 
 
-
+        private void LoadMostGamesRankings()
+        {
+            flitigaste.ItemsSource = null;
+            flitigaste.ItemsSource = DbOperations.GetMostGamesPlayer();
+        }
+        private void LoadTotalScoreRankings()
+        {
+            Loggat_in.ItemsSource = null;
+            Loggat_in.ItemsSource = DbOperations.GetTotalScoresPlayer();
+        }
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             NewUser newUser = new NewUser();
