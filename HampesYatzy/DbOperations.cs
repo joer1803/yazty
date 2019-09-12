@@ -86,7 +86,7 @@ namespace HampesYatzy
                                 Nickname = reader.GetString(0),
                                 Firstname = reader.GetString(1),
                                 Lastname = reader.GetString(2),
-                                GamesPlayed = reader.GetInt32(3)
+                                Stats = new PlayerStats() { GamesPlayed = reader.GetInt32(3)}
                             };
                             plist.Add(p);
                         }
@@ -114,7 +114,7 @@ namespace HampesYatzy
                                 Nickname = reader.GetString(0),
                                 Firstname = reader.GetString(1),
                                 Lastname = reader.GetString(2),
-                                TotalScore = reader.GetInt32(3)
+                                Stats = new PlayerStats() { TotalScore = reader.GetInt32(3)}
                             };
                             plist.Add(p);
                         }

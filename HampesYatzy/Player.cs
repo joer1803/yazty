@@ -8,11 +8,16 @@ namespace HampesYatzy
 {
     class Player
     {
+        //public Player()
+        //{
+        //    Stats = new PlayerStats();
+        //}
         public int Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Nickname { get; set; }
-        public int GamesPlayed { get; set; }
+        public PlayerStats Stats { get; set; }
+        //public int GamesPlayed { get; set; }
         public int TotalScore { get; set; }
     }
 }

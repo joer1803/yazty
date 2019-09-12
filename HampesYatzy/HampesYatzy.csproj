@@ -81,12 +81,14 @@
     </ApplicationDefinition>
     <Compile Include="DbOperations.cs" />
     <Compile Include="Die.cs" />
+    <Compile Include="InGamePlayer.cs" />
     <Compile Include="NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Play.xaml.cs">
       <DependentUpon>Play.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PlayerStats.cs" />
     <Compile Include="Rating.xaml.cs">
       <DependentUpon>Rating.xaml</DependentUpon>
     </Compile>
