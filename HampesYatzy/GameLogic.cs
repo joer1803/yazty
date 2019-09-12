@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HampesYatzy
 {
     class GameLogic
-    {
+    { 
         //A method to keep track of total score
         //A method to keep track of upper score
         //A method to see if the player got 63 points to get bonus points
@@ -54,7 +54,7 @@ namespace HampesYatzy
         //}
 
 
-        public int GetScore(int category, int[] dice)
+        public static int GetScore(int category, int[] dice)
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
             {
@@ -79,7 +79,7 @@ namespace HampesYatzy
 
             }
         }
-        private int CountNumbers(int category, int[] dice)
+        private static int CountNumbers(int category, int[] dice)
         {
             int sum = 0;
             for (int i = 0; i < dice.Length; i++)
@@ -91,7 +91,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private int CheckThreeOfAKind(int[] dice)
+        private static int CheckThreeOfAKind(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -112,7 +112,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private int CheckFourOfAKind(int[] dice)
+        private static int CheckFourOfAKind(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -133,7 +133,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private int CheckSmallStraight(int[] dice)
+        private static int CheckSmallStraight(int[] dice)
         {
             int sum = 0;
             int count = 0;
@@ -152,7 +152,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private int CheckBigStraight(int[] dice)
+        private static int CheckBigStraight(int[] dice)
         {
             int sum = 0;
             int count = 0;
@@ -171,7 +171,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private int CheckOnePair(int[] dice)
+        private static int CheckOnePair(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -194,7 +194,17 @@ namespace HampesYatzy
             }
             return sum;
         }
+        private int CountChance(int[] dice)
+        {
+            int sum = 0;
 
+            foreach (int die in dice)
+            {
+                sum += die;
+            }
+
+            return sum;
+        }
         //private int CheckTwoPair(int[] dice)
         //{
         //    int sum = 0;
@@ -219,77 +229,67 @@ namespace HampesYatzy
         //    return sum;
 
 
-        }
     }
-    //private int CheckFullHouse(int[] dice)
-    //{
-    //    int sum = 0;
+    }
+//private int CheckFullHouse(int[] dice)
+//{
+//    int sum = 0;
 
-    //    int[] i = new int[5];
+//    int[] i = new int[5];
 
-    //    Array.Sort(i);
+//    Array.Sort(i);
 
-    //    if ((((i[0] == i[1]) && (i[1] == i[2])) && // Three of a Kind
-    //         (i[3] == i[4]) && // Two of a Kind
-    //         (i[2] != i[3])) ||
-    //        ((i[0] == i[1]) && // Two of a Kind
-    //         ((i[2] == i[3]) && (i[3] == i[4])) && // Three of a Kind
-    //         (i[1] != i[2])))
-    //    {
-    //        sum = //om kravet ovan uppfylls returneras true vilket sen måste summeras;
-    //    }
+//    if ((((i[0] == i[1]) && (i[1] == i[2])) && // Three of a Kind
+//         (i[3] == i[4]) && // Two of a Kind
+//         (i[2] != i[3])) ||
+//        ((i[0] == i[1]) && // Two of a Kind
+//         ((i[2] == i[3]) && (i[3] == i[4])) && // Three of a Kind
+//         (i[1] != i[2])))
+//    {
+//        sum = //om kravet ovan uppfylls returneras true vilket sen måste summeras;
+//    }
 
-    //    return sum;
-    //}
+//    return sum;
+//}
 
-    //private int CountChance(int[] dice)
-    //{
-    //  int sum = 0;
 
-    //  foreach(int die in dice)
-    //  {
-    //    sum+= die;
-    //  }
 
-    //  return Sum;
-    //}
+//private int CheckYatzy(int[] dice)
+//{
+//    int sum = 0;
+//    int countSame = 0;
+//    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
+//    for (int i = 0; i <= dice.Length; i++)
+//    {
+//        for (int j = 0; j <= numbers.Length; i++)
+//        {
+//            if (dice[i] == numbers[j])
+//            {
+//                countSame++;
+//                if (countSame == 5)
+//                {
+//                    sum = 50;
+//                }
+//            }
+//        }
+//    }
+//    return sum;
+//}
 
-    //private int CheckYatzy(int[] dice)
-    //{
-    //    int sum = 0;
-    //    int countSame = 0;
-    //    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
-    //    for (int i = 0; i <= dice.Length; i++)
-    //    {
-    //        for (int j = 0; j <= numbers.Length; i++)
-    //        {
-    //            if (dice[i] == numbers[j])
-    //            {
-    //                countSame++;
-    //                if (countSame == 5)
-    //                {
-    //                    sum = 50;
-    //                }
-    //            }
-    //        }
-    //    }
-    //    return sum;
-    //}
+//private bool eller int BonusPoint()//Should it be a bool or an int?
+//{
+//    int sum = 0;
+//    if(TotalUp == 63 || TotalUp > 63)
+//    {
+//        sum = 50;
+//    }
+//    else
+//    {
+//        sum = 0;
+//    }
 
-    //private bool eller int BonusPoint()//Should it be a bool or an int?
-    //{
-    //    int sum = 0;
-    //    if(TotalUp == 63 || TotalUp > 63)
-    //    {
-    //        sum = 50;
-    //    }
-    //    else
-    //    {
-    //        sum = 0;
-    //    }
-
-    //    return sum;
-    //}
+//    return sum;
+//}
 
 
 
