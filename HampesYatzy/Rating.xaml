@@ -44,7 +44,7 @@
                     <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
                     <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
                     <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
-                    <GridViewColumn Header="Matcher" Width="100" DisplayMemberBinding="{Binding GamesPlayed}"/>
+                    <GridViewColumn Header="Matcher" Width="100" DisplayMemberBinding="{Binding Stats.GamesPlayed}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -55,7 +55,7 @@
                     <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
                     <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
                     <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
-                    <GridViewColumn Header="Totalpoäng" Width="100" DisplayMemberBinding="{Binding TotalScore}"/>
+                    <GridViewColumn Header="Totalpoäng" Width="100" DisplayMemberBinding="{Binding Stats.TotalScore}"/>
                 </GridView>
             </ListView.View>
         </ListView>
