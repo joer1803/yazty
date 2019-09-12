@@ -8,6 +8,7 @@ namespace HampesYatzy
 {
     class Die
     {
-        
+        private void RollDice(); //Metod for att sla en tarning
+        private bool HoldDie(); //Metod for att halla en tarning
     }
 }
