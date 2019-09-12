@@ -56,6 +56,16 @@ namespace HampesYatzy
             this.Close();
         }
 
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         /*private void DiceTest()
 {
    int nr = 1;

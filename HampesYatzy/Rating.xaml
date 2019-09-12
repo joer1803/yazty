@@ -62,5 +62,6 @@
         <Label x:Name="Flest_i_rad" Content="Flest segrar i rad" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18"/>
         <Label x:Name="fli" Content="De flitigaste yatzyspelarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,106,0" FontSize="18" Width="425"/>
         <Label x:Name="Senaste" Content="De bästa spelarna som loggat in under de senaste 7 dagarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2" Margin="0,0,-72,0" FontSize="18" Width="603"/>
+        <Button x:Name="Kryss_btn" Content="Stäng" Grid.Column="2" HorizontalAlignment="Left" Margin="424.333,0,0,0" VerticalAlignment="Top" Width="106" Height="43" Click="Kryss_btn_Click"/>
     </Grid>
 </Window>
