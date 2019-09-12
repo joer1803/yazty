@@ -81,6 +81,15 @@
     </ApplicationDefinition>
     <Compile Include="DbOperations.cs" />
     <Compile Include="Die.cs" />
+    <Compile Include="NewUser.xaml.cs">
+      <DependentUpon>NewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Play.xaml.cs">
+      <DependentUpon>Play.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Rating.xaml.cs">
+      <DependentUpon>Rating.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Yatzy.cs" />
     <Compile Include="YatzyGame.cs" />
     <Page Include="MainWindow.xaml">
@@ -95,6 +104,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Play.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rating.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Player.cs" />
@@ -124,7 +145,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\d1.png" />
   </ItemGroup>
@@ -142,6 +162,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\d6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Score.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="69658167_509591356270833_1815074108665233408_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ett.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="två.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fyra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sexa.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
