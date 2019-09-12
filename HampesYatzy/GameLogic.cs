@@ -213,6 +213,33 @@ namespace HampesYatzy
             }
             return sum;
         }
+        private int CheckTwoPair(int[] dice)
+        {
+            int sum = 0;
+            int countSame = 0;
+            int firstpair = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                for (int j = 0; j < dice.Length; j++)
+                {
+                    if (dice[i] == dice[j])
+                    {
+                        countSame++;
+                        if (countSame == 2)
+                        {
+                            if (firstpair != 0 && firstpair != dice[i])
+                            {
+                                return sum += dice[i] * 2;
+                            }
+                            firstpair = dice[i];
+                            sum = dice[i] * 2;
+                        }
+                    }
+                }
+                countSame = 0;
+            }
+            return sum = 0;
+        }
         private static int CountChance(int[] dice)
         {
             int sum = 0;
