@@ -8,62 +8,64 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="Spela" Height="900" Width="1800">
-    <Grid>
+    <Grid Background="#FF389355">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="151*"/>
-            <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="112*"/>
-            <ColumnDefinition Width="112*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="122*"/>
-            <RowDefinition Height="324*"/>
-            <RowDefinition Height="401*"/>
-            <RowDefinition Height="45*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0">
+        <Image Source="Resources/Protokoll.png" Margin="-218,31,380,-911" Grid.ColumnSpan="4" Grid.Row="5"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,291.667,0">
             <Menu IsMainMenu="True">
-                <MenuItem Header="Meny" Click="MenuItem_Click_1"></MenuItem>
-                <MenuItem Header="Topplista" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Skapa användare" Click="MenuItem_Click_2"></MenuItem>
+                <MenuItem Header="Meny" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Topplista" Click="MenuItem_Click"/>
+                <MenuItem Header="Skapa användare" Click="MenuItem_Click_2"/>
             </Menu>
         </StackPanel>
+        <Button x:Name="button" Content="Stäng" Grid.Column="3" HorizontalAlignment="Left" Margin="1177,0,-692,0" VerticalAlignment="Top" Width="106" Height="43" Click="Button_Click"/>
+        <Image x:Name="dice1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="148" Margin="1025,615,-593,107" Width="148"/>
+        <Image x:Name="dice2" Grid.Column="3" Margin="905,724,-470,68" Width="148" Height="148"/>
+        <Image x:Name="dice3" Grid.Column="3" Margin="697,724,-260,76" Width="148" Height="148"/>
+        <Image x:Name="dice4" Grid.Column="3" Margin="428,728,10,73" Width="148" Height="148"/>
+        <Image x:Name="dice5" Grid.Column="3" Margin="209,728,230,73" Width="148" Height="148"/>
 
-        <Image x:Name="_69658167_509591356270833_1815074108665233408_n_png" Margin="-56,77,206,-64" Grid.RowSpan="4" Source="69658167_509591356270833_1815074108665233408_n.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-        <Label x:Name="label" Content="Tid kvar att spela: " Grid.Column="3" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="76" Width="360" FontSize="36"/>
 
-        <Image x:Name="ett_jpg" Grid.Column="3" Margin="289,178,58,116" Grid.Row="2" Source="ett.jpg" Stretch="Fill"/>
-        <Image x:Name="två_jpg" Grid.Column="3" Margin="289,178,58,116" Grid.Row="2" Source="två.jpg" Stretch="Fill"/>
-        <Image x:Name="tre_jpg" Grid.Column="3" Margin="289,178,58,116" Grid.Row="2" Source="tre.jpg" Stretch="Fill"/>
-        <Image x:Name="fyra_jpg" Grid.Column="3" Margin="289,178,58,116" Grid.Row="2" Source="fyra.jpg" Stretch="Fill"/>
-        <Image x:Name="fem_jpg" Grid.Column="3" Margin="289,178,58,116" Grid.Row="2" Source="fem.jpg" Stretch="Fill"/>
+        <StackPanel  Height="34" Width="34"  >
+            <TextBlock x:Name="Ettor_1"  Height="34" Width="34" RenderTransformOrigin="7.941,-3.235"/>
+            <TextBlock x:Name="tvåor_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="treor_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="fyror_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="femmor_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="sexor_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="summa_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="bonus1"  Height="34" Width="34"/>
+            <TextBlock x:Name="par_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="tvåpar_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="triss_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="Fyrtal_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="litenstege_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="storstege_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="kåk_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="chans_1" Height="34" Width="34"/>
+            <TextBlock x:Name="yatzy_1"  Height="34" Width="34"/>
+            <TextBlock x:Name="total_1" Height="34" Width="34"/>
 
-        <Image x:Name="ett_jpg1" Grid.Column="3" Margin="57,178,295,116" Grid.Row="2" Source="ett.jpg" Stretch="Fill"/>
-        <Image x:Name="två_jpg1" Grid.Column="3" Margin="57,178,295,116" Grid.Row="2" Source="två.jpg" Stretch="Fill" RenderTransformOrigin="0.206,-0.147"/>
-        <Image x:Name="tre_jpg1" Grid.Column="3" Margin="57,178,295,116" Grid.Row="2" Source="tre.jpg" Stretch="Fill"/>
-        <Image x:Name="fyra_jpg1" Grid.Column="3" Margin="57,178,295,116" Grid.Row="2" Source="fyra.jpg" Stretch="Fill"/>
-        <Image x:Name="fem_jpg1" Grid.Column="3" Margin="57,178,296,116" Grid.Row="2" Source="fem.jpg" Stretch="Fill" RenderTransformOrigin="-0.058,0.557"/>
-        <Image x:Name="sexa_jpg" Grid.Column="3" Margin="51,178,296,116" Grid.Row="2" Source="sexa.jpg" Stretch="Fill"/>
-        <Image x:Name="sexa_jpg1" Grid.Column="3" Margin="289,178,58,116" Grid.Row="2" Source="sexa.jpg" Stretch="Fill"/>
-        <Image x:Name="ett_jpg2" Grid.Column="2" Margin="257,178,96,116" Grid.Row="2" Source="ett.jpg" Stretch="Fill"/>
-        <Image x:Name="två_jpg2" Grid.Column="2" Margin="257,178,96,116" Grid.Row="2" Source="två.jpg" Stretch="Fill"/>
-        <Image x:Name="tre_jpg2" Grid.Column="2" Margin="257,178,96,116" Grid.Row="2" Source="tre.jpg" Stretch="Fill"/>
-        <Image x:Name="fyra_jpg2" Grid.Column="2" Margin="257,178,96,116" Grid.Row="2" Source="fyra.jpg" Stretch="Fill"/>
-        <Image x:Name="fem_jpg2" Grid.Column="2" Margin="257,178,96,116" Grid.Row="2" Source="fem.jpg" Stretch="Fill"/>
-        <Image x:Name="sexa_jpg2" Grid.Column="2" Margin="257,178,89,116" Grid.Row="2" Source="sexa.jpg" Stretch="Fill"/>
-        <Image x:Name="ett_jpg3" Grid.Column="2" Margin="41,184,308,112" Grid.Row="2" Source="ett.jpg" Stretch="Fill"/>
-        <Image x:Name="två_jpg3" Grid.Column="2" Margin="41,184,308,112" Grid.Row="2" Source="två.jpg" Stretch="Fill"/>
-        <Image x:Name="tre_jpg3" Grid.Column="2" Margin="41,184,308,112" Grid.Row="2" Source="tre.jpg" Stretch="Fill"/>
-        <Image x:Name="fyra_jpg3" Grid.Column="2" Margin="41,184,308,112" Grid.Row="2" Source="fyra.jpg" Stretch="Fill"/>
-        <Image x:Name="fem_jpg3" Grid.Column="2" Margin="41,184,308,112" Grid.Row="2" Source="fem.jpg" Stretch="Fill"/>
-        <Image x:Name="sexa_jpg3" Grid.Column="2" Margin="41,184,308,112" Grid.Row="2" Source="sexa.jpg" Stretch="Fill"/>
-        <Image x:Name="ett_jpg4" Grid.Column="1" Margin="125,184,68,112" Grid.Row="2" Source="ett.jpg" Stretch="Fill"/>
-        <Image x:Name="två_jpg4" Grid.Column="1" Margin="125,184,68,112" Grid.Row="2" Source="två.jpg" Stretch="Fill"/>
-        <Image x:Name="tre_jpg4" Grid.Column="1" Margin="125,184,68,112" Grid.Row="2" Source="tre.jpg" Stretch="Fill"/>
-        <Image x:Name="fyra_jpg4" Grid.Column="1" Margin="125,184,68,112" Grid.Row="2" Source="fyra.jpg" Stretch="Fill"/>
-        <Image x:Name="fem_jpg4" Grid.Column="1" Margin="125,184,68,112" Grid.Row="2" Source="fem.jpg" Stretch="Fill" RenderTransformOrigin="0.449,1.486"/>
-        <Image x:Name="sexa_jpg4" Grid.Column="1" Margin="125,184,68,112" Grid.Row="2" Source="sexa.jpg" Stretch="Fill" RenderTransformOrigin="2.01,0.59"/>
+        </StackPanel>
+
+
 
 
     </Grid>

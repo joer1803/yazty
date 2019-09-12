@@ -46,5 +46,16 @@ namespace HampesYatzy
             this.Close();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void Dice()
+        {
+            int nr = 1;
+            BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + nr.ToString() + "png", UriKind.Relative));
+            dice1.Source = image;
+        }
     }
 }

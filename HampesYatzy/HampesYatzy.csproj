@@ -166,22 +166,10 @@
     <Resource Include="Resources\d6.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Score.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Score.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="69658167_509591356270833_1815074108665233408_n.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ett.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="två.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="tre.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="fyra.jpg" />
@@ -190,7 +178,7 @@
     <Resource Include="fem.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="sexa.jpg" />
+    <Resource Include="Resources\Protokoll.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

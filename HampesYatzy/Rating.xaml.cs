@@ -50,5 +50,10 @@ namespace HampesYatzy
             mainwindow.Show();
             this.Close();
         }
+
+        private void Kryss_btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
