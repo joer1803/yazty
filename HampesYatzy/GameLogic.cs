@@ -75,8 +75,8 @@ namespace HampesYatzy
             {
                 case OnePair:
                     return CheckOnePair(dice);
-                //case TwoPair:
-                //    return CheckTwoPair(dice);
+                case TwoPair:
+                    return CheckTwoPair(dice);
                 case ThreeOfAKind:
                     return CheckThreeOfAKind(dice);
                 case FourOfAKind:
@@ -213,7 +213,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private int CheckTwoPair(int[] dice)
+        private static int CheckTwoPair(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
