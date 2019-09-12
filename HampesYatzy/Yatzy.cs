@@ -202,7 +202,7 @@ namespace HampesYatzy
                         countSame++;
                         if (countSame == 2)
                         {
-                            return sum = dice[i] * 2;
+                            sum = dice[i] * 2;
                         }
                     }
                 }
@@ -210,69 +210,32 @@ namespace HampesYatzy
             }
             return sum;
         }
-        //private int CheckSmallStraight(int die1, int die2, int die3, int die4, int die5)// Checking that dices are ! from each other and that there's no sixes'
+
+        //private int CheckTwoPair(int[] dice)
         //{
         //    int sum = 0;
-
-        //    if (CheckSmallStraight)
-
+        //    int countSame = 0;
+        //    Array.Sort(dice);
+        //    Array.Reverse(dice);
+        //    for (int i = 0; i < dice.Length; i++)
         //    {
-
-        //      if ((die1 != die2) && (die1 != die3) && (die1 != die4) && (die1 != die5))
-
+        //        for (int j = 0; j < dice.Length; j++)
         //        {
-
-        //            if ((die2 != die3) && (die2 != die4) && (die2 != die5))
-
+        //            if (dice[i] == dice[j])
         //            {
-
-        //                if ((die3 != die4) && (die3 != die5))
-
+        //                countSame++;
+        //                if (countSame == 2)
         //                {
-
-        //                    if (die4 != die5)
-
-        //                    {
-
-        //                        if ((die1 != '6') && (die2 != '6') && (die3 != '6') && (die4 != '6') && (die5 != '6'))
-
-        //                        {
-
-        //                            return sum= 15;
-
-        //                        }
-
-        //                        else 
-        //                        {
-        //                            return sum= 0;
-        //                        }
-
-        //                    }
+        //                    //Här måste en loop eller if-sats leta efter det andra paret.
+        //                }
+        //            }
+        //        }
+        //        countSame = 0;
+        //    }
+        //    return sum;
 
 
-        //private int CheckBigStraight(int[] dice )// Sorting the numbers and checking that it's in the correct order for a big straight
-        //{
-        //  int sum = 0;
-        //  int[] i = new int[5];
-
-        // HÄR SKA METODEN FÖR ATT SLÅ TÄRNINGAR IN
-
-
-        //  Array.Sort(i);
-
-        //  if( ((i[0] == 2) &&
-        //       (i[1] == 3) &&
-        //       (i[2] == 4) &&
-        //       (i[3] == 5) &&
-        //       (i[4] == 6)) )
-        //  {
-        //    Sum = 20;
-        //  }
-
-        //  return Sum;
-        //}
-
-
+        }
     }
     //private int CheckFullHouse(int[] dice)
     //{
@@ -344,47 +307,7 @@ namespace HampesYatzy
     //    return sum;
     //}
 
-    //private int CheckOnePair(int[] dice)
-    //{
-    //    int sum = 0;
-    //    int countSame = 0;
-    //    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
-    //    for (int i = 0; i <= dice.Length; i--)
-    //    {
-    //        for (int j = 0; j <= numbers.Length; i--)
-    //        {
-    //            if (dice[i] == numbers[j])
-    //            {
-    //                countSame++;
-    //                if (countSame == 2)
-    //                {
-    //                    sum = dice[i] * 2;
-    //                }
-    //            }
-    //        }
-    //    }
-    //    return sum;
 
-    //private int CheckOnePair(int[] dice)
-    //{
-    //    int sum = 0;
-
-    //int[] i = new int[5];
-
-    //Array.Sort(i);
-    //Array.Reverse(i);
-
-    //    if ((
-    //         (i[3] == i[4]) && // One pair
-    //         (i[2] != i[3])) ||
-    //        ((i[0] == i[1]) && // One pair
-    //         i[1] != i[2]))
-    //    {
-    //        sum = //om kravet ovan uppfylls returneras true vilket sen måste summeras;
-    //    }
-
-    //    return sum;
-    //}
 
 }
 
