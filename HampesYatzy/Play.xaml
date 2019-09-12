@@ -8,7 +8,7 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="Spela" Height="900" Width="1800">
-    <Grid>
+    <Grid Background="#FF389355">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
