@@ -256,7 +256,7 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckFullHouse(int dice)
+        private int CheckFullHouse(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
