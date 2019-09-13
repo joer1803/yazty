@@ -8,30 +8,21 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="Skapa användare" Height="900" Width="1800">
-    <Grid Background="#FF389355">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0">
-            <Menu IsMainMenu="True">
+    <Grid Background="#FF389355" Margin="0,0,0.333,-6.667">
+        <StackPanel Margin="0,0,0,847" Grid.ColumnSpan="2" >
+            <Menu IsMainMenu="True" Height="43" Margin="0,0,0.333,0" RenderTransformOrigin="0.499,1.032">
                 <MenuItem Header="Meny" Click="MenuItem_Click_1"></MenuItem>
                 <MenuItem Header="Topplista" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="Skapa användare"></MenuItem>
             </Menu>
         </StackPanel>
-        <TextBox x:Name="txtbox_Firstname" HorizontalAlignment="Left" Height="32" Margin="10,42,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-        <TextBox x:Name="txtbox_Username" TextWrapping="Wrap" Margin="10,215,745.667,52"/>
-        <TextBox x:Name="txtbox_Lastname" HorizontalAlignment="Left" Height="32" Margin="11,158,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-        <Label x:Name="Lastname" Content="Efternamn" HorizontalAlignment="Left" Margin="11,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" FontSize="14"/>
-        <Label x:Name="Firstname" Content="Förnamn" HorizontalAlignment="Left" Margin="10,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="Username" Content="Användarnamn" Margin="10,178,745.667,88" Background="{x:Null}" FontSize="14"/>
-        <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Margin="11,245,0,0" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="43" FontSize="14"/>
-        <Button x:Name="Kryss_btn" Content="Stäng" Grid.Column="1" HorizontalAlignment="Left" Margin="790.333,0,0,0" VerticalAlignment="Top" Width="106" Height="43" Click="Kryss_btn_Click"/>
+        <TextBox x:Name="txtbox_firstname" HorizontalAlignment="Left" Height="32" Margin="50,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="txtbox_lastname" HorizontalAlignment="Left" Height="32" Margin="46,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="lastname" Content="Efternamn" HorizontalAlignment="Left" Margin="50,306,0,0" VerticalAlignment="Top" Width="101" FontSize="14"/>
+        <Label x:Name="firstname" Content="Förnamn" HorizontalAlignment="Left" Margin="50,134,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="username" Content="Användarnamn" Margin="50,472,260,386" Background="{x:Null}" FontSize="14"/>
+        <Button x:Name="close_btn" Content="Stäng" HorizontalAlignment="Left" Margin="1216,0,0,0" VerticalAlignment="Top" Width="131" Height="43" Click="Kryss_btn_Click" Grid.Column="1"/>
+        <TextBox x:Name="txtbox_username" Margin="50,514,1603,354" />
+        <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Margin="50,652,0,0" VerticalAlignment="Top" Width="208" Height="78" FontSize="18"/>
     </Grid>
 </Window>

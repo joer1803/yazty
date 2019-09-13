@@ -9,24 +9,17 @@
         WindowStyle="None"
         Title="Topplista" Height="900" Width="1800">
     <Grid Background="#FF389355">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="211*"/>
-            <RowDefinition Height="358*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="530*"/>
-            <ColumnDefinition Width="531*"/>
-            <ColumnDefinition Width="531"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0">
-            <Menu IsMainMenu="True">
-                <MenuItem Header="Meny" Click="MenuItem_Click_2"></MenuItem>
-                <MenuItem Header="Topplista"></MenuItem>
-                <MenuItem Header="Skapa användare" Click="MenuItem_Click_1"></MenuItem>
+
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0.333,853.333" RenderTransformOrigin="0.502,0.75">
+            <Menu IsMainMenu="True" Margin="0,0,0.333,0" Height="43">
+                <MenuItem Header="Meny" Click="MenuItem_Click_2"/>
+                <MenuItem Header="Topplista"/>
+                <MenuItem Header="Skapa användare" Click="MenuItem_Click_1"/>
             </Menu>
 
         </StackPanel>
-        <ListView x:Name="i_rad" HorizontalAlignment="Left" Height="336" Grid.Row="1" VerticalAlignment="Top" Width="385">
+        <ListView x:Name="i_rad" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="385" Margin="1258,415,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Plats" Width="50"/>
@@ -37,7 +30,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="flitigaste" Grid.Column="1" HorizontalAlignment="Left" Height="336" Grid.Row="1" VerticalAlignment="Top" Width="410">
+        <ListView x:Name="flitigaste" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="410" Margin="646,415,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Plats" Width="50" />
@@ -48,7 +41,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="Loggat_in" Grid.Column="2" HorizontalAlignment="Left" Height="336" Grid.Row="1" VerticalAlignment="Top" Width="410">
+        <ListView x:Name="Loggat_in" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="410" Margin="10,415,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Plats" Width="50"/>
@@ -59,9 +52,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label x:Name="Flest_i_rad" Content="Flest segrar i rad" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18"/>
-        <Label x:Name="fli" Content="De flitigaste yatzyspelarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,106,0" FontSize="18" Width="425"/>
-        <Label x:Name="Senaste" Content="De bästa spelarna som loggat in under de senaste 7 dagarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2" Margin="0,0,-72,0" FontSize="18" Width="603"/>
-        <Button x:Name="Kryss_btn" Content="Stäng" Grid.Column="2" HorizontalAlignment="Left" Margin="424.333,0,0,0" VerticalAlignment="Top" Width="106" Height="43" Click="Kryss_btn_Click"/>
+        <Label  Content="Flest segrar i rad" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18" Margin="10,0,0,595.333"/>
+        <Label  Content="De flitigaste yatzyspelarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="646,0,722.333,586.333" FontSize="18" Width="425"/>
+        <Label  Content="De bästa spelarna som loggat in under de senaste 7 dagarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="1258,0,-67.667,577.333" FontSize="18" Width="603"/>
+        <Button x:Name="Kryss_btn" Content="Stäng" HorizontalAlignment="Left" Margin="1687,0,0,0" VerticalAlignment="Top" Width="106" Height="43" Click="Kryss_btn_Click"/>
     </Grid>
 </Window>
