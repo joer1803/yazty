@@ -285,21 +285,21 @@ namespace HampesYatzy
 
         }
 
-        private int BonusPoint()//Textblock or box for the total sum of 1-6 category goes inside the ()
-        {
-            int sum = 0;
-            int totalUp = //Textblock or box for the total sum of 1-6 category
-            if (totalUp == 63 || totalUp > 63)
-            {
-                sum = 50;
-            }
-            else
-            {
-                sum = 0;
-            }
+        //private int BonusPoint()//Textblock or box for the total sum of 1-6 category goes inside the ()
+        //{
+        //    int sum = 0;
+        //    int totalUp = //Textblock or box for the total sum of 1-6 category
+        //    if (totalUp == 63 || totalUp > 63)
+        //    {
+        //        sum = 50;
+        //    }
+        //    else
+        //    {
+        //        sum = 0;
+        //    }
 
-            return sum;
-        }
+        //    return sum;
+        //}
     }
     }
 //private int CheckFullHouse(int[] dice)
