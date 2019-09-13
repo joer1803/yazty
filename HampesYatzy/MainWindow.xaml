@@ -8,47 +8,37 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="Meny" Height="900" Width="1800">
-    <Grid Margin="0,0,-8,-3" Background="#FF389355">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-        </Grid.ColumnDefinitions>
+    <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355">
+
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <Menu IsMainMenu="True">
+            <Menu IsMainMenu="True" Height="49" Margin="0,0,0.333,0">
                 <MenuItem Header="Meny"></MenuItem>
                 <MenuItem Header="Topplista" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="Skapa användare" Click="MenuItem_Click_1"></MenuItem>
 
             </Menu>
-        </StackPanel>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="497" Margin="10,369.667,0,-353.333" Grid.Row="1" VerticalAlignment="Top" Width="580" Grid.RowSpan="5">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView x:Name="listView1" Grid.Column="1" HorizontalAlignment="Left" Height="497" Margin="11.667,369.667,0,-346.667" Grid.Row="1" VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2" Grid.RowSpan="5">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="btn_steerd" Content="Spela styrd Yatzy" Grid.Column="2" HorizontalAlignment="Left" Margin="77.667,193.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="307" Height="138" Click="Btn_steerd_Click"/>
-        <Button x:Name="btn_classic" Content="Spela klassiskt Yatzy" HorizontalAlignment="Left" Margin="118,193.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="307" Height="138" Click="Btn_classic_Click"/>
-        <Button x:Name="button" Content="Stäng" Grid.Column="4" HorizontalAlignment="Left" Margin="502.667,0,-603.333,0" VerticalAlignment="Top" Width="106" Grid.RowSpan="2" Height="43" Click="Button_Click"/>
 
+
+
+        </StackPanel>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="497" Margin="503,337,0,0" VerticalAlignment="Top" Width="356">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="listView1" HorizontalAlignment="Left" Height="497" Margin="69,337,0,0" VerticalAlignment="Top" Width="356">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btn_steerd" Content="Spela styrd Yatzy" HorizontalAlignment="Left" Margin="895,555,0,0" VerticalAlignment="Top" Width="224" Height="83" Click="Btn_steerd_Click" FontSize="18"/>
+        <Button x:Name="btn_classic" Content="Spela klassiskt Yatzy" HorizontalAlignment="Left" Margin="895,714,0,0" VerticalAlignment="Top" Width="224" Height="83" Click="Btn_classic_Click" FontSize="18"/>
+        <Button x:Name="button" Content="Stäng" HorizontalAlignment="Left" Margin="1687,0,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="Button_Click"/>
+        <Label x:Name="label1" Content="Tillgängliga spelare" Margin="503,281,1015,568" FontSize="24"/>
+        <Label x:Name="label" Content="Pågående spel" Margin="69,281,1551,568" FontSize="24"/>
     </Grid>
 </Window>
