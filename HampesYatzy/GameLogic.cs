@@ -68,8 +68,8 @@ namespace HampesYatzy
                     return CheckSmallStraight(dice);
                 case BigStraight:
                     return CheckBigStraight(dice);
-                //case FullHouse:
-                //    return CheckFullHouse(dice);
+                case FullHouse:
+                    return CheckFullHouse(dice);
                 case Chance:
                     return CountChance(dice);
                 case Yatzy:
@@ -270,26 +270,24 @@ namespace HampesYatzy
                         countSame++;
                         if (countSame == 3)
                         {
-                            if (threeOfAKind != 0 && threeOfAKind != dice[i])
-                            {
-                                sum += dice[i] * 2;
-                            }
                             threeOfAKind = dice[i];
                             sum = dice[i] * 3;
+                        }
+                        else if (countSame == 2 && threeOfAKind != 0 && dice[i] != threeOfAKind)
+                        {
+                            return sum += dice[i] + dice[i];
                         }
                     }
                 }
                 countSame = 0;
             }
             return sum;
-
         }
 
-        private int BonusPoint()//Textblock or box for the total sum of 1-6 category goes inside the ()
-       {
+        private int BonusPoint(int totalUp)//Textblock or box for the total sum of 1-6 category goes inside the ()
+        {
             int sum = 0;
-            int totalUp = //Textblock or box for the total sum of 1-6 category
-            if (totalUp == 63 || totalUp > 63)
+            if (totalUp >= 63)
             {
                 sum = 50;
             }
