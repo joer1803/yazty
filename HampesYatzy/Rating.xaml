@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         WindowStyle="None"
-        Title="Topplista" Height="738" Width="1366">
+        Title="Topplista" Height="768" Width="1366">
     <Grid Background="#FF389355">
 
 
@@ -19,7 +19,7 @@
             </Menu>
 
         </StackPanel>
-        <ListView x:Name="i_rad" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="385" Margin="885,234,0,0">
+        <ListView x:Name="i_rad" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="385" Margin="884,263,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Plats" Width="50"/>
@@ -30,7 +30,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="flitigaste" HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="380" Margin="446,235,0,0">
+        <ListView x:Name="flitigaste" HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="380" Margin="454,258,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Plats" Width="50" />
@@ -41,7 +41,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="Loggat_in" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="387" Margin="0,235,0,0" FontSize="10">
+        <ListView x:Name="Loggat_in" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="387" Margin="0,258,0,0" FontSize="10">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Plats" Width="50"/>

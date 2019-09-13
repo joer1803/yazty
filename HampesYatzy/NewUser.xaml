@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         WindowStyle="None"
-        Title="Skapa användare" Height="738" Width="1366">
+        Title="Skapa användare" Height="768" Width="1366">
     <Grid Background="#FF389355" Margin="0,0,0.333,-6.667">
         <StackPanel Margin="0,0,0,690">
             <Menu IsMainMenu="True" Height="49">

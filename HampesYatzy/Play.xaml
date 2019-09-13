@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         WindowStyle="None"
-        Title="Spela" Height="738" Width="1366">
+        Title="Spela" Height="768" Width="1366">
     <Grid Background="#FF389355" RenderTransformOrigin="0.378,0.528">
 
         <Image Source="Resources/Protokoll.png" Margin="-472,10,471.333,-52.667"/>
