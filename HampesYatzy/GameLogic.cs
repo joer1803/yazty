@@ -28,30 +28,6 @@ namespace HampesYatzy
         //A method to see if the player got 63 points to get bonus points
 
 
-
-        //public int CalculateYatzy( Dice[] myDice )
-        //{
-        //  int Sum = 0;
-
-        //  for( int i = 1; i <= 6; i++ )
-        //  {
-        //    int Count = 0;
-        //    for( int j = 0; j < 5; j++ )
-        //    {
-        //      if( myDice[j].RollNumber == i )
-        //        Count++;
-
-        //      if( Count == 5 )
-        //        Sum = 50;
-        //    }
-        //  }
-
-        //  return Sum;
-        //}
-
-
-
-
         //Add dices when the same number is needed, the upper part of yatzy
         //public int AddUpDices(int DieNumber, Dice[] myDice)
         //{
@@ -238,7 +214,7 @@ namespace HampesYatzy
                 }
                 countSame = 0;
             }
-            return sum = 0;
+            return sum;
         }
         private static int CountChance(int[] dice)
         {
@@ -272,30 +248,51 @@ namespace HampesYatzy
             }
             return sum;
         }
-        //private int CheckTwoPair(int[] dice)
-        //{
-        //    int sum = 0;
-        //    int countSame = 0;
-        //    Array.Sort(dice);
-        //    Array.Reverse(dice);
-        //    for (int i = 0; i < dice.Length; i++)
-        //    {
-        //        for (int j = 0; j < dice.Length; j++)
-        //        {
-        //            if (dice[i] == dice[j])
-        //            {
-        //                countSame++;
-        //                if (countSame == 2)
-        //                {
-        //                    //Här måste en loop eller if-sats leta efter det andra paret.
-        //                }
-        //            }
-        //        }
-        //        countSame = 0;
-        //    }
-        //    return sum;
 
+        private static int CheckFullHouse(int[] dice)
+        {
+            int sum = 0;
+            int countSame = 0;
+            int threeOfAKind = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                for (int j = 0; j < dice.Length; j++)
+                {
+                    if (dice[i] == dice[j])
+                    {
+                        countSame++;
+                        if (countSame == 3)
+                        {
+                            if (threeOfAKind != 0 && threeOfAKind != dice[i])
+                            {
+                                sum += dice[i] * 2;
+                            }
+                            threeOfAKind = dice[i];
+                            sum = dice[i] * 3;
+                        }
+                    }
+                }
+                countSame = 0;
+            }
+            return sum;
 
+        }
+
+        private int BonusPoint()//Textblock or box for the total sum of 1-6 category goes inside the ()
+        {
+            int sum = 0;
+            int totalUp = //Textblock or box for the total sum of 1-6 category
+            if (totalUp == 63 || totalUp > 63)
+            {
+                sum = 50;
+            }
+            else
+            {
+                sum = 0;
+            }
+
+            return sum;
+        }
     }
     }
 //private int CheckFullHouse(int[] dice)
@@ -319,44 +316,6 @@ namespace HampesYatzy
 //    return sum;
 //}
 
-
-
-//private int CheckYatzy(int[] dice)
-//{
-//    int sum = 0;
-//    int countSame = 0;
-//    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6 };
-//    for (int i = 0; i <= dice.Length; i++)
-//    {
-//        for (int j = 0; j <= numbers.Length; i++)
-//        {
-//            if (dice[i] == numbers[j])
-//            {
-//                countSame++;
-//                if (countSame == 5)
-//                {
-//                    sum = 50;
-//                }
-//            }
-//        }
-//    }
-//    return sum;
-//}
-
-//private bool eller int BonusPoint()//Should it be a bool or an int?
-//{
-//    int sum = 0;
-//    if(TotalUp == 63 || TotalUp > 63)
-//    {
-//        sum = 50;
-//    }
-//    else
-//    {
-//        sum = 0;
-//    }
-
-//    return sum;
-//}
 
 
 
