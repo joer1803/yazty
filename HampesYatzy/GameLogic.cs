@@ -23,10 +23,17 @@ namespace HampesYatzy
         public const int FullHouse = 13;
         public const int Chance = 14;
         public const int Yatzy = 15;
+
+        YatzyGame game;
+
+        public GameLogic()
+        {
+            game = new YatzyGame();
+        }
+
+
         //A method to keep track of total score
         //A method to keep track of upper score
-        //A method to see if the player got 63 points to get bonus points
-
 
         //Add dices when the same number is needed, the upper part of yatzy
         //public int AddUpDices(int DieNumber, Dice[] myDice)
