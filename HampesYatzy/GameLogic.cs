@@ -27,7 +27,7 @@ namespace HampesYatzy
         YatzyGame game;
         public static void StartGame(List<InGamePlayer> players)
         {
-            game = new YatzyGame()
+            YatzyGame game = new YatzyGame()
             {
                 Dice = new List<Die>(),
                 Players = players
