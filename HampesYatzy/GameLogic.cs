@@ -68,8 +68,8 @@ namespace HampesYatzy
                     return CheckSmallStraight(dice);
                 case BigStraight:
                     return CheckBigStraight(dice);
-                //case FullHouse:
-                //    return CheckFullHouse(dice);
+                case FullHouse:
+                    return CheckFullHouse(dice);
                 case Chance:
                     return CountChance(dice);
                 case Yatzy:
@@ -256,7 +256,7 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckFullHouse(int[] dice)
+        private static int CheckFullHouse(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
