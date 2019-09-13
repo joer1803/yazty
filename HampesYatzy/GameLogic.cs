@@ -25,13 +25,15 @@ namespace HampesYatzy
         public const int Yatzy = 15;
 
         YatzyGame game;
-
-        public GameLogic()
+        public static void StartGame(List<InGamePlayer> players)
         {
-            game = new YatzyGame();
+            game = new YatzyGame()
+            {
+                Dice = new List<Die>(),
+                Players = players
+
+            };
         }
-
-
         //A method to keep track of total score
         //A method to keep track of upper score
 
