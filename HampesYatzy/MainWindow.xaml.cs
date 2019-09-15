@@ -25,6 +25,18 @@ namespace HampesYatzy
         {
             InitializeComponent();
             //DiceTest();
+            GetFreePlayerList();
+            GetBusyList();
+        }
+        private void GetFreePlayerList()
+        {
+            lstAvailable.ItemsSource = null;
+            lstAvailable.ItemsSource = DbOperations.GetFreePlayers();
+        }
+        private void GetBusyList()
+        {
+            lstBusy.ItemsSource = null;
+            lstBusy.ItemsSource = DbOperations.GetInGamePlayers();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

@@ -8,8 +8,7 @@ namespace HampesYatzy
 {
     class Die
     {
-        //private int RollDice(); //Metod for att sla en tarning
-
-        //private bool HoldDie(); //Metod for att halla en tarning
+        public int Value { get; set; }
+        public bool Hold { get; set; }
     }
 }

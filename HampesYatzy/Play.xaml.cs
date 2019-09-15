@@ -19,11 +19,11 @@ namespace HampesYatzy
     /// </summary>
     public partial class Play : Window
     {
+        GameLogic gameLogic;
         public Play()
         {
             InitializeComponent();
         }
-
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             MainWindow mainwindow = new MainWindow();

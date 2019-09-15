@@ -25,14 +25,22 @@ namespace HampesYatzy
         public const int Yatzy = 15;
 
         YatzyGame game;
-        public static void StartGame(List<InGamePlayer> players)
+        InGamePlayer activePlayer;
+        public void GetActivePlayer()
         {
-            YatzyGame game = new YatzyGame()
-            {
-                Dice = new List<Die>(),
-                Players = players
 
-            };
+        }
+        public void NextPlayer()
+        {
+
+        }
+        public void RollDice()
+        {
+            Random rnd = new Random();
+            for(int i = 0; i < game.Dice.Capacity; i++)
+            {
+
+            }
         }
         //A method to keep track of total score
         //A method to keep track of upper score
@@ -54,7 +62,7 @@ namespace HampesYatzy
         //}
 
 
-        public static int GetScore(int category, int[] dice)
+        public int GetScore(int category, int[] dice)
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
             {
@@ -83,7 +91,7 @@ namespace HampesYatzy
 
             }
         }
-        private static int CountNumbers(int category, int[] dice)
+        private int CountNumbers(int category, int[] dice)
         {
             int sum = 0;
             for (int i = 0; i < dice.Length; i++)
@@ -95,7 +103,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private static int CheckThreeOfAKind(int[] dice)
+        private int CheckThreeOfAKind(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -116,7 +124,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private static int CheckFourOfAKind(int[] dice)
+        private int CheckFourOfAKind(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -137,7 +145,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private static int CheckSmallStraight(int[] dice)
+        private int CheckSmallStraight(int[] dice)
         {
             int sum = 0;
             int count = 0;
@@ -156,7 +164,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private static int CheckBigStraight(int[] dice)
+        private int CheckBigStraight(int[] dice)
         {
             int sum = 0;
             int count = 0;
@@ -175,7 +183,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private static int CheckOnePair(int[] dice)
+        private int CheckOnePair(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -198,7 +206,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private static int CheckTwoPair(int[] dice)
+        private int CheckTwoPair(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -225,7 +233,7 @@ namespace HampesYatzy
             }
             return sum;
         }
-        private static int CountChance(int[] dice)
+        private int CountChance(int[] dice)
         {
             int sum = 0;
 
@@ -236,7 +244,7 @@ namespace HampesYatzy
 
             return sum;
         }
-        private static int CheckYatzy(int[] dice)
+        private int CheckYatzy(int[] dice)
         {
             int sum = 0;
             int countSame = 0;
@@ -258,7 +266,7 @@ namespace HampesYatzy
             return sum;
         }
 
-        private static int CheckFullHouse(int[] dice)
+        private int CheckFullHouse(int[] dice)
         {
             int sum = 0;
             int countSame = 0;

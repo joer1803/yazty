@@ -10,6 +10,23 @@ namespace HampesYatzy
 {
     class DbOperations
     {
+        public static List<Player> GetFreePlayers()
+        {
+            var plist = GetAllPlayers();
+            var busylist = GetInGamePlayers();
+            //List<InGamePlayer> freeList = new List<InGamePlayer>();
+            for(int i=0;i<plist.Count;i++)
+            {
+                for (int j = 0; j < busylist.Count; j++)
+                {
+                    if(plist[i].Id == busylist[j].Id)
+                    {
+                        plist.Remove(plist[i]);
+                    }
+                }
+            }
+            return plist;
+        }
         public static List<Player> GetAllPlayers()
         {
             List<Player> plist = new List<Player>();
@@ -38,7 +55,7 @@ namespace HampesYatzy
                 return plist;
             }
         }
-        public static List<Player> GetInGamePlayers()
+        public static List<Player> GetInGamePlayers() //funkar inte
         {
 
             List<Player> plist = new List<Player>();
@@ -48,7 +65,7 @@ namespace HampesYatzy
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SELECT player.player_id, player.firstname, player.lastname, player.nickname FROM game_player JOIN game ON game.game_id = game_player.game_id JOIN player ON player.player_id = game_player.player_id WHERE game.ended_at IS NULL";
+                    cmd.CommandText = "SELECT player.player_id, player.firstname, player.lastname, player.nickname FROM game_player JOIN player ON game_player.player_id = player.player_id JOIN game ON game.game_id = game_player.game_id WHERE game.ended_at IS NULL GROUP BY player.player_id, player.firstname, player.lastname, player.nickname";
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
