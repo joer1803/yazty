@@ -33,8 +33,23 @@ namespace HampesYatzy
         }
         public void NextPlayer()
         {
+            int index = 0;
+            for (int i = 0; i < game.Players.Count; i++)
+            {
+                if (game.Players[i].Equals(game.Players.Count))
+                {
+                    index = i;
+                }
+            }
+            index++;
+            if (index.Equals(game.Players.Count))
+            {
+                index = 0;
+            }
 
+            activePlayer = game.Players[index];
         }
+
         public void RollDice()
         {
             Random rnd = new Random();
