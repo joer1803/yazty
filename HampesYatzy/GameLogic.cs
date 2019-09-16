@@ -50,16 +50,17 @@ namespace HampesYatzy
             activePlayer = game.Players[index];
         }
 
-        public void RollDice()
+        public List<Die> RollDice()
         {
             Random rnd = new Random();
             for(int i = 0; i < game.Dice.Count; i++)
             {
                 if (game.Dice[i].Hold != true)
                 {
-
+                    game.Dice[i].Value = rnd.Next(1, 7);
                 }
             }
+            return game.Dice;
         }
         //A method to keep track of total score
         //A method to keep track of upper score
