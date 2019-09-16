@@ -158,8 +158,9 @@ namespace HampesYatzy
                     cmd.ExecuteNonQuery();
                 }
             }
-           return CreateGamePlayers(players, currentDateTime);
+            return CreateGamePlayers(players, currentDateTime);
         }
+
         private static int CreateGamePlayers(List<Player> players, DateTime currentDateTime)
         {
             int gameId = 0;
@@ -191,16 +192,17 @@ namespace HampesYatzy
             }
             return gameId;
         }
+
         public static List<Player> GetGame(int gameId)
         {
             List<Player> plist = new List<Player>();
+            string stmt = "SELECT player.player_id, player.firstname, player.lastname, player.nickname FROM player JOIN game_player ON game_player.player_id = player.player_id JOIN game ON game_player.game_id = game.game_id WHERE game.game_id = @gameId";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand())
+                using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
-                    cmd.Connection = conn;
-                    cmd.CommandText = "SELECT player.player_id, player.firstname, player.lastname, player.nickname FROM player";
+                    cmd.Parameters.AddWithValue("gameId", gameId);
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -210,6 +212,7 @@ namespace HampesYatzy
                                 Nickname = reader.GetString(0),
                                 Firstname = reader.GetString(1),
                                 Lastname = reader.GetString(2),
+                                ScoreSheet = new ScoreSheet()
                             };
                             plist.Add(p);
                         }
