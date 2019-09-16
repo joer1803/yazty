@@ -37,7 +37,7 @@ namespace HampesYatzy
         public void RollDice()
         {
             Random rnd = new Random();
-            for(int i = 0; i < game.Dice.Count; i++)
+            for (int i = 0; i < game.Dice.Count; i++)
             {
                 if (game.Dice[i].Hold != true)
                 {

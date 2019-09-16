@@ -26,32 +26,18 @@ namespace HampesYatzy
             InitializeComponent();
             //DiceTest();
             GetFreePlayerList();
-            GetBusyList();
+            //GetBusyList();
         }
         private void GetFreePlayerList()
         {
             lstAvailable.ItemsSource = null;
             lstAvailable.ItemsSource = DbOperations.GetFreePlayers();
         }
-        private void GetBusyList()
-        {
-            lstBusy.ItemsSource = null;
-            lstBusy.ItemsSource = DbOperations.GetInGamePlayers();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Rating rating = new Rating();
-            rating.Show();
-            this.Close();
-        }
-
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            NewUser newUser = new NewUser();
-            newUser.Show();
-            this.Close();
-        }
+        //private void GetBusyList()
+        //{
+        //    lstBusy.ItemsSource = null;
+        //    lstBusy.ItemsSource = DbOperations.GetInGamePlayers();
+        //}
 
 
         private void Btn_classic_Click(object sender, RoutedEventArgs e)
@@ -68,13 +54,32 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        //private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        //{
+
+        //}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
+            Rating rating = new Rating();
+            rating.Show();
+            this.Close();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            NewUser newUser = new NewUser();
+            newUser.Show();
             this.Close();
         }
 
