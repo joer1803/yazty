@@ -13,11 +13,11 @@
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="154*"/>
             <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="36*"/>
             <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="34"/>
-            <ColumnDefinition Width="882*"/>
-            <ColumnDefinition Width="142*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="890*"/>
+            <ColumnDefinition Width="134*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -50,7 +50,7 @@
                 <MenuItem Header="Skapa användare"/>
             </Menu>
         </StackPanel>
-        <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="19" HorizontalAlignment="Left" Width="295" />
+        <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="19" HorizontalAlignment="Left" Width="295" />
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_one">
             <TextBlock x:Name="player1_ones" Height="35" Width="35"/>
             <TextBlock x:Name="player1_twos" Height="35" Width="35"/>
@@ -135,9 +135,12 @@
             <TextBlock x:Name="player4_total" Height="35" Width="35"/>
         </StackPanel>
 
-        <StackPanel>
-            <Image />
+        <StackPanel x:Name="dices" Grid.Column="7" Grid.Row="1">
+            <Image x:Name="dice1"/>
+            <Image x:Name="dice2"/>
+            <Image x:Name="dice3"/>
+            <Image x:Name="dice4"/>
+            <Image x:Name="dice5"/>
         </StackPanel>
-
     </Grid>
 </Window>
