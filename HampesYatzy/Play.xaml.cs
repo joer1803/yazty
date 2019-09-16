@@ -67,7 +67,7 @@ namespace HampesYatzy
             List<BitmapImage> diceImages = new List<BitmapImage>();
             for (int i = 1; i < 7; i++)
             {
-                BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + i.ToString() + "png", UriKind.Relative));
+                BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + i.ToString() + ".png", UriKind.Relative));
                 diceImages.Add(image);
             }
             return diceImages;
