@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HampesYatzy
 {
-    class InGamePlayer : Player
+    class ScoreSheet
     {
         public int Score { get; set; }
         public bool Ones { get; set; }

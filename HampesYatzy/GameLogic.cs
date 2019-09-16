@@ -25,11 +25,11 @@ namespace HampesYatzy
         public const int Yatzy = 15;
 
         YatzyGame game;
-        InGamePlayer activePlayer;
+        Player activePlayer;
 
-        public void GetActivePlayer()
+        public Player GetActivePlayer()
         {            
-            activePlayer = game.Players[0];
+           return activePlayer;
         }
         public void NextPlayer()
         {

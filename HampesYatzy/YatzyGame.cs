@@ -8,7 +8,7 @@ namespace HampesYatzy
 {
     class YatzyGame
     {
-        public List<InGamePlayer> Players { get; set; }
+        public List<Player> Players { get; set; }
         public List<Die> Dice { get; set; }
         public Player Winner { get; set; }
         public string GameType { get; set; }

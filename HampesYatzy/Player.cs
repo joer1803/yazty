@@ -18,6 +18,8 @@ namespace HampesYatzy
         public string Nickname { get; set; }
         public PlayerStats Stats { get; set; }
         //public int GamesPlayed { get; set; }
+        public ScoreSheet ScoreSheet { get; set; }
         public int TotalScore { get; set; }
+
     }
 }

@@ -81,7 +81,7 @@
     </ApplicationDefinition>
     <Compile Include="DbOperations.cs" />
     <Compile Include="Die.cs" />
-    <Compile Include="InGamePlayer.cs" />
+    <Compile Include="ScoreSheet.cs" />
     <Compile Include="NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
     </Compile>
