@@ -15,11 +15,11 @@ namespace HampesYatzy
             var plist = GetAllPlayers();
             var busylist = GetInGamePlayers();
             //List<InGamePlayer> freeList = new List<InGamePlayer>();
-            for(int i=0;i<plist.Count;i++)
+            for (int i = 0; i < plist.Count; i++)
             {
                 for (int j = 0; j < busylist.Count; j++)
                 {
-                    if(plist[i].Id == busylist[j].Id)
+                    if (plist[i].Id == busylist[j].Id)
                     {
                         plist.Remove(plist[i]);
                     }
@@ -27,6 +27,7 @@ namespace HampesYatzy
             }
             return plist;
         }
+
         public static List<Player> GetAllPlayers()
         {
             List<Player> plist = new List<Player>();
@@ -55,9 +56,9 @@ namespace HampesYatzy
                 return plist;
             }
         }
-        public static List<Player> GetInGamePlayers() //funkar inte
-        {
 
+        public static List<Player> GetInGamePlayers()
+        {
             List<Player> plist = new List<Player>();
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
             {
@@ -84,6 +85,7 @@ namespace HampesYatzy
                 return plist;
             }
         }
+
         public static List<Player> GetMostGamesPlayer()
         {
             List<Player> plist = new List<Player>();
@@ -103,7 +105,7 @@ namespace HampesYatzy
                                 Nickname = reader.GetString(0),
                                 Firstname = reader.GetString(1),
                                 Lastname = reader.GetString(2),
-                                Stats = new PlayerStats() { GamesPlayed = reader.GetInt32(3)}
+                                Stats = new PlayerStats() { GamesPlayed = reader.GetInt32(3) }
                             };
                             plist.Add(p);
                         }
@@ -112,6 +114,7 @@ namespace HampesYatzy
                 return plist;
             }
         }
+
         public static List<Player> GetTotalScoresPlayer()
         {
             List<Player> plist = new List<Player>();
@@ -131,7 +134,7 @@ namespace HampesYatzy
                                 Nickname = reader.GetString(0),
                                 Firstname = reader.GetString(1),
                                 Lastname = reader.GetString(2),
-                                Stats = new PlayerStats() { TotalScore = reader.GetInt32(3)}
+                                Stats = new PlayerStats() { TotalScore = reader.GetInt32(3) }
                             };
                             plist.Add(p);
                         }
@@ -140,7 +143,8 @@ namespace HampesYatzy
                 return plist;
             }
         }
-        public static void CreateGame(List<Player> players, int gameType)
+
+        public static int CreateGame(List<Player> players, int gameType)
         {
             DateTime currentDateTime = DateTime.Now;
             string stmt = "INSERT INTO game(gametype_id, started_at) VALUES(@gameType, @currentDateTime)";
@@ -154,9 +158,9 @@ namespace HampesYatzy
                     cmd.ExecuteNonQuery();
                 }
             }
-            
+           return CreateGamePlayers(players, currentDateTime);
         }
-        private void CreateGamePlayers(List<Player> players, DateTime currentDateTime)
+        private static int CreateGamePlayers(List<Player> players, DateTime currentDateTime)
         {
             int gameId = 0;
             string stmt = "SELECT game_id FROM game WHERE started_at = @currentDateTime";
@@ -166,8 +170,8 @@ namespace HampesYatzy
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
-                   cmd.Parameters.AddWithValue("currentDateTime", currentDateTime);
-                   using (var reader = cmd.ExecuteReader())
+                    cmd.Parameters.AddWithValue("currentDateTime", currentDateTime);
+                    using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -177,14 +181,41 @@ namespace HampesYatzy
                 }
                 for (int i = 0; i < players.Capacity; i++) //loopen kanske ska va inne i using? och sluta innan executenonquery
                 {
-                using (var cmd = new NpgsqlCommand(stmtTwo, conn))
-                {
+                    using (var cmd = new NpgsqlCommand(stmtTwo, conn))
+                    {
                         cmd.Parameters.AddWithValue("gameId", gameId);
                         cmd.Parameters.AddWithValue("player", players[i].Id);
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-
+            }
+            return gameId;
+        }
+        public static List<Player> GetGame(int gameId)
+        {
+            List<Player> plist = new List<Player>();
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SELECT player.player_id, player.firstname, player.lastname, player.nickname FROM player";
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Player p = new Player
+                            {
+                                Nickname = reader.GetString(0),
+                                Firstname = reader.GetString(1),
+                                Lastname = reader.GetString(2),
+                            };
+                            plist.Add(p);
+                        }
+                    }
                 }
+                return plist;
             }
         }
     }

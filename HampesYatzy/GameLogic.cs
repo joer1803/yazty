@@ -26,6 +26,10 @@ namespace HampesYatzy
 
         YatzyGame game;
         Player activePlayer;
+        public void CreateGame(List<Player> players)
+        {
+
+        }
 
         public Player GetActivePlayer()
         {            
