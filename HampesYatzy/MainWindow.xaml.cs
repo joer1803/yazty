@@ -56,14 +56,17 @@ namespace HampesYatzy
 
         private void Btn_classic_Click(object sender, RoutedEventArgs e)
         {
-            Play play = new Play();
+            Play play = new Play(CreateNewGame(1));
             play.Show();
             this.Close();
         }
-
+        private int CreateNewGame(int gameType)
+        {
+            return DbOperations.CreateGame((List<Player>)lstAvailable.SelectedItems, gameType);
+        }
         private void Btn_steerd_Click(object sender, RoutedEventArgs e)
         {
-            Play play = new Play();
+            Play play = new Play(CreateNewGame(2));
             play.Show();
             this.Close();
         }

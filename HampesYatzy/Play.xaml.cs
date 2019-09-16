@@ -20,9 +20,10 @@ namespace HampesYatzy
     public partial class Play : Window
     {
         GameLogic gameLogic;
-        public Play()
+        public Play(int gameId)
         {
             InitializeComponent();
+            gameLogic = new GameLogic(gameId);
         }
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {

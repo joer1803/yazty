@@ -26,11 +26,12 @@ namespace HampesYatzy
 
         YatzyGame game;
         Player activePlayer;
-        public void CreateGame(List<Player> players)
+        public GameLogic(int gameId)
         {
-
+            game = new YatzyGame();
+            game.Players = DbOperations.GetGame(gameId);
+            activePlayer = game.Players[0];
         }
-
         public Player GetActivePlayer()
         {            
            return activePlayer;
