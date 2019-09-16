@@ -26,9 +26,10 @@ namespace HampesYatzy
 
         YatzyGame game;
         InGamePlayer activePlayer;
-        public void GetActivePlayer()
-        {
 
+        public void GetActivePlayer()
+        {            
+            activePlayer = game.Players[0];
         }
         public void NextPlayer()
         {
