@@ -55,7 +55,7 @@ namespace HampesYatzy
             activePlayer = game.Players[index];
         }
 
-        public List<Die> RollDice()
+        public void RollDice()
         {
             Random rnd = new Random();
             for(int i = 0; i < 6; i++)
@@ -65,6 +65,9 @@ namespace HampesYatzy
                     game.Dice[i].Value = rnd.Next(1, 7);
                 }
             }
+        }
+        public List<Die> GetDice()
+        {
             return game.Dice;
         }
         //A method to keep track of total score

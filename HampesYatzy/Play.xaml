@@ -20,11 +20,11 @@
 
         </StackPanel>
         <Button x:Name="button" Content="Stäng" HorizontalAlignment="Left" Margin="1687,0,0,0" VerticalAlignment="Top" Width="106" Height="43" Click="Button_Click"/>
-        <Image x:Name="dice1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="110" Margin="1183,-9,66.333,630.333" Width="110"/>
-        <Image x:Name="dice2" Margin="1183,123,66.333,498.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image x:Name="dice3" Margin="1183,265,66.333,356.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image x:Name="dice4" Margin="1183,409,66.333,212.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image x:Name="dice5" Margin="1183,550,66.333,71.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image x:Name="diceOne" HorizontalAlignment="Center" VerticalAlignment="Center" Height="110" Margin="1183,-9,66.333,630.333" Width="110"/>
+        <Image x:Name="diceTwo" Margin="1183,123,66.333,498.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image x:Name="diceThree" Margin="1183,265,66.333,356.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image x:Name="diceFour" Margin="1183,409,66.333,212.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image x:Name="diceFive" Margin="1183,550,66.333,71.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
 
