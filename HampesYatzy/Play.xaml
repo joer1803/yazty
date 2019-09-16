@@ -103,9 +103,6 @@
         <TextBlock x:Name="fullhouse_4" Height="34" Width="34" Margin="259,586,1066.333,111.333"/>
         <TextBlock x:Name="yatzy_4" Height="34" Width="34" Margin="259,657,1066.333,40.333"/>
         <TextBlock x:Name="totalt_4" Height="34" Width="34" Margin="259,694,1066.333,3.333"/>
-
-
-        <Button x:Name="button1" Content="Kasta träning" HorizontalAlignment="Left" Margin="522,601,0,0" VerticalAlignment="Top" Width="273" Height="120" FontSize="36"/>
         <Label x:Name="label" Content="Du har kast kvar : " HorizontalAlignment="Left" Margin="800,663,0,0" VerticalAlignment="Top" Height="39" Width="212" FontSize="24"/>
         <Label x:Name="label1" Content="Tid kvar att spela : " HorizontalAlignment="Left" Margin="484,59,0,0" VerticalAlignment="Top" Height="48" Width="271" FontSize="24"/>
     </Grid>
