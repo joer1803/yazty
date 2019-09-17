@@ -20,6 +20,7 @@ namespace HampesYatzy
         public int Fours { get; set; }
         public int Fives { get; set; }
         public int Sixes { get; set; }
+        public int Bonus { get; set; }
         public int OnePair { get; set; }
         public int TwoPair { get; set; }
         public int ThreeOfAKind { get; set; }
