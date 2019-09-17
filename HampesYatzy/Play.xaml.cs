@@ -24,33 +24,7 @@ namespace HampesYatzy
         {
             InitializeComponent();
         }
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Rating rating = new Rating();
-            rating.Show();
-            this.Close();
-
-        }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-            NewUser newUser = new NewUser();
-            newUser.Show();
-            this.Close();
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+    
         private void Dice()
         {
             int nr = 1;
@@ -60,6 +34,27 @@ namespace HampesYatzy
             dice3.Source = image;
             dice4.Source = image;
             dice5.Source = image;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            Rating rating = new Rating();
+            rating.Show();
+            this.Close();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            NewUser newUser = new NewUser();
+            newUser.Show();
+            this.Close();
         }
     }
 }
