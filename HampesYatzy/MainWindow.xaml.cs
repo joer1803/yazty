@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,35 @@ namespace HampesYatzy
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : INotifyPropertyChanged
     {
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
             //DiceTest();
             GetFreePlayerList();
             //GetBusyList();
+        }
+
+        private string username;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string Username
+        {
+            get { return username; }
+            set
+            {
+                username = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(Username));
+            }
+        }
+
+        public void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, e);
         }
         private void GetFreePlayerList()
         {
@@ -95,4 +117,6 @@ namespace HampesYatzy
 }*/
 
     }
+
+    
 }

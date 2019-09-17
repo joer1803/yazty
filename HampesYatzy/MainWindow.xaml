@@ -8,10 +8,10 @@
         Title="Meny" Height="768" Width="1366">
     <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355" ShowGridLines="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="49"/>
@@ -20,9 +20,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4">
-            <Button x:Name="Btn_classic" Height="48" Content="Spela styrd yatzy" Click="Btn_classic_Click"/>
-            <Button x:Name="Btn_steerd" Height="48" Content="Spela klassisk yatzy" Click="Btn_steerd_Click"/>
+        <StackPanel Grid.Row="4" Grid.Column="1">
+            <Button x:Name="Btn_classic" Height="48" Content="Spela styrd yatzy" FontSize="16" Click="Btn_classic_Click"/>
+            <Button x:Name="Btn_steerd" Height="48" Content="Spela klassisk yatzy" FontSize="16" Click="Btn_steerd_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
@@ -33,8 +33,8 @@
         </StackPanel>
         
      
-        <Label Content="Tillgängliga spelare" Width="auto" Grid.Column="1" Grid.Row="3" FontSize="20"/>
-        <ListView x:Name="lstAvailable" Grid.Column="1" Grid.Row="4" Height="auto">
+        <Label Content="Tillgängliga spelare" Width="auto" Grid.Column="0" Grid.Row="3" FontSize="20"/>
+        <ListView x:Name="lstAvailable" ItemsSource="{Binding Path=Username}" Grid.Column="0" Grid.Row="4" Height="auto">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Spelare" Width="auto"/>
