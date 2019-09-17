@@ -22,7 +22,7 @@
         <Label x:Name="firstname" Content="Förnamn" HorizontalAlignment="Left" Margin="50,134,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Button x:Name="close_btn" Content="Stäng" HorizontalAlignment="Left" Margin="1228,0,0,0" VerticalAlignment="Top" Width="131" Height="48" Click="Kryss_btn_Click"/>
         <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Margin="46,523,0,0" VerticalAlignment="Top" Width="208" Height="78" FontSize="18"/>
-        <Label x:Name="label" Content="Användarnamn" HorizontalAlignment="Left" Margin="46,385,0,0" VerticalAlignment="Top" Width="101" FontSize="14"/>
+        <Label x:Name="label" Content="Användarnamn" HorizontalAlignment="Left" Margin="46,385,0,0" VerticalAlignment="Top" Width="115" FontSize="14"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" Margin="46,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
     </Grid>
 </Window>
