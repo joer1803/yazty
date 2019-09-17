@@ -345,10 +345,25 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int BonusPoint(int totalUp)//Textblock or box for the total sum of 1-6 category goes inside the ()
+        private int BonusPointClassic(int totalUp)//Textblock or box for the total sum of 1-6 category goes inside the ()
         {
             int sum = 0;
             if (totalUp >= 63)
+            {
+                sum = 50;
+            }
+            else
+            {
+                sum = 0;
+            }
+
+            return sum;
+        }
+
+        private int BonusPointStyrd(int totalUp)//Textblock or box for the total sum of 1-6 category goes inside the ()
+        {
+            int sum = 0;
+            if (totalUp >= 42)
             {
                 sum = 50;
             }
