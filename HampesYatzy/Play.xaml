@@ -73,7 +73,7 @@
             <TextBlock x:Name="player1_fullhouse" Height="34" Width="34"/>
             <TextBlock x:Name="player1_chans" Height="34" Width="34"/>
             <TextBlock x:Name="player1_yatzy" Height="34" Width="34"/>
-            <TextBlock x:Name="player1_total" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_total" Height="34"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_two" Grid.ColumnSpan="3" Margin="34.667,0.333,34.333,33.667">

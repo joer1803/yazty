@@ -18,6 +18,16 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -31,21 +41,53 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10">
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="20">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
-                <MenuItem Header="Meny" />
-                <MenuItem Header="Topplista"/>
-                <MenuItem Header="Skapa användare"/>
+                <MenuItem Header="Meny" Click="MenuItem_Click_1" />
+                <MenuItem Header="Topplista" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Skapa användare" Click="MenuItem_Click"/>
             </Menu>
         </StackPanel>
-        <ListBox x:Name="frequent_players" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="5" />
-        <Label Content="Flitigaste spelarna" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" FontSize="24" />
-        
-        <ListBox x:Name="wins_in_arow" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
-        <Label Content="Flest segrar i rad" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" FontSize="24"/>
-
-        <ListBox x:Name="best_frequent_players" Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="5" />
-        <Label Content="Bästa spelarna de senaste 7 dagarna" Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="3" FontSize="24"/>
+        <ListView x:Name="best_7days" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="7" Grid.RowSpan="5" FontSize="16">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Plats" Width="60"/>
+                    <GridViewColumn Header="Användarnamn" Width="120" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridViewColumn Header="Förnamn" Width="100" DisplayMemberBinding="{Binding Firstname}"/>
+                    <GridViewColumn Header="Efternamm" Width="100" DisplayMemberBinding="{Binding Lastname}"/>
+                    <GridViewColumn Header="Matcher" Width="65" DisplayMemberBinding="{Binding Stats.GamesPlayed}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="frequent_players" Grid.Column="11" Grid.Row="9" Grid.ColumnSpan="7" Grid.RowSpan="5" FontSize="16">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Plats" Width="60"/>
+                    <GridViewColumn Header="Användarnamn" Width="120" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridViewColumn Header="Förnamn" Width="100" DisplayMemberBinding="{Binding Firstname}"/>
+                    <GridViewColumn Header="Efternamm" Width="100" DisplayMemberBinding="{Binding Lastname}"/>
+                    <GridViewColumn Header="Matcher" Width="65" DisplayMemberBinding="{Binding Stats.GamesPlayed}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="wins_in_arow" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="7" Grid.RowSpan="5" FontSize="16">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Plats" Width="60"/>
+                    <GridViewColumn Header="Användarnamn" Width="120" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridViewColumn Header="Förnamn" Width="100" DisplayMemberBinding="{Binding Firstname}"/>
+                    <GridViewColumn Header="Efternamm" Width="100" DisplayMemberBinding="{Binding Lastname}"/>
+                    <GridViewColumn Header="Matcher" Width="65" DisplayMemberBinding="{Binding Stats.GamesPlayed}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="De bästa spelarna som loggat in den senaste veckan" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="7" FontSize="20"/>
+        <Label Content="Flest segrar i rad" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="5" FontSize="20"/>
+        <Label Content="De flitigaste spelarna" Grid.Column="11" Grid.Row="8" Grid.ColumnSpan="4" FontSize="20"/>
     </Grid>
 </Window>
