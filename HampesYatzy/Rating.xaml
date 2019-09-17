@@ -5,56 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        WindowStyle="None"
         Title="Topplista" Height="768" Width="1366">
     <Grid Background="#FF389355">
-
-
-        <StackPanel Margin="0,0,0.333,683.333" >
-            <Menu IsMainMenu="True" Height="49" Margin="0,0,0.333,0">
-                <MenuItem Header="Meny" Click="MenuItem_Click_2" FontSize="22"/>
-                <MenuItem Header="Topplista" FontSize="22"/>
-                <MenuItem Header="Skapa användare" Click="MenuItem_Click_1" FontSize="22"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10">
+            <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
+                <MenuItem Header="Meny" />
+                <MenuItem Header="Topplista"/>
+                <MenuItem Header="Skapa användare"/>
             </Menu>
-
         </StackPanel>
-        <ListView x:Name="i_rad" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="385" Margin="884,263,0,0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Plats" Width="50"/>
-                    <GridViewColumn Header="Användarnamn" Width="100"/>
-                    <GridViewColumn Header="Förnamn" Width="75"/>
-                    <GridViewColumn Header="Efternamm" Width="75"/>
-                    <GridViewColumn Header="Segrar" Width="75"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView x:Name="flitigaste" HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="380" Margin="454,258,0,0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Plats" Width="50" />
-                    <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
-                    <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
-                    <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
-                    <GridViewColumn Header="Matcher" Width="100" DisplayMemberBinding="{Binding Stats.GamesPlayed}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView x:Name="Loggat_in" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="387" Margin="0,258,0,0" FontSize="10">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Plats" Width="50"/>
-                    <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
-                    <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
-                    <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
-                    <GridViewColumn Header="Totalpoäng" Width="100" DisplayMemberBinding="{Binding Stats.TotalScore}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Label  Content="Flest segrar i rad" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18" Margin="10,0,0,501.333"/>
-        <Label  Content="De flitigaste yatzyspelarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="455,0,670.333,502.333" FontSize="18" Width="234"/>
-        <Label  Content="De bästa spelarna som loggat in under de senaste 7 dagarna" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="885,0,0.333,502.333" FontSize="16" Width="474"/>
-        <Button x:Name="Kryss_btn" Content="Stäng" HorizontalAlignment="Left" Margin="1253,0,0,0" VerticalAlignment="Top" Width="106" Height="48" Click="Kryss_btn_Click"/>
+        <ListBox x:Name="frequent_players" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="5" />
+        <Label Content="Flitigaste spelarna" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" FontSize="24" />
+        
+        <ListBox x:Name="wins_in_arow" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
+        <Label Content="Flest segrar i rad" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" FontSize="24"/>
+
+        <ListBox x:Name="best_frequent_players" Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="5" />
+        <Label Content="Bästa spelarna de senaste 7 dagarna" Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="3" FontSize="24"/>
     </Grid>
 </Window>
