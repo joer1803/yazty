@@ -187,7 +187,7 @@ namespace HampesYatzy
                         }
                     }
                 }
-                for (int i = 0; i < players.Capacity; i++) //loopen kanske ska va inne i using? och sluta innan executenonquery
+                for (int i = 0; i < players.Capacity; i++)
                 {
                     using (var cmd = new NpgsqlCommand(stmtTwo, conn))
                     {
@@ -228,5 +228,30 @@ namespace HampesYatzy
                 return plist;
             }
         }
+
+        public static void SetEndGame(YatzyGame game)
+        {
+            string stmt = "UPDATE game SET ended_at = @endTime WHERE game_id = @gameId";
+            string stmtTwo = "UPDATE game_player SET score = @playerScore WHERE game_id = @gameId AND player_id = @playerId";
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(stmt, conn))
+                {
+                    cmd.Parameters.AddWithValue("endTime", DateTime.Now);
+                    cmd.Parameters.AddWithValue("gameId", game.GameId);
+                    cmd.ExecuteNonQuery();
+                }
+                for (int i = 0; i < game.Players.Count; i++)
+                {
+                    using (var cmd = new NpgsqlCommand(stmtTwo, conn))
+                    {
+                        cmd.Parameters.AddWithValue("playerScore",game.Players[i]);
+                        cmd.Parameters.AddWithValue("gameId", game.GameId);
+                        cmd.Parameters.AddWithValue("playerId",game.Players[i].Id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
     }
-}
