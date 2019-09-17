@@ -34,6 +34,26 @@ namespace HampesYatzy
             game.StartTime = DateTime.Now;
             activePlayer = game.Players[0];
         }
+        private void CheckGameOver()
+        {
+            bool[] categories = activePlayer.ScoreSheet.Categories;
+            int count = 0;
+            for (int i = 0; i < categories.Length; i++)
+            {
+                if (count == 15)
+                {
+                    DbOperations.SetEndGame(game);
+                }
+                else if(categories[i] == true)
+                {
+                    count++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
 
         public Player GetActivePlayer()
         {
@@ -54,6 +74,7 @@ namespace HampesYatzy
             if (index.Equals(game.Players.Count))
             {
                 index = 0;
+                CheckGameOver();
             }
 
             activePlayer = game.Players[index];
