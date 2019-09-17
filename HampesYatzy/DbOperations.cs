@@ -246,12 +246,13 @@ namespace HampesYatzy
                 {
                     using (var cmd = new NpgsqlCommand(stmtTwo, conn))
                     {
-                        cmd.Parameters.AddWithValue("playerScore",game.Players[i]);
+                        cmd.Parameters.AddWithValue("playerScore", game.Players[i]);
                         cmd.Parameters.AddWithValue("gameId", game.GameId);
-                        cmd.Parameters.AddWithValue("playerId",game.Players[i].Id);
+                        cmd.Parameters.AddWithValue("playerId", game.Players[i].Id);
                         cmd.ExecuteNonQuery();
                     }
                 }
             }
         }
     }
+}
