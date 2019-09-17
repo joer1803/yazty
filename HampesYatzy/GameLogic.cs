@@ -31,6 +31,7 @@ namespace HampesYatzy
         {
             game = new YatzyGame();
             game.Players = DbOperations.GetGame(gameId);
+            game.StartTime = DateTime.Now;
             activePlayer = game.Players[0];
         }
 
