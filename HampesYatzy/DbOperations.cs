@@ -129,14 +129,18 @@ namespace HampesYatzy
                     {
                         while (reader.Read())
                         {
-                            Player p = new Player
+                            if (!reader.IsDBNull(3))
                             {
-                                Nickname = reader.GetString(0),
-                                Firstname = reader.GetString(1),
-                                Lastname = reader.GetString(2),
-                                Stats = new PlayerStats() { TotalScore = reader.GetInt32(3) }
-                            };
-                            plist.Add(p);
+                                Player p = new Player
+                                {
+                                    Nickname = reader.GetString(0),
+                                    Firstname = reader.GetString(1),
+                                    Lastname = reader.GetString(2),
+
+                                    Stats = new PlayerStats() { TotalScore = reader.GetInt32(3) }
+                                };
+                                plist.Add(p);
+                            }
                         }
                     }
                 }
