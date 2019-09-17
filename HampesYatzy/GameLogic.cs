@@ -23,19 +23,22 @@ namespace HampesYatzy
         public const int FullHouse = 13;
         public const int Chance = 14;
         public const int Yatzy = 15;
-
+        int throws = 0;
         YatzyGame game;
         Player activePlayer;
+
         public GameLogic(int gameId)
         {
             game = new YatzyGame();
             game.Players = DbOperations.GetGame(gameId);
             activePlayer = game.Players[0];
         }
+
         public Player GetActivePlayer()
-        {            
-           return activePlayer;
+        {
+            return activePlayer;
         }
+
         public void NextPlayer()
         {
             int index = 0;
@@ -58,18 +61,24 @@ namespace HampesYatzy
         public void RollDice()
         {
             Random rnd = new Random();
-            for(int i = 0; i < 6; i++)
+            if (throws != 3)
             {
-                if (game.Dice[i].Hold != true)
+                for (int i = 0; i < 6; i++)
                 {
-                    game.Dice[i].Value = rnd.Next(1, 7);
+                    if (game.Dice[i].Hold != true)
+                    {
+                        throws++;
+                        game.Dice[i].Value = rnd.Next(1, 7);
+                    }
                 }
             }
         }
+
         public List<Die> GetDice()
         {
             return game.Dice;
         }
+
         //A method to keep track of total score
         //A method to keep track of upper score
 
@@ -89,36 +98,42 @@ namespace HampesYatzy
         //    return Sum;
         //}
 
-
         public int GetScore(int category, int[] dice)
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
             {
                 case OnePair:
                     return CheckOnePair(dice);
+
                 case TwoPair:
                     return CheckTwoPair(dice);
+
                 case ThreeOfAKind:
                     return CheckThreeOfAKind(dice);
+
                 case FourOfAKind:
                     return CheckFourOfAKind(dice);
+
                 case SmallStraight:
                     return CheckSmallStraight(dice);
+
                 case BigStraight:
                     return CheckBigStraight(dice);
+
                 case FullHouse:
                     return CheckFullHouse(dice);
+
                 case Chance:
                     return CountChance(dice);
+
                 case Yatzy:
                     return CheckYatzy(dice);
+
                 default:
                     return CountNumbers(category, dice);
-
-
-
             }
         }
+
         private int CountNumbers(int category, int[] dice)
         {
             int sum = 0;
@@ -131,6 +146,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
         private int CheckThreeOfAKind(int[] dice)
         {
             int sum = 0;
@@ -152,6 +168,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
         private int CheckFourOfAKind(int[] dice)
         {
             int sum = 0;
@@ -173,6 +190,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
         private int CheckSmallStraight(int[] dice)
         {
             int sum = 0;
@@ -192,6 +210,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
         private int CheckBigStraight(int[] dice)
         {
             int sum = 0;
@@ -211,6 +230,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
         private int CheckOnePair(int[] dice)
         {
             int sum = 0;
@@ -234,6 +254,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
         private int CheckTwoPair(int[] dice)
         {
             int sum = 0;
@@ -261,6 +282,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
         private int CountChance(int[] dice)
         {
             int sum = 0;
@@ -272,6 +294,7 @@ namespace HampesYatzy
 
             return sum;
         }
+
         private int CheckYatzy(int[] dice)
         {
             int sum = 0;
@@ -337,7 +360,8 @@ namespace HampesYatzy
             return sum;
         }
     }
-    }
+}
+
 //private int CheckFullHouse(int[] dice)
 //{
 //    int sum = 0;
@@ -358,8 +382,3 @@ namespace HampesYatzy
 
 //    return sum;
 //}
-
-
-
-
-
