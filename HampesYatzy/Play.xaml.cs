@@ -25,19 +25,30 @@ namespace HampesYatzy
             InitializeComponent();
             gameLogic = new GameLogic(gameId);
         }
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+    
+        //private void Dice()
+        //{
+        //    int nr = 1;
+        //    BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + nr.ToString() + "png", UriKind.Relative));
+        //    dice1.Source = image;
+        //    dice2.Source = image;
+        //    dice3.Source = image;
+        //    dice4.Source = image;
+        //    dice5.Source = image;
+        //}
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             Rating rating = new Rating();
             rating.Show();
             this.Close();
-
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
@@ -45,7 +56,6 @@ namespace HampesYatzy
             NewUser newUser = new NewUser();
             newUser.Show();
             this.Close();
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -82,11 +92,6 @@ namespace HampesYatzy
             {
                 diceFrames[i].Source = diceImages[dice[i].Value-1];
             }
-            //dice1.Source = image;
-            //dice2.Source = image;
-            //dice3.Source = image;
-            //dice4.Source = image;
-            //dice5.Source = image;
         }
     }
 }
