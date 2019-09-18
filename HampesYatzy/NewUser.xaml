@@ -48,8 +48,8 @@
         <TextBox x:Name="txtbox_lastname" Height="45" Grid.Column="1" Grid.Row="4" Width="250" />
         
         <Label x:Name="label" Content="Användarnamn" VerticalAlignment="Bottom" Width="115" FontSize="20" Grid.Column="1" Grid.Row="7"  HorizontalAlignment="Left"/>
-        <TextBox x:Name="textBox" Grid.Column="1" Grid.Row="8" Width="250" Height="45"/>
+        <TextBox x:Name="txtbox_nickname" Grid.Column="1" Grid.Row="8" Width="250" Height="45"/>
         
-        <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="208" Height="78" FontSize="18"/>
+        <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="208" Height="78" FontSize="18" Click="Button_Click"/>
     </Grid>
 </Window>

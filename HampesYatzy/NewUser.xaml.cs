@@ -19,6 +19,12 @@ namespace HampesYatzy
     /// </summary>
     public partial class NewUser : Window
     {
+
+        private void asdgkasdg()
+        {            
+            MessageBox.Show(DbOperations.CreatePlayer(txtbox_firstname.Text, txtbox_lastname.Text, txtbox_nickname.Text));
+        }
+
         public NewUser()
         {
             InitializeComponent();
@@ -41,6 +47,11 @@ namespace HampesYatzy
         private void Kryss_btn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            asdgkasdg();
         }
     }
 }
