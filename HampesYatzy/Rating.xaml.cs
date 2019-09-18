@@ -29,13 +29,13 @@ namespace HampesYatzy
 
         private void LoadMostGamesRankings()
         {
-            frequent_players.ItemsSource = null;
-            frequent_players.ItemsSource = DbOperations.GetMostGamesPlayer();
+            bestFrequentPlayers.ItemsSource = null;
+            bestFrequentPlayers.ItemsSource = DbOperations.GetMostGamesPlayer();
         }
         private void LoadTotalScoreRankings()
         {
-            best_7days.ItemsSource = null;
-            best_7days.ItemsSource = DbOperations.GetTotalScoresPlayer();
+            bestWeek.ItemsSource = null;
+            bestWeek.ItemsSource = DbOperations.GetTotalScoresPlayer();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
