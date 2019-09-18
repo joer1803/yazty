@@ -20,36 +20,18 @@ namespace HampesYatzy
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : INotifyPropertyChanged
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = this;
+
             //DiceTest();
             GetFreePlayerList();
             //GetBusyList();
         }
 
-        private string username;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public string Username
-        {
-            get { return username; }
-            set
-            {
-                username = value;
-                OnPropertyChanged(new PropertyChangedEventArgs(Username));
-            }
-        }
-
-        public void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, e);
-        }
+        
         private void GetFreePlayerList()
         {
             lstAvailable.ItemsSource = null;
@@ -81,10 +63,6 @@ namespace HampesYatzy
             this.Close();
         }
 
-        //private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        //{
-
-        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
