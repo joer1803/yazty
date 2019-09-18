@@ -254,5 +254,21 @@ namespace HampesYatzy
                 }
             }
         }
+        public static string CreatePlayer(string fName, string lName, string nickName)
+        {
+            string stmt = "INSERT INTO player(firstname, lastname, nickname) VALUES(@fName, @lName, @nickName)";
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(stmt, conn))
+                {
+                    cmd.Parameters.AddWithValue("fName", fName);
+                    cmd.Parameters.AddWithValue("lName", lName);
+                    cmd.Parameters.AddWithValue("nickName", nickName);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return $"{nickName} är redo att spela yatzy!";
+        }
     }
 }
