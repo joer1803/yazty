@@ -70,7 +70,9 @@ namespace HampesYatzy
         }
         private int CreateNewGame(int gameType)
         {
-            return DbOperations.CreateGame((List<Player>)lstAvailable.SelectedItems, gameType);
+            List<Player> players = new List<Player>();
+            players.Add((Player)lstAvailable.SelectedItems);
+            return DbOperations.CreateGame(players, gameType);
         }
         private void Btn_steerd_Click(object sender, RoutedEventArgs e)
         {
