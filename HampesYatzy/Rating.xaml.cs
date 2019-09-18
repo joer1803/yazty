@@ -29,30 +29,26 @@ namespace HampesYatzy
 
         private void LoadMostGamesRankings()
         {
-            flitigaste.ItemsSource = null;
-            flitigaste.ItemsSource = DbOperations.GetMostGamesPlayer();
+            frequent_players.ItemsSource = null;
+            frequent_players.ItemsSource = DbOperations.GetMostGamesPlayer();
         }
         private void LoadTotalScoreRankings()
         {
-            Loggat_in.ItemsSource = null;
-            Loggat_in.ItemsSource = DbOperations.GetTotalScoresPlayer();
+            best_7days.ItemsSource = null;
+            best_7days.ItemsSource = DbOperations.GetTotalScoresPlayer();
         }
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             NewUser newUser = new NewUser();
             newUser.Show();
             this.Close();
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();
-            this.Close();
-        }
-
-        private void Kryss_btn_Click(object sender, RoutedEventArgs e)
-        {
             this.Close();
         }
     }

@@ -5,108 +5,162 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        WindowStyle="None"
         Title="Spela" Height="768" Width="1366">
-    <Grid Background="#FF389355" RenderTransformOrigin="0.378,0.528">
-
-        <Image Source="Resources/Protokoll.png" Margin="-472,10,471.333,-52.667"/>
-        <StackPanel Margin="0,0,0.333,688.333" >
-            <Menu IsMainMenu="True" Height="49" Margin="0,0,0.333,0" FontSize="22">
-                <MenuItem Header="Meny" Click="MenuItem_Click_1"/>
-                <MenuItem Header="Topplista" Click="MenuItem_Click"/>
+    <Grid Background="#FF389355" RenderTransformOrigin="0.378,0.528" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="68*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="277*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="15" Margin="0,0,0.333,0">
+            <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
+                <MenuItem Header="Meny" Click="MenuItem_Click" />
+                <MenuItem Header="Topplista" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Skapa användare" Click="MenuItem_Click_2"/>
             </Menu>
-
         </StackPanel>
-        <Button x:Name="button" Content="Stäng" HorizontalAlignment="Left" Margin="1687,0,0,0" VerticalAlignment="Top" Width="106" Height="43" Click="Button_Click"/>
-        <Image x:Name="diceOne" HorizontalAlignment="Center" VerticalAlignment="Center" Height="110" Margin="1183,-9,66.333,630.333" Width="110"/>
-        <Image x:Name="diceTwo" Margin="1183,123,66.333,498.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image x:Name="diceThree" Margin="1183,265,66.333,356.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image x:Name="diceFour" Margin="1183,409,66.333,212.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image x:Name="diceFive" Margin="1183,550,66.333,71.333" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="19" Margin="0,0.333,67.667,-0.333"/>
+        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_one" Margin="0.667,0.333,0.667,33.667">
+            <TextBlock x:Name="player1_ones" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_twos" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_threes" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_fours" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_fives" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_sixes" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_sum" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_bonus" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_two_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_three_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_four_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_small_straight" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_big_straigt" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_fullhouse" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_chans" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_yatzy" Height="34" Width="34"/>
+            <TextBlock x:Name="player1_total" Height="34"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_two" Grid.ColumnSpan="3" Margin="34.667,0.333,34.333,33.667">
+            <TextBlock x:Name="player2_ones" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_twos" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_threes" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_fours" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_fives" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_sixes" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_sum" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_bonus" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_two_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_three_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_four_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_small_straight" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_big_straigt" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_fullhouse" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_chans" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_yatzy" Height="34" Width="34"/>
+            <TextBlock x:Name="player2_total" Height="34" Width="34"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="4" Grid.RowSpan="18" x:Name="player_three" Grid.ColumnSpan="2" Margin="0,0.333,34.667,33.667">
+            <TextBlock x:Name="player3_ones" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_twos" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_threes" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_fours" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_fives" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_sixes" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_sum" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_bonus" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_two_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_three_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_four_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_small_straight" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_big_straigt" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_fullhouse" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_chans" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_yatzy" Height="34" Width="34"/>
+            <TextBlock x:Name="player3_total" Height="34" Width="34"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="5" Grid.RowSpan="18" x:Name="player_four" Margin="0.667,0.333,67.667,33.667" Grid.ColumnSpan="2">
+            <TextBlock x:Name="player4_ones" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_twos" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_threes" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_fours" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_fives" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_sixes" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_sum" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_bonus" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_two_par" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_three_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_four_of_akind" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_small_straight" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_big_straigt" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_fullhouse" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_chans" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_yatzy" Height="34" Width="34"/>
+            <TextBlock x:Name="player4_total" Height="34" Width="34"/>
+        </StackPanel>
+
+      
+            <Image x:Name="dice1" Height="100" Width="100" Grid.Column="7" Grid.Row="8"/>
+        <Button x:Name="hold_dice1" Content="spara" Grid.Column="7" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
+            
+        <Image x:Name="dice2" Height="100" Width="100" Grid.Column="8" Grid.Row="8"/>
+        <Button x:Name="hold_dice2" Content="spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
+            
+        <Image x:Name="dice3" Height="100" Width="100" Grid.Column="9" Grid.Row="8"/>
+        <Button x:Name="hold_dice3" Content="spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
+            
+        <Image x:Name="dice4" Height="100" Width="100" Grid.Column="10" Grid.Row="8"/>
+        <Button x:Name="hold_dice4" Content="spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
+            
+        <Image x:Name="dice5" Height="100" Width="100" Grid.Column="11" Grid.Row="8"/>
+        <Button x:Name="hold_dice5" Content="spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
+      
+        <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24"/>
+        <Label x:Name="count_trow" Content="Du har kast kvar :" Grid.Column="13" Grid.Row="17" FontSize="18"/>
+        <Label x:Name="time_count" Content="Tid kvar av session :" Grid.Column="13" Grid.Row="0" FontSize="18"/>
+        <Button x:Name="end_game" Content="avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20"/>
 
 
 
-        <TextBlock x:Name="ones_1"  Height="34" Width="34" Margin="155,88,1170.333,609.333"/>
-        <TextBlock x:Name="twos_1" Width="34" Margin="155,122,1170.333,574.333"/>
-        <TextBlock x:Name="threes_1"  Height="34" Width="34" Margin="155,159,1170.333,538.333"/>
-        <TextBlock x:Name="fours_1"  Height="34" Width="34" Margin="155,195,1170.333,502.333"/>
-        <TextBlock x:Name="fives_1"  Height="34" Width="34" Margin="155,229,1170.333,468.333"/>
-        <TextBlock x:Name="sixes_1"  Height="34" Width="34" Margin="155,265,1170.333,432.333"/>
-        <TextBlock x:Name="sum_1" Margin="155,302,1173.333,396.333"/>
-        <TextBlock x:Name="bonus1" Width="34" Margin="155,340,1170.333,359.333"/>
-        <TextBlock x:Name="par_1"  Height="34" Width="34" Margin="155,375,1170.333,322.333"/>
-        <TextBlock x:Name="twopar_1" Width="34" Margin="155,409,1170.333,288.333" Height="34"/>
-        <TextBlock x:Name="three_of_akind_1"  Height="34" Width="34" Margin="155,445,1170.333,252.333"/>
-        <TextBlock x:Name="Four_of_akind_1"  Height="34" Width="34" Margin="155,481,1170.333,216.333"/>
-        <TextBlock x:Name="smallstraight_1"  Height="34" Width="34" Margin="155,516,1170.333,181.333"/>
-        <TextBlock x:Name="bigstraight_1"  Height="34" Width="34" Margin="155,550,1170.333,147.333"/>
-        <TextBlock x:Name="fullhouse_1"  Height="34" Width="34" Margin="155,586,1170.333,111.333"/>
-        <TextBlock x:Name="chance_1" Height="34" Width="34" Margin="155,620,1170.333,77.333"/>
-        <TextBlock x:Name="yatzy_1"  Height="34" Width="34" Margin="155,657,1170.333,40.333"/>
-        <TextBlock x:Name="total_1" Height="34" Width="34" Margin="155,694,1170.333,3.333"/>
-
-        <TextBlock x:Name="ones_2" Height="34" Width="34" Margin="191,88,1134.333,609.333"/>
-        <TextBlock x:Name="twos_2" Height="34" Width="34" Margin="189,123,1136.333,574.333"/>
-        <TextBlock x:Name="threes_2" Height="34" Width="34" Margin="189,159,1136.333,538.333"/>
-        <TextBlock x:Name="fours_2" Height="34" Width="34" Margin="191,195,1134.333,502.333"/>
-        <TextBlock x:Name="fives_2" Height="34" Width="34" Margin="191,229,1134.333,468.333"/>
-        <TextBlock x:Name="sixes_2" Height="34" Width="34" Margin="189,265,1136.333,432.333"/>
-        <TextBlock x:Name="sum_2" Height="34" Width="34" Margin="189,302,1136.333,395.333"/>
-        <TextBlock x:Name="bonus_2" Height="34" Width="34" Margin="189,340,1136.333,357.333"/>
-        <TextBlock x:Name="par_2" Height="34" Width="34" Margin="189,375,1136.333,322.333"/>
-        <TextBlock x:Name="twopar_2" Height="34" Width="34" Margin="189,409,1136.333,288.333"/>
-        <TextBlock x:Name="three_of_akinf_2" Height="34" Width="34" Margin="189,445,1136.333,252.333"/>
-        <TextBlock x:Name="four_of_akind_2" Height="34" Width="34" Margin="189,481,1136.333,216.333"/>
-        <TextBlock x:Name="smallstraight_2" Height="34" Width="34" Margin="189,516,1136.333,181.333"/>
-        <TextBlock x:Name="bigstraight_2" Height="34" Width="34" Margin="189,550,1136.333,147.333"/>
-        <TextBlock x:Name="fullhouse_2" Height="34" Width="34" Margin="189,586,1136.333,111.333"/>
-        <TextBlock x:Name="chance_2" Height="34" Width="34" Margin="189,620,1136.333,77.333"/>
-        <TextBlock x:Name="yatzy_2" Height="34" Width="34" Margin="189,657,1136.333,40.333"/>
-        <TextBlock x:Name="total_2" Height="34" Width="34" Margin="189,694,1136.333,3.333"/>
-
-        <TextBlock x:Name="ones_3" Height="34" Width="34" Margin="225,88,1100.333,609.333"/>
-        <TextBlock x:Name="twos_3" Height="34" Width="34" Margin="225,123,1100.333,574.333"/>
-        <TextBlock x:Name="threes_3" Height="34" Width="34" Margin="225,159,1100.333,538.333"/>
-        <TextBlock x:Name="fours_3" Height="34" Width="34" Margin="225,195,1100.333,502.333"/>
-        <TextBlock x:Name="fives_3" Height="34" Width="34" Margin="225,229,1100.333,468.333"/>
-        <TextBlock x:Name="sixes_3" Height="34" Width="34" Margin="225,265,1100.333,432.333"/>
-        <TextBlock x:Name="sum_3" Height="34" Width="34" Margin="225,301,1100.333,396.333"/>
-        <TextBlock x:Name="bonus_3" Height="34" Width="34" Margin="225,340,1100.333,357.333"/>
-        <TextBlock x:Name="par_3" Height="34" Width="34" Margin="225,375,1100.333,322.333"/>
-        <TextBlock x:Name="twopar_3" Height="34" Width="34" Margin="225,409,1100.333,288.333"/>
-        <TextBlock x:Name="three_of_akind_3" Height="34" Width="34" Margin="225,445,1100.333,252.333"/>
-        <TextBlock x:Name="four_of_akind_3" Height="34" Width="34" Margin="225,481,1100.333,216.333"/>
-        <TextBlock x:Name="smallstraight_3" Height="34" Width="34" Margin="225,516,1100.333,181.333"/>
-        <TextBlock x:Name="bigstraight_3" Height="34" Width="34" Margin="225,550,1100.333,147.333"/>
-        <TextBlock x:Name="fullhouse_3" Height="34" Width="34" Margin="225,586,1100.333,111.333"/>
-        <TextBlock x:Name="chance_3" Height="34" Width="34" Margin="225,620,1100.333,77.333"/>
-        <TextBlock x:Name="yatzy_3" Height="34" Width="34" Margin="225,657,1100.333,40.333"/>
-        <TextBlock x:Name="totalt_3" Height="34" Width="34" Margin="225,694,1100.333,3.333"/>
-
-
-        <TextBlock x:Name="ones_4" Height="34" Width="34" Margin="259,88,1066.333,609.333"/>
-        <TextBlock x:Name="twos_4" Height="34" Width="34" Margin="259,123,1066.333,574.333"/>
-        <TextBlock x:Name="threes_4" Height="34" Width="34" Margin="259,159,1066.333,538.333"/>
-        <TextBlock x:Name="fours_4" Height="34" Width="34" Margin="259,195,1066.333,502.333"/>
-        <TextBlock x:Name="fives_4" Height="34" Width="34" Margin="259,229,1066.333,468.333"/>
-        <TextBlock x:Name="sixes_4" Height="34" Width="34" Margin="259,265,1066.333,432.333"/>
-        <TextBlock x:Name="sum_4" Height="34" Width="34" Margin="259,302,1066.333,395.333"/>
-        <TextBlock x:Name="bonus_4" Height="34" Width="34" Margin="259,341,1066.333,356.333"/>
-        <TextBlock x:Name="par_4" Height="34" Width="34" Margin="259,375,1066.333,322.333"/>
-        <TextBlock x:Name="twopar_4" Height="34" Width="34" Margin="259,409,1066.333,288.333"/>
-        <TextBlock x:Name="three_of_akind_4" Height="34" Width="34" Margin="259,447,1066.333,250.333"/>
-        <TextBlock x:Name="four_of_akind_4" Height="34" Width="34" Margin="259,481,1066.333,216.333"/>
-        <TextBlock x:Name="smallstraight_4" Height="34" Width="34" Margin="259,516,1066.333,181.333"/>
-        <TextBlock x:Name="bigstraight_4" Height="34" Width="34" Margin="259,550,1066.333,147.333"/>
-        <TextBlock x:Name="fullhouse_4" Height="34" Width="34" Margin="259,586,1066.333,111.333"/>
-        <TextBlock x:Name="yatzy_4" Height="34" Width="34" Margin="259,657,1066.333,40.333"/>
-        <TextBlock x:Name="totalt_4" Height="34" Width="34" Margin="259,694,1066.333,3.333"/>
-
-
-        <Button x:Name="button1" Content="Kasta träning" HorizontalAlignment="Left" Margin="522,601,0,0" VerticalAlignment="Top" Width="273" Height="120" FontSize="36"/>
-        <Label x:Name="label" Content="Du har kast kvar : " HorizontalAlignment="Left" Margin="800,663,0,0" VerticalAlignment="Top" Height="39" Width="212" FontSize="24"/>
-        <Label x:Name="label1" Content="Tid kvar att spela : " HorizontalAlignment="Left" Margin="484,59,0,0" VerticalAlignment="Top" Height="48" Width="271" FontSize="24"/>
     </Grid>
 </Window>

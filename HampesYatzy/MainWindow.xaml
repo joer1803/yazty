@@ -5,44 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        WindowStyle="None"
-        Title="Meny" Height="900" Width="1800">
+        Title="Meny" Height="768" Width="1366">
     <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355">
-
-        <StackPanel Grid.Row="0" Grid.Column="0">
-            <Menu IsMainMenu="True" Height="49" Margin="0,0,0.333,0">
-                <MenuItem Header="Meny"></MenuItem>
-                <MenuItem Header="Topplista" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Skapa användare" Click="MenuItem_Click_1"></MenuItem>
-
-            </Menu>
-
-
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="4" Grid.Column="1">
+            <Button x:Name="Btn_classic" Height="48" Content="Spela styrd yatzy" FontSize="16" Click="Btn_classic_Click"/>
+            <Button x:Name="Btn_steerd" Height="48" Content="Spela klassisk yatzy" FontSize="16" Click="Btn_steerd_Click"/>
         </StackPanel>
-        <ListView x:Name="lstAvailable" HorizontalAlignment="Left" Height="497" Margin="503,337,0,0" VerticalAlignment="Top" Width="356">
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
+            <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
+                <MenuItem Header="Meny" Click="MenuItem_Click" />
+                <MenuItem Header="Topplista" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Skapa användare" Click="MenuItem_Click_2"/>
+            </Menu>
+        </StackPanel>
+        
+     
+        <Label Content="Tillgängliga spelare" Width="auto" Grid.Column="0" Grid.Row="3" FontSize="20"/>
+        <ListView x:Name="lstAvailable" ItemsSource="{Binding Path=Username}" Grid.Column="0" Grid.Row="4" Height="auto">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
-                    <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
-                    <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
+                    <GridViewColumn Header="Spelare" Width="auto"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="lstBusy" HorizontalAlignment="Left" Height="497" Margin="69,337,0,0" VerticalAlignment="Top" Width="356">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Användarnamn" Width="100" DisplayMemberBinding="{Binding Nickname}"/>
-                    <GridViewColumn Header="Förnamn" Width="75" DisplayMemberBinding="{Binding Firstname}"/>
-                    <GridViewColumn Header="Efternamm" Width="75" DisplayMemberBinding="{Binding Lastname}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="btn_steerd" Content="Spela styrd Yatzy" HorizontalAlignment="Left" Margin="895,555,0,0" VerticalAlignment="Top" Width="224" Height="83" Click="Btn_steerd_Click" FontSize="18"/>
-        <Button x:Name="btn_classic" Content="Spela klassiskt Yatzy" HorizontalAlignment="Left" Margin="895,714,0,0" VerticalAlignment="Top" Width="224" Height="83" Click="Btn_classic_Click" FontSize="18"/>
-        <Button x:Name="button" Content="Stäng" HorizontalAlignment="Left" Margin="1687,0,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="Button_Click"/>
-        <Label x:Name="label1" Content="Tillgängliga spelare" Margin="503,281,1015,568" FontSize="24"/>
-        <Label x:Name="label" Content="Pågående spel" Margin="69,281,1551,568" FontSize="24"/>
+
     </Grid>
 </Window>
