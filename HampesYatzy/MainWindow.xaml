@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
         Title="Meny" Height="768" Width="1366">
-    <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355" ShowGridLines="True">
+    <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
