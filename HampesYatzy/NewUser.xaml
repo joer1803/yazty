@@ -17,11 +17,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -46,17 +41,15 @@
             </Menu>
         </StackPanel>
 
-        <Label x:Name="firstname" Content="Förnamn" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" FontSize="20" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="txtbox_firstname" Height="45" Width="250" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <Label x:Name="firstname" Content="Förnamn" Grid.Column="1" Grid.Row="5" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtbox_firstname" Height="45" Width="250" Grid.Column="1" Grid.Row="6" />
 
-        <Label x:Name="lastname" Content="Efternamn" Grid.Column="1" Grid.Row="3" Width="101" FontSize="20" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="txtbox_lastname" Height="45" Grid.Column="1" Grid.Row="4" Width="250" Grid.ColumnSpan="2"/>
+        <Label x:Name="lastname" Content="Efternamn" Grid.Column="1" Grid.Row="3" Width="115" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtbox_lastname" Height="45" Grid.Column="1" Grid.Row="4" Width="250" />
         
-        <Label x:Name="label" Content="Användarnamn" VerticalAlignment="Bottom" Width="115" FontSize="20" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Left"/>
-        <TextBox x:Name="textBox" Grid.Column="1" Grid.Row="8" Width="250" Height="45" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Användarnamn" VerticalAlignment="Bottom" Width="115" FontSize="20" Grid.Column="1" Grid.Row="7"  HorizontalAlignment="Left"/>
+        <TextBox x:Name="textBox" Grid.Column="1" Grid.Row="8" Width="250" Height="45"/>
         
-        
-        <Button x:Name="close_btn" Content="Stäng" HorizontalAlignment="Left" Margin="1228,0,0,0" VerticalAlignment="Top" Width="131" Height="48" Click="Kryss_btn_Click"/>
         <Button x:Name="button" Content="Skapa användare" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="208" Height="78" FontSize="18"/>
     </Grid>
 </Window>
