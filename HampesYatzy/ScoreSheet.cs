@@ -30,5 +30,6 @@ namespace HampesYatzy
         public int FullHouse { get; set; }
         public int Chance { get; set; }
         public int Yatzy { get; set; }
+        public int Sum { get; set; }
     }
 }

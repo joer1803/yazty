@@ -24,6 +24,7 @@ namespace HampesYatzy
         {
             InitializeComponent();
             gameLogic = new GameLogic(gameId);
+            DataContext = this;
         }
     
         //private void Dice()
@@ -43,7 +44,7 @@ namespace HampesYatzy
             mainWindow.Show();
             this.Close();
         }
-
+        
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             Rating rating = new Rating();
