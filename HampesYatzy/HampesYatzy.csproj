@@ -167,15 +167,6 @@
     <Resource Include="Resources\d6.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ett.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="fyra.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="fem.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Protokoll.png" />
   </ItemGroup>
   <ItemGroup>
