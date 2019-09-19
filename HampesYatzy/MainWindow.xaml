@@ -6,35 +6,49 @@
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
         Title="Meny" Height="768" Width="1366">
+   
     <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="49"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="4" Grid.Column="1">
-            <Button x:Name="Btn_steerd" Height="48" Content="Spela styrd yatzy" FontSize="16" Click="Btn_steerd_Click"/>
-            <Button x:Name="Btn_classic" Height="48" Content="Spela klassisk yatzy" FontSize="16" Click="Btn_classic_Click"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
                 <MenuItem Header="Meny" Click="MenuItem_Click" />
                 <MenuItem Header="Topplista" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Skapa användare" Click="MenuItem_Click_2"/>
             </Menu>
         </StackPanel>
-        
-     
-        <Label Content="Tillgängliga spelare" Width="auto" Grid.Column="0" Grid.Row="3" FontSize="20"/>
-        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="0" Grid.Row="4" Height="auto" SelectionMode="Multiple">
+
+
+        <Label Content="Tillgängliga spelare" Width="auto" Grid.Column="1" Grid.Row="3" FontSize="20"/>
+        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="8" Height="auto" FontSize="20" SelectionMode="Multiple">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Spelare" Width="auto" DisplayMemberBinding="{Binding Nickname}"/>
@@ -42,5 +56,10 @@
             </ListView.View>
         </ListView>
 
+
+        <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click"/>
+        <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click"/>
+        
+        <Image Source="Resources/info-logo.png"  Grid.Column="10" Grid.Row="1"  Grid.ColumnSpan="2" Margin="10,0,0,10" Grid.RowSpan="3" RenderTransformOrigin="0.76,0.5" Stretch="Fill"/>
     </Grid>
 </Window>

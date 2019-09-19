@@ -175,5 +175,11 @@
   <ItemGroup>
     <Resource Include="Resources\Protokoll %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HampesYatzy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\info-logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

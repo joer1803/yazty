@@ -28,6 +28,8 @@ namespace HampesYatzy
             GetFreePlayerList();
         }
 
+        
+
         private void GetFreePlayerList()
         {
             lstAvailable.ItemsSource = null;
@@ -80,6 +82,16 @@ namespace HampesYatzy
             NewUser newUser = new NewUser();
             newUser.Show();
             this.Close();
+        }
+
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Image_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
