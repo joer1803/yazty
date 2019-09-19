@@ -153,31 +153,15 @@ namespace HampesYatzy
 
         public static int CreateGame(List<Player> players, int gameType)
         {
+            int gameId = 0;
             DateTime currentDateTime = DateTime.Now;
-            string stmt = "INSERT INTO game(gametype_id, started_at) VALUES(@gameType, @currentDateTime)";
+            string stmt = "INSERT INTO game(gametype_id, started_at) VALUES(@gameType, @currentDateTime) RETURNING game_id";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
                     cmd.Parameters.AddWithValue("gameType", gameType);
-                    cmd.Parameters.AddWithValue("currentDateTime", currentDateTime);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            return CreateGamePlayers(players, currentDateTime);
-        }
-
-        private static int CreateGamePlayers(List<Player> players, DateTime currentDateTime)
-        {
-            int gameId = 0;
-            string stmt = "SELECT game_id FROM game WHERE started_at = @currentDateTime";
-            string stmtTwo = "INSERT INTO game_player(game_id, player_id) VALUES(@gameId, @player)";
-            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
-            {
-                conn.Open();
-                using (var cmd = new NpgsqlCommand(stmt, conn))
-                {
                     cmd.Parameters.AddWithValue("currentDateTime", currentDateTime);
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -187,7 +171,18 @@ namespace HampesYatzy
                         }
                     }
                 }
-                for (int i = 0; i < players.Capacity; i++)
+            }
+            CreateGamePlayers(players, currentDateTime, gameId);
+            return gameId;
+        }
+
+        private static void CreateGamePlayers(List<Player> players, DateTime currentDateTime,int gameId)
+        {
+            string stmtTwo = "INSERT INTO game_player(game_id, player_id) VALUES(@gameId, @player)";
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
+            {
+                conn.Open();
+                for (int i = 0; i < players.Count; i++)
                 {
                     using (var cmd = new NpgsqlCommand(stmtTwo, conn))
                     {
@@ -197,7 +192,6 @@ namespace HampesYatzy
                     }
                 }
             }
-            return gameId;
         }
 
         public static List<Player> GetGame(int gameId)
@@ -216,9 +210,10 @@ namespace HampesYatzy
                         {
                             Player p = new Player
                             {
-                                Nickname = reader.GetString(0),
-                                Firstname = reader.GetString(1),
-                                Lastname = reader.GetString(2),
+                                Id = reader.GetInt32(0),
+                                Nickname = reader.GetString(1),
+                                Firstname = reader.GetString(2),
+                                Lastname = reader.GetString(3),
                                 ScoreSheet = new ScoreSheet()
                             };
                             plist.Add(p);

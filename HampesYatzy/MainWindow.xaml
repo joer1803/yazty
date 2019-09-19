@@ -21,8 +21,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="4" Grid.Column="1">
-            <Button x:Name="Btn_classic" Height="48" Content="Spela styrd yatzy" FontSize="16" Click="Btn_classic_Click"/>
-            <Button x:Name="Btn_steerd" Height="48" Content="Spela klassisk yatzy" FontSize="16" Click="Btn_steerd_Click"/>
+            <Button x:Name="Btn_steerd" Height="48" Content="Spela styrd yatzy" FontSize="16" Click="Btn_steerd_Click"/>
+            <Button x:Name="Btn_classic" Height="48" Content="Spela klassisk yatzy" FontSize="16" Click="Btn_classic_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
@@ -34,7 +34,7 @@
         
      
         <Label Content="Tillgängliga spelare" Width="auto" Grid.Column="0" Grid.Row="3" FontSize="20"/>
-        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="0" Grid.Row="4" Height="auto">
+        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="0" Grid.Row="4" Height="auto" SelectionMode="Multiple">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Spelare" Width="auto" DisplayMemberBinding="{Binding Nickname}"/>
