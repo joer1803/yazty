@@ -137,6 +137,17 @@ namespace HampesYatzy
             }
         }
 
+        //public void SetScore(int category)
+        //{
+        //    switch (category)
+
+        //    {
+        //        case 1:
+        //            activePlayer.Ones = GetScore(1);
+        //            break;
+        //    }
+        //}
+
         private int CountNumbers(int category, int[] dice)
         {
             int sum = 0;
