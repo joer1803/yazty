@@ -157,7 +157,7 @@
       
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24"/>
         <Label x:Name="count_trow" Content="Du har kast kvar :" Grid.Column="13" Grid.Row="17" FontSize="18"/>
-        <Label x:Name="time_count" Content="Tid kvar av session :" Grid.Column="13" Grid.Row="0" FontSize="18"/>
+        <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="13" Grid.Row="0" FontSize="18"/>
         <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20"/>
 
 
