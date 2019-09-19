@@ -19,17 +19,14 @@ namespace HampesYatzy
     /// </summary>
     public partial class NewUser : Window
     {
-
-        private void asdgkasdg()
-        {            
-            MessageBox.Show(DbOperations.CreatePlayer(txtbox_firstname.Text, txtbox_lastname.Text, txtbox_nickname.Text));
-        }
-
         public NewUser()
         {
             InitializeComponent();
         }
-
+        private void CreateNewUser()
+        {
+            MessageBox.Show(DbOperations.CreatePlayer(txtbox_firstname.Text, txtbox_lastname.Text, txtbox_nickname.Text));
+        }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Rating rating = new Rating();
@@ -51,7 +48,7 @@ namespace HampesYatzy
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            asdgkasdg();
+            CreateNewUser();
         }
     }
 }
