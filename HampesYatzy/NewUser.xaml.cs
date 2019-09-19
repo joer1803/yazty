@@ -42,11 +42,6 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void Kryss_btn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void BtnCreateUser_Click(object sender, RoutedEventArgs e)
         {
             CreateNewUser();

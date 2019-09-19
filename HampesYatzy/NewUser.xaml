@@ -39,11 +39,11 @@
             </Menu>
         </StackPanel>
 
-        <Label x:Name="firstname" Content="Förnamn" Grid.Column="1" Grid.Row="5" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <TextBox x:Name="txtbox_firstname" Height="45" Width="250" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" />
+        <Label x:Name="firstname" Content="Förnamn" Grid.Column="1" Grid.Row="3" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtbox_firstname" Height="45" Width="250" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" />
 
-        <Label x:Name="lastname" Content="Efternamn" Grid.Column="1" Grid.Row="3" Width="115" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <TextBox x:Name="txtbox_lastname" Height="45" Grid.Column="1" Grid.Row="4" Width="250" HorizontalAlignment="Left"/>
+        <Label x:Name="lastname" Content="Efternamn" Grid.Column="1" Grid.Row="5" Width="115" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtbox_lastname" Height="45" Grid.Column="1" Grid.Row="6" Width="250" HorizontalAlignment="Left"/>
         
         <Label x:Name="label" Content="Användarnamn" VerticalAlignment="Bottom" Width="272" FontSize="20" Grid.Column="1" Grid.Row="7"  HorizontalAlignment="Left"/>
         <TextBox x:Name="txtbox_nickname" Grid.Column="1" Grid.Row="8" Width="250" Height="45" HorizontalAlignment="Left"/>
