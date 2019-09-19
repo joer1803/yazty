@@ -56,109 +56,111 @@
         </StackPanel>
         <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="19" Margin="0,0.333,67.667,-0.333"/>
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_one" Margin="0.667,0.333,0.667,33.667">
-          <TextBlock x:Name="playerOne_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_big_straigt" Text="{Binding Path = Player.ScoreSheet.BigStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerOne_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34"/>
+            <TextBlock x:Name="playerOne_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_big_straigt" Text="{Binding Path = Player.ScoreSheet.BigStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerOne_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_two" Grid.ColumnSpan="3" Margin="34.667,0.333,34.333,33.667">
-          <TextBlock x:Name="playerTwo_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_big_straigt" Text="{Binding Path = Player.ScoreSheet.BigStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerTwo_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_big_straigt" Text="{Binding Path = Player.ScoreSheet.BigStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerTwo_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="4" Grid.RowSpan="18" x:Name="player_three" Grid.ColumnSpan="2" Margin="0,0.333,34.667,33.667">
-          <TextBlock x:Name="playerThree_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_threes" Text="{Binding Path = Player.ScoreSheet.Three}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_big_straigt" Text="{Binding Path = Player.ScoreSheet.FullStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerThree_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_threes" Text="{Binding Path = Player.ScoreSheet.Three}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_big_straigt" Text="{Binding Path = Player.ScoreSheet.FullStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerThree_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="5" Grid.RowSpan="18" x:Name="player_four" Margin="0.667,0.333,67.667,33.667" Grid.ColumnSpan="2">
-          <TextBlock x:Name="playerFour_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_big_straigt" Text="{Binding Path = Player.ScoreSheet.BigStraight}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
-          <TextBlock x:Name="playerFour_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_fours" Text="{Binding Path = Player.ScoreSheet.Fours}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_fives" Text="{Binding Path = Player.ScoreSheet.Fives}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_sixes" Text="{Binding Path = Player.ScoreSheet.Sixes}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_sum" Text="{Binding Path = Player.ScoreSheet.Sum}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_bonus" Text="{Binding Path = Player.ScoreSheet.Bonus}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_par" Text="{Binding Path = Player.ScoreSheet.OnePair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_two_par" Text="{Binding Path = Player.ScoreSheet.TwoPair}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_three_of_akind" Text="{Binding Path = Player.ScoreSheet.ThreeOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_four_of_akind" Text="{Binding Path = Player.ScoreSheet.FourOfAKind}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_small_straight" Text="{Binding Path = Player.ScoreSheet.SmallStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_big_straigt" Text="{Binding Path = Player.ScoreSheet.BigStraight}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_fullhouse" Text="{Binding Path = Player.ScoreSheet.FullHouse}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_chans" Text="{Binding Path = Player.ScoreSheet.Chans}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_yatzy" Text="{Binding Path = Player.ScoreSheet.Yatzy}" Height="34" Width="34"/>
+            <TextBlock x:Name="playerFour_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
         </StackPanel>
 
-      
-            <Image x:Name="diceOne" Height="100" Width="100" Grid.Column="7" Grid.Row="8"/>
-        <Button x:Name="hold_diceOne" Content="Spara" Grid.Column="7" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
-            
+
+        <Image x:Name="diceOne" Height="100" Width="100" Grid.Column="7" Grid.Row="8"/>
+        <Button x:Name="hold_diceOne" Content="Spara" Grid.Column="7" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click"/>
+
         <Image x:Name="diceTwo" Height="100" Width="100" Grid.Column="8" Grid.Row="8"/>
-        <Button x:Name="hold_diceTwo" Content="Spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
-            
+        <Button x:Name="hold_diceTwo" Content="Spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceTwo_Click"/>
+
         <Image x:Name="diceThree" Height="100" Width="100" Grid.Column="9" Grid.Row="8"/>
-        <Button x:Name="hold_diceThree" Content="Spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
-            
+        <Button x:Name="hold_diceThree" Content="Spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceThree_Click"/>
+
         <Image x:Name="diceFour" Height="100" Width="100" Grid.Column="10" Grid.Row="8"/>
-        <Button x:Name="hold_diceFour" Content="Spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
-            
+        <Button x:Name="hold_diceFour" Content="Spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFour_Click"/>
+
         <Image x:Name="diceFive" Height="100" Width="100" Grid.Column="11" Grid.Row="8"/>
-        <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1"/>
-      
+        <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFive_Click"/>
+
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24"/>
         <Label x:Name="count_trow" Content="Du har kast kvar :" Grid.Column="13" Grid.Row="17" FontSize="18"/>
         <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="13" Grid.Row="0" FontSize="18"/>
         <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20"/>
+        <Button x:Name="btndone" Content="Nästa spelare" Grid.Column="13" HorizontalAlignment="Left" Grid.Row="14" VerticalAlignment="Top" Width="278" Height="68" Grid.RowSpan="2" Click="Button_Click_1" FontSize="24"/>
+        <Label x:Name="lblactiveplayer" Grid.ColumnSpan="2" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="1,0,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="240" FontSize="24"/>
 
 
 
