@@ -27,6 +27,7 @@ namespace HampesYatzy
         {
             MessageBox.Show(DbOperations.CreatePlayer(txtbox_firstname.Text, txtbox_lastname.Text, txtbox_nickname.Text));
         }
+
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Rating rating = new Rating();
@@ -46,9 +47,19 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnCreateUser_Click(object sender, RoutedEventArgs e)
         {
             CreateNewUser();
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
+        }
+
+        private void Btn_Return_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
         }
     }
 }
