@@ -148,6 +148,21 @@ namespace HampesYatzy
         //    }
         //}
 
+        //public void CheckThrows()
+        //{
+        //    int count = 0;
+
+        //    if (count<3)
+        //    {
+        //        count++;
+        //    }
+        //    else
+        //    {
+                
+        //    }
+
+        //}
+
         private int CountNumbers(int category, int[] dice)
         {
             int sum = 0;
