@@ -24,7 +24,6 @@ namespace HampesYatzy
         {
             InitializeComponent();
             gameLogic = new GameLogic(gameId);
-            DataContext = this;           
             UpdatePlayer();
         }
     
@@ -101,9 +100,9 @@ namespace HampesYatzy
             UpdatePlayer();
         }
 
-        public void UpdatePlayer()
+        private void UpdatePlayer()
         {
-            lblactiveplayer.Content = gameLogic.GetActivePlayer().Nickname;
+            lblActivePlayer.Content = gameLogic.GetActivePlayer().Nickname;
         }
         
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)

@@ -211,9 +211,9 @@ namespace HampesYatzy
                             Player p = new Player
                             {
                                 Id = reader.GetInt32(0),
-                                Nickname = reader.GetString(1),
-                                Firstname = reader.GetString(2),
-                                Lastname = reader.GetString(3),
+                                Nickname = reader.GetString(3),
+                                Firstname = reader.GetString(1),
+                                Lastname = reader.GetString(2),
                                 ScoreSheet = new ScoreSheet()
                             };
                             plist.Add(p);

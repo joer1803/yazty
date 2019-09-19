@@ -160,7 +160,7 @@
         <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="13" Grid.Row="0" FontSize="18"/>
         <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20"/>
         <Button x:Name="btndone" Content="Nästa spelare" Grid.Column="13" HorizontalAlignment="Left" Grid.Row="14" VerticalAlignment="Top" Width="278" Height="68" Grid.RowSpan="2" Click="Button_Click_1" FontSize="24"/>
-        <Label x:Name="lblactiveplayer" Grid.ColumnSpan="2" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="1,0,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="240" FontSize="24"/>
+        <Label x:Name="lblActivePlayer" Grid.ColumnSpan="2" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="1,0,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="240" FontSize="24"/>
 
 
 
