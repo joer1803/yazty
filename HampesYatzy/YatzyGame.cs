@@ -8,6 +8,12 @@ namespace HampesYatzy
 {
     class YatzyGame
     {
+
+        public YatzyGame()
+        {
+            Dice = new List<Die>();
+        }
+
         public int GameId { get; set; }
         public DateTime StartTime { get; set; }
         public List<Player> Players { get; set; }
