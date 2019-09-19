@@ -24,7 +24,8 @@ namespace HampesYatzy
         {
             InitializeComponent();
             gameLogic = new GameLogic(gameId);
-            DataContext = this;
+            DataContext = this;           
+            UpdatePlayer();
         }
     
         //private void Dice()
@@ -93,6 +94,41 @@ namespace HampesYatzy
             {
                 diceFrames[i].Source = diceImages[dice[i].Value-1];
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            UpdatePlayer();
+        }
+
+        public void UpdatePlayer()
+        {
+            lblactiveplayer.Content = gameLogic.GetActivePlayer().Nickname;
+        }
+        
+        private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
+        {
+            hold_diceOne.IsEnabled = false;
+        }
+
+        private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
+        {
+            hold_diceTwo.IsEnabled = false;
+        }
+
+        private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
+        {
+            hold_diceThree.IsEnabled = false;
+        }
+
+        private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
+        {
+            hold_diceFour.IsEnabled = false;
+        }
+
+        private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
+        {
+            hold_diceFive.IsEnabled = false;
         }
     }
 }
