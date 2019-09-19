@@ -101,25 +101,6 @@ namespace HampesYatzy
             return game.Dice;
         }
 
-        //A method to keep track of total score
-        //A method to keep track of upper score
-
-        //Add dices when the same number is needed, the upper part of yatzy
-        //public int AddUpDices(int DieNumber, Dice[] myDice)
-        //{
-        //    int Sum = 0;
-
-        //    for (int i = 0; i < 5; i++)
-        //    {
-        //        if (myDice[i].RollNumber == DieNumber)
-        //        {
-        //            Sum += DieNumber;
-        //        }
-        //    }
-
-        //    return Sum;
-        //}
-
         public int GetScore(int category, int[] dice)
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
