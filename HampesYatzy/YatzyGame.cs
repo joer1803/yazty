@@ -12,6 +12,7 @@ namespace HampesYatzy
         public YatzyGame()
         {
             Dice = new List<Die>();
+            for(int i=0; i<5)
         }
 
         public int GameId { get; set; }

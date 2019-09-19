@@ -129,5 +129,11 @@ namespace HampesYatzy
         {
             hold_diceFive.IsEnabled = false;
         }
+
+        private void Trow_dice_Click(object sender, RoutedEventArgs e)
+        {
+            gameLogic.RollDice();
+            UpdateDice();
+        }
     }
 }

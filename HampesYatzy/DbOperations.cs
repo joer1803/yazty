@@ -15,13 +15,13 @@ namespace HampesYatzy
             var plist = GetAllPlayers();
             var busylist = GetInGamePlayers();
             //List<InGamePlayer> freeList = new List<InGamePlayer>();
-            for (int i = 0; i < plist.Count; i++)
+            for (int i = 0; i < busylist.Count; i++)
             {
-                for (int j = 0; j < busylist.Count; j++)
+                for (int j = 0; j < plist.Count; j++)
                 {
-                    if (plist[i].Id == busylist[j].Id)
+                    if (plist[j].Id == busylist[i].Id)
                     {
-                        plist.Remove(plist[i]);
+                        plist.Remove(plist[j]);
                     }
                 }
             }
