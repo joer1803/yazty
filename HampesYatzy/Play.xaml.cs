@@ -63,7 +63,7 @@ namespace HampesYatzy
         {
             this.Close();
         }
-        private List<Image> MakeDiceList()
+        private List<Image> MakeImageList()
         {
             List<Image> dices = new List<Image>();
             dices.Add(diceOne);
@@ -86,7 +86,7 @@ namespace HampesYatzy
         private void UpdateDice()
         {
             List<BitmapImage> diceImages = MakeDiceImageList();
-            List<Image> diceFrames = MakeDiceList();
+            List<Image> diceFrames = MakeImageList();
             List<Die> dice = gameLogic.GetDice();
 
             for (int i = 0; i < diceFrames.Count;i++)

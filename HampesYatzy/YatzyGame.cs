@@ -14,7 +14,8 @@ namespace HampesYatzy
             Dice = new List<Die>();
             for(int i=0; i<5; i++)
             {
-
+                Die die = new Die();
+                Dice.Add(die);
             }
         }
 

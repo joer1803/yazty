@@ -85,7 +85,7 @@ namespace HampesYatzy
             Random rnd = new Random();
             if (throws != 3)
             {
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     if (game.Dice[i].Hold != true)
                     {
