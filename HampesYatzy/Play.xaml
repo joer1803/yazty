@@ -140,19 +140,19 @@
         </StackPanel>
 
 
-        <Image x:Name="diceOne" Height="100" Width="100" Grid.Column="7" Grid.Row="8"/>
+        <Image x:Name="diceOne" Height="100" Width="100" Grid.Column="7" Grid.Row="8" Grid.RowSpan="3"/>
         <Button x:Name="hold_diceOne" Content="Spara" Grid.Column="7" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click"/>
 
-        <Image x:Name="diceTwo" Height="100" Width="100" Grid.Column="8" Grid.Row="8"/>
+        <Image x:Name="diceTwo" Height="100" Width="100" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3"/>
         <Button x:Name="hold_diceTwo" Content="Spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceTwo_Click"/>
 
-        <Image x:Name="diceThree" Height="100" Width="100" Grid.Column="9" Grid.Row="8"/>
+        <Image x:Name="diceThree" Height="100" Width="100" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3"/>
         <Button x:Name="hold_diceThree" Content="Spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceThree_Click"/>
 
-        <Image x:Name="diceFour" Height="100" Width="100" Grid.Column="10" Grid.Row="8"/>
+        <Image x:Name="diceFour" Height="100" Width="100" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3"/>
         <Button x:Name="hold_diceFour" Content="Spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFour_Click"/>
 
-        <Image x:Name="diceFive" Height="100" Width="100" Grid.Column="11" Grid.Row="8"/>
+        <Image x:Name="diceFive" Height="100" Width="100" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3"/>
         <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFive_Click"/>
 
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24" Click="Trow_dice_Click"/>
@@ -161,8 +161,5 @@
         <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20"/>
         <Button x:Name="btndone" Content="Nästa spelare" Grid.Column="13" HorizontalAlignment="Left" Grid.Row="14" VerticalAlignment="Top" Width="278" Height="68" Grid.RowSpan="2" Click="Button_Click_1" FontSize="24"/>
         <Label x:Name="lblActivePlayer" Grid.ColumnSpan="5" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="89,0,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="472" FontSize="24"/>
-
-
-
     </Grid>
 </Window>
