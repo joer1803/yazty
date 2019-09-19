@@ -142,72 +142,79 @@ namespace HampesYatzy
             switch (category)
 
             {
-                case 1:
-                    activePlayer.ScoreSheet.Ones = GetScore(1,);
+                case Ones:
+                    activePlayer.ScoreSheet.Ones = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 2:
-                    activePlayer.ScoreSheet.Twos = GetScore(2,);
+                case Twos:
+                    activePlayer.ScoreSheet.Twos = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 3:
-                    activePlayer.ScoreSheet.Threes = GetScore(3,);
+                case Threes:
+                    activePlayer.ScoreSheet.Threes = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 4:
-                    activePlayer.ScoreSheet.Fours = GetScore(4,);
+                case Fours:
+                    activePlayer.ScoreSheet.Fours = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 5:
-                    activePlayer.ScoreSheet.Fives = GetScore(5,);
+                case Fives:
+                    activePlayer.ScoreSheet.Fives = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 6:
-                    activePlayer.ScoreSheet.Sixes = GetScore(6,);
+                case Sixes:
+                    activePlayer.ScoreSheet.Sixes = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 7:
-                    activePlayer.ScoreSheet.Bonus = GetScore(7,);
+                case OnePair:
+                    activePlayer.ScoreSheet.OnePair = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 8:
-                    activePlayer.ScoreSheet.OnePair = GetScore(8,);
+                case TwoPair:
+                    activePlayer.ScoreSheet.TwoPair = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 9:
-                    activePlayer.ScoreSheet.TwoPair = GetScore(9,);
+                case ThreeOfAKind:
+                    activePlayer.ScoreSheet.ThreeOfAKind = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 10:
-                    activePlayer.ScoreSheet.ThreeOfAKind = GetScore(10,);
+                case FourOfAKind:
+                    activePlayer.ScoreSheet.FourOfAKind = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 11:
-                    activePlayer.ScoreSheet.FourOfAKind = GetScore(11,);
+                case SmallStraight:
+                    activePlayer.ScoreSheet.SmallStraight = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 12:
-                    activePlayer.ScoreSheet.SmallStraight = GetScore(12,);
+                case BigStraight:
+                    activePlayer.ScoreSheet.BigStraight = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 13:
-                    activePlayer.ScoreSheet.BigStraight = GetScore(13,);
+                case FullHouse:
+                    activePlayer.ScoreSheet.FullHouse = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 14:
-                    activePlayer.ScoreSheet.FullHouse = GetScore(14,);
+                case Chance:
+                    activePlayer.ScoreSheet.Chance = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
 
-                case 15:
-                    activePlayer.ScoreSheet.Chance = GetScore(15,);
-                    break;
-
-                case 16:
-                    activePlayer.ScoreSheet.Yatzy = GetScore(16,);
-                    break;
-
-                case 17:
-                    activePlayer.ScoreSheet.Sum = GetScore(17,);
+                case Yatzy:
+                    activePlayer.ScoreSheet.Yatzy = points;
+                    activePlayer.ScoreSheet.Categories[category - 1] = true;
                     break;
             }
         }
