@@ -137,6 +137,82 @@ namespace HampesYatzy
             }
         }
 
+        public void SetScore(int category, int points)
+        {
+            switch (category)
+
+            {
+                case 1:
+                    activePlayer.ScoreSheet.Ones = GetScore(1,);
+                    break;
+
+                case 2:
+                    activePlayer.ScoreSheet.Twos = GetScore(2,);
+                    break;
+
+                case 3:
+                    activePlayer.ScoreSheet.Threes = GetScore(3,);
+                    break;
+
+                case 4:
+                    activePlayer.ScoreSheet.Fours = GetScore(4,);
+                    break;
+
+                case 5:
+                    activePlayer.ScoreSheet.Fives = GetScore(5,);
+                    break;
+
+                case 6:
+                    activePlayer.ScoreSheet.Sixes = GetScore(6,);
+                    break;
+
+                case 7:
+                    activePlayer.ScoreSheet.Bonus = GetScore(7,);
+                    break;
+
+                case 8:
+                    activePlayer.ScoreSheet.OnePair = GetScore(8,);
+                    break;
+
+                case 9:
+                    activePlayer.ScoreSheet.TwoPair = GetScore(9,);
+                    break;
+
+                case 10:
+                    activePlayer.ScoreSheet.ThreeOfAKind = GetScore(10,);
+                    break;
+
+                case 11:
+                    activePlayer.ScoreSheet.FourOfAKind = GetScore(11,);
+                    break;
+
+                case 12:
+                    activePlayer.ScoreSheet.SmallStraight = GetScore(12,);
+                    break;
+
+                case 13:
+                    activePlayer.ScoreSheet.BigStraight = GetScore(13,);
+                    break;
+
+                case 14:
+                    activePlayer.ScoreSheet.FullHouse = GetScore(14,);
+                    break;
+
+                case 15:
+                    activePlayer.ScoreSheet.Chance = GetScore(15,);
+                    break;
+
+                case 16:
+                    activePlayer.ScoreSheet.Yatzy = GetScore(16,);
+                    break;
+
+                case 17:
+                    activePlayer.ScoreSheet.Sum = GetScore(17,);
+                    break;
+            }
+        }
+
+
         private int CountNumbers(int category, int[] dice)
         {
             int sum = 0;
