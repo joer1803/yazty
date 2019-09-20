@@ -61,14 +61,6 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-        }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
@@ -84,17 +76,7 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void Image_MouseEnter_1(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void NewUsertxtblock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void Image_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
 
         }

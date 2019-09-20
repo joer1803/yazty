@@ -59,6 +59,7 @@
 
         <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click"/>
         <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click"/>
-       
+        <Image Grid.Column="11" Grid.Row="1" Source="Resources/Questionmark.png" IsMouseDirectlyOverChanged="Image_IsMouseDirectlyOverChanged"/>
+        <Label Content="Hur spelar man Yatzy" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="22"/>
     </Grid>
 </Window>
