@@ -93,5 +93,10 @@ namespace HampesYatzy
         {
 
         }
+
+        private void NewUsertxtblock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
