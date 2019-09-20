@@ -93,6 +93,9 @@
       <DependentUpon>Rating.xaml</DependentUpon>
     </Compile>
     <Compile Include="GameLogic.cs" />
+    <Compile Include="Tutorial.xaml.cs">
+      <DependentUpon>Tutorial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="YatzyGame.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Rating.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tutorial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

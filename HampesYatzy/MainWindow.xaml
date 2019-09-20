@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
         Title="Meny" Height="768" Width="1366">
-   
+
     <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -40,7 +40,7 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
-                <MenuItem Header="Meny" Click="MenuItem_Click" />
+                <MenuItem Header="Meny"  />
                 <MenuItem Header="Topplista" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Skapa användare" Click="MenuItem_Click_2"/>
             </Menu>
@@ -59,7 +59,9 @@
 
         <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click"/>
         <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click"/>
-        <Image Grid.Column="11" Grid.Row="1" Source="Resources/Questionmark.png" IsMouseDirectlyOverChanged="Image_IsMouseDirectlyOverChanged"/>
+        <Image Grid.Column="10" Grid.Row="1" Source="Resources/Questionmark.png" IsMouseDirectlyOverChanged="Image_IsMouseDirectlyOverChanged" Margin="94,0,0,29" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <Label Content="Hur spelar man Yatzy" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="22"/>
+        <Viewbox Grid.Column="5" HorizontalAlignment="Right" Height="573" Margin="37,0,0,0" Grid.Row="2" Grid.RowSpan="10" VerticalAlignment="Top" Width="646" Grid.ColumnSpan="6" Visibility="Hidden"/>
+        <Frame x:Name="Tutorial" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="11" NavigationUIVisibility="Hidden" Margin="10,0,0,0" MouseLeave="Tutorial_MouseLeave"/>
     </Grid>
 </Window>

@@ -78,7 +78,14 @@ namespace HampesYatzy
 
         private void Image_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
+            Tutorial.Content = new Tutorial();
+        }
 
+        private void Tutorial_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.Close();
+            //felkod. Stänger hela fönstrert. Vill endast manövrera tillbaka till mainwindow.
+           
         }
     }
 }
