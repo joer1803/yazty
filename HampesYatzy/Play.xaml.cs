@@ -222,7 +222,7 @@ namespace HampesYatzy
 
         private void end_game_Click(object sender, RoutedEventArgs e)
         {
-            DbOperations.DeleteGame();
+            //DbOperations.DeleteGame();
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();
             this.Close();
