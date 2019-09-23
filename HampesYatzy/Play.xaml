@@ -167,14 +167,15 @@
         <Button x:Name="btn_select_fours" Content="Välj" Grid.Column="6" Grid.Row="6" FontSize="20" Click="Btn_select_fours_Click"/>
         <Button x:Name="btn_select_fives" Content="Välj" Grid.Column="6" Grid.Row="7" FontSize="20" Click="Btn_select_fives_Click"/>
         <Button x:Name="btn_select_sixes" Content="Välj" Grid.Column="6" Grid.Row="8" FontSize="20" Click="Btn_select_sixes_Click"/>
+        <Button x:Name="btn_select_bonus" Content="Välj" Grid.Column="6" Grid.Row="10" FontSize="20" Click="Btn_select_ones_Click" />
         <Button x:Name="btn_select_pair" Content="Välj" Grid.Column="6" Grid.Row="11" FontSize="20" Click="Btn_select_pair_Click"/>
         <Button x:Name="btn_select_twoPair" Content="Välj" Grid.Column="6" Grid.Row="12" FontSize="20" Click="Btn_select_twoPair_Click"/>
         <Button x:Name="btn_select_threeOfAKind" Content="Välj" Grid.Column="6" Grid.Row="13" FontSize="20" Click="Btn_select_threeOfAKind_Click"/>
         <Button x:Name="btn_select_fourOfAKind" Content="Välj" Grid.Column="6" Grid.Row="14" FontSize="20" Click="Btn_select_fourOfAKind_Click"/>
         <Button x:Name="btn_select_smallStraight" Content="Välj" Grid.Column="6" Grid.Row="15" FontSize="20" Click="Btn_select_smallStraight_Click"/>
-        <Button x:Name="btn_select_BigStraight" Content="Välj" Grid.Column="6" Grid.Row="16" FontSize="20" Click="Btn_select_BigStraight_Click"/>
-        <Button x:Name="btn_select_FullHouse" Content="Välj" Grid.Column="6" Grid.Row="17" FontSize="20" Click="Btn_select_FullHouse_Click"/>
-        <Button x:Name="btn_select_Chance" Content="Välj" Grid.Column="6" Grid.Row="18" FontSize="20" Click="Btn_select_Chance_Click"/>
-        <Button x:Name="btn_select_Yatzy" Content="Välj" Grid.Column="6" Grid.Row="19" FontSize="20" Click="Btn_select_Yatzy_Click"/>
+        <Button x:Name="btn_select_bigStraight" Content="Välj" Grid.Column="6" Grid.Row="16" FontSize="20" Click="Btn_select_BigStraight_Click"/>
+        <Button x:Name="btn_select_fullHouse" Content="Välj" Grid.Column="6" Grid.Row="17" FontSize="20" Click="Btn_select_FullHouse_Click"/>
+        <Button x:Name="btn_select_chance" Content="Välj" Grid.Column="6" Grid.Row="18" FontSize="20" Click="Btn_select_Chance_Click"/>
+        <Button x:Name="btn_select_yatzy" Content="Välj" Grid.Column="6" Grid.Row="19" FontSize="20" Click="Btn_select_Yatzy_Click"/>
     </Grid>
 </Window>
