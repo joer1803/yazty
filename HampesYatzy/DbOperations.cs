@@ -176,7 +176,7 @@ namespace HampesYatzy
             return gameId;
         }
 
-        private static void CreateGamePlayers(List<Player> players, DateTime currentDateTime,int gameId)
+        private static void CreateGamePlayers(List<Player> players, DateTime currentDateTime, int gameId)
         {
             string stmtTwo = "INSERT INTO game_player(game_id, player_id) VALUES(@gameId, @player)";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -265,5 +265,25 @@ namespace HampesYatzy
             }
             return $"{nickName} är redo att spela yatzy!";
         }
+
+
+        public static void DeleteGame(int gameId)
+        {
+            gameId = 0;
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["DbConn"].ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "DELETE FROM game WHERE game_id = @gameId";
+                    cmd.Parameters.AddWithValue("game_id", gameId);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+
+            }
+        }
     }
+
 }
