@@ -99,10 +99,6 @@ namespace HampesYatzy
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            UpdatePlayer();
-        }
 
         private void UpdatePlayer()
         {
@@ -152,6 +148,81 @@ namespace HampesYatzy
         {
             gameLogic.RollDice();
             UpdateDice();
+        }
+
+        private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_twos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_threes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_fours_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_fives_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_sixes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_pair_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_twoPair_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_threeOfAKind_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_fourOfAKind_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_smallStraight_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_BigStraight_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_FullHouse_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_Chance_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

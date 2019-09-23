@@ -140,26 +140,41 @@
         </StackPanel>
 
 
-        <Image x:Name="diceOne" Grid.Column="7" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1"/>
-        <Button x:Name="hold_diceOne" Content="Spara" Grid.Column="7" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click"/>
+        <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1"/>
+        <Button x:Name="hold_diceOne" Content="Spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click"/>
 
-        <Image x:Name="diceTwo" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1"/>
-        <Button x:Name="hold_diceTwo" Content="Spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceTwo_Click"/>
+        <Image x:Name="diceTwo" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1"/>
+        <Button x:Name="hold_diceTwo" Content="Spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceTwo_Click"/>
 
-        <Image x:Name="diceThree" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1"/>
-        <Button x:Name="hold_diceThree" Content="Spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceThree_Click"/>
+        <Image x:Name="diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1"/>
+        <Button x:Name="hold_diceThree" Content="Spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceThree_Click"/>
 
-        <Image x:Name="diceFour" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="10,1"/>
-        <Button x:Name="hold_diceFour" Content="Spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFour_Click"/>
+        <Image x:Name="diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="10,1"/>
+        <Button x:Name="hold_diceFour" Content="Spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFour_Click"/>
 
-        <Image x:Name="diceFive" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1"/>
-        <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFive_Click"/>
+        <Image x:Name="diceFive" Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1"/>
+        <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="12" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFive_Click"/>
 
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24" Click="Trow_dice_Click"/>
         <Label x:Name="count_trow" Content="Du har kast kvar :" Grid.Column="13" Grid.Row="17" FontSize="18"/>
         <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="13" Grid.Row="0" FontSize="18"/>
         <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20"/>
-        <Button x:Name="btndone" Content="Nästa spelare" Grid.Column="13" HorizontalAlignment="Left" Grid.Row="14" VerticalAlignment="Top" Width="278" Height="68" Grid.RowSpan="2" Click="Button_Click_1" FontSize="24"/>
         <Label x:Name="lblActivePlayer" Grid.ColumnSpan="5" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="89,0,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="472" FontSize="24"/>
+        
+        <Button x:Name="btn_select_ones" Content="Välj" Grid.Column="6" Grid.Row="3" FontSize="20" Click="Btn_select_ones_Click" />
+        <Button x:Name="btn_select_twos" Content="Välj" Grid.Column="6" Grid.Row="4" FontSize="20" Click="Btn_select_twos_Click" />
+        <Button x:Name="btn_select_threes" Content="Välj" Grid.Column="6" Grid.Row="5" FontSize="20" Click="Btn_select_threes_Click"/>
+        <Button x:Name="btn_select_fours" Content="Välj" Grid.Column="6" Grid.Row="6" FontSize="20" Click="Btn_select_fours_Click"/>
+        <Button x:Name="btn_select_fives" Content="Välj" Grid.Column="6" Grid.Row="7" FontSize="20" Click="Btn_select_fives_Click"/>
+        <Button x:Name="btn_select_sixes" Content="Välj" Grid.Column="6" Grid.Row="8" FontSize="20" Click="Btn_select_sixes_Click"/>
+        <Button x:Name="btn_select_pair" Content="Välj" Grid.Column="6" Grid.Row="11" FontSize="20" Click="Btn_select_pair_Click"/>
+        <Button x:Name="btn_select_twoPair" Content="Välj" Grid.Column="6" Grid.Row="12" FontSize="20" Click="Btn_select_twoPair_Click"/>
+        <Button x:Name="btn_select_threeOfAKind" Content="Välj" Grid.Column="6" Grid.Row="13" FontSize="20" Click="Btn_select_threeOfAKind_Click"/>
+        <Button x:Name="btn_select_fourOfAKind" Content="Välj" Grid.Column="6" Grid.Row="14" FontSize="20" Click="Btn_select_fourOfAKind_Click"/>
+        <Button x:Name="btn_select_smallStraight" Content="Välj" Grid.Column="6" Grid.Row="15" FontSize="20" Click="Btn_select_smallStraight_Click"/>
+        <Button x:Name="btn_select_BigStraight" Content="Välj" Grid.Column="6" Grid.Row="16" FontSize="20" Click="Btn_select_BigStraight_Click"/>
+        <Button x:Name="btn_select_FullHouse" Content="Välj" Grid.Column="6" Grid.Row="17" FontSize="20" Click="Btn_select_FullHouse_Click"/>
+        <Button x:Name="btn_select_Chance" Content="Välj" Grid.Column="6" Grid.Row="18" FontSize="20" Click="Btn_select_Chance_Click"/>
+        <Button x:Name="btn_select_Yatzy" Content="Välj" Grid.Column="6" Grid.Row="19" FontSize="20" Click="Btn_select_Yatzy_Click"/>
     </Grid>
 </Window>
