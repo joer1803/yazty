@@ -101,7 +101,7 @@ namespace HampesYatzy
             return game.Dice;
         }
 
-        public int GetScore(int category, int[] dice)
+        public int GetScore(int category, List<Die> dice)
         {
             switch (category) //väljer metod beroende på kategori. 1or - 6or är default
             {
@@ -220,12 +220,12 @@ namespace HampesYatzy
         }
 
 
-        private int CountNumbers(int category, int[] dice)
+        private int CountNumbers(int category, List<Die> dice)
         {
             int sum = 0;
-            for (int i = 0; i < dice.Length; i++)
+            for (int i = 0; i < dice.Count; i++)
             {
-                if (dice[i] == category)
+                if (dice[i].Value == category)
                 {
                     sum += category;
                 }
@@ -233,20 +233,20 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckThreeOfAKind(int[] dice)
+        private int CheckThreeOfAKind(List<Die> dice)
         {
             int sum = 0;
             int countSame = 0;
-            for (int i = 0; i < dice.Length; i++)
+            for (int i = 0; i < dice.Count; i++)
             {
-                for (int j = 0; j < dice.Length; j++)
+                for (int j = 0; j < dice.Count; j++)
                 {
                     if (dice[i] == dice[j])
                     {
                         countSame++;
                         if (countSame == 3)
                         {
-                            sum = dice[i] * 3;
+                            sum = dice[i].Value * 3;
                         }
                     }
                 }
@@ -255,20 +255,20 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckFourOfAKind(int[] dice)
+        private int CheckFourOfAKind(List<Die> dice)
         {
             int sum = 0;
             int countSame = 0;
-            for (int i = 0; i < dice.Length; i++)
+            for (int i = 0; i < dice.Count; i++)
             {
-                for (int j = 0; j < dice.Length; j++)
+                for (int j = 0; j < dice.Count; j++)
                 {
                     if (dice[i] == dice[j])
                     {
                         countSame++;
                         if (countSame == 4)
                         {
-                            sum = dice[i] * 4;
+                            sum = dice[i].Value * 4;
                         }
                     }
                 }
@@ -277,15 +277,15 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckSmallStraight(int[] dice)
+        private int CheckSmallStraight(List<Die> dice)
         {
             int sum = 0;
             int count = 0;
 
-            Array.Sort(dice);
-            for (int i = 0; i < dice.Length; i++)
+            Array.Sort(dice.ToArray());
+            for (int i = 0; i < dice.Count; i++)
             {
-                if (dice[count] < dice[i] && dice[i] != 6)
+                if (dice[count].Value < dice[i].Value && dice[i].Value != 6)
                 {
                     count++;
                 }
@@ -297,15 +297,15 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckBigStraight(int[] dice)
+        private int CheckBigStraight(List<Die> dice)
         {
             int sum = 0;
             int count = 0;
 
-            Array.Sort(dice);
-            for (int i = 0; i < dice.Length; i++)
+            Array.Sort(dice.ToArray());
+            for (int i = 0; i < dice.Count; i++)
             {
-                if (dice[count] < dice[i] && dice[i] != 1)
+                if (dice[count].Value < dice[i].Value && dice[i].Value != 1)
                 {
                     count++;
                 }
@@ -317,22 +317,22 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckOnePair(int[] dice)
+        private int CheckOnePair(List<Die> dice)
         {
             int sum = 0;
             int countSame = 0;
-            Array.Sort(dice);
-            Array.Reverse(dice);
-            for (int i = 0; i < dice.Length; i++)
+            Array.Sort(dice.ToArray());
+            Array.Reverse(dice.ToArray());
+            for (int i = 0; i < dice.Count; i++)
             {
-                for (int j = 0; j < dice.Length; j++)
+                for (int j = 0; j < dice.Count; j++)
                 {
                     if (dice[i] == dice[j])
                     {
                         countSame++;
                         if (countSame == 2)
                         {
-                            sum = dice[i] * 2;
+                            sum = dice[i].Value * 2;
                         }
                     }
                 }
@@ -341,26 +341,26 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckTwoPair(int[] dice)
+        private int CheckTwoPair(List<Die> dice)
         {
             int sum = 0;
             int countSame = 0;
             int firstpair = 0;
-            for (int i = 0; i < dice.Length; i++)
+            for (int i = 0; i < dice.Count; i++)
             {
-                for (int j = 0; j < dice.Length; j++)
+                for (int j = 0; j < dice.Count; j++)
                 {
                     if (dice[i] == dice[j])
                     {
                         countSame++;
                         if (countSame == 2)
                         {
-                            if (firstpair != 0 && firstpair != dice[i])
+                            if (firstpair != 0 && firstpair != dice[i].Value)
                             {
-                                return sum += dice[i] * 2;
+                                return sum += dice[i].Value * 2;
                             }
-                            firstpair = dice[i];
-                            sum = dice[i] * 2;
+                            firstpair = dice[i].Value;
+                            sum = dice[i].Value * 2;
                         }
                     }
                 }
@@ -369,25 +369,25 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CountChance(int[] dice)
+        private int CountChance(List<Die> dice)
         {
             int sum = 0;
 
-            foreach (int die in dice)
+            foreach (Die die in dice)
             {
-                sum += die;
+                sum += die.Value;
             }
 
             return sum;
         }
 
-        private int CheckYatzy(int[] dice)
+        private int CheckYatzy(List<Die> dice)
         {
             int sum = 0;
             int countSame = 0;
-            for (int i = 0; i < dice.Length; i++)
+            for (int i = 0; i < dice.Count; i++)
             {
-                for (int j = 0; j < dice.Length; j++)
+                for (int j = 0; j < dice.Count; j++)
                 {
                     if (dice[i] == dice[j])
                     {
@@ -403,26 +403,26 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckFullHouse(int[] dice)
+        private int CheckFullHouse(List<Die> dice)
         {
             int sum = 0;
             int countSame = 0;
             int threeOfAKind = 0;
-            for (int i = 0; i < dice.Length; i++)
+            for (int i = 0; i < dice.Count; i++)
             {
-                for (int j = 0; j < dice.Length; j++)
+                for (int j = 0; j < dice.Count; j++)
                 {
                     if (dice[i] == dice[j])
                     {
                         countSame++;
                         if (countSame == 3)
                         {
-                            threeOfAKind = dice[i];
-                            sum = dice[i] * 3;
+                            threeOfAKind = dice[i].Value;
+                            sum = dice[i].Value * 3;
                         }
-                        else if (countSame == 2 && threeOfAKind != 0 && dice[i] != threeOfAKind)
+                        else if (countSame == 2 && threeOfAKind != 0 && dice[i].Value != threeOfAKind)
                         {
-                            return sum += dice[i] + dice[i];
+                            return sum += dice[i].Value + dice[i].Value;
                         }
                     }
                 }
@@ -430,6 +430,7 @@ namespace HampesYatzy
             }
             return sum;
         }
+
 
         private int BonusPointClassic(int totalUp)//Textblock or box for the total sum of 1-6 category goes inside the ()
         {
