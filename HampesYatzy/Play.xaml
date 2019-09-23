@@ -14,7 +14,7 @@
             <ColumnDefinition Width="34*"/>
             <ColumnDefinition Width="35*"/>
             <ColumnDefinition Width="33*"/>
-            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="67*"/>
             <ColumnDefinition Width="121*"/>
             <ColumnDefinition Width="121*"/>
             <ColumnDefinition Width="121*"/>
@@ -167,7 +167,6 @@
         <Button x:Name="btn_select_fours" Content="Välj" Grid.Column="6" Grid.Row="6" FontSize="20" Click="Btn_select_fours_Click"/>
         <Button x:Name="btn_select_fives" Content="Välj" Grid.Column="6" Grid.Row="7" FontSize="20" Click="Btn_select_fives_Click"/>
         <Button x:Name="btn_select_sixes" Content="Välj" Grid.Column="6" Grid.Row="8" FontSize="20" Click="Btn_select_sixes_Click"/>
-        
         <Button x:Name="btn_select_pair" Content="Välj" Grid.Column="6" Grid.Row="11" FontSize="20" Click="Btn_select_pair_Click"/>
         <Button x:Name="btn_select_twoPair" Content="Välj" Grid.Column="6" Grid.Row="12" FontSize="20" Click="Btn_select_twoPair_Click"/>
         <Button x:Name="btn_select_threeOfAKind" Content="Välj" Grid.Column="6" Grid.Row="13" FontSize="20" Click="Btn_select_threeOfAKind_Click"/>
