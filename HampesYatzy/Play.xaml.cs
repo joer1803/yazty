@@ -20,13 +20,14 @@ namespace HampesYatzy
     public partial class Play : Window
     {
         GameLogic gameLogic;
+
         public Play(int gameId)
         {
             InitializeComponent();
             gameLogic = new GameLogic(gameId);
             UpdatePlayer();
         }
-    
+
         //private void Dice()
         //{
         //    int nr = 1;
@@ -44,7 +45,7 @@ namespace HampesYatzy
             mainWindow.Show();
             this.Close();
         }
-        
+
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             Rating rating = new Rating();
@@ -63,6 +64,7 @@ namespace HampesYatzy
         {
             this.Close();
         }
+
         private List<Image> MakeImageList()
         {
             List<Image> dices = new List<Image>();
@@ -73,6 +75,7 @@ namespace HampesYatzy
             dices.Add(diceFive);
             return dices;
         }
+
         private List<BitmapImage> MakeDiceImageList()
         {
             List<BitmapImage> diceImages = new List<BitmapImage>();
@@ -83,15 +86,16 @@ namespace HampesYatzy
             }
             return diceImages;
         }
+
         private void UpdateDice()
         {
             List<BitmapImage> diceImages = MakeDiceImageList();
             List<Image> diceFrames = MakeImageList();
             List<Die> dice = gameLogic.GetDice();
 
-            for (int i = 0; i < diceFrames.Count;i++)
+            for (int i = 0; i < diceFrames.Count; i++)
             {
-                diceFrames[i].Source = diceImages[dice[i].Value-1];
+                diceFrames[i].Source = diceImages[dice[i].Value - 1];
             }
         }
 
@@ -104,30 +108,44 @@ namespace HampesYatzy
         {
             lblActivePlayer.Content = gameLogic.GetActivePlayer().Nickname;
         }
-        
+        private string CheckButton(int index)
+        {
+            if(gameLogic.GetDice()[index].Hold == true)
+            {
+                gameLogic.GetDice()[index].Hold = false;
+                return "Spara";
+            }
+            else
+            {
+                gameLogic.GetDice()[index].Hold = true;
+                return "Släpp";
+
+            }
+        }
+
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceOne.IsEnabled = false;
+            hold_diceOne.Content = CheckButton(0);
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceTwo.IsEnabled = false;
+            hold_diceTwo.Content = CheckButton(1);
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceThree.IsEnabled = false;
+            hold_diceThree.Content = CheckButton(2);
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceFour.IsEnabled = false;
+            hold_diceFour.Content = CheckButton(3);
         }
 
         private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceFive.IsEnabled = false;
+            hold_diceFive.Content = CheckButton(4);
         }
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
