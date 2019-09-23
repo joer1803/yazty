@@ -269,19 +269,15 @@ namespace HampesYatzy
 
         public static void DeleteGame(int gameId)
         {
-            gameId = 0;
-            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["DbConn"].ConnectionString))
+            string stmt = "DELETE FROM game WHERE game_id = @gameId";
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand())
+                using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
-                    cmd.Connection = conn;
-                    cmd.CommandText = "DELETE FROM game WHERE game_id = @gameId";
-                    cmd.Parameters.AddWithValue("game_id", gameId);
+                    cmd.Parameters.AddWithValue("gameId", gameId);
                     cmd.ExecuteNonQuery();
                 }
-                conn.Close();
-
             }
         }
     }
