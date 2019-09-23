@@ -76,17 +76,10 @@ namespace HampesYatzy
             this.Close();
         }
 
-        //private void Image_MousesEnter(object sender, DependencyPropertyChangedEventArgs e)
-        //{
-        //    Tutorial.Content = new Tutorial();
-        //}
-
         private void Tutorial_MouseLeave(object sender, MouseEventArgs e)
         {
             Tutorial.Content = null;
             
-            //felkod. Stänger hela fönstrert. Vill endast manövrera tillbaka till mainwindow.
-           
         }
 
         private void Image_MouseEnter(object sender, MouseEventArgs e)

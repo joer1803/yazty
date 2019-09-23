@@ -9,19 +9,19 @@
     <Grid Background="#FF389355" RenderTransformOrigin="0.378,0.528" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="156*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="34*"/>
             <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="68*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="121*"/>
             <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="121*"/>
             <ColumnDefinition Width="71*"/>
-            <ColumnDefinition Width="277*"/>
+            <ColumnDefinition Width="278*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -47,15 +47,15 @@
             <RowDefinition Height="35*"/>
             <RowDefinition Height="35*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="15" Margin="0,0,0.333,0">
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="15">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
                 <MenuItem Header="Spela Yatzy" Click="MenuItem_Click" />
                 <MenuItem Header="Topplista" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Skapa användare" Click="MenuItem_Click_2"/>
             </Menu>
         </StackPanel>
-        <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="19" Margin="0,0.333,67.667,-0.333"/>
-        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_one" Margin="0.667,0.333,0.667,33.667">
+        <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="19" Margin="0,0,68,0"/>
+        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="17" x:Name="player_one" Margin="1,0">
             <TextBlock x:Name="playerOne_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
             <TextBlock x:Name="playerOne_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
             <TextBlock x:Name="playerOne_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
@@ -76,7 +76,7 @@
             <TextBlock x:Name="playerOne_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" x:Name="player_two" Grid.ColumnSpan="3" Margin="34.667,0.333,34.333,33.667">
+        <StackPanel Grid.Row="3" Grid.Column="3" Grid.RowSpan="17" x:Name="player_two" Margin="0,0,2,0">
             <TextBlock x:Name="playerTwo_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
             <TextBlock x:Name="playerTwo_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
             <TextBlock x:Name="playerTwo_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
@@ -97,7 +97,7 @@
             <TextBlock x:Name="playerTwo_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="4" Grid.RowSpan="18" x:Name="player_three" Grid.ColumnSpan="2" Margin="0,0.333,34.667,33.667">
+        <StackPanel Grid.Row="3" Grid.Column="4" Grid.RowSpan="17" x:Name="player_three" Margin="0,0,3,0">
             <TextBlock x:Name="playerThree_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
             <TextBlock x:Name="playerThree_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
             <TextBlock x:Name="playerThree_threes" Text="{Binding Path = Player.ScoreSheet.Three}" Height="34" Width="34"/>
@@ -118,7 +118,7 @@
             <TextBlock x:Name="playerThree_total" Text="{Binding Path = Player.ScoreSheet.Score}" Height="34" Width="34"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="5" Grid.RowSpan="18" x:Name="player_four" Margin="0.667,0.333,67.667,33.667" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="3" Grid.Column="5" Grid.RowSpan="17" x:Name="player_four" Margin="1,0,68,0" Grid.ColumnSpan="2">
             <TextBlock x:Name="playerFour_ones" Text="{Binding Path = Player.ScoreSheet.Ones}" Height="34" Width="34"/>
             <TextBlock x:Name="playerFour_twos" Text="{Binding Path = Player.ScoreSheet.Twos}" Height="34" Width="34"/>
             <TextBlock x:Name="playerFour_threes" Text="{Binding Path = Player.ScoreSheet.Threes}" Height="34" Width="34"/>
@@ -140,19 +140,19 @@
         </StackPanel>
 
 
-        <Image x:Name="diceOne" Height="100" Width="100" Grid.Column="7" Grid.Row="8" Grid.RowSpan="3"/>
+        <Image x:Name="diceOne" Grid.Column="7" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1"/>
         <Button x:Name="hold_diceOne" Content="Spara" Grid.Column="7" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click"/>
 
-        <Image x:Name="diceTwo" Height="100" Width="100" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3"/>
+        <Image x:Name="diceTwo" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1"/>
         <Button x:Name="hold_diceTwo" Content="Spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceTwo_Click"/>
 
-        <Image x:Name="diceThree" Height="100" Width="100" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3"/>
+        <Image x:Name="diceThree" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1"/>
         <Button x:Name="hold_diceThree" Content="Spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceThree_Click"/>
 
-        <Image x:Name="diceFour" Height="100" Width="100" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3"/>
+        <Image x:Name="diceFour" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="10,1"/>
         <Button x:Name="hold_diceFour" Content="Spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFour_Click"/>
 
-        <Image x:Name="diceFive" Height="100" Width="100" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3"/>
+        <Image x:Name="diceFive" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1"/>
         <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFive_Click"/>
 
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24" Click="Trow_dice_Click"/>

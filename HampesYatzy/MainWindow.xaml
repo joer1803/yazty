@@ -63,5 +63,6 @@
         <Label Content="Hur spelar man Yatzy" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="22"/>
         <Viewbox Grid.Column="5" HorizontalAlignment="Right" Height="573" Margin="37,0,0,0" Grid.Row="2" Grid.RowSpan="10" VerticalAlignment="Top" Width="646" Grid.ColumnSpan="6" Visibility="Hidden"/>
         <Frame x:Name="Tutorial" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="11" NavigationUIVisibility="Hidden" Margin="10,0,0,0" MouseLeave="Tutorial_MouseLeave"/>
+        <Label x:Name="error_lbl" Visibility="Hidden" Content="Du måste välja spelare" Grid.Column="6" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="26" Grid.ColumnSpan="3" Height="47" Width="270"/>
     </Grid>
 </Window>
