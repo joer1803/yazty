@@ -33,7 +33,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="10">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
-                <MenuItem Header="Meny" Click="MenuItem_Click_1" FontSize="22"/>
+                <MenuItem Header="Spela Yatzy" Click="MenuItem_Click_1" FontSize="22"/>
                 <MenuItem Header="Topplista" Click="MenuItem_Click" FontSize="22"/>
                 <MenuItem Header="Skapa användare" FontSize="22"/>
             </Menu>
