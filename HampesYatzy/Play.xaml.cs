@@ -32,8 +32,6 @@ namespace HampesYatzy
             CountTime();
         }
 
-
-
         //private void Dice()
         //{
         //    int nr = 1;
@@ -44,11 +42,6 @@ namespace HampesYatzy
         //    dice4.Source = image;
         //    dice5.Source = image;
         //}
-
-       
-
-
-
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -105,14 +98,14 @@ namespace HampesYatzy
             }
         }
 
-
         private void UpdatePlayer()
         {
             lblActivePlayer.Content = gameLogic.GetActivePlayer().Nickname;
         }
+
         private string CheckButton(int index)
         {
-            if(gameLogic.GetDice()[index].Hold == true)
+            if (gameLogic.GetDice()[index].Hold == true)
             {
                 gameLogic.GetDice()[index].Hold = false;
                 return "Spara";
@@ -121,7 +114,6 @@ namespace HampesYatzy
             {
                 gameLogic.GetDice()[index].Hold = true;
                 return "Släpp";
-
             }
         }
 
@@ -173,47 +165,45 @@ namespace HampesYatzy
         //private bool buttonYatzyWasClicked = false;
         private void UpdateScoreSheet()
         {
-            Player player = gameLogic.GetActivePlayer();
-            for (int i = 0; i < player_one_items.Items.Count-1; i++)
+            List<Player> players = gameLogic.GetPlayers();
+            for (int i = 0; i < players.Count; i++)
             {
-                for(int j = 0; j < player.ScoreSheet.Scores.Length; j++)
+                switch (i)
                 {
-                    TextBlock tblock = new TextBlock();
-                    tblock = (TextBlock)player_one_items.Items[i];
-                    if (i == 6)
-                    {
-                        tblock.Text = player.ScoreSheet.Sum.ToString();
-                    }
-                    else if (i == 7)
-                    {
-                        tblock.Text = player.ScoreSheet.Bonus.ToString();
-                    }
-                    else if (i == 17)
-                    {
-                        tblock.Text = player.ScoreSheet.TotScore.ToString();
-                    }
-                    else if (i > 7)
-                    {
-                        tblock.Text = player.ScoreSheet.Scores[i-2].ToString();
-                    }
-                    else
-                    {
-                        tblock.Text = player.ScoreSheet.Scores[i].ToString();
-                    }
+                    case 0:
+                        player_one_items.Items.Add(players[i]);
+                        break;
+                    case 1:
+                        player_two_items.Items.Add(players[i]);
+                        break;
+                    case 2:
+                        player_three_items.Items.Add(players[i]);
+                        break;
+                    case 3:
+                        player_four_items.Items.Add(players[i]);
+                        break;
                 }
-                
             }
             
-            
-
         }
+
         private void SendScore(int category)
         {
             gameLogic.SetScore(category);
             UpdateScoreSheet();
             NextTurn();
-
+            ResetDiceButtons();
         }
+        private void ResetDiceButtons()
+        {
+            string save = "Spara";
+            hold_diceOne.Content = save;
+            hold_diceTwo.Content = save;
+            hold_diceThree.Content = save;
+            hold_diceFour.Content = save;
+            hold_diceFive.Content = save;
+        }
+
         private void NextTurn()
         {
             gameLogic.NextPlayer();
@@ -325,7 +315,7 @@ namespace HampesYatzy
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 tbTime.Text = _time.ToString("c"); //namnge textblocket till "tbTime"
-                if (_time == TimeSpan.Zero) _timer.Stop();
+                        if (_time == TimeSpan.Zero) _timer.Stop();
                 _time = _time.Add(TimeSpan.FromSeconds(-1));
             }, Application.Current.Dispatcher);
 
@@ -354,6 +344,6 @@ namespace HampesYatzy
         //    }
 
         //}
-       
     }
 }
+    

@@ -26,7 +26,7 @@ namespace HampesYatzy
         int throws = 3;
         YatzyGame game;
         Player activePlayer;
-
+        
         public GameLogic(int gameId)
         {
             game = new YatzyGame();
@@ -34,6 +34,10 @@ namespace HampesYatzy
             game.StartTime = DateTime.Now;
             game.GameId = gameId;
             activePlayer = game.Players[0];
+        }
+        public List<Player> GetPlayers()
+        {
+            return game.Players;
         }
         private void CheckGameOver()
         {
@@ -70,7 +74,7 @@ namespace HampesYatzy
             int index = 0;
             for (int i = 0; i < game.Players.Count; i++)
             {
-                if (game.Players[i].Equals(game.Players.Count))
+                if (game.Players[i].Equals(activePlayer))
                 {
                     index = i;
                 }
@@ -81,8 +85,17 @@ namespace HampesYatzy
                 index = 0;
                 CheckGameOver();
             }
+            ResetDice();
             ResetThrows();
             activePlayer = game.Players[index];
+        }
+        private void ResetDice()
+        {
+            for(int i = 0; i < game.Dice.Count; i++)
+            {
+                game.Dice[i].Hold = false;
+                game.Dice[i].Value = 0;
+            }
         }
 
         public void RollDice()
@@ -328,8 +341,8 @@ namespace HampesYatzy
         {
             int sum = 0;
             int countSame = 0;
-            Array.Sort(dice.ToArray());
-            Array.Reverse(dice.ToArray());
+            dice.Sort();
+            dice.Reverse();
             for (int i = 0; i < dice.Count; i++)
             {
                 for (int j = 0; j < dice.Count; j++)
