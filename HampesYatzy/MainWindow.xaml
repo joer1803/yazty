@@ -47,7 +47,7 @@
         </StackPanel>
 
 
-        <Label Content="Välj dina motståndare (Minst 2st, Max 3st)" Width="auto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" FontSize="20"/>
+        <Label Content="Välj dig och dina motståndare (Max 4 spelare)" Width="auto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" FontSize="20"/>
         <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="8" Height="auto" FontSize="20" SelectionMode="Multiple" SelectionChanged="LstAvailable_SelectionChanged">
             <ListView.View>
                 <GridView>
