@@ -14,7 +14,7 @@
             <ColumnDefinition Width="34*"/>
             <ColumnDefinition Width="35*"/>
             <ColumnDefinition Width="33*"/>
-            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="67*"/>
             <ColumnDefinition Width="121*"/>
             <ColumnDefinition Width="121*"/>
             <ColumnDefinition Width="121*"/>
@@ -158,7 +158,7 @@
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24" Click="Trow_dice_Click"/>
         <Label x:Name="count_trow" Content="Du har kast kvar :" Grid.Column="13" Grid.Row="17" FontSize="18"/>
         <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="13" Grid.Row="0" FontSize="18"/>
-        <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20"/>
+        <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20" Click="end_game_Click"/>
         <Label x:Name="lblActivePlayer" Grid.ColumnSpan="5" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="89,0,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="472" FontSize="24"/>
         
         <Button x:Name="btn_select_ones" Content="Välj" Grid.Column="6" Grid.Row="3" FontSize="20" Click="Btn_select_ones_Click" />
@@ -167,7 +167,6 @@
         <Button x:Name="btn_select_fours" Content="Välj" Grid.Column="6" Grid.Row="6" FontSize="20" Click="Btn_select_fours_Click"/>
         <Button x:Name="btn_select_fives" Content="Välj" Grid.Column="6" Grid.Row="7" FontSize="20" Click="Btn_select_fives_Click"/>
         <Button x:Name="btn_select_sixes" Content="Välj" Grid.Column="6" Grid.Row="8" FontSize="20" Click="Btn_select_sixes_Click"/>
-        
         <Button x:Name="btn_select_pair" Content="Välj" Grid.Column="6" Grid.Row="11" FontSize="20" Click="Btn_select_pair_Click"/>
         <Button x:Name="btn_select_twoPair" Content="Välj" Grid.Column="6" Grid.Row="12" FontSize="20" Click="Btn_select_twoPair_Click"/>
         <Button x:Name="btn_select_threeOfAKind" Content="Välj" Grid.Column="6" Grid.Row="13" FontSize="20" Click="Btn_select_threeOfAKind_Click"/>

@@ -60,11 +60,6 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private List<Image> MakeImageList()
         {
             List<Image> dices = new List<Image>();
@@ -223,6 +218,14 @@ namespace HampesYatzy
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void end_game_Click(object sender, RoutedEventArgs e)
+        {
+            //DbOperations.DeleteGame();
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
         }
     }
 }
