@@ -32,6 +32,7 @@ namespace HampesYatzy
             game = new YatzyGame();
             game.Players = DbOperations.GetGame(gameId);
             game.StartTime = DateTime.Now;
+            game.GameId = gameId;
             activePlayer = game.Players[0];
         }
         private void CheckGameOver()
@@ -461,6 +462,10 @@ namespace HampesYatzy
             }
 
             return sum;
+        }
+        public void QuitGame()
+        {
+            DbOperations.DeleteGame(game.GameId);
         }
     }
 }
