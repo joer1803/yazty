@@ -168,20 +168,24 @@ namespace HampesYatzy
             List<Player> players = gameLogic.GetPlayers();
             for (int i = 0; i < players.Count; i++)
             {
-                switch (i)
+                if (players[i].Id.Equals(gameLogic.GetActivePlayer().Id))
                 {
-                    case 0:
-                        player_one_items.Items.Add(players[i]);
-                        break;
-                    case 1:
-                        player_two_items.Items.Add(players[i]);
-                        break;
-                    case 2:
-                        player_three_items.Items.Add(players[i]);
-                        break;
-                    case 3:
-                        player_four_items.Items.Add(players[i]);
-                        break;
+                    switch (i)
+                    {
+                        case 0:
+                            player_one_items.Items.Add(gameLogic.GetActivePlayer());
+                            break;
+                        case 1:
+                            player_two_items.Items.Add(gameLogic.GetActivePlayer());
+                            break;
+                        case 2:
+                            player_three_items.Items.Add(gameLogic.GetActivePlayer());
+                            break;
+                        case 3:
+                            player_four_items.Items.Add(gameLogic.GetActivePlayer());
+                            break;
+                    }
+                    
                 }
             }
             
