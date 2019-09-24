@@ -48,7 +48,7 @@
 
 
         <Label Content="Välj dina motståndare" Width="auto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" FontSize="20"/>
-        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="8" Height="auto" FontSize="20" SelectionMode="Multiple">
+        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="8" Height="auto" FontSize="20" SelectionMode="Multiple" SelectionChanged="LstAvailable_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Spelare" Width="auto" DisplayMemberBinding="{Binding Nickname}"/>
@@ -57,8 +57,8 @@
         </ListView>
 
 
-        <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click"/>
-        <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click"/>
+        <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click" IsEnabled="False"/>
+        <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click" IsEnabled="False"/>
         <Image Grid.Column="10" Grid.Row="1" Source="Resources/Questionmark.png" Margin="94,0,0,29" Grid.ColumnSpan="2" Grid.RowSpan="2" MouseEnter="Image_MouseEnter"/>
         <Label Content="Hur spelar man Yatzy" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="22"/>
         <Viewbox Grid.Column="5" HorizontalAlignment="Right" Height="573" Margin="37,0,0,0" Grid.Row="2" Grid.RowSpan="10" VerticalAlignment="Top" Width="646" Grid.ColumnSpan="6" Visibility="Hidden"/>

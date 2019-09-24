@@ -37,9 +37,20 @@ namespace HampesYatzy
         }
         private void Btn_classic_Click(object sender, RoutedEventArgs e)
         {
-            Play play = new Play(CreateNewGame(1));
-            play.Show();
-            this.Close();
+                Play play = new Play(CreateNewGame(1));
+                play.Show();
+                this.Close();        
+        }
+        private bool IsPlayersChosen()
+        {
+            if(lstAvailable.SelectedItems.Count >= 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private int CreateNewGame(int gameType)
@@ -85,6 +96,20 @@ namespace HampesYatzy
         private void Image_MouseEnter(object sender, MouseEventArgs e)
         {
             Tutorial.Content = new Tutorial();
+        }
+
+        private void LstAvailable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (IsPlayersChosen())
+            {
+                Btn_classic.IsEnabled = true;
+                Btn_steerd.IsEnabled = true;
+            }
+            else
+            {
+                Btn_classic.IsEnabled = false;
+                Btn_steerd.IsEnabled = false;
+            }
         }
     }
 }
