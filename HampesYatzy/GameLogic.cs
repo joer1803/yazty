@@ -444,7 +444,7 @@ namespace HampesYatzy
             }
             if (count == 5)
             {
-                activePlayer.ScoreSheet.Scores[Bonus = BonusPointClassic();
+                activePlayer.ScoreSheet.Bonus = BonusPointClassic();
             }
         }
         
