@@ -175,91 +175,91 @@ namespace HampesYatzy
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(1, gameLogic.GetDice());
+            gameLogic.SetScore(0, gameLogic.GetDice());
             //buttonOnesWasClicked = true;
         }
 
         private void Btn_select_twos_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(2, gameLogic.GetDice());
+            gameLogic.SetScore(1, gameLogic.GetDice());
             //buttonTwosWasClicked = true;
         }
 
         private void Btn_select_threes_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(3, gameLogic.GetDice());
+            gameLogic.SetScore(2, gameLogic.GetDice());
             //buttonThreesWasClicked = true;
         }
 
         private void Btn_select_fours_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(4, gameLogic.GetDice());
+            gameLogic.SetScore(3, gameLogic.GetDice());
             //buttonFoursWasClicked = true;
         }
 
         private void Btn_select_fives_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(5, gameLogic.GetDice());
+            gameLogic.SetScore(4, gameLogic.GetDice());
             //buttonFivesWasClicked = true;
         }
 
         private void Btn_select_sixes_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(6, gameLogic.GetDice());
+            gameLogic.SetScore(5, gameLogic.GetDice());
             //buttonSixesWasClicked = true;
         }
 
         private void Btn_select_pair_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(7, gameLogic.GetDice());
+            gameLogic.SetScore(6, gameLogic.GetDice());
             //buttonOnePairWasClicked = true;
         }
 
         private void Btn_select_twoPair_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(8, gameLogic.GetDice());
+            gameLogic.SetScore(7, gameLogic.GetDice());
             //buttonTwoPairWasClicked = true;
         }
 
         private void Btn_select_threeOfAKind_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(9, gameLogic.GetDice());
+            gameLogic.SetScore(8, gameLogic.GetDice());
             //buttonThreeOfAKindWasClicked = true;
         }
 
         private void Btn_select_fourOfAKind_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(10, gameLogic.GetDice());
+            gameLogic.SetScore(9, gameLogic.GetDice());
             //buttonFourOfAKindWasClicked = true;
         }
 
         private void Btn_select_smallStraight_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(11, gameLogic.GetDice());
+            gameLogic.SetScore(10, gameLogic.GetDice());
             //buttonSmallStraightWasClicked = true;
         }
 
         private void Btn_select_BigStraight_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(12, gameLogic.GetDice());
+            gameLogic.SetScore(11, gameLogic.GetDice());
             //buttonBigStraightWasClicked = true;
         }
 
         private void Btn_select_FullHouse_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(13, gameLogic.GetDice());
+            gameLogic.SetScore(12, gameLogic.GetDice());
             //buttonFullHouseWasClicked = true;
         }
 
         private void Btn_select_Chance_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(14, gameLogic.GetDice());
+            gameLogic.SetScore(13, gameLogic.GetDice());
             //buttonChanceWasClicked = true;
         }
 
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(15, gameLogic.GetDice());
+            gameLogic.SetScore(14, gameLogic.GetDice());
             //buttonYatzyWasClicked = true;
         }
 
