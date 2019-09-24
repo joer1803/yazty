@@ -23,7 +23,7 @@ namespace HampesYatzy
         public const int FullHouse = 13;
         public const int Chance = 14;
         public const int Yatzy = 15;
-        int throws = 0;
+        int throws = 3;
         YatzyGame game;
         Player activePlayer;
 
@@ -83,13 +83,14 @@ namespace HampesYatzy
         public void RollDice()
         {
             Random rnd = new Random();
-            if (throws != 3)
+            if (throws != 0)
             {
+                throws--;
                 for (int i = 0; i < 5; i++)
                 {
                     if (game.Dice[i].Hold != true)
                     {
-                        throws++;
+                        
                         game.Dice[i].Value = rnd.Next(1, 7);
                     }
                 }
