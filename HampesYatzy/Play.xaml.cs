@@ -171,95 +171,142 @@ namespace HampesYatzy
         //private bool buttonFullHouseWasClicked = false;
         //private bool buttonChanceWasClicked = false;
         //private bool buttonYatzyWasClicked = false;
+        private void UpdateScoreSheet()
+        {
+            Player player = gameLogic.GetActivePlayer();
+            for (int i = 0; i < player_one_items.Items.Count-1; i++)
+            {
+                for(int j = 0; j < player.ScoreSheet.Scores.Length; j++)
+                {
+                    TextBlock tblock = new TextBlock();
+                    tblock = (TextBlock)player_one_items.Items[i];
+                    if (i == 6)
+                    {
+                        tblock.Text = player.ScoreSheet.Sum.ToString();
+                    }
+                    else if (i == 7)
+                    {
+                        tblock.Text = player.ScoreSheet.Bonus.ToString();
+                    }
+                    else if (i == 17)
+                    {
+                        tblock.Text = player.ScoreSheet.TotScore.ToString();
+                    }
+                    else if (i > 7)
+                    {
+                        tblock.Text = player.ScoreSheet.Scores[i-2].ToString();
+                    }
+                    else
+                    {
+                        tblock.Text = player.ScoreSheet.Scores[i].ToString();
+                    }
+                }
+                
+            }
+            
+            
 
+        }
+        private void SendScore(int category)
+        {
+            gameLogic.SetScore(category);
+            UpdateScoreSheet();
+            NextTurn();
+
+        }
+        private void NextTurn()
+        {
+            gameLogic.NextPlayer();
+            UpdatePlayer();
+        }
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(0, gameLogic.GetDice());
+            SendScore(0);
             //buttonOnesWasClicked = true;
         }
 
         private void Btn_select_twos_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(1, gameLogic.GetDice());
+            SendScore(1);
             //buttonTwosWasClicked = true;
         }
 
         private void Btn_select_threes_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(2, gameLogic.GetDice());
+            SendScore(2);
             //buttonThreesWasClicked = true;
         }
 
         private void Btn_select_fours_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(3, gameLogic.GetDice());
+            SendScore(3);
             //buttonFoursWasClicked = true;
         }
 
         private void Btn_select_fives_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(4, gameLogic.GetDice());
+            SendScore(4);
             //buttonFivesWasClicked = true;
         }
 
         private void Btn_select_sixes_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(5, gameLogic.GetDice());
+            SendScore(5);
             //buttonSixesWasClicked = true;
         }
 
         private void Btn_select_pair_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(6, gameLogic.GetDice());
+            SendScore(6);
             //buttonOnePairWasClicked = true;
         }
 
         private void Btn_select_twoPair_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(7, gameLogic.GetDice());
+            SendScore(7);
             //buttonTwoPairWasClicked = true;
         }
 
         private void Btn_select_threeOfAKind_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(8, gameLogic.GetDice());
+            SendScore(8);
             //buttonThreeOfAKindWasClicked = true;
         }
 
         private void Btn_select_fourOfAKind_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(9, gameLogic.GetDice());
+            SendScore(9);
             //buttonFourOfAKindWasClicked = true;
         }
 
         private void Btn_select_smallStraight_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(10, gameLogic.GetDice());
+            SendScore(10);
             //buttonSmallStraightWasClicked = true;
         }
 
         private void Btn_select_BigStraight_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(11, gameLogic.GetDice());
+            SendScore(11);
             //buttonBigStraightWasClicked = true;
         }
 
         private void Btn_select_FullHouse_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(12, gameLogic.GetDice());
+            SendScore(12);
             //buttonFullHouseWasClicked = true;
         }
 
         private void Btn_select_Chance_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(13, gameLogic.GetDice());
+            SendScore(13);
             //buttonChanceWasClicked = true;
         }
 
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.SetScore(14, gameLogic.GetDice());
+            SendScore(14);
             //buttonYatzyWasClicked = true;
         }
 

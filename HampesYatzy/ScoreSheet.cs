@@ -10,12 +10,13 @@ namespace HampesYatzy
     {
         public ScoreSheet()
         {
-            Categories = new bool[14];
-            Scores = new int[14];
+            Categories = new bool[15];
+            Scores = new int[15];
         }
         public int Bonus { get; set; }
         public bool[] Categories { get; set; }
         public int[] Scores { get; set; }
         public int Sum { get; set; }
+        public int TotScore { get; set; }
     }
 }
