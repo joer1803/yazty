@@ -43,7 +43,7 @@ namespace HampesYatzy
         }
         private bool IsPlayersChosen()
         {
-            if(lstAvailable.SelectedItems.Count >= 2)
+            if(lstAvailable.SelectedItems.Count >= 2 && lstAvailable.SelectedItems.Count <= 4)
             {
                 return true;
             }
