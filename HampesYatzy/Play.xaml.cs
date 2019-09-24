@@ -151,77 +151,77 @@ namespace HampesYatzy
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(1, gameLogic.GetDice());
         }
 
         private void Btn_select_twos_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(2, gameLogic.GetDice());
         }
 
         private void Btn_select_threes_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(3, gameLogic.GetDice());
         }
 
         private void Btn_select_fours_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(4, gameLogic.GetDice());
         }
 
         private void Btn_select_fives_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(5, gameLogic.GetDice());
         }
 
         private void Btn_select_sixes_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(6, gameLogic.GetDice());
         }
 
         private void Btn_select_pair_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(7, gameLogic.GetDice());
         }
 
         private void Btn_select_twoPair_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(8, gameLogic.GetDice());
         }
 
         private void Btn_select_threeOfAKind_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(9, gameLogic.GetDice());
         }
 
         private void Btn_select_fourOfAKind_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(10, gameLogic.GetDice());
         }
 
         private void Btn_select_smallStraight_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(11, gameLogic.GetDice());
         }
 
         private void Btn_select_BigStraight_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(12, gameLogic.GetDice());
         }
 
         private void Btn_select_FullHouse_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(13, gameLogic.GetDice());
         }
 
         private void Btn_select_Chance_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(14, gameLogic.GetDice());
         }
 
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
-
+            gameLogic.SetScore(15, gameLogic.GetDice());
         }
 
         private void end_game_Click(object sender, RoutedEventArgs e)
