@@ -8,21 +8,21 @@ namespace HampesYatzy
 {
     class GameLogic
     {
-        public const int Ones = 1;
-        public const int Twos = 2;
-        public const int Threes = 3;
-        public const int Fours = 4;
-        public const int Fives = 5;
-        public const int Sixes = 6;
-        public const int OnePair = 7;
-        public const int TwoPair = 8;
-        public const int ThreeOfAKind = 9;
-        public const int FourOfAKind = 10;
-        public const int SmallStraight = 11;
-        public const int BigStraight = 12;
-        public const int FullHouse = 13;
-        public const int Chance = 14;
-        public const int Yatzy = 15;
+        public const int Ones = 0;
+        public const int Twos = 1;
+        public const int Threes =2;
+        public const int Fours = 3;
+        public const int Fives = 4;
+        public const int Sixes = 5;
+        public const int OnePair = 6;
+        public const int TwoPair = 7;
+        public const int ThreeOfAKind =8;
+        public const int FourOfAKind = 9;
+        public const int SmallStraight = 10;
+        public const int BigStraight = 11;
+        public const int FullHouse = 12;
+        public const int Chance = 13;
+        public const int Yatzy = 14;
         int throws = 3;
         YatzyGame game;
         Player activePlayer;
@@ -145,78 +145,78 @@ namespace HampesYatzy
 
             {
                 case Ones:
-                    activePlayer.ScoreSheet.Ones = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Ones] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case Twos:
-                    activePlayer.ScoreSheet.Twos = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Twos] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case Threes:
-                    activePlayer.ScoreSheet.Threes = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Threes] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case Fours:
-                    activePlayer.ScoreSheet.Fours = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Fours] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case Fives:
-                    activePlayer.ScoreSheet.Fives = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Fives] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case Sixes:
-                    activePlayer.ScoreSheet.Sixes = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Sixes] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case OnePair:
-                    activePlayer.ScoreSheet.OnePair = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[OnePair] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case TwoPair:
-                    activePlayer.ScoreSheet.TwoPair = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[TwoPair] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case ThreeOfAKind:
-                    activePlayer.ScoreSheet.ThreeOfAKind = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[ThreeOfAKind] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case FourOfAKind:
-                    activePlayer.ScoreSheet.FourOfAKind = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[FourOfAKind] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case SmallStraight:
-                    activePlayer.ScoreSheet.SmallStraight = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[SmallStraight] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case BigStraight:
-                    activePlayer.ScoreSheet.BigStraight = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[BigStraight] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case FullHouse:
-                    activePlayer.ScoreSheet.FullHouse = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[FullHouse] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case Chance:
-                    activePlayer.ScoreSheet.Chance = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Chance] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
 
                 case Yatzy:
-                    activePlayer.ScoreSheet.Yatzy = GetScore(category, dice);
-                    activePlayer.ScoreSheet.Categories[category - 1] = true;
+                    activePlayer.ScoreSheet.Scores[Yatzy] = GetScore(category, dice);
+                    activePlayer.ScoreSheet.Categories[category] = true;
                     break;
             }
         }
@@ -432,10 +432,29 @@ namespace HampesYatzy
             }
             return sum;
         }
-
-
-        private int BonusPointClassic(int totalUp)//Textblock or box for the total sum of 1-6 category goes inside the ()
+        private void CheckBonus()
         {
+            int count = 0;
+            for(int i = 0; i < 6; i++)
+            {
+                if (activePlayer.ScoreSheet.Categories[i])
+                {
+                    count++;
+                }
+            }
+            if (count == 5)
+            {
+                activePlayer.ScoreSheet.Scores[Bonus = BonusPointClassic();
+            }
+        }
+        
+        private int BonusPointClassic()//Textblock or box for the total sum of 1-6 category goes inside the ()
+        {
+            int totalUp = 0;
+            for(int i = 0; i < 6; i++)
+            {
+                totalUp += activePlayer.ScoreSheet.Scores[i];
+            }
             int sum = 0;
             if (totalUp >= 63)
             {
@@ -449,8 +468,13 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int BonusPointStyrd(int totalUp)//Textblock or box for the total sum of 1-6 category goes inside the ()
+        private int BonusPointStyrd()//Textblock or box for the total sum of 1-6 category goes inside the ()
         {
+            int totalUp = 0;
+            for (int i = 0; i < 6; i++)
+            {
+                totalUp += activePlayer.ScoreSheet.Scores[i];
+            }
             int sum = 0;
             if (totalUp >= 42)
             {
