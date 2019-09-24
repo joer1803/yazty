@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace HampesYatzy
 {
@@ -20,12 +21,15 @@ namespace HampesYatzy
     public partial class Play : Window
     {
         GameLogic gameLogic;
+        DispatcherTimer _timer;
+        TimeSpan _time;
 
         public Play(int gameId)
         {
             InitializeComponent();
             gameLogic = new GameLogic(gameId);
             UpdatePlayer();
+            CountTime();
         }
 
         //private void Dice()
@@ -226,6 +230,20 @@ namespace HampesYatzy
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();
             this.Close();
+        }
+
+        private void CountTime()
+        {
+            _time = TimeSpan.FromHours(2);
+
+            _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                tbTime.Text = _time.ToString("c"); //namnge textblocket till "tbTime"
+                if (_time == TimeSpan.Zero) _timer.Stop();
+                _time = _time.Add(TimeSpan.FromSeconds(-1));
+            }, Application.Current.Dispatcher);
+
+            _timer.Start();
         }
     }
 }
