@@ -200,9 +200,9 @@
         <Button x:Name="btn_select_fullHouse" Content="Välj" Grid.Column="6" Grid.Row="17" FontSize="20" Click="Btn_select_FullHouse_Click" />
         <Button x:Name="btn_select_chance" Content="Välj" Grid.Column="6" Grid.Row="18" FontSize="20" Click="Btn_select_Chance_Click" />
         <Button x:Name="btn_select_yatzy" Content="Välj" Grid.Column="6" Grid.Row="19" FontSize="20" Click="Btn_select_Yatzy_Click" />
-        <Label x:Name="player_four" Content="" Width="34" Height="34" Grid.Column="5" Grid.Row="2"/>
-        <Label x:Name="player_three" Content="" Width="34" Height="34" Grid.Column="4" Grid.Row="2"/>
-        <Label x:Name="player_two" Content="" Width="34" Height="34" Grid.Column="3" Grid.Row="2"/>
-        <Label x:Name="player_one" Content="" Width="34" Height="34" Grid.Column="2" Grid.Row="2"/>
+        <Label x:Name="player_four_initial" Content="" Width="34" Height="34" Grid.Column="5" Grid.Row="2"/>
+        <Label x:Name="player_three_initial" Content="" Width="34" Height="34" Grid.Column="4" Grid.Row="2"/>
+        <Label x:Name="player_two_initial" Content="" Width="34" Height="34" Grid.Column="3" Grid.Row="2"/>
+        <Label x:Name="player_one_initial" Content="" Width="34" Height="34" Grid.Column="2" Grid.Row="2"/>
     </Grid>
 </Window>

@@ -29,9 +29,23 @@ namespace HampesYatzy
             InitializeComponent();
             gameLogic = new GameLogic(gameId);
             UpdatePlayer();
+            SetInitials();
             CountTime();
         }
-
+        private void SetInitials()
+        {
+            List<Label> txtblcks = new List<Label>();
+            txtblcks.Add(player_one_initial);
+            txtblcks.Add(player_two_initial);
+            txtblcks.Add(player_three_initial);
+            txtblcks.Add(player_four_initial);
+            List<Player> players = gameLogic.GetPlayers();
+            for (int i = 0; i < players.Count; i++)
+            {
+                string initials = $"{players[i].Firstname[0]}{players[i].Lastname[0]}";
+                txtblcks[i].Content = initials;
+            }
+        }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
