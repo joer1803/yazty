@@ -41,24 +41,29 @@ namespace HampesYatzy
         }
         public bool CheckGameOver()
         {
-            bool[] categories = activePlayer.ScoreSheet.Categories;
+            bool[] categories = game.Players[game.Players.Count-1].ScoreSheet.Categories;
             int count = 0;
             for (int i = 0; i < categories.Length; i++)
-            {
-                if (count == 15)
-                {
-                    return true;
-                }
-                else if(categories[i] == true)
+            {  
+                if(categories[i] == true)
                 {
                     count++;
                 }  
+            }
+            if (count == 15)
+            {
+                return true;
             }
             return false;
         }
         public void SetGameOver()
         {    
-                DbOperations.SetEndGame(game);            
+                DbOperations.SetEndGame(game);
+        }
+        public Player GetWinner()
+        {
+            List<Player> players = game.Players.OrderByDescending(p => p.ScoreSheet.TotScore).ToList();
+            return game.Players[0];
         }
 
         public Player GetActivePlayer()
@@ -83,13 +88,7 @@ namespace HampesYatzy
             index++;
             if (index.Equals(game.Players.Count))
             {
-                index = 0;
-                if (CheckGameOver())
-                {
-                    SetGameOver();
-                }
-                
-
+                index = 0;           
             }
             ResetDice();
             ResetThrows();
@@ -170,87 +169,23 @@ namespace HampesYatzy
 
         public void SetScore(int category)
         {
-                switch (category)
-
-                {
-                    case Ones:
-                        activePlayer.ScoreSheet.Scores[Ones] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case Twos:
-                        activePlayer.ScoreSheet.Scores[Twos] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case Threes:
-                        activePlayer.ScoreSheet.Scores[Threes] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case Fours:
-                        activePlayer.ScoreSheet.Scores[Fours] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case Fives:
-                        activePlayer.ScoreSheet.Scores[Fives] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case Sixes:
-                        activePlayer.ScoreSheet.Scores[Sixes] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case OnePair:
-                        activePlayer.ScoreSheet.Scores[OnePair] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case TwoPair:
-                        activePlayer.ScoreSheet.Scores[TwoPair] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case ThreeOfAKind:
-                        activePlayer.ScoreSheet.Scores[ThreeOfAKind] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case FourOfAKind:
-                        activePlayer.ScoreSheet.Scores[FourOfAKind] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case SmallStraight:
-                        activePlayer.ScoreSheet.Scores[SmallStraight] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case BigStraight:
-                        activePlayer.ScoreSheet.Scores[BigStraight] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case FullHouse:
-                        activePlayer.ScoreSheet.Scores[FullHouse] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case Chance:
-                        activePlayer.ScoreSheet.Scores[Chance] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-
-                    case Yatzy:
-                        activePlayer.ScoreSheet.Scores[Yatzy] = GetScore(category, game.Dice);
-                        activePlayer.ScoreSheet.Categories[category] = true;
-                        break;
-                }
+            activePlayer.ScoreSheet.Scores[category] = GetScore(category, game.Dice);
+            activePlayer.ScoreSheet.Categories[category] = true;
+            AddTotScore(category);
+            if(category < 6)
+            {
+                AddToSum(category);
+            }
             
         }
-
+        private void AddToSum(int category)
+        {
+            activePlayer.ScoreSheet.Sum += activePlayer.ScoreSheet.Scores[category];
+        }
+        private void AddTotScore(int category)
+        {           
+                activePlayer.ScoreSheet.TotScore += activePlayer.ScoreSheet.Scores[category];   
+        }
 
         private int CountNumbers(int category, List<Die> dice)
         {

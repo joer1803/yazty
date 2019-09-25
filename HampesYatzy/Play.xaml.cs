@@ -258,10 +258,21 @@ namespace HampesYatzy
             hold_diceFour.Content = save;
             hold_diceFive.Content = save;
         }
-
+        private void GameOverCheck()
+        {
+            if (gameLogic.CheckGameOver())
+            {
+                gameLogic.SetGameOver();
+                MessageBox.Show($"GRATTIS {gameLogic.GetWinner().Nickname.ToUpper()} DU VANN SPELET!!! WOOOOOWWWWW");
+                MainWindow mainwindow = new MainWindow();
+                mainwindow.Show();
+                this.Close();
+            }
+        }
         private void NextTurn()
         {
             gameLogic.NextPlayer();
+            GameOverCheck();
             UpdatePlayer();
             DisableCategoryButtons();
             DisplayThrows();
