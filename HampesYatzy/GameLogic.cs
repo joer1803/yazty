@@ -274,12 +274,12 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < dice.Count; j++)
                 {
-                    if (dice[i] == dice[j])
+                    if (dice[i].Value == dice[j].Value)
                     {
                         countSame++;
                         if (countSame == 3)
                         {
-                            sum = dice[i].Value * 3;
+                           return sum = dice[i].Value * 3;
                         }
                     }
                 }
@@ -296,12 +296,12 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < dice.Count; j++)
                 {
-                    if (dice[i] == dice[j])
+                    if (dice[i].Value == dice[j].Value)
                     {
                         countSame++;
                         if (countSame == 4)
                         {
-                            sum = dice[i].Value * 4;
+                            return sum = dice[i].Value * 4;
                         }
                     }
                 }
@@ -361,12 +361,12 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < dice.Count; j++)
                 {
-                    if (dice[i] == dice[j])
+                    if (dice[i].Value == dice[j].Value)
                     {
                         countSame++;
                         if (countSame == 2)
                         {
-                            sum = dice[i].Value * 2;
+                            return sum = dice[i].Value + dice[i].Value;
                         }
                     }
                 }
@@ -384,17 +384,17 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < dice.Count; j++)
                 {
-                    if (dice[i] == dice[j])
+                    if (dice[i].Value == dice[j].Value)
                     {
                         countSame++;
                         if (countSame == 2)
                         {
                             if (firstpair != 0 && firstpair != dice[i].Value)
                             {
-                                return sum += dice[i].Value * 2;
+                                return sum += dice[i].Value + dice[i].Value;
                             }
                             firstpair = dice[i].Value;
-                            sum = dice[i].Value * 2;
+                            sum = dice[i].Value + dice[i].Value;
                         }
                     }
                 }
@@ -423,12 +423,12 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < dice.Count; j++)
                 {
-                    if (dice[i] == dice[j])
+                    if (dice[i].Value == dice[j].Value)
                     {
                         countSame++;
                         if (countSame == 5)
                         {
-                            sum = 50;
+                           return sum = 50;
                         }
                     }
                 }
@@ -446,7 +446,7 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < dice.Count; j++)
                 {
-                    if (dice[i] == dice[j])
+                    if (dice[i].Value == dice[j].Value)
                     {
                         countSame++;
                         if (countSame == 3)
