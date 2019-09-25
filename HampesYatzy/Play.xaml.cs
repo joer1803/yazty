@@ -319,7 +319,7 @@ namespace HampesYatzy
 
         private void CheckTimer()
         {
-            if (_time == TimeSpan.Zero) _timer.Stop();
+            if (_time <= TimeSpan.Zero)
             {
                 MessageBox.Show($"Tiden är slut");
             }
