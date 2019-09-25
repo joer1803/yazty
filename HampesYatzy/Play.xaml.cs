@@ -149,6 +149,7 @@ namespace HampesYatzy
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
         {
             gameLogic.RollDice();
+            CategoryTaken();
             UpdateDice();
         }
 
@@ -193,6 +194,10 @@ namespace HampesYatzy
                 {
                     buttons[i].IsEnabled = false;
                 }
+                else
+                {
+                    buttons[i].IsEnabled = true;
+                }
             }
         }
         private List<Button> GetButtonList()
@@ -214,6 +219,13 @@ namespace HampesYatzy
             catButtons.Add(btn_select_chance);
             catButtons.Add(btn_select_yatzy);
             return catButtons;
+        }
+        private void DisableCategoryButtons()
+        {
+            foreach(Button b in GetButtonList())
+            {
+                b.IsEnabled = false;
+            }
         }
         private void SendScore(int category)
         {
@@ -245,7 +257,7 @@ namespace HampesYatzy
         {
             gameLogic.NextPlayer();
             UpdatePlayer();
-            CategoryTaken();
+            DisableCategoryButtons();
         }
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
