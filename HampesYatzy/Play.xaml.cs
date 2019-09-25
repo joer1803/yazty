@@ -184,14 +184,52 @@ namespace HampesYatzy
             }
             
         }
-
+        private void CategoryTaken()
+        {
+            List<Button> buttons = GetButtonList();
+            for(int i = 0; i < buttons.Count; i++)
+            {
+                if (gameLogic.GetActivePlayer().ScoreSheet.Categories[i])
+                {
+                    buttons[i].IsEnabled = false;
+                }
+            }
+        }
+        private List<Button> GetButtonList()
+        {
+            List<Button> catButtons = new List<Button>();
+            catButtons.Add(btn_select_ones);
+            catButtons.Add(btn_select_twos);
+            catButtons.Add(btn_select_threes);
+            catButtons.Add(btn_select_fours);
+            catButtons.Add(btn_select_fives);
+            catButtons.Add(btn_select_sixes);
+            catButtons.Add(btn_select_pair);
+            catButtons.Add(btn_select_twoPair);
+            catButtons.Add(btn_select_threeOfAKind);
+            catButtons.Add(btn_select_fourOfAKind);
+            catButtons.Add(btn_select_smallStraight);
+            catButtons.Add(btn_select_bigStraight);
+            catButtons.Add(btn_select_fullHouse);
+            catButtons.Add(btn_select_chance);
+            catButtons.Add(btn_select_yatzy);
+            return catButtons;
+        }
         private void SendScore(int category)
         {
-            gameLogic.SetScore(category);
-            UpdateScoreSheet();
-            NextTurn();
-            ResetDiceButtons();
-            CheckTimer();
+            if (!gameLogic.GetActivePlayer().ScoreSheet.Categories[category])
+            {
+                gameLogic.SetScore(category);
+                UpdateScoreSheet();
+                NextTurn();
+                ResetDiceButtons();
+                CheckTimer();
+            }
+            else
+            {
+                MessageBox.Show("Du har redan tagit denna kategori");
+            }
+            
         }
         private void ResetDiceButtons()
         {
@@ -207,6 +245,7 @@ namespace HampesYatzy
         {
             gameLogic.NextPlayer();
             UpdatePlayer();
+            CategoryTaken();
         }
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
