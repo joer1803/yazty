@@ -314,7 +314,7 @@ namespace HampesYatzy
 
         private void CountTime()
         {
-            _time = TimeSpan.FromMinutes(2);
+            _time = TimeSpan.FromHours(2);
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
