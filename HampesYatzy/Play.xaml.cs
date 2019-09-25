@@ -287,15 +287,12 @@ namespace HampesYatzy
 
         private void end_game_Click(object sender, RoutedEventArgs e)
         {
-            gameLogic.QuitGame();
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
+            EndGame();
         }
 
         private void CountTime()
         {
-            _time = TimeSpan.FromMinutes(1);
+            _time = TimeSpan.FromHours(2);
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
@@ -307,15 +304,31 @@ namespace HampesYatzy
             _timer.Start();
         }
 
+        private void EndGame()
+        {
+            gameLogic.QuitGame();
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
+        }
+
+        private void EndOrQuitGame()
+        {
+            if (gameLogic.CheckGameOver() == false)
+            {
+                EndGame();
+            }
+        }
         private void CheckTimer()
         {
             if (_time <= TimeSpan.Zero)
             {
                 MessageBox.Show($"Tiden är slut");
+                EndOrQuitGame();
             }
         }
 
-        
+
     }
 }
     
