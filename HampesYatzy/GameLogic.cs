@@ -39,7 +39,7 @@ namespace HampesYatzy
         {
             return game.Players;
         }
-        private bool CheckGameOver()
+        public bool CheckGameOver()
         {
             bool[] categories = activePlayer.ScoreSheet.Categories;
             int count = 0;
