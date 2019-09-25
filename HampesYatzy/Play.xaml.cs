@@ -151,10 +151,10 @@ namespace HampesYatzy
             gameLogic.RollDice();
             CategoryTaken();
             UpdateDice();
-            DispalyThrows();
+            DisplayThrows();
         }
 
-        private void DispalyThrows()
+        private void DisplayThrows()
         {
             count_trow.Content = $"Du har {gameLogic.GetThrows()} kast kvar";
         }
@@ -264,6 +264,7 @@ namespace HampesYatzy
             gameLogic.NextPlayer();
             UpdatePlayer();
             DisableCategoryButtons();
+            DisplayThrows();
         }
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
