@@ -148,21 +148,7 @@ namespace HampesYatzy
             UpdateDice();
         }
 
-        //private bool buttonOnesWasClicked = false;
-        //private bool buttonTwosWasClicked = false;
-        //private bool buttonThreesWasClicked = false;
-        //private bool buttonFoursWasClicked = false;
-        //private bool buttonFivesWasClicked = false;
-        //private bool buttonSixesWasClicked = false;
-        //private bool buttonOnePairWasClicked = false;
-        //private bool buttonTwoPairWasClicked = false;
-        //private bool buttonThreeOfAKindWasClicked = false;
-        //private bool buttonFourOfAKindWasClicked = false;
-        //private bool buttonSmallStraightWasClicked = false;
-        //private bool buttonBigStraightWasClicked = false;
-        //private bool buttonFullHouseWasClicked = false;
-        //private bool buttonChanceWasClicked = false;
-        //private bool buttonYatzyWasClicked = false;
+      
         private void UpdateScoreSheet()
         {
             List<Player> players = gameLogic.GetPlayers();
@@ -197,6 +183,7 @@ namespace HampesYatzy
             UpdateScoreSheet();
             NextTurn();
             ResetDiceButtons();
+            CheckTimer();
         }
         private void ResetDiceButtons()
         {
@@ -217,91 +204,91 @@ namespace HampesYatzy
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
         {
             SendScore(0);
-            //buttonOnesWasClicked = true;
+            
         }
 
         private void Btn_select_twos_Click(object sender, RoutedEventArgs e)
         {
             SendScore(1);
-            //buttonTwosWasClicked = true;
+            
         }
 
         private void Btn_select_threes_Click(object sender, RoutedEventArgs e)
         {
             SendScore(2);
-            //buttonThreesWasClicked = true;
+            
         }
 
         private void Btn_select_fours_Click(object sender, RoutedEventArgs e)
         {
             SendScore(3);
-            //buttonFoursWasClicked = true;
+            
         }
 
         private void Btn_select_fives_Click(object sender, RoutedEventArgs e)
         {
             SendScore(4);
-            //buttonFivesWasClicked = true;
+            
         }
 
         private void Btn_select_sixes_Click(object sender, RoutedEventArgs e)
         {
             SendScore(5);
-            //buttonSixesWasClicked = true;
+            
         }
 
         private void Btn_select_pair_Click(object sender, RoutedEventArgs e)
         {
             SendScore(6);
-            //buttonOnePairWasClicked = true;
+            
         }
 
         private void Btn_select_twoPair_Click(object sender, RoutedEventArgs e)
         {
             SendScore(7);
-            //buttonTwoPairWasClicked = true;
+            
         }
 
         private void Btn_select_threeOfAKind_Click(object sender, RoutedEventArgs e)
         {
             SendScore(8);
-            //buttonThreeOfAKindWasClicked = true;
+            
         }
 
         private void Btn_select_fourOfAKind_Click(object sender, RoutedEventArgs e)
         {
             SendScore(9);
-            //buttonFourOfAKindWasClicked = true;
+            
         }
 
         private void Btn_select_smallStraight_Click(object sender, RoutedEventArgs e)
         {
             SendScore(10);
-            //buttonSmallStraightWasClicked = true;
+            
         }
 
         private void Btn_select_BigStraight_Click(object sender, RoutedEventArgs e)
         {
             SendScore(11);
-            //buttonBigStraightWasClicked = true;
+            
         }
 
         private void Btn_select_FullHouse_Click(object sender, RoutedEventArgs e)
         {
             SendScore(12);
-            //buttonFullHouseWasClicked = true;
+            
         }
 
         private void Btn_select_Chance_Click(object sender, RoutedEventArgs e)
         {
             SendScore(13);
-            //buttonChanceWasClicked = true;
+            
         }
 
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
             SendScore(14);
-            //buttonYatzyWasClicked = true;
+            
         }
 
         private void end_game_Click(object sender, RoutedEventArgs e)
@@ -314,11 +301,11 @@ namespace HampesYatzy
 
         private void CountTime()
         {
-            _time = TimeSpan.FromHours(2);
+            _time = TimeSpan.FromMinutes(1);
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
-                tbTime.Text = _time.ToString("c"); //namnge textblocket till "tbTime"
+                tbTime.Text = _time.ToString("c"); 
                         if (_time == TimeSpan.Zero) _timer.Stop();
                 _time = _time.Add(TimeSpan.FromSeconds(-1));
             }, Application.Current.Dispatcher);
@@ -326,28 +313,13 @@ namespace HampesYatzy
             _timer.Start();
         }
 
-        //private void CheckTimer()
-        //{
-        //    if (buttonOnesWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonTwosWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonThreesWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonFoursWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonFivesWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonSixesWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonOnePairWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonTwoPairWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonThreeOfAKindWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonFoursWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonSmallStraightWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonBigStraightWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonFullHouseWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonChanceWasClicked == true && _time == TimeSpan.Zero ||
-        //        buttonYatzyWasClicked == true && _time == TimeSpan.Zero)
-        //    {
-        //        MessageBox.Show($"Tiden är slut");
-        //    }
-
-        //}
+        private void CheckTimer()
+        {
+            if (_time == TimeSpan.Zero) _timer.Stop();
+            {
+                MessageBox.Show($"Tiden är slut");
+            }
+        }
     }
 }
     
