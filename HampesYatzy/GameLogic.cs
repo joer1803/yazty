@@ -93,6 +93,7 @@ namespace HampesYatzy
             }
             ResetDice();
             ResetThrows();
+            CheckBonus();
             activePlayer = game.Players[index];
         }
         private void ResetDice()
@@ -304,12 +305,12 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckSmallStraight(List<Die> dice)
+        private int CheckSmallStraight(List<Die> diceUnsorted)
         {
             int sum = 0;
             int count = 0;
 
-            dice.Sort();
+            List<Die> dice = diceUnsorted.OrderByDescending(d => d.Value).ToList();
             dice.Reverse();
             for (int i = 0; i < dice.Count; i++)
             {
@@ -325,12 +326,13 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckBigStraight(List<Die> dice)
+        private int CheckBigStraight(List<Die> diceUnsorted)
         {
             int sum = 0;
             int count = 0;
 
-            Array.Sort(dice.ToArray());
+            List<Die> dice = diceUnsorted.OrderByDescending(d => d.Value).ToList();
+            dice.Reverse();
             for (int i = 0; i < dice.Count; i++)
             {
                 if (dice[count].Value < dice[i].Value && dice[i].Value != 1)
@@ -345,12 +347,11 @@ namespace HampesYatzy
             return sum;
         }
 
-        private int CheckOnePair(List<Die> dice)
+        private int CheckOnePair(List<Die> diceUnsorted)
         {
             int sum = 0;
             int countSame = 0;
-            dice.Sort();
-            dice.Reverse();
+            List<Die> dice = diceUnsorted.OrderByDescending(d => d.Value).ToList();
             for (int i = 0; i < dice.Count; i++)
             {
                 for (int j = 0; j < dice.Count; j++)
