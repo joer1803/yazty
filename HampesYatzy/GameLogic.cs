@@ -39,7 +39,7 @@ namespace HampesYatzy
         {
             return game.Players;
         }
-        private void CheckGameOver()
+        private bool CheckGameOver()
         {
             bool[] categories = activePlayer.ScoreSheet.Categories;
             int count = 0;
@@ -47,17 +47,23 @@ namespace HampesYatzy
             {
                 if (count == 15)
                 {
-                    DbOperations.SetEndGame(game);
+                    SetGameOver(true);
+                    return true;
                 }
                 else if(categories[i] == true)
                 {
                     count++;
-                }
-                else
-                {
-                    break;
-                }
+                }  
             }
+            return false;
+        }
+        private void SetGameOver(bool gameover)
+        {
+            if (gameover)
+            {
+                DbOperations.SetEndGame(game);
+            }
+            
         }
 
         public Player GetActivePlayer()
@@ -84,6 +90,7 @@ namespace HampesYatzy
             {
                 index = 0;
                 CheckGameOver();
+
             }
             ResetDice();
             ResetThrows();
