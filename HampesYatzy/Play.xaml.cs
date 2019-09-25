@@ -151,9 +151,15 @@ namespace HampesYatzy
             gameLogic.RollDice();
             CategoryTaken();
             UpdateDice();
+            DispalyThrows();
         }
 
-      
+        private void DispalyThrows()
+        {
+            count_trow.Content = $"Du har {gameLogic.GetThrows()} kast kvar";
+        }
+
+
         private void UpdateScoreSheet()
         {
             List<Player> players = gameLogic.GetPlayers();

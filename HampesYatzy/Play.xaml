@@ -179,7 +179,7 @@
         <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="12" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFive_Click" />
 
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24" Click="Trow_dice_Click" />
-        <Label x:Name="count_trow" Content="Du har kast kvar :" Grid.Column="13" Grid.Row="17" FontSize="18" />
+        <Label x:Name="count_trow" Grid.Column="13" Grid.Row="17" FontSize="18" />
         <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="13" Grid.Row="0" FontSize="18" />
         <TextBlock x:Name="tbTime" Grid.Column="13" Grid.Row="0" HorizontalAlignment="Left" Margin="141,0,0,0" TextWrapping="NoWrap" TextAlignment="Left" Padding="6" VerticalAlignment="Top" Width="129" Height="48" FontSize="18" />
         <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20" Click="end_game_Click" />

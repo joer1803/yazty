@@ -122,6 +122,11 @@ namespace HampesYatzy
             }
         }
 
+        public int GetThrows()
+        {
+            return throws;
+        }
+
         public List<Die> GetDice()
         {
             return game.Dice;
