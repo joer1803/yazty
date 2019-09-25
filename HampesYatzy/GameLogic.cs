@@ -47,7 +47,6 @@ namespace HampesYatzy
             {
                 if (count == 15)
                 {
-                    SetGameOver(true);
                     return true;
                 }
                 else if(categories[i] == true)
@@ -57,13 +56,9 @@ namespace HampesYatzy
             }
             return false;
         }
-        private void SetGameOver(bool gameover)
-        {
-            if (gameover)
-            {
-                DbOperations.SetEndGame(game);
-            }
-            
+        public void SetGameOver()
+        {    
+                DbOperations.SetEndGame(game);            
         }
 
         public Player GetActivePlayer()
@@ -89,7 +84,11 @@ namespace HampesYatzy
             if (index.Equals(game.Players.Count))
             {
                 index = 0;
-                CheckGameOver();
+                if (CheckGameOver())
+                {
+                    SetGameOver();
+                }
+                
 
             }
             ResetDice();
@@ -518,27 +517,6 @@ namespace HampesYatzy
         }
     }
 }
-
-//private int CheckFullHouse(int[] dice)
-//{
-//    int sum = 0;
-
-//    int[] i = new int[5];
-
-//    Array.Sort(i);
-
-//    if ((((i[0] == i[1]) && (i[1] == i[2])) && // Three of a Kind
-//         (i[3] == i[4]) && // Two of a Kind
-//         (i[2] != i[3])) ||
-//        ((i[0] == i[1]) && // Two of a Kind
-//         ((i[2] == i[3]) && (i[3] == i[4])) && // Three of a Kind
-//         (i[1] != i[2])))
-//    {
-//        sum = //om kravet ovan uppfylls returneras true vilket sen måste summeras;
-//    }
-
-//    return sum;
-//}
 
 
     
