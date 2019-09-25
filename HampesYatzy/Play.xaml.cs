@@ -32,16 +32,6 @@ namespace HampesYatzy
             CountTime();
         }
 
-        //private void Dice()
-        //{
-        //    int nr = 1;
-        //    BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + nr.ToString() + "png", UriKind.Relative));
-        //    dice1.Source = image;
-        //    dice2.Source = image;
-        //    dice3.Source = image;
-        //    dice4.Source = image;
-        //    dice5.Source = image;
-        //}
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -324,6 +314,8 @@ namespace HampesYatzy
                 MessageBox.Show($"Tiden är slut");
             }
         }
+
+        
     }
 }
     
