@@ -159,15 +159,19 @@ namespace HampesYatzy
                     switch (i)
                     {
                         case 0:
+                            player_one_items.Items.Clear();
                             player_one_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
                         case 1:
+                            player_two_items.Items.Clear();
                             player_two_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
                         case 2:
+                            player_three_items.Items.Clear();
                             player_three_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
                         case 3:
+                            player_four_items.Items.Clear();
                             player_four_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
                     }
