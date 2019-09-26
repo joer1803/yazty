@@ -50,11 +50,5 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void Btn_Return_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
-        }
     }
 }
