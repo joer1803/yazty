@@ -335,7 +335,7 @@ namespace HampesYatzy
                 }
                 countSame = 0;
             }
-            return sum;
+            return sum = 0;
         }
 
         private int CountChance(List<Die> dice)

@@ -226,6 +226,22 @@ namespace HampesYatzy
             catButtons.Add(btn_select_yatzy);
             return catButtons;
         }
+
+        private void SteerButtons()
+        {
+            DisableCategoryButtons();
+            List<Button> buttons = GetButtonList();
+            int index = 0;
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                if (gameLogic.GetActivePlayer().ScoreSheet.Categories[i] == true)
+                {
+                    index = i;
+                }
+            }
+            buttons[index + 1].IsEnabled = true;
+        }
+
         private void DisableCategoryButtons()
         {
             foreach(Button b in GetButtonList())
