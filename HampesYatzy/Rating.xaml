@@ -67,7 +67,7 @@
         <ListView x:Name="bestFrequentPlayers" Grid.Column="11" Grid.Row="9" Grid.ColumnSpan="7" Grid.RowSpan="5" FontSize="16">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Plats" Width="60"/>
+                    <GridViewColumn Header="Plats" Width="60" DisplayMemberBinding="{Binding Stats.GamesPlayedRank}"/>
                     <GridViewColumn Header="Användarnamn" Width="120" DisplayMemberBinding="{Binding Nickname}"/>
                     <GridViewColumn Header="Förnamn" Width="100" DisplayMemberBinding="{Binding Firstname}"/>
                     <GridViewColumn Header="Efternamm" Width="100" DisplayMemberBinding="{Binding Lastname}"/>
@@ -78,7 +78,7 @@
         <ListView x:Name="bestWeek" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="7" Grid.RowSpan="5" FontSize="16">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Plats" Width="60"/>
+                    <GridViewColumn Header="Plats" Width="60" DisplayMemberBinding="{Binding Stats.TotalScoreRank}"/>
                     <GridViewColumn Header="Användarnamn" Width="120" DisplayMemberBinding="{Binding Nickname}"/>
                     <GridViewColumn Header="Förnamn" Width="100" DisplayMemberBinding="{Binding Firstname}"/>
                     <GridViewColumn Header="Efternamm" Width="100" DisplayMemberBinding="{Binding Lastname}"/>

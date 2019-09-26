@@ -95,7 +95,7 @@ namespace HampesYatzy
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "WITH rankgamesamount AS (SELECT player.nickname, player.firstname, player.lastname, COUNT(game_player.player_id) FROM game_player JOIN player ON player.player_id = game_player.player_id GROUP BY player.nickname, player.firstname, player.lastname ORDER BY COUNT DESC) SELECT * FROM rankgamesamount";
+                    cmd.CommandText = "WITH rankgamesamount AS (SELECT player.nickname, player.firstname, player.lastname, COUNT(game_player.player_id), RANK () OVER(ORDER BY SUM(game_player.player_id::int) DESC) AS ranking FROM game_player JOIN player ON player.player_id = game_player.player_id GROUP BY player.nickname, player.firstname, player.lastname) SELECT * FROM rankgamesamount";
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -107,7 +107,11 @@ namespace HampesYatzy
                                     Nickname = reader.GetString(0),
                                     Firstname = reader.GetString(1),
                                     Lastname = reader.GetString(2),
-                                    Stats = new PlayerStats() { GamesPlayed = reader.GetInt32(3) }
+                                    Stats = new PlayerStats()
+                                    {
+                                        GamesPlayed = reader.GetInt32(3),
+                                        GamesPlayedRank = reader.GetInt32(4)
+                                    }
                                 };
                                 plist.Add(p);
                             }
@@ -127,7 +131,7 @@ namespace HampesYatzy
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "WITH rankscoreamount AS (SELECT player.nickname, player.firstname, player.lastname, SUM(game_player.score)FROM game_player JOIN player ON player.player_id = game_player.player_id JOIN game ON game.game_id = game_player.game_id WHERE game.started_at BETWEEN CURRENT_DATE - INTERVAL '7 days' AND CURRENT_DATE + INTERVAL '1 day' GROUP BY player.nickname, player.firstname, player.lastname ORDER BY SUM DESC) SELECT* FROM rankscoreamount";
+                    cmd.CommandText = "WITH rankscoreamount AS (SELECT player.nickname, player.firstname, player.lastname, SUM(game_player.score), RANK () OVER(ORDER BY SUM(game_player.score::int) DESC) AS ranking FROM game_player JOIN player ON player.player_id = game_player.player_id JOIN game ON game.game_id = game_player.game_id WHERE game.started_at BETWEEN CURRENT_DATE - INTERVAL '7 days' AND CURRENT_DATE + INTERVAL '1 day' AND game_player.score IS NOT NULL GROUP BY player.nickname, player.firstname, player.lastname) SELECT * FROM rankscoreamount";
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -140,7 +144,11 @@ namespace HampesYatzy
                                     Firstname = reader.GetString(1),
                                     Lastname = reader.GetString(2),
 
-                                    Stats = new PlayerStats() { TotalScore = reader.GetInt32(3) }
+                                    Stats = new PlayerStats()
+                                    {
+                                        TotalScore = reader.GetInt32(3),
+                                        TotalScoreRank = reader.GetInt32(4)
+                                    }
                                 };
                                 plist.Add(p);
                             }

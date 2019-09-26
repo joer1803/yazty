@@ -112,7 +112,7 @@ namespace HampesYatzy
                 throws--;
                 for (int i = 0; i < 5; i++)
                 {
-                    if (game.Dice[i].Hold != true)
+                    if (game.Dice[i].Hold != true || game.Dice[i].Value == 0)
                     {
                         
                         game.Dice[i].Value = rnd.Next(1, 7);

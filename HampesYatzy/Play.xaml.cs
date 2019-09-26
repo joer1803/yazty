@@ -98,7 +98,7 @@ namespace HampesYatzy
 
             for (int i = 0; i < diceFrames.Count; i++)
             {
-                diceFrames[i].Source = diceImages[dice[i].Value - 1];
+                diceFrames[i].Source = diceImages[dice[i].Value-1];
             }
         }
 
