@@ -19,7 +19,6 @@ namespace HampesYatzy
         public PlayerStats Stats { get; set; }
         //public int GamesPlayed { get; set; }
         public ScoreSheet ScoreSheet { get; set; }
-        public int TotalScore { get; set; }
 
     }
 }
