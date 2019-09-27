@@ -124,7 +124,7 @@ namespace HampesYatzy
 
         private void UpdatePlayer()
         {
-            lblActivePlayer.Content = gameLogic.GetActivePlayer().Nickname;
+            lblActivePlayer.Content = $"{gameLogic.GetActivePlayer().Firstname} {gameLogic.GetActivePlayer().Lastname}";
         }
 
         private void CheckButton(int index)
