@@ -32,6 +32,11 @@ namespace HampesYatzy
             bestFrequentPlayers.ItemsSource = null;
             bestFrequentPlayers.ItemsSource = DbOperations.GetMostGamesPlayer();
         }
+        private void LoadConsecutiveWinsRanking()
+        {
+            bestConsecutiveWins.ItemsSource = null;
+            bestConsecutiveWins.ItemsSource = DbOperations.GetBestPlayer();
+        }
         private void LoadTotalScoreRankings()
         {
             bestWeek.ItemsSource = null;
