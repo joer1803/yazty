@@ -32,6 +32,7 @@ namespace HampesYatzy
             SetInitials();
             CountTime();
         }
+
         private void SetInitials()
         {
             List<Label> txtblcks = new List<Label>();
@@ -90,15 +91,34 @@ namespace HampesYatzy
             return diceImages;
         }
 
+        private List<BitmapImage> MakeDiceImageHoldList()
+        {
+            List<BitmapImage> diceImages = new List<BitmapImage>();
+            for (int i = 1; i < 7; i++)
+            {
+                BitmapImage image = new BitmapImage(new Uri(@"Resources\d" + i.ToString() + "red.png", UriKind.Relative));
+                diceImages.Add(image);
+            }
+            return diceImages;
+        }
+
         private void UpdateDice()
         {
             List<BitmapImage> diceImages = MakeDiceImageList();
             List<Image> diceFrames = MakeImageList();
             List<Die> dice = gameLogic.GetDice();
+            List<BitmapImage> diceRedImages = MakeDiceImageHoldList();
 
             for (int i = 0; i < diceFrames.Count; i++)
             {
-                diceFrames[i].Source = diceImages[dice[i].Value-1];
+                if (dice[i].Hold == true)
+                {
+                    diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
+                }
+                else
+                {
+                    diceFrames[i].Source = diceImages[dice[i].Value - 1];
+                }
             }
         }
 
@@ -124,26 +144,31 @@ namespace HampesYatzy
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
             hold_diceOne.Content = CheckButton(0);
+            UpdateDice();
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
             hold_diceTwo.Content = CheckButton(1);
+            UpdateDice();
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
             hold_diceThree.Content = CheckButton(2);
+            UpdateDice();
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
         {
             hold_diceFour.Content = CheckButton(3);
+            UpdateDice();
         }
 
         private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
         {
             hold_diceFive.Content = CheckButton(4);
+            UpdateDice();
         }
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
@@ -159,7 +184,6 @@ namespace HampesYatzy
             count_trow.Content = $"Du har {gameLogic.GetThrows()} kast kvar";
         }
 
-
         private void UpdateScoreSheet()
         {
             List<Player> players = gameLogic.GetPlayers();
@@ -173,28 +197,36 @@ namespace HampesYatzy
                             player_one_items.Items.Clear();
                             player_one_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
+
                         case 1:
                             player_two_items.Items.Clear();
                             player_two_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
+
                         case 2:
                             player_three_items.Items.Clear();
                             player_three_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
+
                         case 3:
                             player_four_items.Items.Clear();
                             player_four_items.Items.Add(gameLogic.GetActivePlayer());
                             break;
                     }
-                    
                 }
             }
-            
+        }
+        private void ClearDice()
+        {
+            for(int i = 0; i < MakeImageList().Count; i++)
+            {
+                MakeImageList()[i].Source = null;
+            }
         }
         private void CategoryTaken()
         {
             List<Button> buttons = GetButtonList();
-            for(int i = 0; i < buttons.Count; i++)
+            for (int i = 0; i < buttons.Count; i++)
             {
                 if (gameLogic.GetActivePlayer().ScoreSheet.Categories[i])
                 {
@@ -206,6 +238,7 @@ namespace HampesYatzy
                 }
             }
         }
+
         private List<Button> GetButtonList()
         {
             List<Button> catButtons = new List<Button>();
@@ -244,11 +277,12 @@ namespace HampesYatzy
 
         private void DisableCategoryButtons()
         {
-            foreach(Button b in GetButtonList())
+            foreach (Button b in GetButtonList())
             {
                 b.IsEnabled = false;
             }
         }
+
         private void SendScore(int category)
         {
             if (!gameLogic.GetActivePlayer().ScoreSheet.Categories[category])
@@ -258,13 +292,14 @@ namespace HampesYatzy
                 NextTurn();
                 ResetDiceButtons();
                 CheckTimer();
+                ClearDice();
             }
             else
             {
                 MessageBox.Show("Du har redan tagit denna kategori");
             }
-            
         }
+
         private void ResetDiceButtons()
         {
             string save = "Spara";
@@ -274,6 +309,7 @@ namespace HampesYatzy
             hold_diceFour.Content = save;
             hold_diceFive.Content = save;
         }
+
         private void GameOverCheck()
         {
             if (gameLogic.CheckGameOver())
@@ -285,6 +321,7 @@ namespace HampesYatzy
                 this.Close();
             }
         }
+
         private void NextTurn()
         {
             gameLogic.NextPlayer();
@@ -297,91 +334,76 @@ namespace HampesYatzy
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
         {
             SendScore(0);
-            
         }
 
         private void Btn_select_twos_Click(object sender, RoutedEventArgs e)
         {
             SendScore(1);
-            
         }
 
         private void Btn_select_threes_Click(object sender, RoutedEventArgs e)
         {
             SendScore(2);
-            
         }
 
         private void Btn_select_fours_Click(object sender, RoutedEventArgs e)
         {
             SendScore(3);
-            
         }
 
         private void Btn_select_fives_Click(object sender, RoutedEventArgs e)
         {
             SendScore(4);
-            
         }
 
         private void Btn_select_sixes_Click(object sender, RoutedEventArgs e)
         {
             SendScore(5);
-            
         }
 
         private void Btn_select_pair_Click(object sender, RoutedEventArgs e)
         {
             SendScore(6);
-            
         }
 
         private void Btn_select_twoPair_Click(object sender, RoutedEventArgs e)
         {
             SendScore(7);
-            
         }
 
         private void Btn_select_threeOfAKind_Click(object sender, RoutedEventArgs e)
         {
             SendScore(8);
-            
         }
 
         private void Btn_select_fourOfAKind_Click(object sender, RoutedEventArgs e)
         {
             SendScore(9);
-            
         }
 
         private void Btn_select_smallStraight_Click(object sender, RoutedEventArgs e)
         {
             SendScore(10);
-            
         }
 
         private void Btn_select_BigStraight_Click(object sender, RoutedEventArgs e)
         {
             SendScore(11);
-            
         }
 
         private void Btn_select_FullHouse_Click(object sender, RoutedEventArgs e)
         {
             SendScore(12);
-            
         }
 
         private void Btn_select_Chance_Click(object sender, RoutedEventArgs e)
         {
             SendScore(13);
-            
         }
 
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
             SendScore(14);
-            
         }
 
         private void end_game_Click(object sender, RoutedEventArgs e)
@@ -395,8 +417,8 @@ namespace HampesYatzy
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
-                tbTime.Text = _time.ToString("c"); 
-                        if (_time == TimeSpan.Zero) _timer.Stop();
+                tbTime.Text = _time.ToString("c");
+                if (_time == TimeSpan.Zero) _timer.Stop();
                 _time = _time.Add(TimeSpan.FromSeconds(-1));
             }, Application.Current.Dispatcher);
 
@@ -418,6 +440,7 @@ namespace HampesYatzy
                 EndGame();
             }
         }
+
         private void CheckTimer()
         {
             if (_time <= TimeSpan.Zero)
@@ -426,8 +449,5 @@ namespace HampesYatzy
                 EndOrQuitGame();
             }
         }
-
-
     }
 }
-    
