@@ -288,6 +288,46 @@ namespace HampesYatzy
                 }
             }
         }
+
+        public static List<Player> GetBestPlayer()
+        {
+            List<Player> plist = new List<Player>();
+            string stmt = "WITH rankscoreamount AS (SELECT player.nickname, player.firstname, player.lastname, SUM(game_player.score)," +
+                "RANK () OVER(ORDER BY SUM(game_player.score::int) DESC) AS ranking FROM game_player JOIN player ON player.player_id = game_player.player_id" +
+                "JOIN game ON game.game_id = game_player.game_id" +
+                "GROUP BY player.nickname, player.firstname, player.lastname) SELECT * FROM rankscoreamountwhere sum is not null";
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(stmt, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Player p = new Player
+                            {
+
+                                Firstname = reader.GetString(0),
+                                Nickname = reader.GetString(1),
+                                Lastname = reader.GetString(2),
+                                Stats = new PlayerStats()
+                                {
+                                    ConsecutiveWins = reader.GetInt32(3),
+                                    ConsecutiveWinsRank = reader.GetInt32(4)
+                                }
+
+                            };
+
+                            plist.Add(p);
+                        }
+                    }
+                }
+
+            }
+
+            return plist;
+        }
     }
 
 }
