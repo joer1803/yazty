@@ -25,15 +25,20 @@ namespace HampesYatzy
         public MainWindow()
         {
             InitializeComponent();
-            GetFreePlayerList();
+            FillAvailableList();
         }
 
         
-
-        private void GetFreePlayerList()
+        private void FillAvailableList()
         {
             lstAvailable.ItemsSource = null;
-            lstAvailable.ItemsSource = DbOperations.GetFreePlayers();
+            lstAvailable.ItemsSource = GetFreePlayerList();
+        }
+        private List<Player> GetFreePlayerList()
+        {
+            List<Player> playersSort = DbOperations.GetFreePlayers().OrderByDescending(p => p.Nickname).ToList();
+            playersSort.Reverse();
+            return playersSort;
         }
         private void Btn_classic_Click(object sender, RoutedEventArgs e)
         {
@@ -43,7 +48,7 @@ namespace HampesYatzy
         }
         private bool IsPlayersChosen()
         {
-            if(lstAvailable.SelectedItems.Count >= 2 && lstAvailable.SelectedItems.Count <= 4)
+            if(lstChosen.Items.Count >= 2)
             {
                 return true;
             }
@@ -56,10 +61,10 @@ namespace HampesYatzy
         private int CreateNewGame(int gameType)
         {
             List<Player> players = new List<Player>();
-            for (int i = 0; i < lstAvailable.SelectedItems.Count; i++)
+            for (int i = 0; i < lstChosen.Items.Count; i++)
             {
                 Player player = new Player();
-                player = (Player)lstAvailable.SelectedItems[i];
+                player = (Player)lstChosen.Items[i];
                 players.Add(player);
             }
             return DbOperations.CreateGame(players, gameType);
@@ -100,6 +105,7 @@ namespace HampesYatzy
 
         private void LstAvailable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            FillChosenList();
             if (IsPlayersChosen())
             {
                 Btn_classic.IsEnabled = true;
@@ -110,6 +116,69 @@ namespace HampesYatzy
                 Btn_classic.IsEnabled = false;
                 Btn_steerd.IsEnabled = false;
             }
+        }
+        private void RemoveFromAvailableList()
+        {
+            List<Player> players = GetFreePlayerList();
+            List<Player> playerschosen = GetChosenList();
+            List<Player> newPlayers = new List<Player>();
+            for(int i = 0; i < players.Count; i++)
+            {
+                for (int j = 0; j < playerschosen.Count; j++)
+                {
+                    if (players[i].Id == playerschosen[j].Id)
+                    {
+                        players.RemoveAt(i);
+                    }
+                }
+            }
+            lstAvailable.ItemsSource = null;
+            lstAvailable.ItemsSource = players;
+
+        }
+        private List<Player> GetChosenList()
+        {
+            List<Player> playerschosen = new List<Player>();
+            for (int i = 0; i < lstChosen.Items.Count; i++)
+            {
+                playerschosen.Add((Player)lstChosen.Items[i]);
+            }
+            return playerschosen;
+        }
+        private void FillChosenList()
+        {
+            int count = 0;
+            List<Player> playerschosen = GetChosenList();
+            if(lstChosen.Items.Count < 4)
+            {
+                if(lstAvailable.SelectedItem != null)
+                {
+                    for(int i = 0; i < lstChosen.Items.Count; i++)
+                    {
+                        if (!lstAvailable.SelectedItem.Equals(playerschosen[i]))
+                        {
+                            count++;
+                        }
+                    }
+                    if (count == lstChosen.Items.Count)
+                    {
+                        playerschosen.Add((Player)lstAvailable.SelectedItem);
+                        lstChosen.ItemsSource = null;
+                        lstChosen.ItemsSource = playerschosen;
+                        RemoveFromAvailableList();
+                    }
+                }
+            }
+        }
+        private void ResetChosenPlayers()
+        {
+            GetFreePlayerList();
+            lstChosen.ItemsSource = null;
+        }
+
+        private void Btn_clear_chosen_Click(object sender, RoutedEventArgs e)
+        {
+            ResetChosenPlayers();
         }
     }
 }
