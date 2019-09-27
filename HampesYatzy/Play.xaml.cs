@@ -127,47 +127,45 @@ namespace HampesYatzy
             lblActivePlayer.Content = gameLogic.GetActivePlayer().Nickname;
         }
 
-        private string CheckButton(int index)
+        private void CheckButton(int index)
         {
             if (gameLogic.GetDice()[index].Hold == true)
             {
                 gameLogic.GetDice()[index].Hold = false;
-                return "";
             }
             else
             {
                 gameLogic.GetDice()[index].Hold = true;
-                return "";
             }
         }
 
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceOne.Content = CheckButton(0);
+            CheckButton(0);
             UpdateDice();
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceTwo.Content = CheckButton(1);
+            CheckButton(1);
             UpdateDice();
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceThree.Content = CheckButton(2);
+            CheckButton(2);
             UpdateDice();
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceFour.Content = CheckButton(3);
+            CheckButton(3);
             UpdateDice();
         }
 
         private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
         {
-            hold_diceFive.Content = CheckButton(4);
+            CheckButton(4);
             UpdateDice();
         }
 
@@ -290,7 +288,6 @@ namespace HampesYatzy
                 gameLogic.SetScore(category);
                 UpdateScoreSheet();
                 NextTurn();
-                ResetDiceButtons();
                 CheckTimer();
                 ClearDice();
             }
@@ -299,17 +296,6 @@ namespace HampesYatzy
                 MessageBox.Show("Du har redan tagit denna kategori");
             }
         }
-
-        private void ResetDiceButtons()
-        {
-            string save = "Spara";
-            hold_diceOne.Content = save;
-            hold_diceTwo.Content = save;
-            hold_diceThree.Content = save;
-            hold_diceFour.Content = save;
-            hold_diceFive.Content = save;
-        }
-
         private void GameOverCheck()
         {
             if (gameLogic.CheckGameOver())
