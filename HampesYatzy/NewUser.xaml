@@ -33,20 +33,20 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="10">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
-                <MenuItem Header="Lobby" Click="MenuItem_Click_1" FontSize="22"/>
-                <MenuItem Header="Topplista" Click="MenuItem_Click" FontSize="22"/>
-                <MenuItem Header="Skapa användare" FontSize="22"/>
+                <MenuItem Header="Lobby" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Topplista" Click="MenuItem_Click"/>
+                <MenuItem Header="Skapa användare"/>
             </Menu>
         </StackPanel>
 
         <Label x:Name="firstname" Content="Förnamn" Grid.Column="1" Grid.Row="3" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <TextBox x:Name="txtbox_firstname" Height="45" Width="250" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" />
+        <TextBox x:Name="txtbox_firstname" Height="45" Width="250" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" FontSize="20" />
 
         <Label x:Name="lastname" Content="Efternamn" Grid.Column="1" Grid.Row="5" Width="115" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <TextBox x:Name="txtbox_lastname" Height="45" Grid.Column="1" Grid.Row="6" Width="250" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtbox_lastname" Height="45" Grid.Column="1" Grid.Row="6" Width="250" HorizontalAlignment="Left" FontSize="20"/>
 
         <Label x:Name="label" Content="Användarnamn*" VerticalAlignment="Bottom" Width="272" FontSize="20" Grid.Column="1" Grid.Row="7"  HorizontalAlignment="Left"/>
-        <TextBox x:Name="txtbox_nickname" Grid.Column="1" Grid.Row="8" Width="250" Height="45" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtbox_nickname" Grid.Column="1" Grid.Row="8" Width="250" Height="45" HorizontalAlignment="Left" FontSize="20"/>
 
         <Button x:Name="btnCreateUser" Content="Skapa användare" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="208" Height="78" FontSize="18" Click="BtnCreateUser_Click"/>
         <Label x:Name="label1" Content="* Obligatoriska fält" Grid.Column="1" Grid.Row="9" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
