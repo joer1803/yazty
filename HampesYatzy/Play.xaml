@@ -164,19 +164,19 @@
             </ItemsControl>
 
             <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1" />
-        <Button x:Name="hold_diceOne" Content="Spara" Grid.Column="8" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click" />
+        <Button x:Name="hold_diceOne"  Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1" Background="Transparent" Click="Hold_diceOne_Click" />
 
         <Image x:Name="diceTwo" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1" />
-        <Button x:Name="hold_diceTwo" Content="Spara" Grid.Column="9" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceTwo_Click" />
+        <Button x:Name="hold_diceTwo"  Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1" Background="Transparent" Click="Hold_diceTwo_Click" />
 
         <Image x:Name="diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1" />
-        <Button x:Name="hold_diceThree" Content="Spara" Grid.Column="10" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceThree_Click" />
+        <Button x:Name="hold_diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1" Background="Transparent" Click="Hold_diceThree_Click" />
 
         <Image x:Name="diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="10,1" />
-        <Button x:Name="hold_diceFour" Content="Spara" Grid.Column="11" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFour_Click" />
+        <Button x:Name="hold_diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1" Background="Transparent" Click="Hold_diceFour_Click" />
 
         <Image x:Name="diceFive" Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1" />
-        <Button x:Name="hold_diceFive" Content="Spara" Grid.Column="12" Grid.Row="11" FontSize="20" Margin="1 1 1 1" Click="Hold_diceFive_Click" />
+        <Button x:Name="hold_diceFive"  Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1" Background="Transparent" Click="Hold_diceFive_Click" />
 
         <Button x:Name="Trow_dice" Content="Kasta tärning" Grid.Column="13" Grid.Row="18" Grid.RowSpan="2" FontSize="24" Click="Trow_dice_Click" />
         <Label x:Name="count_trow" Grid.Column="13" Grid.Row="17" FontSize="18" />

@@ -132,12 +132,12 @@ namespace HampesYatzy
             if (gameLogic.GetDice()[index].Hold == true)
             {
                 gameLogic.GetDice()[index].Hold = false;
-                return "Spara";
+                return "";
             }
             else
             {
                 gameLogic.GetDice()[index].Hold = true;
-                return "Släpp";
+                return "";
             }
         }
 
