@@ -24,6 +24,7 @@ namespace HampesYatzy
             InitializeComponent();
             LoadMostGamesRankings();
             LoadTotalScoreRankings();
+            LoadConsecutiveWinsRanking();
         }
 
 

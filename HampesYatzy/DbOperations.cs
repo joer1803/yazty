@@ -292,10 +292,10 @@ namespace HampesYatzy
         public static List<Player> GetBestPlayer()
         {
             List<Player> plist = new List<Player>();
-            string stmt = "WITH rankscoreamount AS (SELECT player.nickname, player.firstname, player.lastname, SUM(game_player.score)," +
-                "RANK () OVER(ORDER BY SUM(game_player.score::int) DESC) AS ranking FROM game_player JOIN player ON player.player_id = game_player.player_id" +
-                "JOIN game ON game.game_id = game_player.game_id" +
-                "GROUP BY player.nickname, player.firstname, player.lastname) SELECT * FROM rankscoreamountwhere sum is not null";
+            string stmt = "WITH rankscoreamount AS (SELECT player.nickname, player.firstname, player.lastname, SUM(game_player.score), " +
+                "RANK () OVER(ORDER BY SUM(game_player.score::int) DESC) AS ranking FROM game_player JOIN player ON player.player_id = game_player.player_id " +
+                "JOIN game ON game.game_id = game_player.game_id " +
+                "GROUP BY player.nickname, player.firstname, player.lastname) SELECT * FROM rankscoreamount where sum is not null";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
             {
                 conn.Open();
