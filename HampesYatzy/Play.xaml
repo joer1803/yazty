@@ -59,24 +59,24 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" />
+                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
@@ -86,24 +86,24 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" />
+                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
@@ -113,24 +113,24 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" />
+                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
@@ -140,24 +140,24 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" />
-                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" />
+                        <TextBlock Text="{Binding ScoreSheet.Scores[0]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[1]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[2]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[3]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[4]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[5]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Sum}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Bonus}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[6]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[7]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[8]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[9]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[10]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[11]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[12]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[13]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.Scores[14]}" Height="34" Width="34" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding ScoreSheet.TotScore}" Height="34" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
@@ -200,9 +200,9 @@
         <Button x:Name="btn_select_fullHouse" Content="Välj" Grid.Column="6" Grid.Row="17" FontSize="20" Click="Btn_select_FullHouse_Click" />
         <Button x:Name="btn_select_chance" Content="Välj" Grid.Column="6" Grid.Row="18" FontSize="20" Click="Btn_select_Chance_Click" />
         <Button x:Name="btn_select_yatzy" Content="Välj" Grid.Column="6" Grid.Row="19" FontSize="20" Click="Btn_select_Yatzy_Click" />
-        <Label x:Name="player_four_initial" Content="" Width="34" Height="34" Grid.Column="5" Grid.Row="2"/>
-        <Label x:Name="player_three_initial" Content="" Width="34" Height="34" Grid.Column="4" Grid.Row="2"/>
-        <Label x:Name="player_two_initial" Content="" Width="34" Height="34" Grid.Column="3" Grid.Row="2"/>
-        <Label x:Name="player_one_initial" Content="" Width="34" Height="34" Grid.Column="2" Grid.Row="2"/>
+        <Label x:Name="player_four_initial" Content="" Width="34" Height="34" Grid.Column="5" Grid.Row="2" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="player_three_initial" Content="" Width="34" Height="34" Grid.Column="4" Grid.Row="2" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="player_two_initial" Content="" Width="34" Height="34" Grid.Column="3" Grid.Row="2" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="player_one_initial" Content="" Width="34" Height="34" Grid.Column="2" Grid.Row="2" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Window>
