@@ -12,15 +12,15 @@ namespace HampesYatzy
     {
         private static bool IsBlankNickName(string nickname)
         {
-                    int checkBlankNick = 0;
+            int checkBlankNick = 0;
             foreach (char c in nickname)
             {
-                if (c.Equals(" "))
+                if (Char.IsWhiteSpace(c))
                 {
                     checkBlankNick++;
                 }
             }
-            if(checkBlankNick == nickname.Length)
+            if (checkBlankNick == nickname.Length)
             {
                 return true;
             }
@@ -29,6 +29,7 @@ namespace HampesYatzy
                 return false;
             }
         }
+
         public static List<Player> GetFreePlayers()
         {
             var plist = GetAllPlayers();
@@ -181,15 +182,13 @@ namespace HampesYatzy
         public static int CreateGame(List<Player> players, int gameType)
         {
             int gameId = 0;
-            DateTime currentDateTime = DateTime.Now;
-            string stmt = "INSERT INTO game(gametype_id, started_at) VALUES(@gameType, @currentDateTime) RETURNING game_id";
+            string stmt = "INSERT INTO game(gametype_id) VALUES(@gameType) RETURNING game_id";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
                     cmd.Parameters.AddWithValue("gameType", gameType);
-                    cmd.Parameters.AddWithValue("currentDateTime", currentDateTime);
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -199,11 +198,11 @@ namespace HampesYatzy
                     }
                 }
             }
-            CreateGamePlayers(players, currentDateTime, gameId);
+            CreateGamePlayers(players, gameId);
             return gameId;
         }
 
-        private static void CreateGamePlayers(List<Player> players, DateTime currentDateTime, int gameId)
+        private static void CreateGamePlayers(List<Player> players, int gameId)
         {
             string stmtTwo = "INSERT INTO game_player(game_id, player_id) VALUES(@gameId, @player)";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -285,10 +284,17 @@ namespace HampesYatzy
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
-                    cmd.Parameters.AddWithValue("fName", fName);
-                    cmd.Parameters.AddWithValue("lName", lName);
-                    cmd.Parameters.AddWithValue("nickName", nickName);
-                    cmd.ExecuteNonQuery();
+                    if (IsBlankNickName(nickName))
+                    {
+                        return $"{nickName} är inte ett giltigt smeknamn/spelarnamn";
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("fName", fName);
+                        cmd.Parameters.AddWithValue("lName", lName);
+                        cmd.Parameters.AddWithValue("nickName", nickName);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
             return $"{nickName} är redo att spela yatzy!";
@@ -334,7 +340,6 @@ namespace HampesYatzy
                                     {
                                         TotScore = reader.GetInt32(5)
                                     }
-
                                 };
                                 players.Add(p);
                             }
@@ -359,13 +364,13 @@ namespace HampesYatzy
                     {
                         while (reader.Read())
                         {
-                                YatzyGame game = new YatzyGame
-                                {
-                                    Players = GetGamePlayerStatsList(reader.GetInt32(0)),
-                                    GameId = reader.GetInt32(0),
-                                    EndTime = reader.GetDateTime(1)
-                                };
-                                gameList.Add(game);
+                            YatzyGame game = new YatzyGame
+                            {
+                                Players = GetGamePlayerStatsList(reader.GetInt32(0)),
+                                GameId = reader.GetInt32(0),
+                                EndTime = reader.GetDateTime(1)
+                            };
+                            gameList.Add(game);
                         }
                     }
                 }

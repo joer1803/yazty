@@ -172,7 +172,7 @@ namespace HampesYatzy
         }
         private void ResetChosenPlayers()
         {
-            GetFreePlayerList();
+            FillAvailableList();
             lstChosen.ItemsSource = null;
         }
 
