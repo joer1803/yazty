@@ -87,7 +87,7 @@
             </ListView.View>
         </ListView>
         <Label Content="De bästa spelarna som loggat in den senaste veckan" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="7" FontSize="20"/>
-        <Label Content="Flest segrar" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="5" FontSize="20"/>
+        <Label Content="Flest segrar i rad" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="5" FontSize="20"/>
         <Label Content="De flitigaste spelarna" Grid.Column="11" Grid.Row="8" Grid.ColumnSpan="4" FontSize="20"/>
     </Grid>
 </Window>
