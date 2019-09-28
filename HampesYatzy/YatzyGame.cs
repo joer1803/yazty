@@ -21,6 +21,7 @@ namespace HampesYatzy
 
         public int GameId { get; set; }
         public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public List<Player> Players { get; set; }
         public List<Die> Dice { get; set; }
         public Player Winner { get; set; }

@@ -10,6 +10,25 @@ namespace HampesYatzy
 {
     class DbOperations
     {
+        private static bool IsBlankNickName(string nickname)
+        {
+                    int checkBlankNick = 0;
+            foreach (char c in nickname)
+            {
+                if (c.Equals(" "))
+                {
+                    checkBlankNick++;
+                }
+            }
+            if(checkBlankNick == nickname.Length)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public static List<Player> GetFreePlayers()
         {
             var plist = GetAllPlayers();
@@ -19,7 +38,7 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < plist.Count; j++)
                 {
-                    if (plist[j].Id == busylist[i].Id)
+                    if (plist[j].Id == busylist[i].Id || IsBlankNickName(plist[j].Nickname))
                     {
                         plist.Remove(plist[j]);
                     }
@@ -257,6 +276,7 @@ namespace HampesYatzy
                 }
             }
         }
+
         public static string CreatePlayer(string fName, string lName, string nickName)
         {
             string stmt = "INSERT INTO player(firstname, lastname, nickname) VALUES(@fName, @lName, @nickName)";
@@ -274,7 +294,6 @@ namespace HampesYatzy
             return $"{nickName} är redo att spela yatzy!";
         }
 
-
         public static void DeleteGame(int gameId)
         {
             string stmt = "DELETE FROM game WHERE game_id = @gameId";
@@ -289,13 +308,48 @@ namespace HampesYatzy
             }
         }
 
-        public static List<Player> GetBestPlayer()
+        private static List<Player> GetGamePlayerStatsList(int gameId)
         {
-            List<Player> plist = new List<Player>();
-            string stmt = "WITH rankscoreamount AS (SELECT player.nickname, player.firstname, player.lastname, SUM(game_player.score), " +
-                "RANK () OVER(ORDER BY SUM(game_player.score::int) DESC) AS ranking FROM game_player JOIN player ON player.player_id = game_player.player_id " +
-                "JOIN game ON game.game_id = game_player.game_id " +
-                "GROUP BY player.nickname, player.firstname, player.lastname) SELECT * FROM rankscoreamount where sum is not null";
+            string stmt = "SELECT game_player.game_id, game_player.player_id, player.firstname, player.Nickname, player.Lastname, game_player.score, game.ended_at FROM game_player INNER JOIN player on player.player_id = game_player.player_id JOIN game ON game.game_id = game_player.game_id WHERE game.game_id = @gameId";
+            List<Player> players = new List<Player>();
+            using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(stmt, conn))
+                {
+                    cmd.Parameters.AddWithValue("gameId", gameId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(5))
+                            {
+                                Player p = new Player()
+                                {
+                                    Id = reader.GetInt32(1),
+                                    Firstname = reader.GetString(2),
+                                    Nickname = reader.GetString(3),
+                                    Lastname = reader.GetString(4),
+                                    ScoreSheet = new ScoreSheet()
+                                    {
+                                        TotScore = reader.GetInt32(5)
+                                    }
+
+                                };
+                                players.Add(p);
+                            }
+                        }
+                    }
+                }
+            }
+            return players;
+        }
+
+        public static List<YatzyGame> GetConsecutiveWinsRanking()
+        {
+            List<YatzyGame> gameList = new List<YatzyGame>();
+
+            string stmt = "SELECT game_id, ended_at FROM game WHERE ended_at IS NOT NULL";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
             {
                 conn.Open();
@@ -305,29 +359,19 @@ namespace HampesYatzy
                     {
                         while (reader.Read())
                         {
-                            Player p = new Player
-                            {
-
-                                Firstname = reader.GetString(0),
-                                Nickname = reader.GetString(1),
-                                Lastname = reader.GetString(2),
-                                Stats = new PlayerStats()
+                                YatzyGame game = new YatzyGame
                                 {
-                                    ConsecutiveWins = reader.GetInt32(3),
-                                    ConsecutiveWinsRank = reader.GetInt32(4)
-                                }
-
-                            };
-
-                            plist.Add(p);
+                                    Players = GetGamePlayerStatsList(reader.GetInt32(0)),
+                                    GameId = reader.GetInt32(0),
+                                    EndTime = reader.GetDateTime(1)
+                                };
+                                gameList.Add(game);
                         }
                     }
                 }
-
             }
 
-            return plist;
+            return gameList;
         }
     }
-
 }
