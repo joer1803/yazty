@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
         Title="Topplista" Height="768" Width="1366">
-    <Grid Background="#FF389355">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/greens.png"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>

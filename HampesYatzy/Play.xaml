@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
         Title="Spela" Height="768" Width="1366">
-    <Grid Background="#FF389355" RenderTransformOrigin="0.378,0.528">
+    <Grid RenderTransformOrigin="0.378,0.528">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/pastelgreens.png"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="156*" />

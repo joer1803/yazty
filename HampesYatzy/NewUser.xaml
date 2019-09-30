@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:HampesYatzy"
         mc:Ignorable="d"
         Title="Skapa användare" Height="768" Width="1366">
-    <Grid Background="#FF389355" Margin="0,0,0.333,-6.667">
+    <Grid Margin="0,0,0.333,-6.667">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/whiteback.png"/>
+        </Grid.Background>
 
 
         <Grid.ColumnDefinitions>
