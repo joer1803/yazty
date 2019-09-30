@@ -54,7 +54,12 @@
         <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="8" Height="auto" FontSize="20" SelectionChanged="LstAvailable_SelectionChanged" SelectionMode="Single">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Spelare" Width="auto" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridViewColumn Header="Tillgängliga spelare" Width="230" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
                 </GridView>
             </ListView.View>
         </ListView>
