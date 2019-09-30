@@ -108,18 +108,22 @@ namespace HampesYatzy
             List<Image> diceFrames = MakeImageList();
             List<Die> dice = gameLogic.GetDice();
             List<BitmapImage> diceRedImages = MakeDiceImageHoldList();
-
-            for (int i = 0; i < diceFrames.Count; i++)
+            if(dice[0].Value!= 0)
             {
-                if (dice[i].Hold == true)
+                for (int i = 0; i < diceFrames.Count; i++)
                 {
-                    diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
-                }
-                else
-                {
-                    diceFrames[i].Source = diceImages[dice[i].Value - 1];
+                    if (dice[i].Hold == true)
+                    {
+                        diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
+                    }
+                    else
+                    {
+                        diceFrames[i].Source = diceImages[dice[i].Value - 1];
+                    }
                 }
             }
+
+           
         }
 
         private void UpdatePlayer()
