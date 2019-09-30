@@ -63,7 +63,7 @@ namespace HampesYatzy
         public Player GetWinner()
         {
             List<Player> players = game.Players.OrderByDescending(p => p.ScoreSheet.TotScore).ToList();
-            return game.Players[0];
+            return players[0];
         }
 
         public Player GetActivePlayer()
