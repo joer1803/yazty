@@ -9,33 +9,33 @@
 
     <Grid Margin="0,0,-7.667,-6.667" Background="#FF389355">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="194*"/>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="105*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition />
-            <RowDefinition/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="58*" />
+            <RowDefinition Height="57*"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12">
@@ -47,8 +47,8 @@
         </StackPanel>
 
 
-        <Label Content="Välj dig och dina motståndare (Max 4 spelare)" Width="auto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" FontSize="20"/>
-        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="8" Height="auto" FontSize="20" SelectionChanged="LstAvailable_SelectionChanged" SelectionMode="Single">
+        <Label Content="Välj dig och dina motståndare&#10;(Max 4 spelare)" Width="auto" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="4" FontSize="18"/>
+        <ListView x:Name="lstAvailable" DisplayMemberPath="{Binding Player}" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="8" Height="auto" FontSize="20" SelectionChanged="LstAvailable_SelectionChanged" SelectionMode="Single">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Spelare" Width="auto" DisplayMemberBinding="{Binding Nickname}"/>
@@ -56,21 +56,27 @@
             </ListView.View>
         </ListView>
 
-
-        <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="6" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
-        <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
-        <Button x:Name="Btn_clear_chosen" Height="55" Content="Rensa lista" FontSize="15" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="1" VerticalAlignment="Bottom" Margin="40,0,62,0" Click="Btn_clear_chosen_Click"/>
+        <Label Content="Välkommen till Hampes Yatzy" HorizontalAlignment="Left" Grid.Row="1" Grid.ColumnSpan="5" Height="auto" VerticalAlignment="Top" FontSize="40" Width="auto" Margin="46,52,0,0" Grid.RowSpan="2"/>
+        <Label Content="Är detta första gången du spelar hos oss?&#10;För att sätta igång så behöver du först skapa&#10;en användare. Om du redan är medlem hos&#10;oss så kan du starta direkt genom att välja&#10;dig och dina motståndare i rutan till höger.&#10;Lycka till!" HorizontalAlignment="Left" Grid.Row="4" Grid.ColumnSpan="5" Height="276" VerticalAlignment="Top" FontSize="22" Width="auto" Grid.RowSpan="5" Margin="87,0,0,0"/>
+        <GridSplitter Grid.Column="4" HorizontalAlignment="Left" Height="506" Grid.Row="3" Grid.RowSpan="9" VerticalAlignment="Top" Width="1" Background="Black" Margin="151,10,0,0"/>
+        <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="9" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
+        <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="9" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
+        <Button x:Name="Btn_clear_chosen" Height="32" Content="Rensa lista" FontSize="15" Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="1" VerticalAlignment="Bottom" Margin="40,0,62,23" Click="Btn_clear_chosen_Click"/>
         <Image Grid.Column="10" Grid.Row="1" Source="Resources/Questionmark.png" Margin="94,0,0,29" Grid.ColumnSpan="2" Grid.RowSpan="2" MouseEnter="Image_MouseEnter"/>
-        <Label Content="Hur spelar man Yatzy" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="22"/>
-        <Viewbox Grid.Column="5" HorizontalAlignment="Right" Height="573" Margin="37,0,0,0" Grid.Row="2" Grid.RowSpan="10" VerticalAlignment="Top" Width="646" Grid.ColumnSpan="6" Visibility="Hidden"/>
-        <Label x:Name="error_lbl" Visibility="Hidden" Content="Du måste välja spelare" Grid.Column="6" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="26" Grid.ColumnSpan="3" Height="47" Width="270"/>
-        <ListView x:Name="lstChosen" DisplayMemberPath="{Binding Player}" Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Height="auto" FontSize="20" Margin="0,0,62,0">
+
+        <Label Content="Hur spelar man Yatzy" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="22" Height="39"/>
+        <Viewbox Grid.Column="4" HorizontalAlignment="Right" Height="573" Grid.Row="2" Grid.RowSpan="10" VerticalAlignment="Top" Width="646" Grid.ColumnSpan="7" Visibility="Hidden"/>
+        <Label x:Name="error_lbl" Visibility="Hidden" Content="Du måste välja spelare" Grid.Column="9" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="26" Grid.ColumnSpan="3" Height="47" Width="270"/>
+        <ListView x:Name="lstChosen" DisplayMemberPath="{Binding Player}" Grid.Column="9" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Height="auto" FontSize="20" Margin="5,0,62,0" RenderTransformOrigin="1.707,0.474">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Valda spelare" Width="{Binding ElementName=lstChosen}" DisplayMemberBinding="{Binding Nickname}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Frame x:Name="Tutorial" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="11" NavigationUIVisibility="Hidden" Margin="10,0,0,0" MouseLeave="Tutorial_MouseLeave"/>
+        <Frame x:Name="Tutorial" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="12" NavigationUIVisibility="Hidden" Margin="10,47,0,10" MouseLeave="Tutorial_MouseLeave"/>
+
+
+
     </Grid>
 </Window>
