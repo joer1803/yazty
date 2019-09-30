@@ -402,7 +402,7 @@ namespace HampesYatzy
         private void CheckBonus()
         {
             int count = 0;
-            for(int i = 0; i < 7; i++)
+            for(int i = 0; i < 6; i++)
             {
                 if (activePlayer.ScoreSheet.Categories[i])
                 {
