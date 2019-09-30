@@ -235,6 +235,13 @@ namespace HampesYatzy
             for(int i = 0; i < MakeImageList().Count; i++)
             {
                 MakeImageList()[i].Source = null;
+
+                lblHold_diceOne.Visibility = Visibility.Collapsed;
+                lblHold_diceTwo.Visibility = Visibility.Collapsed;
+                lblHold_diceThree.Visibility = Visibility.Collapsed;
+                lblHold_diceFour.Visibility = Visibility.Collapsed;
+                lblHold_diceFive.Visibility = Visibility.Collapsed;
+
             }
         }
         private void CategoryTaken()

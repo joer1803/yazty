@@ -166,28 +166,28 @@
             </ItemsControl.ItemTemplate>
             </ItemsControl>
 
-        <TextBlock x:Name="txtActivePlayer" Grid.ColumnSpan="5" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="89,0,0,0" Grid.Row="3" Grid.RowSpan="3" VerticalAlignment="Top" Width="472" FontSize="24">
+        <TextBlock x:Name="txtActivePlayer" Grid.ColumnSpan="5" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="89,0,0,0" Grid.Row="3" Grid.RowSpan="3" VerticalAlignment="Top" Width="472" FontSize="24" >
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Trigger.EnterActions>
+                        <DataTrigger Binding="{Binding ElementName=Trow_dice, Path=IsPressed}"  Value="True">
+                            <DataTrigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation Duration="0:0:0.400" To="40" Storyboard.TargetProperty="FontSize"  />
-                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.300" AutoReverse="True" To="40" Storyboard.TargetProperty="FontSize"  />
+                                        <DoubleAnimation Duration="0:0:0.400" AutoReverse="True" To="125" Storyboard.TargetProperty="Height" />
                                     </Storyboard>
                                 </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation Duration="0:0:0.250" To="24" Storyboard.TargetProperty="FontSize" />
-                                        <DoubleAnimation Duration="0:0:0.150" To="92" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.900" AutoReverse="True" To="24" Storyboard.TargetProperty="FontSize" />
+                                        <DoubleAnimation Duration="0:0:0.900" AutoReverse="True" To="92" Storyboard.TargetProperty="Height" />
                                     </Storyboard>
                                 </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </TextBlock.Style>
