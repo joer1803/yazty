@@ -1,0 +1,12 @@
+﻿<Window x:Class="HampesYatzy.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HampesYatzy"
+        mc:Ignorable="d"
+        Title="Hampes Yatzy" Height="410.801" Width="583.624">
+    <Grid Background="#FF389355">
+        <Image Source="Resources/HampesYatzy.png" Margin="-9,-106,-10,106"/>
+    </Grid>
+</Window>
