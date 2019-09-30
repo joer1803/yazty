@@ -24,10 +24,10 @@ namespace HampesYatzy
         DispatcherTimer _timer;
         TimeSpan _time;
 
-        public Play(int gameId)
+        public Play(int gameId, int gametype)
         {
             InitializeComponent();
-            gameLogic = new GameLogic(gameId);
+            gameLogic = new GameLogic(gameId, gametype);
             UpdatePlayer();
             SetInitials();
             CountTime();

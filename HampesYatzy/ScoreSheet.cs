@@ -14,6 +14,7 @@ namespace HampesYatzy
             Scores = new int[15];
         }
         public int Bonus { get; set; }
+        public bool BonusTaken { get; set; }
         public bool[] Categories { get; set; }
         public int[] Scores { get; set; }
         public int Sum { get; set; }

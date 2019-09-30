@@ -27,12 +27,13 @@ namespace HampesYatzy
         YatzyGame game;
         Player activePlayer;
         
-        public GameLogic(int gameId)
+        public GameLogic(int gameId, int gametype)
         {
             game = new YatzyGame();
             game.Players = DbOperations.GetGame(gameId);
             game.StartTime = DateTime.Now;
             game.GameId = gameId;
+            game.GameType = gametype;
             activePlayer = game.Players[0];
         }
         public List<Player> GetPlayers()
@@ -402,20 +403,32 @@ namespace HampesYatzy
         private void CheckBonus()
         {
             int count = 0;
-            for(int i = 0; i < 6; i++)
+            if (!activePlayer.ScoreSheet.BonusTaken)
             {
-                if (activePlayer.ScoreSheet.Categories[i])
+                for (int i = 0; i < 6; i++)
                 {
-                    count++;
+                    if (activePlayer.ScoreSheet.Categories[i])
+                    {
+                        count++;
+                    }
+                }
+                if (count == 6)
+                {
+                    activePlayer.ScoreSheet.BonusTaken = true;
+                    if (game.GameType == 1)
+                    {
+                        BonusPointClassic();
+                    }
+                    else if (game.GameType == 2)
+                    {
+                        BonusPointStyrd();
+                    }
                 }
             }
-            if (count == 6)
-            {
-                activePlayer.ScoreSheet.Bonus = BonusPointClassic();
-            }
+            
         }
         
-        private int BonusPointClassic()//Textblock or box for the total sum of 1-6 category goes inside the ()
+        private void BonusPointClassic()//Textblock or box for the total sum of 1-6 category goes inside the ()
         {
             int totalUp = 0;
             for(int i = 0; i < 6; i++)
@@ -432,10 +445,11 @@ namespace HampesYatzy
                 sum = 0;
             }
 
-            return sum;
+            activePlayer.ScoreSheet.Bonus = sum;
+            activePlayer.ScoreSheet.TotScore += activePlayer.ScoreSheet.Bonus;
         }
 
-        private int BonusPointStyrd()//Textblock or box for the total sum of 1-6 category goes inside the ()
+        private void BonusPointStyrd()//Textblock or box for the total sum of 1-6 category goes inside the ()
         {
             int totalUp = 0;
             for (int i = 0; i < 6; i++)
@@ -451,8 +465,8 @@ namespace HampesYatzy
             {
                 sum = 0;
             }
-
-            return sum;
+            activePlayer.ScoreSheet.Bonus = sum;
+            activePlayer.ScoreSheet.TotScore += activePlayer.ScoreSheet.Bonus;
         }
         public void QuitGame()
         {

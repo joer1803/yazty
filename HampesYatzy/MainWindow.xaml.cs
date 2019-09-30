@@ -42,7 +42,7 @@ namespace HampesYatzy
         }
         private void Btn_classic_Click(object sender, RoutedEventArgs e)
         {
-                Play play = new Play(CreateNewGame(1));
+                Play play = new Play(CreateNewGame(1), 1);
                 play.Show();
                 this.Close();        
         }
@@ -72,7 +72,7 @@ namespace HampesYatzy
 
         private void Btn_steerd_Click(object sender, RoutedEventArgs e)
         {
-            Play play = new Play(CreateNewGame(2));
+            Play play = new Play(CreateNewGame(2), 2);
             play.Show();
             this.Close();
         }
