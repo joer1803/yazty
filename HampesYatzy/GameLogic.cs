@@ -35,6 +35,20 @@ namespace HampesYatzy
             game.GameId = gameId;
             game.GameType = gametype;
             activePlayer = game.Players[0];
+            if(game.GameType == 2)
+            {
+                StartSteeredYatzy();
+            }
+        }
+        private void StartSteeredYatzy()
+        {
+            for(int i=0; i < game.Players.Count; i++)
+            {
+                for(int j = 1; j < game.Players[i].ScoreSheet.Categories.Length; j++)
+                {
+                    game.Players[i].ScoreSheet.Categories[j] = true;
+                }
+            }
         }
         public List<Player> GetPlayers()
         {
@@ -176,6 +190,13 @@ namespace HampesYatzy
             if(category < 6)
             {
                 AddToSum(category);
+            }
+            if (game.GameType == 2)
+            {
+                if(category<activePlayer.ScoreSheet.Categories.Length-1)
+                {
+                    activePlayer.ScoreSheet.Categories[category + 1] = false;
+                }
             }
             
         }
