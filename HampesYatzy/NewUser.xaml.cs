@@ -23,9 +23,9 @@ namespace HampesYatzy
         {
             InitializeComponent();
         }
-        private void CreateNewUser()
+        private string CreateNewUser()
         {
-            MessageBox.Show(DbOperations.CreatePlayer(txtbox_firstname.Text, txtbox_lastname.Text, txtbox_nickname.Text));
+           return DbOperations.CreatePlayer(txtbox_firstname.Text, txtbox_lastname.Text, txtbox_nickname.Text);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -44,10 +44,25 @@ namespace HampesYatzy
 
         private void BtnCreateUser_Click(object sender, RoutedEventArgs e)
         {
-            CreateNewUser();
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
+            MessageBox.Show(CheckUserName(txtbox_nickname.Text, txtbox_firstname.Text, txtbox_lastname.Text));
+        }
+        private string CheckUserName(string nickname, string fname, string lname)
+        {
+            if (DbOperations.IsBlankNickName(nickname))
+            {
+                return $"{nickname} är inte ett giltigt smeknamn/spelarnamn";
+            }
+            else if (DbOperations.IsDuplicateNickname(nickname))
+            {
+                return $"{nickname} är upptaget! Välj ett annat användarnamn.";
+            }
+            else
+            {
+                MainWindow mainwindow = new MainWindow();
+                mainwindow.Show();
+                this.Close();
+                return CreateNewUser();
+            }
         }
 
     }

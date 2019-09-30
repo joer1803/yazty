@@ -10,7 +10,7 @@ namespace HampesYatzy
 {
     class DbOperations
     {
-        private static bool IsBlankNickName(string nickname)
+        public static bool IsBlankNickName(string nickname)
         {
             int checkBlankNick = 0;
             foreach (char c in nickname)
@@ -28,6 +28,19 @@ namespace HampesYatzy
             {
                 return false;
             }
+        }
+        public static bool IsDuplicateNickname(string nickname)
+        {
+            List<Player> players = GetAllPlayers();
+            foreach (Player p in players)
+            {
+                if(p.Nickname.Equals(nickname))
+                {
+                    return true;
+                }
+            }
+            return false;
+            
         }
 
         public static List<Player> GetFreePlayers()
@@ -284,17 +297,12 @@ namespace HampesYatzy
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
-                    if (IsBlankNickName(nickName))
-                    {
-                        return $"{nickName} är inte ett giltigt smeknamn/spelarnamn";
-                    }
-                    else
-                    {
+
                         cmd.Parameters.AddWithValue("fName", fName);
                         cmd.Parameters.AddWithValue("lName", lName);
                         cmd.Parameters.AddWithValue("nickName", nickName);
                         cmd.ExecuteNonQuery();
-                    }
+
                 }
             }
             return $"{nickName} är redo att spela yatzy!";
