@@ -129,6 +129,7 @@ namespace HampesYatzy
                     if (players[i].Id == playerschosen[j].Id)
                     {
                         players.RemoveAt(i);
+                        i--;
                     }
                 }
             }
