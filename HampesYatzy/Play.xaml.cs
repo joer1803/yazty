@@ -31,6 +31,7 @@ namespace HampesYatzy
             UpdatePlayer();
             SetInitials();
             CountTime();
+            DisableCategoryButtons();
         }
 
         private void SetInitials()
@@ -115,6 +116,7 @@ namespace HampesYatzy
                     if (dice[i].Hold == true)
                     {
                         diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
+
                     }
                     else
                     {
@@ -136,10 +138,12 @@ namespace HampesYatzy
             if (gameLogic.GetDice()[index].Hold == true)
             {
                 gameLogic.GetDice()[index].Hold = false;
+                
             }
             else
             {
                 gameLogic.GetDice()[index].Hold = true;
+
             }
         }
 
@@ -147,30 +151,38 @@ namespace HampesYatzy
         {
             CheckButton(0);
             UpdateDice();
+            lblHold_diceOne.Visibility = Visibility.Visible;
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
             CheckButton(1);
             UpdateDice();
+            lblHold_diceTwo.Visibility = Visibility.Visible;
+
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
             CheckButton(2);
             UpdateDice();
+            lblHold_diceThree.Visibility = Visibility.Visible;
+
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
         {
             CheckButton(3);
             UpdateDice();
+            lblHold_diceFour.Visibility = Visibility.Visible;
         }
 
         private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
         {
             CheckButton(4);
             UpdateDice();
+            lblHold_diceFive.Visibility = Visibility.Visible;
+
         }
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
