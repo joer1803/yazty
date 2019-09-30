@@ -10,7 +10,7 @@
         <Image Source="Resources/dice.roll.png" Margin="342,0,-64,124"/>
         <Label Content="Välkommen till Hampes Yatzy" HorizontalAlignment="Left" Margin="33,35,0,0" VerticalAlignment="Top" FontSize="25"/>
         <Label Content="Är detta första gången du spelar hos oss?&#10;Klicka då på skapa ny användare för att kunna starta spelet.&#10;Är du redan medlem hos oss klicka då på redan medlem för att&#10;komma direkt in i lobbyn. Lycka till!" HorizontalAlignment="Left" Margin="33,83,0,0" VerticalAlignment="Top" FontSize="14" Width="382"/>
-        <Button Name="BtnCreate" Content="Skapa ny användare" HorizontalAlignment="Left" Margin="188,193,0,0" VerticalAlignment="Top" Width="115" Height="30"/>
-        <Button Name="BtnPlay" Content="Redan medlem" HorizontalAlignment="Left" Margin="33,193,0,0" VerticalAlignment="Top" Width="115" Height="30"/>
+        <Button Name="BtnCreate" Content="Skapa ny användare" HorizontalAlignment="Left" Margin="188,193,0,0" VerticalAlignment="Top" Width="115" Height="30" Click="BtnCreate_Click"/>
+        <Button Name="BtnPlay" Content="Redan medlem" HorizontalAlignment="Left" Margin="33,193,0,0" VerticalAlignment="Top" Width="115" Height="30" Click="BtnPlay_Click"/>
     </Grid>
 </Window>
