@@ -209,5 +209,16 @@
   <ItemGroup>
     <Resource Include="Resources\yatzywindow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\whiteback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\whitepaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\greens.png" />
+    <Resource Include="Resources\mintgreens.png" />
+    <Resource Include="Resources\pastelgreens.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
