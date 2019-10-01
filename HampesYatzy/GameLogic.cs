@@ -419,7 +419,7 @@ namespace HampesYatzy
                 }
                 countSame = 0;
             }
-            return sum;
+            return sum = 0;
         }
         private void CheckBonus()
         {
