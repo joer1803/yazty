@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HampesYatzy"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="Spela" Height="768" Width="1366">
     <Grid RenderTransformOrigin="0.378,0.528">
@@ -193,22 +194,28 @@
             </TextBlock.Style>
         </TextBlock>
 
+
+        <Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="8" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />
         <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1" />
         <Button x:Name="hold_diceOne"  Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click" Opacity="0" />
         <Label x:Name="lblHold_diceOne" Content="Sparad" Grid.Column="8" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Visibility="Collapsed"/>
-        
+
+        <Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="9" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />
         <Image x:Name="diceTwo" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1" />
         <Button x:Name="hold_diceTwo"  Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceTwo_Click" Opacity="0" />
         <Label x:Name="lblHold_diceTwo" Content="Sparad" Grid.Column="9" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Visibility="Collapsed"/>
 
+        <Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="10" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />
         <Image x:Name="diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1" />
         <Button x:Name="hold_diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceThree_Click" Opacity="0" />
         <Label x:Name="lblHold_diceThree" Content="Sparad" Grid.Column="10" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Visibility="Collapsed"/>
 
+        <Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="11" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />
         <Image x:Name="diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="10,1" />
         <Button x:Name="hold_diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceFour_Click" Opacity="0" />
         <Label x:Name="lblHold_diceFour" Content="Sparad" Grid.Column="11" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Visibility="Collapsed"/>
 
+        <Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="12" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />
         <Image x:Name="diceFive" Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1" />
         <Button x:Name="hold_diceFive"  Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceFive_Click" Opacity="0" />
         <Label x:Name="lblHold_diceFive" Content="Sparad" Grid.Column="12" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Visibility="Collapsed"/>
