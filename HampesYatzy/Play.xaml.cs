@@ -125,6 +125,7 @@ namespace HampesYatzy
                     }
                 }
             }
+            DisplayHoldLabels();
            
         }
 
@@ -158,20 +159,20 @@ namespace HampesYatzy
             return labels;
         }
 
-        private void DisplayLabel(int index)
+        private void DisplayHoldLabels()
         {
             List<Label> labels = GetHoldLabelList();
 
-            for (int i = 0; i < labels.Capacity; i++)
+            for (int i = 0; i < labels.Count; i++)
             {
-                if (gameLogic.GetDice()[index].Hold == true)
+                if (gameLogic.GetDice()[i].Hold == true)
                 {
-                    labels[index].Content = "Sparad";
+                    labels[i].Content = "Sparad";
 
                 }
                 else
                 {
-                    labels[index].Content = "";
+                    labels[i].Content = "";
 
                 }
             }
@@ -182,35 +183,30 @@ namespace HampesYatzy
         {
             CheckDie(0);
             UpdateDice();
-            DisplayLabel(0);
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(1);
             UpdateDice();
-            DisplayLabel(1);
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(2);
             UpdateDice();
-            DisplayLabel(2);
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(3);
             UpdateDice();
-            DisplayLabel(3);
         }
 
         private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(4);
             UpdateDice();
-            DisplayLabel(4);
         }
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
@@ -265,16 +261,6 @@ namespace HampesYatzy
                 MakeImageList()[i].Source = null;
 
             }
-        }
-
-        private void ClearLabel()
-        {
-            lblHold_diceOne.Visibility = Visibility.Collapsed;
-            lblHold_diceTwo.Visibility = Visibility.Collapsed;
-            lblHold_diceThree.Visibility = Visibility.Collapsed;
-            lblHold_diceFour.Visibility = Visibility.Collapsed;
-            lblHold_diceFive.Visibility = Visibility.Collapsed;
-
         }
         private void CategoryTaken()
         {
@@ -345,7 +331,6 @@ namespace HampesYatzy
                 NextTurn();
                 CheckTimer();
                 ClearDice();
-                ClearLabel();
             }
             else
             {
@@ -371,6 +356,7 @@ namespace HampesYatzy
             UpdatePlayer();
             DisableCategoryButtons();
             DisplayThrows();
+            DisplayHoldLabels();
         }
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
