@@ -117,7 +117,7 @@ namespace HampesYatzy
                     if (dice[i].Hold == true)
                     {
                         diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
-
+                        
                     }
                     else
                     {
@@ -158,48 +158,59 @@ namespace HampesYatzy
             return labels;
         }
 
-        //private void DisplayLabel1(int index)
-        //{
-        //    if (gameLogic.GetDice()[index].Hold == true)
-        //    {
-        //        lblHold_diceOne.Visibility = Visibility.Visible;
-                
-        //    }
-        //    else
-        //    {
-        //        lblHold_diceOne.Visibility = Visibility.Collapsed;
+        private void DisplayLabel(int index)
+        {
+            List<Label> labels = GetHoldLabelList();
 
-        //    }
-        //}
+            for (int i = 0; i < labels.Capacity; i++)
+            {
+                if (gameLogic.GetDice()[index].Hold == true)
+                {
+                    labels[index].Content = "Sparad";
+
+                }
+                else
+                {
+                    labels[index].Content = "";
+
+                }
+            }
+
+        }
 
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(0);
             UpdateDice();
+            DisplayLabel(0);
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(1);
             UpdateDice();
+            DisplayLabel(1);
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(2);
             UpdateDice();
+            DisplayLabel(2);
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(3);
             UpdateDice();
+            DisplayLabel(3);
         }
 
         private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(4);
             UpdateDice();
+            DisplayLabel(4);
         }
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
