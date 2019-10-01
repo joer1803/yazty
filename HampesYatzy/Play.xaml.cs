@@ -147,10 +147,29 @@ namespace HampesYatzy
             }
         }
 
+        //private void DisplayLabel(int index)
+        //{
+        //    if (gameLogic.GetDice()[index].Hold == true)
+        //    {
+
+        //        lblHold_diceOne.Visibility = Visibility.Visible;
+        //        lblHold_diceTwo.Visibility = Visibility.Visible;
+
+        //    }
+        //    else
+        //    {
+        //        lblHold_diceOne.Visibility = Visibility.Collapsed;
+        //        lblHold_diceTwo.Visibility = Visibility.Collapsed;
+
+
+        //    }
+        //}
+
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(0);
             UpdateDice();
+            //DisplayLabel(0);
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
