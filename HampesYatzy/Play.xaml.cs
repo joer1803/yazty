@@ -133,7 +133,7 @@ namespace HampesYatzy
             txtActivePlayer.Text = $"{gameLogic.GetActivePlayer().Firstname} {gameLogic.GetActivePlayer().Lastname}";
         }
 
-        private void CheckButton(int index)
+        private void CheckDie(int index)
         {
             if (gameLogic.GetDice()[index].Hold == true)
             {
@@ -149,39 +149,34 @@ namespace HampesYatzy
 
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
-            CheckButton(0);
+            CheckDie(0);
             UpdateDice();
-            lblHold_diceOne.Visibility = Visibility.Visible;
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
-            CheckButton(1);
+            CheckDie(1);
             UpdateDice();
-            lblHold_diceTwo.Visibility = Visibility.Visible;
 
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
-            CheckButton(2);
+            CheckDie(2);
             UpdateDice();
-            lblHold_diceThree.Visibility = Visibility.Visible;
 
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
         {
-            CheckButton(3);
+            CheckDie(3);
             UpdateDice();
-            lblHold_diceFour.Visibility = Visibility.Visible;
         }
 
         private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
         {
-            CheckButton(4);
+            CheckDie(4);
             UpdateDice();
-            lblHold_diceFive.Visibility = Visibility.Visible;
 
         }
 
@@ -236,11 +231,11 @@ namespace HampesYatzy
             {
                 MakeImageList()[i].Source = null;
 
-                lblHold_diceOne.Visibility = Visibility.Collapsed;
-                lblHold_diceTwo.Visibility = Visibility.Collapsed;
-                lblHold_diceThree.Visibility = Visibility.Collapsed;
-                lblHold_diceFour.Visibility = Visibility.Collapsed;
-                lblHold_diceFive.Visibility = Visibility.Collapsed;
+                //lblHold_diceOne.Visibility = Visibility.Collapsed;
+                //lblHold_diceTwo.Visibility = Visibility.Collapsed;
+                //lblHold_diceThree.Visibility = Visibility.Collapsed;
+                //lblHold_diceFour.Visibility = Visibility.Collapsed;
+                //lblHold_diceFive.Visibility = Visibility.Collapsed;
 
             }
         }
