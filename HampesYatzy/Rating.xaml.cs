@@ -126,7 +126,7 @@ namespace HampesYatzy
                 {
                     WinningplayersSorted[i].Stats.ConsecutiveWinsRank = rank;
                 }
-                else
+                else if(rank<6)
                 {
                     rank++;
                     WinningplayersSorted[i].Stats.ConsecutiveWinsRank = rank;

@@ -146,7 +146,14 @@ namespace HampesYatzy
                                         GamesPlayedRank = reader.GetInt32(4)
                                     }
                                 };
-                                plist.Add(p);
+                                if (plist.Count > 0 && p.Stats.GamesPlayed == plist[plist.Count - 1].Stats.GamesPlayed)
+                                {
+                                    p.Stats.GamesPlayedRank = plist[plist.Count - 1].Stats.GamesPlayedRank;
+                                }
+                                if(p.Stats.GamesPlayedRank < 6)
+                                {
+                                    plist.Add(p);
+                                }
                             }
                         }
                     }
@@ -183,7 +190,14 @@ namespace HampesYatzy
                                         TotalScoreRank = reader.GetInt32(4)
                                     }
                                 };
-                                plist.Add(p);
+                                if(plist.Count > 0 && p.Stats.TotalScore == plist[plist.Count - 1].Stats.TotalScore)
+                                {
+                                    p.Stats.TotalScoreRank = plist[plist.Count - 1].Stats.TotalScoreRank;
+                                }
+                                if (p.Stats.TotalScoreRank < 6)
+                                {
+                                    plist.Add(p);
+                                }
                             }
                         }
                     }
