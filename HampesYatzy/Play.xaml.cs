@@ -147,6 +147,16 @@ namespace HampesYatzy
 
             }
         }
+        private List<Label> GetHoldLabelList()
+        {
+            List<Label> labels = new List<Label>();
+            labels.Add(lblHold_diceOne);
+            labels.Add(lblHold_diceTwo);
+            labels.Add(lblHold_diceThree);
+            labels.Add(lblHold_diceFour);
+            labels.Add(lblHold_diceFive);
+            return labels;
+        }
 
         //private void DisplayLabel1(int index)
         //{
