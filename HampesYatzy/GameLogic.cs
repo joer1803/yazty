@@ -40,6 +40,21 @@ namespace HampesYatzy
                 StartSteeredYatzy();
             }
         }
+        public string GetReqBonus()
+        {
+
+            string gametype = "";
+            if (game.GameType == 1)
+            {
+                gametype = "63 poäng krävs för bonus";
+            }
+            else if (game.GameType == 2)
+            {
+                gametype = "42 poäng krävs för bonus";
+            }
+
+            return gametype;
+        }
         private void StartSteeredYatzy()
         {
             for(int i=0; i < game.Players.Count; i++)

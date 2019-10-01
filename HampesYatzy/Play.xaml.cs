@@ -32,6 +32,7 @@ namespace HampesYatzy
             SetInitials();
             CountTime();
             DisableCategoryButtons();
+            score_required.Text = gameLogic.GetReqBonus();
         }
 
         private void SetInitials()
