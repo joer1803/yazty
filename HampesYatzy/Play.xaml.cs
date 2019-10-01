@@ -125,9 +125,9 @@ namespace HampesYatzy
                     }
                 }
             }
-
            
         }
+
 
         private void UpdatePlayer()
         {
@@ -148,20 +148,16 @@ namespace HampesYatzy
             }
         }
 
-        //private void DisplayLabel(int index)
+        //private void DisplayLabel1(int index)
         //{
         //    if (gameLogic.GetDice()[index].Hold == true)
         //    {
-
         //        lblHold_diceOne.Visibility = Visibility.Visible;
-        //        lblHold_diceTwo.Visibility = Visibility.Visible;
-
+                
         //    }
         //    else
         //    {
         //        lblHold_diceOne.Visibility = Visibility.Collapsed;
-        //        lblHold_diceTwo.Visibility = Visibility.Collapsed;
-
 
         //    }
         //}
@@ -170,21 +166,18 @@ namespace HampesYatzy
         {
             CheckDie(0);
             UpdateDice();
-            //DisplayLabel(0);
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(1);
             UpdateDice();
-
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(2);
             UpdateDice();
-
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
@@ -197,7 +190,6 @@ namespace HampesYatzy
         {
             CheckDie(4);
             UpdateDice();
-
         }
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
@@ -251,13 +243,17 @@ namespace HampesYatzy
             {
                 MakeImageList()[i].Source = null;
 
-                //lblHold_diceOne.Visibility = Visibility.Collapsed;
-                //lblHold_diceTwo.Visibility = Visibility.Collapsed;
-                //lblHold_diceThree.Visibility = Visibility.Collapsed;
-                //lblHold_diceFour.Visibility = Visibility.Collapsed;
-                //lblHold_diceFive.Visibility = Visibility.Collapsed;
-
             }
+        }
+
+        private void ClearLabel()
+        {
+            lblHold_diceOne.Visibility = Visibility.Collapsed;
+            lblHold_diceTwo.Visibility = Visibility.Collapsed;
+            lblHold_diceThree.Visibility = Visibility.Collapsed;
+            lblHold_diceFour.Visibility = Visibility.Collapsed;
+            lblHold_diceFive.Visibility = Visibility.Collapsed;
+
         }
         private void CategoryTaken()
         {
@@ -328,6 +324,7 @@ namespace HampesYatzy
                 NextTurn();
                 CheckTimer();
                 ClearDice();
+                ClearLabel();
             }
             else
             {
