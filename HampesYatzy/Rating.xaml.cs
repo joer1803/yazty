@@ -30,7 +30,7 @@ namespace HampesYatzy
         private void LoadMostGamesRankings()
         {
             bestFrequentPlayers.ItemsSource = null;
-            bestFrequentPlayers.ItemsSource = DbOperations.GetMostGamesPlayer();
+            bestFrequentPlayers.ItemsSource = GetMostGamesRankedList();
         }
 
         private void LoadConsecutiveWinsRanking()
@@ -42,7 +42,7 @@ namespace HampesYatzy
         private void LoadTotalScoreRankings()
         {
             bestWeek.ItemsSource = null;
-            bestWeek.ItemsSource = DbOperations.GetTotalScoresPlayer();
+            bestWeek.ItemsSource = GetTotalScoreRankedList();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -58,7 +58,57 @@ namespace HampesYatzy
             mainwindow.Show();
             this.Close();
         }
+        private List<Player> GetMostGamesRankedList()
+        {
+            int rank = 0;
+            List<Player> players = DbOperations.GetMostGamesPlayer().OrderByDescending(p => p.Stats.GamesPlayed).ToList();
+            List<Player> topfive = new List<Player>();
+            for(int i = 0; i < players.Count; i++)
+            {
+                if(i>0 && players[i].Stats.GamesPlayed == players[i - 1].Stats.GamesPlayed)
+                {
+                    players[i].Stats.GamesPlayedRank = players[i - 1].Stats.GamesPlayedRank;
 
+                }
+                else
+                {
+                    rank++;
+                    if (rank == 6)
+                    {
+                        return topfive;
+                    }
+                    players[i].Stats.GamesPlayedRank = rank;
+                }
+                topfive.Add(players[i]);
+            }
+            return topfive;
+        }
+        private List<Player> GetTotalScoreRankedList()
+        {
+            int rank = 0;
+            List<Player> players = DbOperations.GetTotalScoresPlayer().OrderByDescending(p => p.Stats.TotalScore).ToList();
+            List<Player> topfive = new List<Player>();
+            for (int i = 0; i < players.Count; i++)
+            {
+                
+                if (i > 0 && players[i].Stats.TotalScore == players[i - 1].Stats.TotalScore)
+                {
+                    players[i].Stats.TotalScoreRank = players[i - 1].Stats.TotalScoreRank;
+
+                }
+                else
+                {
+                    rank++;
+                    if (rank == 6)
+                    {
+                        return topfive;
+                    }
+                    players[i].Stats.TotalScoreRank = rank;
+                }
+                topfive.Add(players[i]);
+            }
+            return topfive;
+        }
         private List<Player> CalculateConsecutiveWins()
         {
             List<YatzyGame> games = DbOperations.GetConsecutiveWinsRanking();
@@ -120,19 +170,25 @@ namespace HampesYatzy
                 }
             }
             List<Player> WinningplayersSorted = Winningplayers.OrderByDescending(p => p.Stats.ConsecutiveWins).ToList();
+            List<Player> topfive = new List<Player>();
             for (int i = 0; i < WinningplayersSorted.Count; i++)
             {
                 if (i - 1 >= 0 && WinningplayersSorted[i - 1].Stats.ConsecutiveWins == WinningplayersSorted[i].Stats.ConsecutiveWins)
                 {
                     WinningplayersSorted[i].Stats.ConsecutiveWinsRank = rank;
                 }
-                else if(rank<6)
+                else if (rank == 5)
+                {
+                    return topfive;
+                }
+                else
                 {
                     rank++;
                     WinningplayersSorted[i].Stats.ConsecutiveWinsRank = rank;
                 }
+                topfive.Add(WinningplayersSorted[i]);
             }
-            return WinningplayersSorted;
+            return topfive;
         }
     }
 }

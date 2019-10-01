@@ -29,18 +29,18 @@ namespace HampesYatzy
                 return false;
             }
         }
+
         public static bool IsDuplicateNickname(string nickname)
         {
             List<Player> players = GetAllPlayers();
             foreach (Player p in players)
             {
-                if(p.Nickname.Equals(nickname))
+                if (p.Nickname.Equals(nickname))
                 {
                     return true;
                 }
             }
             return false;
-            
         }
 
         public static List<Player> GetFreePlayers()
@@ -146,14 +146,7 @@ namespace HampesYatzy
                                         GamesPlayedRank = reader.GetInt32(4)
                                     }
                                 };
-                                if (plist.Count > 0 && p.Stats.GamesPlayed == plist[plist.Count - 1].Stats.GamesPlayed)
-                                {
-                                    p.Stats.GamesPlayedRank = plist[plist.Count - 1].Stats.GamesPlayedRank;
-                                }
-                                if(p.Stats.GamesPlayedRank < 6)
-                                {
-                                    plist.Add(p);
-                                }
+                                plist.Add(p);
                             }
                         }
                     }
@@ -190,14 +183,8 @@ namespace HampesYatzy
                                         TotalScoreRank = reader.GetInt32(4)
                                     }
                                 };
-                                if(plist.Count > 0 && p.Stats.TotalScore == plist[plist.Count - 1].Stats.TotalScore)
-                                {
-                                    p.Stats.TotalScoreRank = plist[plist.Count - 1].Stats.TotalScoreRank;
-                                }
-                                if (p.Stats.TotalScoreRank < 6)
-                                {
-                                    plist.Add(p);
-                                }
+                                plist.Add(p);
+
                             }
                         }
                     }
@@ -311,12 +298,10 @@ namespace HampesYatzy
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
-
-                        cmd.Parameters.AddWithValue("fName", fName);
-                        cmd.Parameters.AddWithValue("lName", lName);
-                        cmd.Parameters.AddWithValue("nickName", nickName);
-                        cmd.ExecuteNonQuery();
-
+                    cmd.Parameters.AddWithValue("fName", fName);
+                    cmd.Parameters.AddWithValue("lName", lName);
+                    cmd.Parameters.AddWithValue("nickName", nickName);
+                    cmd.ExecuteNonQuery();
                 }
             }
             return $"{nickName} är redo att spela yatzy!";
