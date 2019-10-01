@@ -8,7 +8,7 @@
         Title="Skapa användare" Height="768" Width="1366">
     <Grid Margin="0,0,0.333,-6.667">
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/whiteback.png"/>
+            <ImageBrush ImageSource="Resources/greens.png"/>
         </Grid.Background>
 
 

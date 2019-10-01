@@ -9,7 +9,7 @@
         Title="Spela" Height="768" Width="1366">
     <Grid RenderTransformOrigin="0.378,0.528">
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/pastelgreens.png"/>
+            <ImageBrush ImageSource="Resources/greens.png"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
