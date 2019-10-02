@@ -63,7 +63,7 @@
                     <GridViewColumn Header="Användarnamn" Width="120" DisplayMemberBinding="{Binding Nickname}"/>
                     <GridViewColumn Header="Förnamn" Width="100" DisplayMemberBinding="{Binding Firstname}"/>
                     <GridViewColumn Header="Efternamm" Width="100" DisplayMemberBinding="{Binding Lastname}"/>
-                    <GridViewColumn Header="Matcher" Width="65" DisplayMemberBinding="{Binding Stats.ConsecutiveWins}"/>
+                    <GridViewColumn Header="Vinster" Width="65" DisplayMemberBinding="{Binding Stats.ConsecutiveWins}"/>
                 </GridView>
             </ListView.View>
         </ListView>
