@@ -78,10 +78,16 @@ namespace HampesYatzy
                             Player p = new Player
                             {
                                 Id = reader.GetInt32(0),
-                                Firstname = reader.GetString(1),
-                                Nickname = reader.GetString(2),
-                                Lastname = reader.GetString(3)
+                                Nickname = reader.GetString(2)
                             };
+                            if (!reader.IsDBNull(1))
+                            {
+                                p.Firstname = reader.GetString(1);
+                            }
+                            if (!reader.IsDBNull(3))
+                            {
+                                p.Lastname = reader.GetString(3);
+                            }
                             plist.Add(p);
                         }
                     }
@@ -184,7 +190,6 @@ namespace HampesYatzy
                                     }
                                 };
                                 plist.Add(p);
-
                             }
                         }
                     }
