@@ -106,11 +106,17 @@ namespace HampesYatzy
         private void LstAvailable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             FillChosenList();
+            SetPlayButtons();
+
+
+        }
+        private void SetPlayButtons()
+        {
             if (IsPlayersChosen())
             {
                 Btn_classic.IsEnabled = true;
                 Btn_classic.Content = "Spela klassisk yatzy";
-                
+
                 Btn_steerd.IsEnabled = true;
                 Btn_steerd.Content = "Spela styrd yatzy";
             }
@@ -186,6 +192,7 @@ namespace HampesYatzy
         private void Btn_clear_chosen_Click(object sender, RoutedEventArgs e)
         {
             ResetChosenPlayers();
+            SetPlayButtons();
         }
     }
 }
