@@ -251,10 +251,10 @@
                 </Style>
             </StackPanel.Resources>
             <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="Hidden" x:Name="diceOneGif"  Margin="8,0,0,0"/>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="16,0,0,0"/>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="17,0,0,0"/>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="15,0,0,0"/>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="17,0,0,0"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="16,0,0,0" x:Name="diceTwoGif"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="17,0,0,0" x:Name="diceThreeGif"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="15,0,0,0" x:Name="diceFourGif"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="17,0,0,0" x:Name="diceFiveGif"/>
             <Button x:Name="Trow_dice" Content="Kasta tärningar" FontSize="24" Click="Trow_dice_Click" Margin="30,0,0,0" Height="70" Width="200"/>
             <StackPanel.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">

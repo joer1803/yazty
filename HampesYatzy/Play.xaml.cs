@@ -104,13 +104,23 @@ namespace HampesYatzy
             }
             return diceImages;
         }
-
+        private List<Image> GetDiceGifList()
+        {
+            List<Image> diceGifs = new List<Image>();
+            diceGifs.Add(diceOneGif);
+            diceGifs.Add(diceTwoGif);
+            diceGifs.Add(diceThreeGif);
+            diceGifs.Add(diceFourGif);
+            diceGifs.Add(diceFiveGif);
+            return diceGifs;
+        }
         private void UpdateDice()
         {
             List<BitmapImage> diceImages = MakeDiceImageList();
             List<Image> diceFrames = MakeImageList();
             List<Die> dice = gameLogic.GetDice();
             List<BitmapImage> diceRedImages = MakeDiceImageHoldList();
+            List<Image> rollingdice = GetDiceGifList();
             if (dice[0].Value != 0)
             {
                 for (int i = 0; i < diceFrames.Count; i++)
@@ -118,11 +128,13 @@ namespace HampesYatzy
                     if (dice[i].Hold == true)
                     {
                         diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
+                        rollingdice[i].Opacity = 0;
 
                     }
                     else
                     {
                         diceFrames[i].Source = diceImages[dice[i].Value - 1];
+                        rollingdice[i].Opacity = 100;
                     }
                 }
             }
