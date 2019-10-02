@@ -10,7 +10,7 @@ namespace HampesYatzy
 {
     class DbOperations
     {
-        public static bool IsBlankNickName(string nickname)
+        public static bool IsBlankNickName(string nickname) // kollar så nickname inte är blankt
         {
             int checkBlankNick = 0;
             foreach (char c in nickname)
@@ -30,7 +30,7 @@ namespace HampesYatzy
             }
         }
 
-        public static bool IsDuplicateNickname(string nickname)
+        public static bool IsDuplicateNickname(string nickname) // kollar så nickname är unikt
         {
             List<Player> players = GetAllPlayers();
             foreach (Player p in players)
@@ -43,7 +43,7 @@ namespace HampesYatzy
             return false;
         }
 
-        public static List<Player> GetFreePlayers()
+        public static List<Player> GetFreePlayers() // sorterar ut lediga spelare
         {
             var plist = GetAllPlayers();
             var busylist = GetInGamePlayers();
@@ -61,7 +61,7 @@ namespace HampesYatzy
             return plist;
         }
 
-        public static List<Player> GetAllPlayers()
+        public static List<Player> GetAllPlayers() // hämtar alla spelare
         {
             List<Player> plist = new List<Player>();
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -90,7 +90,7 @@ namespace HampesYatzy
             }
         }
 
-        public static List<Player> GetInGamePlayers()
+        public static List<Player> GetInGamePlayers() // hämtar spelar som är i ett spel
         {
             List<Player> plist = new List<Player>();
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -119,7 +119,7 @@ namespace HampesYatzy
             }
         }
 
-        public static List<Player> GetMostGamesPlayer()
+        public static List<Player> GetMostGamesPlayer() // hämtar spelare och hur många matcher dom har spelar
         {
             List<Player> plist = new List<Player>();
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -155,7 +155,7 @@ namespace HampesYatzy
             }
         }
 
-        public static List<Player> GetTotalScoresPlayer()
+        public static List<Player> GetTotalScoresPlayer() // hämtar spelare och deras poäng senaste veckan
         {
             List<Player> plist = new List<Player>();
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -193,7 +193,7 @@ namespace HampesYatzy
             }
         }
 
-        public static int CreateGame(List<Player> players, int gameType)
+        public static int CreateGame(List<Player> players, int gameType) // skapar ett spel
         {
             int gameId = 0;
             string stmt = "INSERT INTO game(gametype_id) VALUES(@gameType) RETURNING game_id";
@@ -216,7 +216,7 @@ namespace HampesYatzy
             return gameId;
         }
 
-        private static void CreateGamePlayers(List<Player> players, int gameId)
+        private static void CreateGamePlayers(List<Player> players, int gameId) // lägger in spelare i ett spel
         {
             string stmtTwo = "INSERT INTO game_player(game_id, player_id) VALUES(@gameId, @player)";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -234,7 +234,7 @@ namespace HampesYatzy
             }
         }
 
-        public static List<Player> GetGame(int gameId)
+        public static List<Player> GetGame(int gameId) // hämtar spelare i ett spel
         {
             List<Player> plist = new List<Player>();
             string stmt = "SELECT player.player_id, player.firstname, player.lastname, player.nickname FROM player JOIN game_player ON game_player.player_id = player.player_id JOIN game ON game_player.game_id = game.game_id WHERE game.game_id = @gameId";
@@ -264,7 +264,7 @@ namespace HampesYatzy
             }
         }
 
-        public static void SetEndGame(YatzyGame game)
+        public static void SetEndGame(YatzyGame game) // avslutar matchen
         {
             string stmt = "UPDATE game SET ended_at = @endTime WHERE game_id = @gameId";
             string stmtTwo = "UPDATE game_player SET score = @playerScore WHERE game_id = @gameId AND player_id = @playerId";
@@ -290,7 +290,7 @@ namespace HampesYatzy
             }
         }
 
-        public static string CreatePlayer(string fName, string lName, string nickName)
+        public static string CreatePlayer(string fName, string lName, string nickName) //skapar spelare
         {
             string stmt = "INSERT INTO player(firstname, lastname, nickname) VALUES(@fName, @lName, @nickName)";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -307,7 +307,7 @@ namespace HampesYatzy
             return $"{nickName} är tillagd i listan av tillängliga spelare och är redo att spela yatzy!";
         }
 
-        public static void DeleteGame(int gameId)
+        public static void DeleteGame(int gameId) // tar bort spel
         {
             string stmt = "DELETE FROM game WHERE game_id = @gameId";
             using (var conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString))
@@ -321,7 +321,7 @@ namespace HampesYatzy
             }
         }
 
-        private static List<Player> GetGamePlayerStatsList(int gameId)
+        private static List<Player> GetGamePlayerStatsList(int gameId) //hämtar spelare med poäng och game_id
         {
             string stmt = "SELECT game_player.game_id, game_player.player_id, player.firstname, player.Nickname, player.Lastname, game_player.score, game.ended_at FROM game_player INNER JOIN player on player.player_id = game_player.player_id JOIN game ON game.game_id = game_player.game_id WHERE game.game_id = @gameId";
             List<Player> players = new List<Player>();
@@ -357,7 +357,7 @@ namespace HampesYatzy
             return players;
         }
 
-        public static List<YatzyGame> GetConsecutiveWinsRanking()
+        public static List<YatzyGame> GetConsecutiveWinsRanking() // hämtar avslutade spel
         {
             List<YatzyGame> gameList = new List<YatzyGame>();
 
