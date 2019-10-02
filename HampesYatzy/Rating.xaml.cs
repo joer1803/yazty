@@ -58,7 +58,7 @@ namespace HampesYatzy
             mainwindow.Show();
             this.Close();
         }
-        private List<Player> GetMostGamesRankedList()
+        private List<Player> GetMostGamesRankedList() // rankar spelare efter spelade matcher
         {
             int rank = 0;
             List<Player> players = DbOperations.GetMostGamesPlayer().OrderByDescending(p => p.Stats.GamesPlayed).ToList();
@@ -83,7 +83,7 @@ namespace HampesYatzy
             }
             return topfive;
         }
-        private List<Player> GetTotalScoreRankedList()
+        private List<Player> GetTotalScoreRankedList() // rankar spelare efter totalscore
         {
             int rank = 0;
             List<Player> players = DbOperations.GetTotalScoresPlayer().OrderByDescending(p => p.Stats.TotalScore).ToList();
@@ -109,7 +109,7 @@ namespace HampesYatzy
             }
             return topfive;
         }
-        private List<Player> CalculateConsecutiveWins()
+        private List<Player> CalculateConsecutiveWins() // rankar spelare efter vinster i rad
         {
             List<YatzyGame> games = DbOperations.GetConsecutiveWinsRanking();
             List<YatzyGame> gamesSorted = games.OrderByDescending(g => g.EndTime).ToList();
