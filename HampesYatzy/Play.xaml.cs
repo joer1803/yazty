@@ -111,14 +111,14 @@ namespace HampesYatzy
             List<Image> diceFrames = MakeImageList();
             List<Die> dice = gameLogic.GetDice();
             List<BitmapImage> diceRedImages = MakeDiceImageHoldList();
-            if(dice[0].Value!= 0)
+            if (dice[0].Value != 0)
             {
                 for (int i = 0; i < diceFrames.Count; i++)
                 {
                     if (dice[i].Hold == true)
                     {
                         diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
-                        
+
                     }
                     else
                     {
@@ -127,7 +127,7 @@ namespace HampesYatzy
                 }
             }
             DisplayHoldLabels();
-           
+
         }
 
 
@@ -141,7 +141,7 @@ namespace HampesYatzy
             if (gameLogic.GetDice()[index].Hold == true)
             {
                 gameLogic.GetDice()[index].Hold = false;
-                
+
             }
             else
             {
@@ -274,7 +274,7 @@ namespace HampesYatzy
         }
         private void ClearDice()
         {
-            for(int i = 0; i < MakeImageList().Count; i++)
+            for (int i = 0; i < MakeImageList().Count; i++)
             {
                 MakeImageList()[i].Source = null;
 
@@ -505,6 +505,18 @@ namespace HampesYatzy
         private void Image_MouseEnter(object sender, MouseEventArgs e)
         {
             Tutorial.Content = new Tutorial();
+        }
+
+        public void ShowFireWork()
+        {
+            if (gameLogic.GetActivePlayer().ScoreSheet.Scores[14] == 50)
+            {
+                fireworkyatzy.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                fireworkyatzy.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

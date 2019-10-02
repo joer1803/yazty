@@ -194,7 +194,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-
+        <Image x:Name="fireworkyatzy" gif:ImageBehavior.AnimatedSource="Resources/firework.gif" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="14" Grid.RowSpan="20" Height="350" Width="350"/>
         <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="0,0,0,0" Height="100" Width="100"/>
         <Button x:Name="hold_diceOne"  Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1" Click="Hold_diceOne_Click" Opacity="0" />
         <Label x:Name="lblHold_diceOne" Content="" Grid.Column="8" Grid.Row="7" FontSize="16" HorizontalAlignment="Center"/>
