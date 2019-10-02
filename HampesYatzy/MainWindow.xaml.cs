@@ -109,12 +109,18 @@ namespace HampesYatzy
             if (IsPlayersChosen())
             {
                 Btn_classic.IsEnabled = true;
+                Btn_classic.Content = "Spela klassisk yatzy";
+                
                 Btn_steerd.IsEnabled = true;
+                Btn_steerd.Content = "Spela styrd yatzy";
             }
             else
             {
                 Btn_classic.IsEnabled = false;
+                Btn_classic.Content = "Välj spelare först";
+
                 Btn_steerd.IsEnabled = false;
+                Btn_steerd.Content = "Välj spelare först";
             }
         }
         private void RemoveFromAvailableList()
