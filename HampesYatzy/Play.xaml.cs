@@ -47,7 +47,7 @@ namespace HampesYatzy
             for (int i = 0; i < players.Count; i++)
             {
                 string initials = $"{players[i].Firstname[0]}{players[i].Lastname[0]}";
-                txtblcks[i].Content = initials;
+                txtblcks[i].Content = initials.ToUpper();
             }
         }
 
