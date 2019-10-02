@@ -242,7 +242,7 @@
         <Label x:Name="player_two_initial" Content="" Width="34" Height="34" Grid.Column="3" Grid.Row="2" FontSize="16" FontWeight="Bold" />
         <Label x:Name="player_one_initial" Content="" Width="34" Height="34" Grid.Column="2" Grid.Row="2" FontSize="16" FontWeight="Bold" />
         <TextBlock x:Name="score_required" Text="63 poäng krävs för bonus" Grid.Column="6" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" />
-        <StackPanel Orientation="Horizontal" Grid.Column="8" Grid.ColumnSpan="7" Grid.RowSpan="3" Grid.Row="8">
+        <StackPanel Orientation="Horizontal" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="3" Grid.Row="8">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Image}">
                     <Setter Property="Margin" Value="0,0,19,0" />
