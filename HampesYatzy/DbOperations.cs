@@ -304,7 +304,7 @@ namespace HampesYatzy
                     cmd.ExecuteNonQuery();
                 }
             }
-            return $"{nickName} är redo att spela yatzy!";
+            return $"{nickName} är tillagd i listan av tillängliga spelare och är redo att spela yatzy!";
         }
 
         public static void DeleteGame(int gameId)
