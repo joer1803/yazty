@@ -32,6 +32,7 @@ namespace HampesYatzy
             SetInitials();
             CountTime();
             DisableCategoryButtons();
+            DisableDiceButtons();
             score_required.Text = gameLogic.GetReqBonus();
         }
 
@@ -178,6 +179,22 @@ namespace HampesYatzy
             }
 
         }
+        private void EnableDiceButtons()
+        {
+            hold_diceOne.IsEnabled = true;
+            hold_diceTwo.IsEnabled = true;
+            hold_diceThree.IsEnabled = true;
+            hold_diceFour.IsEnabled = true;
+            hold_diceFive.IsEnabled = true;
+        }
+        private void DisableDiceButtons()
+        {
+            hold_diceOne.IsEnabled = false;
+            hold_diceTwo.IsEnabled = false;
+            hold_diceThree.IsEnabled = false;
+            hold_diceFour.IsEnabled = false;
+            hold_diceFive.IsEnabled = false;
+        }
 
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
@@ -215,6 +232,7 @@ namespace HampesYatzy
             CategoryTaken();
             UpdateDice();
             DisplayThrows();
+            EnableDiceButtons();
         }
 
         private void DisplayThrows()
@@ -355,6 +373,7 @@ namespace HampesYatzy
             GameOverCheck();
             UpdatePlayer();
             DisableCategoryButtons();
+            DisableDiceButtons();
             DisplayThrows();
             DisplayHoldLabels();
         }
