@@ -225,7 +225,7 @@
     <Resource Include="Resources\droll.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\drollnew.gif" />
+    <Resource Include="Resources\drollnew.gif" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\firework.gif" />
