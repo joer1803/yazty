@@ -477,5 +477,15 @@ namespace HampesYatzy
                 EndOrQuitGame();
             }
         }
+
+        private void Tutorial_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Tutorial.Content = null;
+        }
+
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Tutorial.Content = new Tutorial();
+        }
     }
 }

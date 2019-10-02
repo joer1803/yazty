@@ -13,19 +13,20 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="156*" />
-            <ColumnDefinition Width="32*" />
-            <ColumnDefinition Width="34*" />
-            <ColumnDefinition Width="35*" />
+            <ColumnDefinition Width="151*" />
+            <ColumnDefinition Width="31*" />
             <ColumnDefinition Width="33*" />
-            <ColumnDefinition Width="67*" />
-            <ColumnDefinition Width="121*" />
-            <ColumnDefinition Width="121*" />
-            <ColumnDefinition Width="121*" />
-            <ColumnDefinition Width="120*" />
-            <ColumnDefinition Width="121*" />
-            <ColumnDefinition Width="120*" />
-            <ColumnDefinition Width="278*" />
+            <ColumnDefinition Width="34*" />
+            <ColumnDefinition Width="32*" />
+            <ColumnDefinition Width="65*" />
+            <ColumnDefinition Width="117*" />
+            <ColumnDefinition Width="117*" />
+            <ColumnDefinition Width="117*" />
+            <ColumnDefinition Width="117*" />
+            <ColumnDefinition Width="117*" />
+            <ColumnDefinition Width="117*" />
+            <ColumnDefinition Width="181*" />
+            <ColumnDefinition Width="89*"/>
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -51,15 +52,15 @@
             <RowDefinition Height="35*" />
             <RowDefinition Height="35*" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="15">
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="16" Margin="0,0,0.333,0">
             <Menu IsMainMenu="True" Height="49" Margin="0 0 0.333 0" FontSize="20">
                 <MenuItem Header="Lobby" Click="MenuItem_Click" />
                 <MenuItem Header="Topplista" Click="MenuItem_Click_1" />
                 <MenuItem Header="Skapa användare" Click="MenuItem_Click_2" />
             </Menu>
         </StackPanel>
-        <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="19" Margin="0,0,68,0" />
-        <ItemsControl x:Name="player_one_items" ItemsSource="{Binding Player}" Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" Margin="1,0">
+        <Image Source="Resources/Protokoll (2).png" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="19" Margin="0,0.333,3,-0.333" />
+        <ItemsControl x:Name="player_one_items" ItemsSource="{Binding Player}" Grid.Row="3" Grid.Column="2" Grid.RowSpan="18" Margin="0.667,0.333,0.667,-0.333">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -86,7 +87,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <ItemsControl Grid.Row="3" Grid.Column="3" Grid.RowSpan="18" x:Name="player_two_items" Margin="0,0,2,0" ItemsSource="{Binding Player}">
+        <ItemsControl Grid.Row="3" Grid.Column="3" Grid.RowSpan="18" x:Name="player_two_items" Margin="0.333,0.333,2,-0.333" ItemsSource="{Binding Player}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -113,7 +114,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <ItemsControl Grid.Row="3" Grid.Column="4" Grid.RowSpan="18" x:Name="player_three_items" Margin="0,0,3,0" ItemsSource="{Binding Player}">
+        <ItemsControl Grid.Row="3" Grid.Column="4" Grid.RowSpan="18" x:Name="player_three_items" Margin="0,0.333,3,-0.333" ItemsSource="{Binding Player}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -140,7 +141,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <ItemsControl Grid.Row="3" Grid.Column="5" Grid.RowSpan="18" x:Name="player_four_items" Margin="1,0,68,0" Grid.ColumnSpan="2" ItemsSource="{Binding Player}">
+        <ItemsControl Grid.Row="3" Grid.Column="5" Grid.RowSpan="18" x:Name="player_four_items" Margin="1,0.333,3,-0.333" ItemsSource="{Binding Player}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -167,7 +168,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <TextBlock x:Name="txtActivePlayer" Grid.ColumnSpan="5" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="89,0,0,0" Grid.Row="3" Grid.RowSpan="3" VerticalAlignment="Top" Width="472" FontSize="24">
+        <TextBlock x:Name="txtActivePlayer" Grid.ColumnSpan="5" Grid.Column="7" HorizontalAlignment="Left" Height="92" Margin="88.667,0.333,0,0" Grid.Row="3" Grid.RowSpan="3" VerticalAlignment="Top" Width="472" FontSize="24">
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
                     <Style.Triggers>
@@ -194,55 +195,57 @@
             </TextBlock.Style>
         </TextBlock>
 
-        <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1" />
-        <Button x:Name="hold_diceOne"  Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1" Click="Hold_diceOne_Click" Opacity="0" />
-        <Label x:Name="lblHold_diceOne" Content="" Grid.Column="8" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" />
+        <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="11.333,1,10.333,1" />
+        <Button x:Name="hold_diceOne"  Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1" Click="Hold_diceOne_Click" Opacity="0" />
+        <Label x:Name="lblHold_diceOne" Content="" Grid.Column="8" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Margin="53.333,0" />
 
-        <Image x:Name="diceTwo" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1" />
-        <Button x:Name="hold_diceTwo"  Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceTwo_Click" Opacity="0" />
-        <Label x:Name="lblHold_diceTwo" Content="" Grid.Column="9" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" />
+        <Image x:Name="diceTwo" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="9.667,1,10.667,1" />
+        <Button x:Name="hold_diceTwo"  Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="0.667,1"  Click="Hold_diceTwo_Click" Opacity="0" />
+        <Label x:Name="lblHold_diceTwo" Content="" Grid.Column="9" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Margin="53.667,0" />
 
         <!--<Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="10" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />-->
-        <Image x:Name="diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="11,1,10,1" />
-        <Button x:Name="hold_diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceThree_Click" Opacity="0" />
-        <Label x:Name="lblHold_diceThree" Content="" Grid.Column="10" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" />
+        <Image x:Name="diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="11.333,1,10.333,1" />
+        <Button x:Name="hold_diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1"  Click="Hold_diceThree_Click" Opacity="0" />
+        <Label x:Name="lblHold_diceThree" Content="" Grid.Column="10" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Margin="53.333,0" />
 
         <!--<Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="11" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />-->
-        <Image x:Name="diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="10,1" />
-        <Button x:Name="hold_diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceFour_Click" Opacity="0" />
-        <Label x:Name="lblHold_diceFour" Content="" Grid.Column="11" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" />
+        <Image x:Name="diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="9.667,1" />
+        <Button x:Name="hold_diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="0.667,1"  Click="Hold_diceFour_Click" Opacity="0" />
+        <Label x:Name="lblHold_diceFour" Content="" Grid.Column="11" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Margin="53.667,0" />
 
         <!--<Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="12" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />-->
-        <Image x:Name="diceFive" Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" Margin="10,1,11,1" />
-        <Button x:Name="hold_diceFive"  Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1 1 1 1"  Click="Hold_diceFive_Click" Opacity="0" />
-        <Label x:Name="lblHold_diceFive" Content="" Grid.Column="12" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" />
+        <Image x:Name="diceFive" Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" Margin="10.333,1,11.333,1" />
+        <Button x:Name="hold_diceFive"  Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1"  Click="Hold_diceFive_Click" Opacity="0" />
+        <Label x:Name="lblHold_diceFive" Content="" Grid.Column="12" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" Margin="53.333,0" />
 
-        <Label x:Name="count_trow" Grid.Column="13" Grid.Row="7" FontSize="18" />
-        <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="13" Grid.Row="0" FontSize="18" />
-        <TextBlock x:Name="tbTime" Grid.Column="13" Grid.Row="0" HorizontalAlignment="Left" Margin="141,0,0,0" TextWrapping="NoWrap" TextAlignment="Left" Padding="6" VerticalAlignment="Top" Width="129" Height="48" FontSize="18" />
-        <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="1" FontSize="20" Click="end_game_Click" />
+        <Label x:Name="count_trow" Grid.Column="12" Grid.Row="7" FontSize="18" Grid.ColumnSpan="3" Margin="116.333,0,0.333,0" />
+        <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="12" Grid.Row="0" FontSize="18" Grid.ColumnSpan="3" Margin="116.333,0,0.333,0" />
+        <TextBlock x:Name="tbTime" Grid.Column="13" Grid.Row="0" HorizontalAlignment="Left" Margin="140.667,0,0,0" TextWrapping="NoWrap" TextAlignment="Left" Padding="6" VerticalAlignment="Top" Width="129" Height="48" FontSize="18" Grid.ColumnSpan="2" />
+        <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="12" Grid.Row="18" Grid.RowSpan="3" FontSize="20" Click="end_game_Click" Grid.ColumnSpan="3" Margin="116.333,0,0.333,33.667" />
 
-        <Button x:Name="btn_select_ones" Content="Välj" Grid.Column="6" Grid.Row="3" FontSize="20" Click="Btn_select_ones_Click" />
-        <Button x:Name="btn_select_twos" Content="Välj" Grid.Column="6" Grid.Row="4" FontSize="20" Click="Btn_select_twos_Click" />
-        <Button x:Name="btn_select_threes" Content="Välj" Grid.Column="6" Grid.Row="5" FontSize="20" Click="Btn_select_threes_Click" />
-        <Button x:Name="btn_select_fours" Content="Välj" Grid.Column="6" Grid.Row="6" FontSize="20" Click="Btn_select_fours_Click" />
-        <Button x:Name="btn_select_fives" Content="Välj" Grid.Column="6" Grid.Row="7" FontSize="20" Click="Btn_select_fives_Click" />
-        <Button x:Name="btn_select_sixes" Content="Välj" Grid.Column="6" Grid.Row="8" FontSize="20" Click="Btn_select_sixes_Click" />
-        <Button x:Name="btn_select_pair" Content="Välj" Grid.Column="6" Grid.Row="11" FontSize="20" Click="Btn_select_pair_Click" />
-        <Button x:Name="btn_select_twoPair" Content="Välj" Grid.Column="6" Grid.Row="12" FontSize="20" Click="Btn_select_twoPair_Click" />
-        <Button x:Name="btn_select_threeOfAKind" Content="Välj" Grid.Column="6" Grid.Row="13" FontSize="20" Click="Btn_select_threeOfAKind_Click" />
-        <Button x:Name="btn_select_fourOfAKind" Content="Välj" Grid.Column="6" Grid.Row="14" FontSize="20" Click="Btn_select_fourOfAKind_Click" />
-        <Button x:Name="btn_select_smallStraight" Content="Välj" Grid.Column="6" Grid.Row="15" FontSize="20" Click="Btn_select_smallStraight_Click" />
-        <Button x:Name="btn_select_bigStraight" Content="Välj" Grid.Column="6" Grid.Row="16" FontSize="20" Click="Btn_select_BigStraight_Click" />
-        <Button x:Name="btn_select_fullHouse" Content="Välj" Grid.Column="6" Grid.Row="17" FontSize="20" Click="Btn_select_FullHouse_Click" />
-        <Button x:Name="btn_select_chance" Content="Välj" Grid.Column="6" Grid.Row="18" FontSize="20" Click="Btn_select_Chance_Click" />
-        <Button x:Name="btn_select_yatzy" Content="Välj" Grid.Column="6" Grid.Row="19" FontSize="20" Click="Btn_select_Yatzy_Click" />
-        <Label x:Name="player_four_initial" Content="" Width="34" Height="34" Grid.Column="5" Grid.Row="2" FontSize="16" FontWeight="Bold" />
-        <Label x:Name="player_three_initial" Content="" Width="34" Height="34" Grid.Column="4" Grid.Row="2" FontSize="16" FontWeight="Bold" />
-        <Label x:Name="player_two_initial" Content="" Width="34" Height="34" Grid.Column="3" Grid.Row="2" FontSize="16" FontWeight="Bold" />
-        <Label x:Name="player_one_initial" Content="" Width="34" Height="34" Grid.Column="2" Grid.Row="2" FontSize="16" FontWeight="Bold" />
-        <TextBlock x:Name="score_required" Text="63 poäng krävs för bonus" Grid.Column="6" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" />
-        <StackPanel Orientation="Horizontal" Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="3" Grid.Row="8">
+        <Button x:Name="btn_select_ones" Content="Välj" Grid.Column="6" Grid.Row="3" FontSize="20" Click="Btn_select_ones_Click" Margin="0,0.333,0.333,0.333" />
+        <Button x:Name="btn_select_twos" Content="Välj" Grid.Column="6" Grid.Row="3" FontSize="20" Click="Btn_select_twos_Click" Margin="0,34.333,0.333,0" Grid.RowSpan="2" />
+        <Button x:Name="btn_select_threes" Content="Välj" Grid.Column="6" Grid.Row="5" FontSize="20" Click="Btn_select_threes_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_fours" Content="Välj" Grid.Column="6" Grid.Row="6" FontSize="20" Click="Btn_select_fours_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_fives" Content="Välj" Grid.Column="6" Grid.Row="7" FontSize="20" Click="Btn_select_fives_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_sixes" Content="Välj" Grid.Column="6" Grid.Row="8" FontSize="20" Click="Btn_select_sixes_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_pair" Content="Välj" Grid.Column="6" Grid.Row="11" FontSize="20" Click="Btn_select_pair_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_twoPair" Content="Välj" Grid.Column="6" Grid.Row="12" FontSize="20" Click="Btn_select_twoPair_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_threeOfAKind" Content="Välj" Grid.Column="6" Grid.Row="13" FontSize="20" Click="Btn_select_threeOfAKind_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_fourOfAKind" Content="Välj" Grid.Column="6" Grid.Row="14" FontSize="20" Click="Btn_select_fourOfAKind_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_smallStraight" Content="Välj" Grid.Column="6" Grid.Row="15" FontSize="20" Click="Btn_select_smallStraight_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_bigStraight" Content="Välj" Grid.Column="6" Grid.Row="16" FontSize="20" Click="Btn_select_BigStraight_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_fullHouse" Content="Välj" Grid.Column="6" Grid.Row="17" FontSize="20" Click="Btn_select_FullHouse_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_chance" Content="Välj" Grid.Column="6" Grid.Row="18" FontSize="20" Click="Btn_select_Chance_Click" Margin="0,0,0.333,0" />
+        <Button x:Name="btn_select_yatzy" Content="Välj" Grid.Column="6" Grid.Row="19" FontSize="20" Click="Btn_select_Yatzy_Click" Margin="0,0,0.333,33.667" Grid.RowSpan="2" />
+        <Label x:Name="player_four_initial" Content="" Width="34" Height="34" Grid.Column="5" Grid.Row="2" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0.333,63.333,34.333" Grid.RowSpan="2" />
+        <Label x:Name="player_three_initial" Content="" Width="34" Height="34" Grid.Column="4" Grid.Row="2" FontSize="16" FontWeight="Bold" Margin="0,0.333,0,34.333" Grid.RowSpan="2" />
+        <Label x:Name="player_two_initial" Content="" Width="34" Height="34" Grid.Column="3" Grid.Row="2" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0.333,0.333,33,34.333" Grid.RowSpan="2" />
+        <Label x:Name="player_one_initial" Content="" Width="34" Height="34" Grid.Column="1" Grid.Row="2" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="3" Margin="151,0.333,31,34.333" Grid.RowSpan="2" />
+        <TextBlock x:Name="score_required" Text="63 poäng krävs för bonus" Grid.Column="6" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="3" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,0,116.333,0" />
+        <Image Grid.Column="12" Grid.Row="1" Grid.RowSpan="3" Source="Resources/Questionmark.png" Grid.ColumnSpan="3" Margin="0,0,0.333,34.333" HorizontalAlignment="Right" Width="270" MouseEnter="Image_MouseEnter"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="8" Grid.ColumnSpan="7" Grid.RowSpan="3" Grid.Row="8" Margin="0.333,0">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Image}">
                     <Setter Property="Margin" Value="0,0,19,0" />
@@ -268,5 +271,6 @@
                 </EventTrigger>
             </StackPanel.Triggers>
         </StackPanel>
+        <Frame x:Name="Tutorial" Grid.Column="9" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="16" NavigationUIVisibility="Hidden" MouseLeave="Tutorial_MouseLeave"/>
     </Grid>
 </Window>
