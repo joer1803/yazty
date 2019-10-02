@@ -451,6 +451,7 @@ namespace HampesYatzy
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
             SendScore(14);
+            ShowFireWork();
         }
 
         private void end_game_Click(object sender, RoutedEventArgs e)
