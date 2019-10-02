@@ -195,26 +195,26 @@
             </TextBlock.Style>
         </TextBlock>
 
-        <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="11.333,1,10.333,1" />
+        <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="0,0,0,0" Height="100" Width="100"/>
         <Button x:Name="hold_diceOne"  Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1" Click="Hold_diceOne_Click" Opacity="0" />
         <Label x:Name="lblHold_diceOne" Content="" Grid.Column="8" Grid.Row="7" FontSize="16" HorizontalAlignment="Center"/>
 
-        <Image x:Name="diceTwo" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="9.667,1,10.667,1" />
+        <Image x:Name="diceTwo" Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" Margin="0,0,0,0" Height="100" Width="100"/>
         <Button x:Name="hold_diceTwo"  Grid.Column="9" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="0.667,1"  Click="Hold_diceTwo_Click" Opacity="0" />
         <Label x:Name="lblHold_diceTwo" Content="" Grid.Column="9" Grid.Row="7" FontSize="16" HorizontalAlignment="Center"/>
 
         <!--<Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="10" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />-->
-        <Image x:Name="diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="11.333,1,10.333,1" />
+        <Image x:Name="diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" Margin="0,0,0,0" Height="100" Width="100"/>
         <Button x:Name="hold_diceThree" Grid.Column="10" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1"  Click="Hold_diceThree_Click" Opacity="0" />
         <Label x:Name="lblHold_diceThree" Content="" Grid.Column="10" Grid.Row="7" FontSize="16" HorizontalAlignment="Center"/>
 
         <!--<Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="11" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />-->
-        <Image x:Name="diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="9.667,1" />
+        <Image x:Name="diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" Margin="0,0,0,0" Height="100" Width="100"/>
         <Button x:Name="hold_diceFour" Grid.Column="11" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="0.667,1"  Click="Hold_diceFour_Click" Opacity="0" />
         <Label x:Name="lblHold_diceFour" Content="" Grid.Column="11" Grid.Row="7" FontSize="16" HorizontalAlignment="Center"/>
 
         <!--<Image gif:ImageBehavior.AnimatedSource="Resources/droll.gif" Grid.Column="12" Grid.RowSpan="3" Grid.Row="8" Height="100" Width="100" />-->
-        <Image x:Name="diceFive" Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" Margin="10.333,1,11.333,1" />
+        <Image x:Name="diceFive" Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" Margin="0,0,0,0" Height="100" Width="100" />
         <Button x:Name="hold_diceFive"  Grid.Column="12" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1"  Click="Hold_diceFive_Click" Opacity="0" />
         <Label x:Name="lblHold_diceFive" Content="" Grid.Column="12" Grid.Row="7" FontSize="16" HorizontalAlignment="Center"/>
 
@@ -244,19 +244,18 @@
         <Label x:Name="player_one_initial" Content="" Width="34" Height="34" Grid.Column="1" Grid.Row="2" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="3" Margin="151,0.333,31,34.333" Grid.RowSpan="2" />
         <TextBlock x:Name="score_required" Text="63 poäng krävs för bonus" Grid.Column="6" Grid.Row="9" Grid.RowSpan="2" Grid.ColumnSpan="3" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,0,116.333,0" />
         <Image Grid.Column="12" Grid.Row="1" Grid.RowSpan="3" Source="Resources/Questionmark.png" Grid.ColumnSpan="3" Margin="0,0,0.333,34.333" HorizontalAlignment="Right" Width="270" MouseEnter="Image_MouseEnter"/>
-
         <StackPanel Orientation="Horizontal" Grid.Column="8" Grid.ColumnSpan="7" Grid.RowSpan="3" Grid.Row="8" Margin="0.333,0">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Image}">
-                    <Setter Property="Margin" Value="0,0,19,0" />
+                    <Setter Property="Margin" Value="2,0,19,0" />
                 </Style>
             </StackPanel.Resources>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="Hidden" x:Name="diceOneGif"  Margin="0,1,19,1"  />
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}"/>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}"/>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}"/>
-            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}"/>
-            <Button x:Name="Trow_dice" Content="Kasta tärning" FontSize="24" Click="Trow_dice_Click" Margin="0,0,0,0"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="Hidden" x:Name="diceOneGif"  Margin="8,0,0,0"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="16,0,0,0"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="17,0,0,0"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="15,0,0,0"/>
+            <Image gif:ImageBehavior.AnimatedSource="Resources/drollnew.gif" Height="100" Width="100" Visibility="{Binding Visibility, ElementName=diceOneGif}" Margin="17,0,0,0"/>
+            <Button x:Name="Trow_dice" Content="Kasta tärningar" FontSize="24" Click="Trow_dice_Click" Margin="30,0,0,0" Height="70" Width="200"/>
             <StackPanel.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard Name="rollStoryboard">
