@@ -65,7 +65,13 @@
         </ListView>
 
         <Label Content="Välkommen till Hampes Yatzy" HorizontalAlignment="Left" Grid.Row="1" Grid.ColumnSpan="5" Height="auto" VerticalAlignment="Top" FontSize="40" Width="auto" Margin="46,52,0,0" Grid.RowSpan="2"/>
-        <Label Content="Är detta första gången du spelar hos oss?&#10;För att sätta igång så behöver du först skapa&#10;en användare. Om du redan är medlem hos&#10;oss så kan du starta direkt genom att välja&#10;dig och dina motståndare i rutan till höger.&#10;Lycka till!" HorizontalAlignment="Left" Grid.Row="4" Grid.ColumnSpan="5" Height="276" VerticalAlignment="Top" FontSize="22" Width="auto" Grid.RowSpan="5" Margin="87,0,0,0"/>
+        
+        <StackPanel Grid.Row="4" Grid.RowSpan="5" Grid.ColumnSpan="5">
+            <TextBlock HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" FontSize="22" Width="500" Margin="87,0,0,0" TextWrapping="Wrap" >
+                För att sätta igång så behöver du först välja <Bold>din egen användare och dina motståndare</Bold> i rutan till höger. Om du inte redan har en användare hos oss så kan du skapa en genom att klicka på Skapa användare i menyn här ovanför. Lycka till!
+            </TextBlock>
+        </StackPanel>
+        
         <GridSplitter Grid.Column="4" HorizontalAlignment="Left" Height="506" Grid.Row="3" Grid.RowSpan="9" VerticalAlignment="Top" Width="1" Background="Black" Margin="151,10,0,0"/>
         <Button x:Name="Btn_steerd" Height="75" Content="Spela styrd yatzy" FontSize="20" Grid.Column="9" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Btn_steerd_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
         <Button x:Name="Btn_classic" Height="75" Content="Spela klassisk yatzy" FontSize="20" Grid.Column="9" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="Btn_classic_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
