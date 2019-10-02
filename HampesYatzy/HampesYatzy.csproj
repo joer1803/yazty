@@ -227,5 +227,8 @@
   <ItemGroup>
     <None Include="Resources\drollnew.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\firework.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
