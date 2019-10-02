@@ -110,7 +110,7 @@ namespace HampesYatzy
 
 
         }
-        private void SetPlayButtons()
+        private void SetPlayButtons() //justerar spela knapparna beroende på hur många valda spelare det är
         {
             if (IsPlayersChosen())
             {
@@ -129,7 +129,7 @@ namespace HampesYatzy
                 Btn_steerd.Content = "Välj spelare först";
             }
         }
-        private void RemoveFromAvailableList()
+        private void RemoveFromAvailableList() // tar bort valda spelare från spelarlistan
         {
             List<Player> players = GetFreePlayerList();
             List<Player> playerschosen = GetChosenList();
@@ -149,7 +149,7 @@ namespace HampesYatzy
             lstAvailable.ItemsSource = players;
 
         }
-        private List<Player> GetChosenList()
+        private List<Player> GetChosenList() //gör en lista av listview för valda spelare
         {
             List<Player> playerschosen = new List<Player>();
             for (int i = 0; i < lstChosen.Items.Count; i++)
@@ -158,7 +158,7 @@ namespace HampesYatzy
             }
             return playerschosen;
         }
-        private void FillChosenList()
+        private void FillChosenList() //stoppar valda spelaren i listview
         {
             int count = 0;
             List<Player> playerschosen = GetChosenList();
@@ -183,7 +183,7 @@ namespace HampesYatzy
                 }
             }
         }
-        private void ResetChosenPlayers()
+        private void ResetChosenPlayers() // rensar listan av valda spelare
         {
             FillAvailableList();
             lstChosen.ItemsSource = null;
