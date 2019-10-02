@@ -36,7 +36,7 @@ namespace HampesYatzy
             score_required.Text = gameLogic.GetReqBonus();
         }
 
-        private void SetInitials()
+        private void SetInitials() // sätter initialer på "spelbrädet" för alla spelare
         {
             List<Label> txtblcks = new List<Label>();
             txtblcks.Add(player_one_initial);
@@ -72,7 +72,7 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private List<Image> MakeImageList()
+        private List<Image> MakeImageList() // gör en lista av tomma bilder
         {
             List<Image> dices = new List<Image>();
             dices.Add(diceOne);
@@ -83,7 +83,7 @@ namespace HampesYatzy
             return dices;
         }
 
-        private List<BitmapImage> MakeDiceImageList()
+        private List<BitmapImage> MakeDiceImageList() // gör en lista av bitmapsbilder av tärningar
         {
             List<BitmapImage> diceImages = new List<BitmapImage>();
             for (int i = 1; i < 7; i++)
@@ -94,7 +94,7 @@ namespace HampesYatzy
             return diceImages;
         }
 
-        private List<BitmapImage> MakeDiceImageHoldList()
+        private List<BitmapImage> MakeDiceImageHoldList() //gör en lista av röda tärningar (sparade tärningar)
         {
             List<BitmapImage> diceImages = new List<BitmapImage>();
             for (int i = 1; i < 7; i++)
@@ -104,7 +104,7 @@ namespace HampesYatzy
             }
             return diceImages;
         }
-        private List<Image> GetDiceGifList()
+        private List<Image> GetDiceGifList() // gör en lista av gifs med rullande tärningar
         {
             List<Image> diceGifs = new List<Image>();
             diceGifs.Add(diceOneGif);
@@ -114,7 +114,7 @@ namespace HampesYatzy
             diceGifs.Add(diceFiveGif);
             return diceGifs;
         }
-        private void UpdateDice()
+        private void UpdateDice() // uppdaterar alla tärningsbilder och gifs
         {
             List<BitmapImage> diceImages = MakeDiceImageList();
             List<Image> diceFrames = MakeImageList();
@@ -143,12 +143,12 @@ namespace HampesYatzy
         }
 
 
-        private void UpdatePlayer()
+        private void UpdatePlayer() // uppdaterar label med namnet på spelaren som har turen
         {
             txtActivePlayer.Text = $"{gameLogic.GetActivePlayer().Firstname} {gameLogic.GetActivePlayer().Lastname}";
         }
 
-        private void CheckDie(int index)
+        private void CheckDie(int index) // kollar om en tärning är sparad eller inte
         {
             if (gameLogic.GetDice()[index].Hold == true)
             {
@@ -161,7 +161,7 @@ namespace HampesYatzy
 
             }
         }
-        private List<Label> GetHoldLabelList()
+        private List<Label> GetHoldLabelList() // gör en lista av labels ovanför varje tärning där det står "sparad"
         {
             List<Label> labels = new List<Label>();
             labels.Add(lblHold_diceOne);
@@ -172,7 +172,7 @@ namespace HampesYatzy
             return labels;
         }
 
-        private void DisplayHoldLabels()
+        private void DisplayHoldLabels() // visar sparad ovanför tärningar som ska sparas
         {
             List<Label> labels = GetHoldLabelList();
 
@@ -247,12 +247,12 @@ namespace HampesYatzy
             EnableDiceButtons();
         }
 
-        private void DisplayThrows()
+        private void DisplayThrows() // visar antalet kast man har kvar
         {
             count_trow.Content = $"Du har {gameLogic.GetThrows()} kast kvar";
         }
 
-        private void UpdateScoreSheet()
+        private void UpdateScoreSheet() // uppdaterar poängen 
         {
             List<Player> players = gameLogic.GetPlayers();
             for (int i = 0; i < players.Count; i++)
@@ -284,7 +284,7 @@ namespace HampesYatzy
                 }
             }
         }
-        private void ClearDice()
+        private void ClearDice() // rensar tärningsbilder så dom är tomma
         {
             for (int i = 0; i < MakeImageList().Count; i++)
             {
@@ -292,7 +292,7 @@ namespace HampesYatzy
 
             }
         }
-        private void CategoryTaken()
+        private void CategoryTaken() //kollar om en kategori är tagen och gör så den knappen inte går klicka på
         {
             List<Button> buttons = GetButtonList();
             for (int i = 0; i < buttons.Count; i++)
@@ -308,7 +308,7 @@ namespace HampesYatzy
             }
         }
 
-        private List<Button> GetButtonList()
+        private List<Button> GetButtonList() // gör en lista av alla kategorik knappar
         {
             List<Button> catButtons = new List<Button>();
             catButtons.Add(btn_select_ones);
@@ -329,7 +329,7 @@ namespace HampesYatzy
             return catButtons;
         }
 
-        private void SteerButtons()
+        private void SteerButtons() //sköter knapparna för styrd yatzy
         {
             DisableCategoryButtons();
             List<Button> buttons = GetButtonList();
@@ -352,7 +352,7 @@ namespace HampesYatzy
             }
         }
 
-        private void SendScore(int category)
+        private void SendScore(int category) // skickar iväg vald kategori för poängsättning
         {
             if (!gameLogic.GetActivePlayer().ScoreSheet.Categories[category])
             {
@@ -367,7 +367,7 @@ namespace HampesYatzy
                 MessageBox.Show("Du har redan tagit denna kategori");
             }
         }
-        private void GameOverCheck()
+        private void GameOverCheck() //kollar om spelet är slut och skickar ett meddelande till vinnaren
         {
             if (gameLogic.CheckGameOver())
             {
@@ -379,7 +379,7 @@ namespace HampesYatzy
             }
         }
 
-        private void NextTurn()
+        private void NextTurn() // nästa spelare och kör en massa metoder för gränssnittet
         {
             gameLogic.NextPlayer();
             GameOverCheck();
@@ -471,7 +471,7 @@ namespace HampesYatzy
             EndGame();
         }
 
-        private void CountTime()
+        private void CountTime() // startar tiden (2 timmar) 
         {
             _time = TimeSpan.FromHours(2);
 
@@ -485,7 +485,7 @@ namespace HampesYatzy
             _timer.Start();
         }
 
-        private void EndGame()
+        private void EndGame() // avslutar spelet
         {
             gameLogic.QuitGame();
             MainWindow mainwindow = new MainWindow();
@@ -493,7 +493,7 @@ namespace HampesYatzy
             this.Close();
         }
 
-        private void EndOrQuitGame()
+        private void EndOrQuitGame() //kollar om spelet är slut
         {
             if (gameLogic.CheckGameOver() == false)
             {
@@ -501,7 +501,7 @@ namespace HampesYatzy
             }
         }
 
-        private void CheckTimer()
+        private void CheckTimer() //kollar om timern är slut
         {
             if (_time <= TimeSpan.Zero)
             {
@@ -520,7 +520,7 @@ namespace HampesYatzy
             Tutorial.Content = new Tutorial();
         }
 
-        public void ShowFireWork()
+        public void ShowFireWork() // visar fyrverkerier om någon får yatzy
         {
             if (gameLogic.GetActivePlayer().ScoreSheet.Scores[14] == 50)
             {
