@@ -29,18 +29,18 @@ namespace HampesYatzy
                 return false;
             }
         }
+
         public static bool IsDuplicateNickname(string nickname)
         {
             List<Player> players = GetAllPlayers();
             foreach (Player p in players)
             {
-                if(p.Nickname.Equals(nickname))
+                if (p.Nickname.Equals(nickname))
                 {
                     return true;
                 }
             }
             return false;
-            
         }
 
         public static List<Player> GetFreePlayers()
@@ -184,6 +184,7 @@ namespace HampesYatzy
                                     }
                                 };
                                 plist.Add(p);
+
                             }
                         }
                     }
@@ -297,12 +298,10 @@ namespace HampesYatzy
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(stmt, conn))
                 {
-
-                        cmd.Parameters.AddWithValue("fName", fName);
-                        cmd.Parameters.AddWithValue("lName", lName);
-                        cmd.Parameters.AddWithValue("nickName", nickName);
-                        cmd.ExecuteNonQuery();
-
+                    cmd.Parameters.AddWithValue("fName", fName);
+                    cmd.Parameters.AddWithValue("lName", lName);
+                    cmd.Parameters.AddWithValue("nickName", nickName);
+                    cmd.ExecuteNonQuery();
                 }
             }
             return $"{nickName} är redo att spela yatzy!";

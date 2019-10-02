@@ -8,7 +8,7 @@
         Title="Hampes Yatzy" Height="295.801" Width="559.624">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/pastelgreens.png"/>
+            <ImageBrush ImageSource="Resources/greens.png"/>
         </Grid.Background>
                 <Image Source="Resources/dice.roll.png" Margin="342,0,-64,124"/>
         <Label Content="Välkommen till Hampes Yatzy" HorizontalAlignment="Left" Margin="33,35,0,0" VerticalAlignment="Top" FontSize="25"/>

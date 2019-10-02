@@ -117,7 +117,7 @@ namespace HampesYatzy
                     if (dice[i].Hold == true)
                     {
                         diceFrames[i].Source = diceRedImages[dice[i].Value - 1];
-
+                        
                     }
                     else
                     {
@@ -125,9 +125,10 @@ namespace HampesYatzy
                     }
                 }
             }
-
+            DisplayHoldLabels();
            
         }
+
 
         private void UpdatePlayer()
         {
@@ -147,44 +148,53 @@ namespace HampesYatzy
 
             }
         }
+        private List<Label> GetHoldLabelList()
+        {
+            List<Label> labels = new List<Label>();
+            labels.Add(lblHold_diceOne);
+            labels.Add(lblHold_diceTwo);
+            labels.Add(lblHold_diceThree);
+            labels.Add(lblHold_diceFour);
+            labels.Add(lblHold_diceFive);
+            return labels;
+        }
 
-        //private void DisplayLabel(int index)
-        //{
-        //    if (gameLogic.GetDice()[index].Hold == true)
-        //    {
+        private void DisplayHoldLabels()
+        {
+            List<Label> labels = GetHoldLabelList();
 
-        //        lblHold_diceOne.Visibility = Visibility.Visible;
-        //        lblHold_diceTwo.Visibility = Visibility.Visible;
+            for (int i = 0; i < labels.Count; i++)
+            {
+                if (gameLogic.GetDice()[i].Hold == true)
+                {
+                    labels[i].Content = "Sparad";
 
-        //    }
-        //    else
-        //    {
-        //        lblHold_diceOne.Visibility = Visibility.Collapsed;
-        //        lblHold_diceTwo.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    labels[i].Content = "";
 
+                }
+            }
 
-        //    }
-        //}
+        }
 
         private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(0);
             UpdateDice();
-            //DisplayLabel(0);
         }
 
         private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(1);
             UpdateDice();
-
         }
 
         private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(2);
             UpdateDice();
-
         }
 
         private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
@@ -197,7 +207,6 @@ namespace HampesYatzy
         {
             CheckDie(4);
             UpdateDice();
-
         }
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
@@ -250,12 +259,6 @@ namespace HampesYatzy
             for(int i = 0; i < MakeImageList().Count; i++)
             {
                 MakeImageList()[i].Source = null;
-
-                //lblHold_diceOne.Visibility = Visibility.Collapsed;
-                //lblHold_diceTwo.Visibility = Visibility.Collapsed;
-                //lblHold_diceThree.Visibility = Visibility.Collapsed;
-                //lblHold_diceFour.Visibility = Visibility.Collapsed;
-                //lblHold_diceFive.Visibility = Visibility.Collapsed;
 
             }
         }
@@ -353,6 +356,7 @@ namespace HampesYatzy
             UpdatePlayer();
             DisableCategoryButtons();
             DisplayThrows();
+            DisplayHoldLabels();
         }
 
         private void Btn_select_ones_Click(object sender, RoutedEventArgs e)

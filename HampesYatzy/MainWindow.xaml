@@ -9,7 +9,7 @@
 
     <Grid Margin="0,0,-7.667,-6.667">
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/pastelgreens.png"/>
+            <ImageBrush ImageSource="Resources/greens.png"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="114*"/>
