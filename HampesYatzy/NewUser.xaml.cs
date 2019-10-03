@@ -25,7 +25,7 @@ namespace HampesYatzy
         }
         private string CreateNewUser()
         {
-           return DbOperations.CreatePlayer(txtbox_firstname.Text, txtbox_lastname.Text, txtbox_nickname.Text);
+           return DbOperations.CreatePlayer(txtFirstname.Text, txtLastname.Text, txtNickname.Text);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -44,7 +44,7 @@ namespace HampesYatzy
 
         private void BtnCreateUser_Click(object sender, RoutedEventArgs e)
         {
-            CheckUserName(txtbox_nickname.Text, txtbox_firstname.Text, txtbox_lastname.Text);
+            CheckUserName(txtNickname.Text, txtFirstname.Text, txtLastname.Text);
         }
         private void CheckUserName(string nickname, string fname, string lname)
         {
