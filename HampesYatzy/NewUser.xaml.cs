@@ -44,24 +44,24 @@ namespace HampesYatzy
 
         private void BtnCreateUser_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(CheckUserName(txtbox_nickname.Text, txtbox_firstname.Text, txtbox_lastname.Text));
+            CheckUserName(txtbox_nickname.Text, txtbox_firstname.Text, txtbox_lastname.Text);
         }
-        private string CheckUserName(string nickname, string fname, string lname)
+        private void CheckUserName(string nickname, string fname, string lname)
         {
             if (DbOperations.IsBlankNickName(nickname))
             {
-                return $"{nickname} är inte ett giltigt smeknamn/spelarnamn";
+                MessageBox.Show($"{nickname} är inte ett giltigt smeknamn/spelarnamn");
             }
             else if (DbOperations.IsDuplicateNickname(nickname))
             {
-                return $"{nickname} är upptaget! Välj ett annat användarnamn.";
+                MessageBox.Show($"{nickname} är upptaget! Välj ett annat användarnamn.");
             }
             else
             {
+                MessageBox.Show(CreateNewUser());
                 MainWindow mainwindow = new MainWindow();
                 mainwindow.Show();
                 this.Close();
-                return CreateNewUser();
             }
         }
 
