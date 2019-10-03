@@ -103,14 +103,6 @@ namespace HampesYatzy
         {
             Tutorial.Content = new Tutorial();
         }
-
-        private void LstAvailable_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            FillChosenList();
-            SetPlayButtons();
-
-
-        }
         private void SetPlayButtons() //justerar spela knapparna beroende på hur många valda spelare det är
         {
             if (IsPlayersChosen())
@@ -196,5 +188,16 @@ namespace HampesYatzy
             SetPlayButtons();
         }
 
+        private void BtnChoosePlayer_Click(object sender, RoutedEventArgs e)
+        {
+            FillChosenList();
+            SetPlayButtons();
+        }
+
+        private void LstAvailable_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            FillChosenList();
+            SetPlayButtons();
+        }
     }
 }
