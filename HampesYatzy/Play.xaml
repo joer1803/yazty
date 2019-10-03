@@ -220,7 +220,7 @@
 
         <Label x:Name="count_trow" Grid.Column="12" Grid.Row="7" FontSize="18" Grid.ColumnSpan="3" Margin="116.333,0,0.333,0" />
         <Label x:Name="time_count" Content="Tid kvar av spel :" Grid.Column="1" Grid.Row="1" FontSize="18" Margin="0,0,0,33.667" Grid.RowSpan="2" HorizontalAlignment="Left" Width="272" Grid.ColumnSpan="5" />
-        <TextBlock x:Name="tbTime" Grid.Column="13" Grid.Row="0" HorizontalAlignment="Left" Margin="140.667,0,0,0" TextWrapping="NoWrap" TextAlignment="Left" Padding="6" VerticalAlignment="Top" Width="129" Height="48" FontSize="18" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="tbTime" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="140.667,0,0,0" TextWrapping="NoWrap" TextAlignment="Left" Padding="6" VerticalAlignment="Top" Width="129" Height="48" FontSize="18" Grid.ColumnSpan="4" />
         <Button x:Name="end_game" Content="Avsluta spel" Grid.Column="13" Grid.Row="0" Grid.ColumnSpan="3" FontSize="20" Click="end_game_Click"  />
 
         <Button x:Name="btn_select_ones" Content="Välj" Grid.Column="6" Grid.Row="3" FontSize="20" Click="Btn_select_ones_Click" Margin="0,0.333,0.333,0.333" />
