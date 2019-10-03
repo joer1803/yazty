@@ -33,16 +33,16 @@ namespace HampesYatzy
             CountTime();
             DisableCategoryButtons();
             DisableDiceButtons();
-            score_required.Text = gameLogic.GetReqBonus();
+            scoreRequired.Text = gameLogic.GetReqBonus();
         }
 
         private void SetInitials() // sätter initialer på "spelbrädet" för alla spelare
         {
             List<Label> txtblcks = new List<Label>();
-            txtblcks.Add(player_one_initial);
-            txtblcks.Add(player_two_initial);
-            txtblcks.Add(player_three_initial);
-            txtblcks.Add(player_four_initial);
+            txtblcks.Add(playerOneInitial);
+            txtblcks.Add(playerTwoInitial);
+            txtblcks.Add(playerThreeInitial);
+            txtblcks.Add(playerFourInitial);
             List<Player> players = gameLogic.GetPlayers();
             for (int i = 0; i < players.Count; i++)
             {
@@ -164,11 +164,11 @@ namespace HampesYatzy
         private List<Label> GetHoldLabelList() // gör en lista av labels ovanför varje tärning där det står "sparad"
         {
             List<Label> labels = new List<Label>();
-            labels.Add(lblHold_diceOne);
-            labels.Add(lblHold_diceTwo);
-            labels.Add(lblHold_diceThree);
-            labels.Add(lblHold_diceFour);
-            labels.Add(lblHold_diceFive);
+            labels.Add(lblDiceOne);
+            labels.Add(lblDiceTwo);
+            labels.Add(lblDiceThree);
+            labels.Add(lblDiceFour);
+            labels.Add(lblDiceFive);
             return labels;
         }
 
@@ -193,52 +193,52 @@ namespace HampesYatzy
         }
         private void EnableDiceButtons()
         {
-            hold_diceOne.IsEnabled = true;
-            hold_diceTwo.IsEnabled = true;
-            hold_diceThree.IsEnabled = true;
-            hold_diceFour.IsEnabled = true;
-            hold_diceFive.IsEnabled = true;
+            holdDiceOne.IsEnabled = true;
+            holdDiceTwo.IsEnabled = true;
+            holdDiceThree.IsEnabled = true;
+            holdDiceFour.IsEnabled = true;
+            holdDiceFive.IsEnabled = true;
         }
         private void DisableDiceButtons()
         {
-            hold_diceOne.IsEnabled = false;
-            hold_diceTwo.IsEnabled = false;
-            hold_diceThree.IsEnabled = false;
-            hold_diceFour.IsEnabled = false;
-            hold_diceFive.IsEnabled = false;
+            holdDiceOne.IsEnabled = false;
+            holdDiceTwo.IsEnabled = false;
+            holdDiceThree.IsEnabled = false;
+            holdDiceFour.IsEnabled = false;
+            holdDiceFive.IsEnabled = false;
         }
 
-        private void Hold_diceOne_Click(object sender, RoutedEventArgs e)
+        private void HoldDiceOne_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(0);
             UpdateDice();
         }
 
-        private void Hold_diceTwo_Click(object sender, RoutedEventArgs e)
+        private void HoldDiceTwo_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(1);
             UpdateDice();
         }
 
-        private void Hold_diceThree_Click(object sender, RoutedEventArgs e)
+        private void HoldDiceThree_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(2);
             UpdateDice();
         }
 
-        private void Hold_diceFour_Click(object sender, RoutedEventArgs e)
+        private void HoldDiceFour_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(3);
             UpdateDice();
         }
 
-        private void Hold_diceFive_Click(object sender, RoutedEventArgs e)
+        private void HoldDiceFive_Click(object sender, RoutedEventArgs e)
         {
             CheckDie(4);
             UpdateDice();
         }
 
-        private void Trow_dice_Click(object sender, RoutedEventArgs e)
+        private void btnThrowDice_Click(object sender, RoutedEventArgs e)
         {
             HideFirework();
             gameLogic.RollDice();
@@ -250,18 +250,18 @@ namespace HampesYatzy
 
         private void DisplayThrows() // visar antalet kast man har kvar
         {
-            count_trow.Content = $"Du har {gameLogic.GetThrows()} kast kvar";
+            countThrow.Content = $"Du har {gameLogic.GetThrows()} kast kvar";
             DisableThrowButton();
         }
         private void DisableThrowButton()
         {
             if (gameLogic.GetThrows() == 0)
             {
-                Trow_dice.IsEnabled = false;
+                btnThrowDice.IsEnabled = false;
             }
             else
             {
-                Trow_dice.IsEnabled = true;
+                btnThrowDice.IsEnabled = true;
             }
         }
 
@@ -275,23 +275,23 @@ namespace HampesYatzy
                     switch (i)
                     {
                         case 0:
-                            player_one_items.Items.Clear();
-                            player_one_items.Items.Add(gameLogic.GetActivePlayer());
+                            playerOneItems.Items.Clear();
+                            playerOneItems.Items.Add(gameLogic.GetActivePlayer());
                             break;
 
                         case 1:
-                            player_two_items.Items.Clear();
-                            player_two_items.Items.Add(gameLogic.GetActivePlayer());
+                            playerTwoItems.Items.Clear();
+                            playerTwoItems.Items.Add(gameLogic.GetActivePlayer());
                             break;
 
                         case 2:
-                            player_three_items.Items.Clear();
-                            player_three_items.Items.Add(gameLogic.GetActivePlayer());
+                            playerThreeItems.Items.Clear();
+                            playerThreeItems.Items.Add(gameLogic.GetActivePlayer());
                             break;
 
                         case 3:
-                            player_four_items.Items.Clear();
-                            player_four_items.Items.Add(gameLogic.GetActivePlayer());
+                            playerFourItems.Items.Clear();
+                            playerFourItems.Items.Add(gameLogic.GetActivePlayer());
                             break;
                     }
                 }
@@ -324,21 +324,21 @@ namespace HampesYatzy
         private List<Button> GetButtonList() // gör en lista av alla kategorik knappar
         {
             List<Button> catButtons = new List<Button>();
-            catButtons.Add(btn_select_ones);
-            catButtons.Add(btn_select_twos);
-            catButtons.Add(btn_select_threes);
-            catButtons.Add(btn_select_fours);
-            catButtons.Add(btn_select_fives);
-            catButtons.Add(btn_select_sixes);
-            catButtons.Add(btn_select_pair);
-            catButtons.Add(btn_select_twoPair);
-            catButtons.Add(btn_select_threeOfAKind);
-            catButtons.Add(btn_select_fourOfAKind);
-            catButtons.Add(btn_select_smallStraight);
-            catButtons.Add(btn_select_bigStraight);
-            catButtons.Add(btn_select_fullHouse);
-            catButtons.Add(btn_select_chance);
-            catButtons.Add(btn_select_yatzy);
+            catButtons.Add(btnSelectOnes);
+            catButtons.Add(btnSelectTwos);
+            catButtons.Add(btnSelectThrees);
+            catButtons.Add(btnSelectFours);
+            catButtons.Add(btnSelectFives);
+            catButtons.Add(btnSelectSixes);
+            catButtons.Add(btnSelectPair);
+            catButtons.Add(btnSelectTwoPair);
+            catButtons.Add(btnSelectThreeOfAKind);
+            catButtons.Add(btnSelectFourOfAKind);
+            catButtons.Add(btnSelectSmallStraight);
+            catButtons.Add(btnSelectBigStraight);
+            catButtons.Add(btnSelectFullHouse);
+            catButtons.Add(btnSelectChance);
+            catButtons.Add(btnSelectYatzy);
             return catButtons;
         }
 
@@ -409,82 +409,82 @@ namespace HampesYatzy
             DisplayHoldLabels();
         }
 
-        private void Btn_select_ones_Click(object sender, RoutedEventArgs e)
+        private void btnSelectOnes_Click(object sender, RoutedEventArgs e)
         {
             SendScore(0);
         }
 
-        private void Btn_select_twos_Click(object sender, RoutedEventArgs e)
+        private void btnSelectTwos_Click(object sender, RoutedEventArgs e)
         {
             SendScore(1);
         }
 
-        private void Btn_select_threes_Click(object sender, RoutedEventArgs e)
+        private void btnSelectThrees_Click(object sender, RoutedEventArgs e)
         {
             SendScore(2);
         }
 
-        private void Btn_select_fours_Click(object sender, RoutedEventArgs e)
+        private void btnSelectFours_Click(object sender, RoutedEventArgs e)
         {
             SendScore(3);
         }
 
-        private void Btn_select_fives_Click(object sender, RoutedEventArgs e)
+        private void btnSelectFives_Click(object sender, RoutedEventArgs e)
         {
             SendScore(4);
         }
 
-        private void Btn_select_sixes_Click(object sender, RoutedEventArgs e)
+        private void btnSelectSixes_Click(object sender, RoutedEventArgs e)
         {
             SendScore(5);
         }
 
-        private void Btn_select_pair_Click(object sender, RoutedEventArgs e)
+        private void btnSelectPair_Click(object sender, RoutedEventArgs e)
         {
             SendScore(6);
         }
 
-        private void Btn_select_twoPair_Click(object sender, RoutedEventArgs e)
+        private void btnSelectTwoPair_Click(object sender, RoutedEventArgs e)
         {
             SendScore(7);
         }
 
-        private void Btn_select_threeOfAKind_Click(object sender, RoutedEventArgs e)
+        private void btnSelectThreeOfAKind_Click(object sender, RoutedEventArgs e)
         {
             SendScore(8);
         }
 
-        private void Btn_select_fourOfAKind_Click(object sender, RoutedEventArgs e)
+        private void btnSelectFourOfAKind_Click(object sender, RoutedEventArgs e)
         {
             SendScore(9);
         }
 
-        private void Btn_select_smallStraight_Click(object sender, RoutedEventArgs e)
+        private void btnSelectSmallStraight_Click(object sender, RoutedEventArgs e)
         {
             SendScore(10);
         }
 
-        private void Btn_select_BigStraight_Click(object sender, RoutedEventArgs e)
+        private void btnSelectBigStraight_Click(object sender, RoutedEventArgs e)
         {
             SendScore(11);
         }
 
-        private void Btn_select_FullHouse_Click(object sender, RoutedEventArgs e)
+        private void btnSelectFullHouse_Click(object sender, RoutedEventArgs e)
         {
             SendScore(12);
         }
 
-        private void Btn_select_Chance_Click(object sender, RoutedEventArgs e)
+        private void btnSelectChance_Click(object sender, RoutedEventArgs e)
         {
             SendScore(13);
         }
 
-        private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
+        private void btnSelectYatzy_Click(object sender, RoutedEventArgs e)
         {
             SendScore(14);
         }
 
-        private void end_game_Click(object sender, RoutedEventArgs e)
+        private void btnEndGame_Click(object sender, RoutedEventArgs e)
         {
             EndGame();
         }
