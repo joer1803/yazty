@@ -53,5 +53,6 @@
 
         <Button x:Name="btnCreateUser" Content="Skapa användare" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="10" Grid.RowSpan="2" VerticalAlignment="Top" Width="208" Height="78" FontSize="18" Click="BtnCreateUser_Click"/>
         <Label x:Name="label1" Content="* Obligatoriska fält" Grid.Column="1" Grid.Row="9" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="30" Width="134" />
+        <Image Grid.Column="2" Margin="277,24,-166,0" Grid.RowSpan="8" Source="Bild1.png" Stretch="Fill" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
