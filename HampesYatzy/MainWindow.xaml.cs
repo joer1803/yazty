@@ -40,12 +40,20 @@ namespace HampesYatzy
             playersSort.Reverse();
             return playersSort;
         }
-        private void Btn_classic_Click(object sender, RoutedEventArgs e)
+        private void BtnClassic_Click(object sender, RoutedEventArgs e)
         {
                 Play play = new Play(CreateNewGame(1), 1);
                 play.Show();
                 this.Close();        
         }
+
+        private void BtnSteerd_Click(object sender, RoutedEventArgs e)
+        {
+            Play play = new Play(CreateNewGame(2), 2);
+            play.Show();
+            this.Close();
+        }
+
         private bool IsPlayersChosen()
         {
             if(lstChosen.Items.Count >= 2)
@@ -68,13 +76,6 @@ namespace HampesYatzy
                 players.Add(player);
             }
             return DbOperations.CreateGame(players, gameType);
-        }
-
-        private void Btn_steerd_Click(object sender, RoutedEventArgs e)
-        {
-            Play play = new Play(CreateNewGame(2), 2);
-            play.Show();
-            this.Close();
         }
 
 
@@ -114,19 +115,19 @@ namespace HampesYatzy
         {
             if (IsPlayersChosen())
             {
-                Btn_classic.IsEnabled = true;
-                Btn_classic.Content = "Spela klassisk yatzy";
+                BtnClassic.IsEnabled = true;
+                BtnClassic.Content = "Spela klassisk yatzy";
 
-                Btn_steerd.IsEnabled = true;
-                Btn_steerd.Content = "Spela styrd yatzy";
+                BtnSteerd.IsEnabled = true;
+                BtnSteerd.Content = "Spela styrd yatzy";
             }
             else
             {
-                Btn_classic.IsEnabled = false;
-                Btn_classic.Content = "Välj spelare först";
+                BtnClassic.IsEnabled = false;
+                BtnClassic.Content = "Välj spelare först";
 
-                Btn_steerd.IsEnabled = false;
-                Btn_steerd.Content = "Välj spelare först";
+                BtnSteerd.IsEnabled = false;
+                BtnSteerd.Content = "Välj spelare först";
             }
         }
         private void RemoveFromAvailableList() // tar bort valda spelare från spelarlistan
@@ -189,10 +190,11 @@ namespace HampesYatzy
             lstChosen.ItemsSource = null;
         }
 
-        private void Btn_clear_chosen_Click(object sender, RoutedEventArgs e)
+        private void BtnClearChosen_Click(object sender, RoutedEventArgs e)
         {
             ResetChosenPlayers();
             SetPlayButtons();
         }
+
     }
 }
