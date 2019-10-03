@@ -250,6 +250,18 @@ namespace HampesYatzy
         private void DisplayThrows() // visar antalet kast man har kvar
         {
             count_trow.Content = $"Du har {gameLogic.GetThrows()} kast kvar";
+            DisableThrowButton();
+        }
+        private void DisableThrowButton()
+        {
+            if (gameLogic.GetThrows() == 0)
+            {
+                Trow_dice.IsEnabled = false;
+            }
+            else
+            {
+                Trow_dice.IsEnabled = true;
+            }
         }
 
         private void UpdateScoreSheet() // uppdaterar poängen 
