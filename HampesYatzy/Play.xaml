@@ -195,7 +195,10 @@
             </TextBlock.Style>
         </TextBlock>
         <Image Source="Resources/watch1.png" Grid.Column="5" Grid.Row="1"/>
-        <Image x:Name="fireworkyatzy" gif:ImageBehavior.AnimatedSource="Resources/firework.gif" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="14" Grid.RowSpan="20" Height="350" Width="350" Visibility="Hidden"/>
+        <Image x:Name="fireworkyatzy" gif:ImageBehavior.AnimatedSource="Resources/firework.gif" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="20" Height="350" Width="350" Visibility="Hidden" />
+        <Image  gif:ImageBehavior.AnimatedSource="Resources/firework.gif" Grid.Column="11" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="20" Height="350" Width="350" Visibility="{Binding Visibility, ElementName=fireworkyatzy}"/>
+        <Image  gif:ImageBehavior.AnimatedSource="Resources/firework.gif" Grid.Column="8" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="9" Height="350" Width="350" Visibility="{Binding Visibility, ElementName=fireworkyatzy}"/>
+        <Image  gif:ImageBehavior.AnimatedSource="Resources/firework.gif" Grid.Column="8" Grid.Row="10" Grid.ColumnSpan="4" Grid.RowSpan="9" Height="350" Width="350" Visibility="{Binding Visibility, ElementName=fireworkyatzy}"/>
         <Image x:Name="diceOne" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Margin="0,0,0,0" Height="100" Width="100"/>
         <Button x:Name="hold_diceOne"  Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" FontSize="20" Margin="1.333,1" Click="Hold_diceOne_Click" Opacity="0" />
         <Label x:Name="lblHold_diceOne" Content="" Grid.Column="8" Grid.Row="7" FontSize="16" HorizontalAlignment="Center"/>

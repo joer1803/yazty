@@ -240,6 +240,7 @@ namespace HampesYatzy
 
         private void Trow_dice_Click(object sender, RoutedEventArgs e)
         {
+            HideFirework();
             gameLogic.RollDice();
             CategoryTaken();
             UpdateDice();
@@ -366,10 +367,15 @@ namespace HampesYatzy
 
         private void SendScore(int category) // skickar iväg vald kategori för poängsättning
         {
+            
             if (!gameLogic.GetActivePlayer().ScoreSheet.Categories[category])
             {
                 gameLogic.SetScore(category);
                 UpdateScoreSheet();
+                if (category == 14)
+                {
+                    ShowFireWork();
+                }
                 NextTurn();
                 CheckTimer();
                 ClearDice();
@@ -378,6 +384,7 @@ namespace HampesYatzy
             {
                 MessageBox.Show("Du har redan tagit denna kategori");
             }
+          
         }
         private void GameOverCheck() //kollar om spelet är slut och skickar ett meddelande till vinnaren
         {
@@ -475,7 +482,6 @@ namespace HampesYatzy
         private void Btn_select_Yatzy_Click(object sender, RoutedEventArgs e)
         {
             SendScore(14);
-            ShowFireWork();
         }
 
         private void end_game_Click(object sender, RoutedEventArgs e)
@@ -531,7 +537,10 @@ namespace HampesYatzy
         {
             Tutorial.Content = new Tutorial();
         }
-
+        private void HideFirework()
+        {
+            fireworkyatzy.Visibility = Visibility.Hidden;
+        }
         public void ShowFireWork() // visar fyrverkerier om någon får yatzy
         {
             if (gameLogic.GetActivePlayer().ScoreSheet.Scores[14] == 50)
