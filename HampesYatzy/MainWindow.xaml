@@ -63,7 +63,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnChoosePlayer" Height="47" Content="Välj spelare" FontSize="20" Grid.Column="5" Grid.Row="11" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Click="BtnChoosePlayer_Click" Margin="0,0,0,1" />
+        <Button x:Name="btnChoosePlayer" Height="47" Content="Välj spelare" FontSize="20" Grid.Column="5" Grid.Row="11" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Click="btnChoosePlayer_Click" Margin="0,0,0,1" />
         <Label Content="Välkommen till Hampes Yatzy" HorizontalAlignment="Left" Grid.Row="1" Grid.ColumnSpan="5" Height="auto" VerticalAlignment="Top" FontSize="40" Width="auto" Margin="46,52,0,0" Grid.RowSpan="2"/>
 
         <StackPanel Grid.Row="4" Grid.RowSpan="5" Grid.ColumnSpan="5">
@@ -73,9 +73,9 @@
         </StackPanel>
 
         <GridSplitter Grid.Column="4" HorizontalAlignment="Left" Height="506" Grid.Row="3" Grid.RowSpan="9" VerticalAlignment="Top" Width="1" Background="Black" Margin="151,10,0,0"/>
-        <Button x:Name="BtnSteerd" Height="75" Content="Välj spelare först" FontSize="20" Grid.Column="9" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="BtnSteerd_Click" IsEnabled="False" VerticalAlignment="Bottom" Margin="0,0,0,0"/>
-        <Button x:Name="BtnClassic" Height="75" Content="Välj spelare först" FontSize="20" Grid.Column="9" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="BtnClassic_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
-        <Button x:Name="BtnClearChosen" Height="32" Content="Rensa lista" FontSize="15" Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="1" VerticalAlignment="Bottom" Margin="40,0,62,23" Click="BtnClearChosen_Click"/>
+        <Button x:Name="btnSteerd" Height="75" Content="Välj spelare först" FontSize="20" Grid.Column="9" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="btnSteerd_Click" IsEnabled="False" VerticalAlignment="Bottom" Margin="0,0,0,0"/>
+        <Button x:Name="btnClassic" Height="75" Content="Välj spelare först" FontSize="20" Grid.Column="9" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"  Click="btnClassic_Click" IsEnabled="False" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnClearChosen" Height="32" Content="Rensa lista" FontSize="15" Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="1" VerticalAlignment="Bottom" Margin="40,0,62,23" Click="btnClearChosen_Click"/>
         <Image Grid.Column="10" Grid.Row="1" Source="Resources/Questionmark.png" Margin="94,0,0,29" Grid.ColumnSpan="2" Grid.RowSpan="2" MouseEnter="Image_MouseEnter"/>
 
         <Label Content="Hur spelar man Yatzy" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="22" Height="39"/>

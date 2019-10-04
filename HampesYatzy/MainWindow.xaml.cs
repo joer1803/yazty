@@ -40,14 +40,14 @@ namespace HampesYatzy
             playersSort.Reverse();
             return playersSort;
         }
-        private void BtnClassic_Click(object sender, RoutedEventArgs e)
+        private void btnClassic_Click(object sender, RoutedEventArgs e)
         {
                 Play play = new Play(CreateNewGame(1), 1);
                 play.Show();
                 this.Close();        
         }
 
-        private void BtnSteerd_Click(object sender, RoutedEventArgs e)
+        private void btnSteerd_Click(object sender, RoutedEventArgs e)
         {
             Play play = new Play(CreateNewGame(2), 2);
             play.Show();
@@ -107,19 +107,19 @@ namespace HampesYatzy
         {
             if (IsPlayersChosen())
             {
-                BtnClassic.IsEnabled = true;
-                BtnClassic.Content = "Spela klassisk yatzy";
+                btnClassic.IsEnabled = true;
+                btnClassic.Content = "Spela klassisk yatzy";
 
-                BtnSteerd.IsEnabled = true;
-                BtnSteerd.Content = "Spela styrd yatzy";
+                btnSteerd.IsEnabled = true;
+                btnSteerd.Content = "Spela styrd yatzy";
             }
             else
             {
-                BtnClassic.IsEnabled = false;
-                BtnClassic.Content = "Välj spelare först";
+                btnClassic.IsEnabled = false;
+                btnClassic.Content = "Välj spelare först";
 
-                BtnSteerd.IsEnabled = false;
-                BtnSteerd.Content = "Välj spelare först";
+                btnSteerd.IsEnabled = false;
+                btnSteerd.Content = "Välj spelare först";
             }
         }
         private void RemoveFromAvailableList() // tar bort valda spelare från spelarlistan
@@ -182,13 +182,13 @@ namespace HampesYatzy
             lstChosen.ItemsSource = null;
         }
 
-        private void BtnClearChosen_Click(object sender, RoutedEventArgs e)
+        private void btnClearChosen_Click(object sender, RoutedEventArgs e)
         {
             ResetChosenPlayers();
             SetPlayButtons();
         }
 
-        private void BtnChoosePlayer_Click(object sender, RoutedEventArgs e)
+        private void btnChoosePlayer_Click(object sender, RoutedEventArgs e)
         {
             FillChosenList();
             SetPlayButtons();
