@@ -28,7 +28,7 @@ namespace HampesYatzy
         {
             InitializeComponent();
             gameLogic = new GameLogic(gameId, gametype);
-            UpdatePlayer();
+            UpdatePlayerLabel();
             SetInitials();
             CountTime();
             DisableCategoryButtons();
@@ -44,9 +44,17 @@ namespace HampesYatzy
             txtblcks.Add(playerThreeInitial);
             txtblcks.Add(playerFourInitial);
             List<Player> players = gameLogic.GetPlayers();
+            string initials;
             for (int i = 0; i < players.Count; i++)
             {
-                string initials = $"{players[i].Firstname[0]}{players[i].Lastname[0]}";
+                if (!DbOperations.IsBlankName(players[i].Firstname) || !DbOperations.IsBlankName(players[i].Lastname))
+                {
+                    initials = $"{players[i].Firstname[0]}{players[i].Lastname[0]}";
+                }
+                else
+                {
+                    initials = $"{players[i].Nickname[0]}{players[i].Nickname[1]}";
+                }
                 txtblcks[i].Content = initials.ToUpper();
             }
         }
@@ -143,9 +151,9 @@ namespace HampesYatzy
         }
 
 
-        private void UpdatePlayer() // uppdaterar label med namnet på spelaren som har turen
+        private void UpdatePlayerLabel() // uppdaterar label med namnet på spelaren som har turen
         {
-            txtActivePlayer.Text = $"{gameLogic.GetActivePlayer().Firstname} {gameLogic.GetActivePlayer().Lastname}";
+            txtActivePlayer.Text = $"{gameLogic.GetActivePlayer().Firstname} \"{gameLogic.GetActivePlayer().Nickname}\" {gameLogic.GetActivePlayer().Lastname}";
         }
 
         private void CheckDie(int index) // kollar om en tärning är sparad eller inte
@@ -402,7 +410,7 @@ namespace HampesYatzy
         {
             gameLogic.NextPlayer();
             GameOverCheck();
-            UpdatePlayer();
+            UpdatePlayerLabel();
             DisableCategoryButtons();
             DisableDiceButtons();
             DisplayThrows();

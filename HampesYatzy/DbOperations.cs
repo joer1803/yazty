@@ -10,17 +10,17 @@ namespace HampesYatzy
 {
     class DbOperations
     {
-        public static bool IsBlankNickName(string nickname) // kollar så nickname inte är blankt
+        public static bool IsBlankName(string name) // kollar så nickname inte är blankt
         {
             int checkBlankNick = 0;
-            foreach (char c in nickname)
+            foreach (char c in name)
             {
                 if (Char.IsWhiteSpace(c))
                 {
                     checkBlankNick++;
                 }
             }
-            if (checkBlankNick == nickname.Length)
+            if (checkBlankNick == name.Length)
             {
                 return true;
             }
@@ -52,7 +52,7 @@ namespace HampesYatzy
             {
                 for (int j = 0; j < plist.Count; j++)
                 {
-                    if (plist[j].Id == busylist[i].Id || IsBlankNickName(plist[j].Nickname))
+                    if (plist[j].Id == busylist[i].Id || IsBlankName(plist[j].Nickname))
                     {
                         plist.Remove(plist[j]);
                     }

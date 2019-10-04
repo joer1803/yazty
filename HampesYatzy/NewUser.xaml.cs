@@ -48,7 +48,7 @@ namespace HampesYatzy
         }
         private void CheckUserName(string nickname, string fname, string lname)
         {
-            if (DbOperations.IsBlankNickName(nickname))
+            if (DbOperations.IsBlankName(nickname))
             {
                 MessageBox.Show($"{nickname} är inte ett giltigt smeknamn/spelarnamn");
             }
