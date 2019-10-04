@@ -24,6 +24,7 @@ namespace HampesYatzy
         public const int Chance = 13;
         public const int Yatzy = 14;
         int throws = 3;
+        Random rnd;
         YatzyGame game;
         Player activePlayer;
         
@@ -35,6 +36,7 @@ namespace HampesYatzy
             game.GameId = gameId;
             game.GameType = gametype;
             activePlayer = game.Players[0];
+            rnd = new Random();
             if(game.GameType == 2)
             {
                 StartSteeredYatzy();
@@ -136,7 +138,6 @@ namespace HampesYatzy
 
         public void RollDice()
         {
-            Random rnd = new Random();
             if (throws != 0)
             {
                 throws--;
